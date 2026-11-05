@@ -393,15 +393,33 @@
         const taxDetailBox = document.getElementById('taxDetailBox');
         const crashDetailBox = document.getElementById('crashDetailBox');
 
-        // Populate dropdowns
+        // Populate dropdowns (Option B: Grouped by Real Candidates vs Excluded Hypotheses)
+        const KEPT_16 = ["Nathalie Arthaud", "Philippe Poutou", "Jean-Luc Mélenchon", "Fabien Roussel", "François Ruffin", "Marine Tondelier", "Raphaël Glucksmann", "Édouard Philippe", "François Bayrou", "David Lisnard", "Laurent Wauquiez", "Marine Le Pen", "Éric Zemmour", "Nicolas Dupont-Aignan", "François Asselineau", "Jean Lassalle"];
+
+        const grpA1 = document.createElement('optgroup'); grpA1.label = "🎯 16 Candidats Réels en Campagne";
+        const grpA2 = document.createElement('optgroup'); grpA2.label = "📁 16 Hypothèses Écartées & Doublons";
+        const grpB1 = document.createElement('optgroup'); grpB1.label = "🎯 16 Candidats Réels en Campagne";
+        const grpB2 = document.createElement('optgroup'); grpB2.label = "📁 16 Hypothèses Écartées & Doublons";
+        const grpC1 = document.createElement('optgroup'); grpC1.label = "🎯 16 Candidats Réels en Campagne";
+        const grpC2 = document.createElement('optgroup'); grpC2.label = "📁 16 Hypothèses Écartées & Doublons";
+
         cands.forEach(c => {
-            const optA = new Option(c.name, c.name);
-            const optB = new Option(c.name, c.name);
-            const optC = new Option(c.name, c.name);
-            selA.add(optA);
-            selB.add(optB);
-            selC.add(optC);
+            const isReal = KEPT_16.includes(c.name);
+            const label = isReal ? c.name : `${c.name} (Non candidat / Doublon)`;
+            const optA = new Option(label, c.name);
+            const optB = new Option(label, c.name);
+            const optC = new Option(label, c.name);
+
+            if (isReal) {
+                grpA1.appendChild(optA); grpB1.appendChild(optB); grpC1.appendChild(optC);
+            } else {
+                grpA2.appendChild(optA); grpB2.appendChild(optB); grpC2.appendChild(optC);
+            }
         });
+
+        selA.appendChild(grpA1); selA.appendChild(grpA2);
+        selB.appendChild(grpB1); selB.appendChild(grpB2);
+        selC.appendChild(grpC1); selC.appendChild(grpC2);
 
         // Default selection: David Lisnard vs Bruno Retailleau vs Laurent Wauquiez
         selA.value = "David Lisnard";

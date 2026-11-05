@@ -1,48 +1,61 @@
 # OBSERVATOIRE DES CANDIDATS À L'ÉLECTION PRÉSIDENTIELLE 2027
 
-Ce répertoire regroupe les dossiers individuels de l'ensemble des candidats déclarés, pressentis ou figures de premier plan pour l'élection présidentielle de 2027 en France.
-
+Ce répertoire regroupe les dossiers individuels des candidats à l'élection présidentielle de 2027, structurés selon le filtre de réalité politique (Option B : Resserrage strict des candidatures).
 
 > 📊 **Grand Observatoire Comparatif Dédié :** Retrouvez tous les classements, graphiques et visualisations multi-candidats dans le dossier dédié [../comparatifs candidats/](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/) :
-> - 💻 [Tableau de Bord Web Interactif Multi-Candidats](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Visualisation_Comparatif_Tous_Candidats_2027.html)
-> - 📈 [Classeur Excel Maître Comparatif des 32 Candidats](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Comparatif_Budgetaire_Tous_Candidats_2027.xlsx)
-> - ⚔️ [Comparateur Interactif Face-à-Face (Duels & Matchs)](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Comparateur_Interactif_Face_a_Face.html)
-> - 📑 [Matrices Thématiques Transversales (8 Grands Sujets)](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Matrices_Thematiques_Transversales_2027.xlsx)
-> - 📋 [Index Général des Comparatifs](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/INDEX_COMPARATIFS.md)
+> - 🌐 [Portail Général National 2027](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/index.html)
+> - 📊 [Atlas Comparatif des Candidats](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Visualisation_Comparatif_Tous_Candidats_2027.html)
+> - ⚖️ [Comparateur Interactif Face-à-Face](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Comparateur_Interactif_Face_a_Face.html)
+> - 🏛️ [Simulateur de Majorités & Gouvernabilité Assemblée](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Simulateur_Gouvernabilite_Assemblee_2027.html)
+> - 💶 [Simulateur Pouvoir d'Achat Citoyen](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Simulateur_Pouvoir_Achat_Citoyen.html)
+> - 🧭 [Boussole Électorale & Test d'Affinité](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Boussole_Electorale_Test_Affinite.html)
 
-**Nombre total de profils suivis :** 32 candidats répartis sur l'ensemble de l'échiquier politique.
+---
 
-| Candidat (Prénom Nom) | Parti / Mouvement | Famille Politique | Statut Parrainages (Couleur Dossier) | Lien Dossier |
-| :--- | :--- | :--- | :---: | :--- |
-| **Nathalie Arthaud** | Lutte Ouvrière (LO) | Extrême gauche | 🔴 **Rouge (<300 En difficulté)** | [Nathalie Arthaud](./Nathalie%20Arthaud/) |
-| **Philippe Poutou** | Nouveau Parti Anticapitaliste (NPA) | Extrême gauche | 🔴 **Rouge (<300 En difficulté)** | [Philippe Poutou](./Philippe%20Poutou/) |
-| **Jean-Luc Mélenchon** | La France Insoumise (LFI) | Gauche radicale & populaire | 🟢 **Vert (500+ Assurés)** | [Jean-Luc Mélenchon](./Jean-Luc%20Mélenchon/) |
-| **Fabien Roussel** | Parti Communiste Français (PCF) | Gauche républicaine & ouvrière | 🟢 **Vert (500+ Assurés)** | [Fabien Roussel](./Fabien%20Roussel/) |
-| **François Ruffin** | Picardie Debout ! / Débout ! | Gauche populaire & sociale | 🟠 **Orange (300-499 En bonne voie)** | [François Ruffin](./François%20Ruffin/) |
-| **Clémentine Autain** | L'Après | Gauche unitaire & féministe | 🟠 **Orange (300-499 En bonne voie)** | [Clémentine Autain](./Clémentine%20Autain/) |
-| **Marine Tondelier** | Les Écologistes (EELV) | Écologie politique | 🟢 **Vert (500+ Assurés)** | [Marine Tondelier](./Marine%20Tondelier/) |
-| **Raphaël Glucksmann** | Place Publique | Social-démocratie & Pro-européen | 🟠 **Orange (300-499 En bonne voie)** | [Raphaël Glucksmann](./Raphaël%20Glucksmann/) |
-| **François Hollande** | Parti Socialiste (PS) | Social-démocratie gouvernementale | 🟢 **Vert (500+ Assurés)** | [François Hollande](./François%20Hollande/) |
-| **Bernard Cazeneuve** | La Convention | Gauche républicaine & laïque | 🟢 **Vert (500+ Assurés)** | [Bernard Cazeneuve](./Bernard%20Cazeneuve/) |
-| **Carole Delga** | Parti Socialiste / Occitanie | Gauche territoriale & girondine | 🟢 **Vert (500+ Assurés)** | [Carole Delga](./Carole%20Delga/) |
-| **Jean-Marc Governatori** | Écologie au Centre | Écologie indépendante & centriste | 🔴 **Rouge (<300 En difficulté)** | [Jean-Marc Governatori](./Jean-Marc%20Governatori/) |
-| **Hélène Thouy** | Parti Animaliste | Condition animale | 🔴 **Rouge (<300 En difficulté)** | [Hélène Thouy](./Hélène%20Thouy/) |
-| **Édouard Philippe** | Horizons | Centre-droit / Bloc central | 🟢 **Vert (500+ Assurés)** | [Édouard Philippe](./Édouard%20Philippe/) |
-| **Gabriel Attal** | Renaissance | Centre progressiste & libéral | 🟢 **Vert (500+ Assurés)** | [Gabriel Attal](./Gabriel%20Attal/) |
-| **François Bayrou** | Mouvement Démocrate (MoDem) | Centre humaniste & démocrate | 🟢 **Vert (500+ Assurés)** | [François Bayrou](./François%20Bayrou/) |
-| **Gérald Darmanin** | Populaire / Renaissance | Centre-droit populaire / Gaullisme social | 🟢 **Vert (500+ Assurés)** | [Gérald Darmanin](./Gérald%20Darmanin/) |
-| **Yaël Braun-Pivet** | Renaissance | Centre républicain & institutionnel | 🟢 **Vert (500+ Assurés)** | [Yaël Braun-Pivet](./Yaël%20Braun-Pivet/) |
-| **David Lisnard** | Nouvelle Énergie | Droite libérale & souveraine | 🟢 **Vert (500+ Assurés)** | [David Lisnard](./David%20Lisnard/) |
-| **Bruno Retailleau** | Les Républicains (LR) | Droite républicaine & conservatrice | 🟢 **Vert (500+ Assurés)** | [Bruno Retailleau](./Bruno%20Retailleau/) |
-| **Laurent Wauquiez** | La Droite Républicaine (LR) | Droite républicaine & régalienne | 🟢 **Vert (500+ Assurés)** | [Laurent Wauquiez](./Laurent%20Wauquiez/) |
-| **Xavier Bertrand** | Nous France / LR | Droite gaulliste & sociale | 🟢 **Vert (500+ Assurés)** | [Xavier Bertrand](./Xavier%20Bertrand/) |
-| **Dominique de Villepin** | La France Humaniste | Gaullisme souverainiste & diplomatique | 🟠 **Orange (300-499 En bonne voie)** | [Dominique de Villepin](./Dominique%20de%20Villepin/) |
-| **Michel Barnier** | Les Républicains (LR) | Droite modérée & européenne | 🟢 **Vert (500+ Assurés)** | [Michel Barnier](./Michel%20Barnier/) |
-| **Marine Le Pen** | Rassemblement National (RN) | Droite nationale & souverainiste | 🟠 **Orange (300-499 En bonne voie)** | [Marine Le Pen](./Marine%20Le%20Pen/) |
-| **Jordan Bardella** | Rassemblement National (RN) | Droite nationale & patriotique | 🟠 **Orange (300-499 En bonne voie)** | [Jordan Bardella](./Jordan%20Bardella/) |
-| **Éric Zemmour** | Reconquête ! | Droite identitaire & civilisationnelle | 🔴 **Rouge (<300 En difficulté)** | [Éric Zemmour](./Éric%20Zemmour/) |
-| **Marion Maréchal** | Identité-Libertés | Droite conservatrice & libérale | 🔴 **Rouge (<300 En difficulté)** | [Marion Maréchal](./Marion%20Maréchal/) |
-| **Nicolas Dupont-Aignan** | Debout la France (DLF) | Gaullisme souverainiste | 🟠 **Orange (300-499 En bonne voie)** | [Nicolas Dupont-Aignan](./Nicolas%20Dupont-Aignan/) |
-| **François Asselineau** | Union Populaire Républicaine (UPR) | Souverainisme & Frexit juridique | 🔴 **Rouge (<300 En difficulté)** | [François Asselineau](./François%20Asselineau/) |
-| **Florian Philippot** | Les Patriotes | Souverainisme & Frexit citoyen | 🔴 **Rouge (<300 En difficulté)** | [Florian Philippot](./Florian%20Philippot/) |
-| **Jean Lassalle** | Résistons ! | Ruralité & Démocratie authentique | 🟠 **Orange (300-499 En bonne voie)** | [Jean Lassalle](./Jean%20Lassalle/) |
+## 🎯 1. LES 16 CANDIDATS RÉELS EN CAMPAGNE (En lice ou déclarés)
+
+Ces 16 candidats constituent l'échiquier politique réel et opérationnel pour le premier tour de 2027, sans doublons d'appareil ni candidatures de substitution :
+
+| N° | Candidat (Prénom Nom) | Parti / Mouvement | Famille Politique | Statut Parrainages | Lien Dossier |
+| :---: | :--- | :--- | :--- | :---: | :--- |
+| 1 | **Nathalie Arthaud** | Lutte Ouvrière (LO) | Extrême gauche | 🔴 <300 En difficulté | [Dossier](./Nathalie%20Arthaud/index.html) |
+| 2 | **Philippe Poutou** | Nouveau Parti Anticapitaliste (NPA) | Extrême gauche | 🔴 <300 En difficulté | [Dossier](./Philippe%20Poutou/index.html) |
+| 3 | **Jean-Luc Mélenchon** | La France Insoumise (LFI) | Gauche radicale & populaire | 🟢 500+ Assurés | [Dossier](./Jean-Luc%20M%C3%A9lenchon/index.html) |
+| 4 | **Fabien Roussel** | Parti Communiste Français (PCF) | Gauche républicaine & ouvrière | 🟢 500+ Assurés | [Dossier](./Fabien%20Roussel/index.html) |
+| 5 | **François Ruffin** | Picardie Debout ! / Debout ! | Gauche populaire & sociale | 🟠 300-499 En bonne voie | [Dossier](./Fran%C3%A7ois%20Ruffin/index.html) |
+| 6 | **Marine Tondelier** | Les Écologistes (EELV) | Écologie politique | 🟢 500+ Assurés | [Dossier](./Marine%20Tondelier/index.html) |
+| 7 | **Raphaël Glucksmann** | Place Publique / PS | Social-démocratie & Pro-européen | 🟠 300-499 En bonne voie | [Dossier](./Rapha%C3%ABl%20Glucksmann/index.html) |
+| 8 | **Édouard Philippe** | Horizons | Centre-droit / Bloc central (Déclaré) | 🟢 500+ Assurés | [Dossier](./%C3%89douard%20Philippe/index.html) |
+| 9 | **François Bayrou** | MoDem | Centre humaniste & démocrate | 🟢 500+ Assurés | [Dossier](./Fran%C3%A7ois%20Bayrou/index.html) |
+| 10 | **David Lisnard** | Nouvelle Énergie | Droite libérale, régalienne & décentralisatrice | 🟢 500+ Assurés | [Dossier](./David%20Lisnard/index.html) |
+| 11 | **Laurent Wauquiez** | La Droite Républicaine (LR) | Droite républicaine & conservatrice | 🟢 500+ Assurés | [Dossier](./Laurent%20Wauquiez/index.html) |
+| 12 | **Marine Le Pen** | Rassemblement National (RN) | Droite nationale & souverainiste (Candidate officielle) | 🟠 300-499 En bonne voie | [Dossier](./Marine%20Le%20Pen/index.html) |
+| 13 | **Éric Zemmour** | Reconquête ! | Droite identitaire & civilisationnelle | 🔴 <300 En difficulté | [Dossier](./%C3%89ric%20Zemmour/index.html) |
+| 14 | **Nicolas Dupont-Aignan** | Debout la France (DLF) | Gaullisme souverainiste | 🟠 300-499 En bonne voie | [Dossier](./Nicolas%20Dupont-Aignan/index.html) |
+| 15 | **François Asselineau** | UPR | Souverainisme & Frexit juridique | 🔴 <300 En difficulté | [Dossier](./Fran%C3%A7ois%20Asselineau/index.html) |
+| 16 | **Jean Lassalle** | Résistons ! | Ruralité & Souverainisme populaire | 🟠 300-499 En bonne voie | [Dossier](./Jean%20Lassalle/index.html) |
+
+---
+
+## 📁 2. LES 16 HYPOTHÈSES ÉCARTÉES, DOUBLONS & TICKETS EXÉCUTIFS
+
+Ces 16 profils ont été modélisés et chiffrés dans l'observatoire mais **ne constituent pas des candidatures effectives distinctes** pour 2027 :
+
+| Personnalité | Parti | Rôle Réel & Motif de non-candidature directe | Dossier Archivé |
+| :--- | :--- | :--- | :--- |
+| **Jordan Bardella** | RN | **Ne se présente pas.** Forme un ticket exécutif avec Marine Le Pen (cible Matignon). Plan B uniquement en cas d'inéligibilité judiciaire de Marine Le Pen. | [Consulter](./Jordan%20Bardella/index.html) |
+| **Michel Barnier** | LR | **Ne se présente pas.** 73 ans, a expressément exclu une candidature après son passage à Matignon. | [Consulter](./Michel%20Barnier/index.html) |
+| **Gabriel Attal** | Renaissance | **Doublon bloc central.** Chef du groupe parlementaire EPR, ne se présentera pas face à Édouard Philippe. | [Consulter](./Gabriel%20Attal/index.html) |
+| **Gérald Darmanin** | Renaissance | **Doublon bloc central.** Mouvement Populaires, soutien d'une candidature unique du centre-droit. | [Consulter](./G%C3%A9rald%20Darmanin/index.html) |
+| **Yaël Braun-Pivet** | Renaissance | **Doublon bloc central.** Présidente de l'Assemblée nationale, positionnée en figure institutionnelle. | [Consulter](./Ya%C3%ABl%20Braun-Pivet/index.html) |
+| **Bruno Retailleau** | LR | **Doublon LR.** Ministre de l'Intérieur, rivalité interne tranchée au profit du candidat unique de la droite républicaine. | [Consulter](./Bruno%20Retailleau/index.html) |
+| **Xavier Bertrand** | LR | **Doublon LR.** Président des Hauts-de-France, ralliement au candidat investi. | [Consulter](./Xavier%20Bertrand/index.html) |
+| **François Hollande** | PS | **Doublon social-démocrate.** Ancien président, ne se présentera pas face à l'offre sociale-démocrate établie. | [Consulter](./Fran%C3%A7ois%20Hollande/index.html) |
+| **Bernard Cazeneuve** | La Convention | **Doublon social-démocrate.** Mouvement La Convention, espace électoral insuffisant hors PS. | [Consulter](./Bernard%20Cazeneuve/index.html) |
+| **Carole Delga** | PS | **Doublon socialiste.** Présidente d'Occitanie, soutiendra la candidature sociale-démocrate unifiée. | [Consulter](./Carole%20Delga/index.html) |
+| **Clémentine Autain** | L'Après | **Doublon gauche radicale.** Refus d'une candidature testimoniale et recherche d'un accord unitaire. | [Consulter](./Cl%C3%A9mentine%20Autain/index.html) |
+| **Marion Maréchal** | Identité-Libertés | **Doublon droite nationale.** A expressément refusé de se présenter contre le Rassemblement National. | [Consulter](./Marion%20Mar%C3%A9chal/index.html) |
+| **Dominique de Villepin** | - | **Figure diplomatique.** Sans parti, sans réseau militant, sans maillage de parrainages. | [Consulter](./Dominique%20de%20Villepin/index.html) |
+| **Florian Philippot** | Les Patriotes | **Doublon souverainiste.** Candidature redondante avec Dupont-Aignan et Asselineau. | [Consulter](./Florian%20Philippot/index.html) |
+| **Hélène Thouy** | Parti Animaliste | **Thématique.** Absence de réseau suffisant d'élus locaux pour sécuriser les 500 parrainages. | [Consulter](./H%C3%A9l%C3%A8ne%20Thouy/index.html) |
+| **Jean-Marc Governatori** | Écologie au Centre | **Doublon écologiste.** Pas de dynamique pour une candidature présidentielle autonome. | [Consulter](./Jean-Marc%20Governatori/index.html) |

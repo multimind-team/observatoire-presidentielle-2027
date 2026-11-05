@@ -355,21 +355,24 @@
                 return { ...c, impact: imp };
             });
 
-            // Sort by total annual gain descending
-            computed.sort((a, b) => b.impact.totalYear - a.impact.totalYear);
+            const KEPT_16 = ["Nathalie Arthaud", "Philippe Poutou", "Jean-Luc Mélenchon", "Fabien Roussel", "François Ruffin", "Marine Tondelier", "Raphaël Glucksmann", "Édouard Philippe", "François Bayrou", "David Lisnard", "Laurent Wauquiez", "Marine Le Pen", "Éric Zemmour", "Nicolas Dupont-Aignan", "François Asselineau", "Jean Lassalle"];
 
-            // Update Chart
+            // Sort by total annual gain descending, prioritizing the 16 real candidates
+            const officialComputed = computed.filter(c => KEPT_16.includes(c.name));
+            officialComputed.sort((a, b) => b.impact.totalYear - a.impact.totalYear);
+
+            // Update Chart with the 16 real candidates
             const ctx = document.getElementById('impactChart').getContext('2d');
             if (impactChart) impactChart.destroy();
 
             impactChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: computed.map(c => c.name),
+                    labels: officialComputed.map(c => c.name),
                     datasets: [{
                         label: 'Gain / Perte Net Annuel (€ / an)',
-                        data: computed.map(c => c.impact.totalYear),
-                        backgroundColor: computed.map(c => c.impact.totalYear >= 0 ? '#10b981' : '#f43f5e'),
+                        data: officialComputed.map(c => c.impact.totalYear),
+                        backgroundColor: officialComputed.map(c => c.impact.totalYear >= 0 ? '#10b981' : '#f43f5e'),
                         borderRadius: 6
                     }]
                 },

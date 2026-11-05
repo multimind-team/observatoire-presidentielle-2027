@@ -426,7 +426,9 @@
             const labels = ['1ère Place — Accord Majeur', '2ème Place — Forte Convergence', '3ème Place — Convergence Élevée'];
 
             for (let i = 0; i < 3; i++) {
-                const r = results[i];
+                const KEPT_16 = ["Nathalie Arthaud", "Philippe Poutou", "Jean-Luc Mélenchon", "Fabien Roussel", "François Ruffin", "Marine Tondelier", "Raphaël Glucksmann", "Édouard Philippe", "François Bayrou", "David Lisnard", "Laurent Wauquiez", "Marine Le Pen", "Éric Zemmour", "Nicolas Dupont-Aignan", "François Asselineau", "Jean Lassalle"];
+            const officialResults = results.filter(res => KEPT_16.includes(res.name));
+            const r = officialResults[i];
                 const card = document.createElement('div');
                 card.className = `podium-card ${classes[i]}`;
                 card.innerHTML = `

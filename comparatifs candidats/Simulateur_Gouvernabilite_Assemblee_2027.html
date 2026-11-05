@@ -189,10 +189,24 @@
         const sel = document.getElementById('scenarSelect');
         let hemiChart = null;
 
+        const KEPT_16 = ["Nathalie Arthaud", "Philippe Poutou", "Jean-Luc Mélenchon", "Fabien Roussel", "François Ruffin", "Marine Tondelier", "Raphaël Glucksmann", "Édouard Philippe", "François Bayrou", "David Lisnard", "Laurent Wauquiez", "Marine Le Pen", "Éric Zemmour", "Nicolas Dupont-Aignan", "François Asselineau", "Jean Lassalle"];
+
+        const grpGov1 = document.createElement('optgroup'); grpGov1.label = "🎯 16 Candidats Réels en Campagne";
+        const grpGov2 = document.createElement('optgroup'); grpGov2.label = "📁 16 Scénarios d'Hypothèses Écartées (Non candidats)";
+
         scenarios.forEach((s, idx) => {
-            const opt = new Option(s.winner + ' (' + s.president_family + ')', idx);
-            sel.add(opt);
+            const isReal = KEPT_16.includes(s.winner);
+            const label = isReal ? `${s.winner} (${s.president_family})` : `${s.winner} [Non candidat / Doublon]`;
+            const opt = new Option(label, idx);
+            if (isReal) {
+                grpGov1.appendChild(opt);
+            } else {
+                grpGov2.appendChild(opt);
+            }
         });
+
+        sel.appendChild(grpGov1);
+        sel.appendChild(grpGov2);
 
         function updateHemicycle() {
             const s = scenarios[sel.value];
