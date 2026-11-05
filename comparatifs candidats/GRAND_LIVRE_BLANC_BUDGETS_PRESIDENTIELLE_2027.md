@@ -1,8 +1,8 @@
 # 📘 GRAND LIVRE BLANC DES FINANCES PUBLIQUES & PROGRAMMES PRÉSIDENTIELS 2027
-### *Rapport d'Évaluation Macroéconomique Consolidée, Stress-Test Souverain & Analyse Stratégique des 32 Candidats*
+### *Rapport d'Évaluation Macroéconomique Consolidée, Stress-Test Souverain & Analyse Stratégique des Candidats en Lice (16 Candidats Réels)*
 
 > **Auteur :** Grand Observatoire Indépendant de la Présidentielle 2027  
-> **Périmètre d'analyse :** 32 candidats déclarés ou pressentis  
+> **Périmètre d'analyse :** 16 candidats réels en lice (et 16 hypothèses alternatives analysées)  
 > **Base de référence officielle :** Budget consolidé des Administrations Publiques françaises (APU) 2026 : **1 514,0 Mds € de dépenses** / **1 368,0 Mds € de recettes** / **-146,0 Mds € de déficit (-5,1 % du PIB)** / **Dette publique : 3 228 Mds € (112,5 % du PIB)**.  
 > **Répertoire dédié :** `C:\Users\user\Desktop\projets_IA\projets\presidentielle\comparatifs candidats\`
 

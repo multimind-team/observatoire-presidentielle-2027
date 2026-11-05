@@ -5,7 +5,7 @@
 
 ---
 
-## 1. Synthèse Comparative de la Gouvernabilité des 32 Candidats
+## 1. Synthèse Comparative de la Gouvernabilité des Candidats 2027
 
 | Candidat Vainqueur | Coalition Majoritaire Projetée | Sièges Projetés | Type de Majorité | Risque de Censure | Faisabilité Budgétaire |
 | :--- | :--- | :---: | :---: | :---: | :--- |

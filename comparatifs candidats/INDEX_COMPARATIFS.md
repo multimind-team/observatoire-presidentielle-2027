@@ -1,7 +1,7 @@
-# HUB CENTRAL : COMPARATIFS DES 32 CANDIDATS (PRÉSIDENTIELLE 2027)
+# HUB CENTRAL : COMPARATIFS DES CANDIDATS (16 EN LICE) (PRÉSIDENTIELLE 2027)
 
 > **Répertoire dédié :** `C:\Users\user\Desktop\projets_IA\projets\presidentielle\comparatifs candidats\`  
-> **Périmètre analysé :** 32 candidats déclarés ou pressentis  
+> **Périmètre analysé :** 16 candidats réels en lice (et 16 hypothèses alternatives analysées)  
 > **Cadre de référence :** Budget consolidé de l'État et des administrations publiques françaises (1 514 Mds € de dépenses / 1 368 Mds € de recettes / -146 Mds € de déficit)
 
 ---
@@ -10,7 +10,7 @@
 
 1. 🌐 **Portail Web Unifié d'Accueil (Vitrine Centrale) :**
    - [PORTAIL_PRESIDENTIELLE_2027.html](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/PORTAIL_PRESIDENTIELLE_2027.html)
-   - *Accès direct en 1 clic à l'ensemble des 6 simulateurs, aux 32 dossiers complets et aux classeurs Excel.*
+   - *Accès direct en 1 clic à l'ensemble des 6 simulateurs, aux dossiers des 16 candidats réels (et aux 16 dossiers complémentaires) et aux classeurs Excel.*
 
 2. 💶 **Simulateur Personnalisé de Pouvoir d'Achat (« Mon Portefeuille ») :**
    - [Simulateur_Pouvoir_Achat_Citoyen.html](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Simulateur_Pouvoir_Achat_Citoyen.html)
@@ -18,14 +18,14 @@
 
 3. 🧭 **Boussole Électorale & Test d'Affinité (Quiz 12 Questions) :**
    - [Boussole_Electorale_Test_Affinite.html](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Boussole_Electorale_Test_Affinite.html)
-   - *Test d'orientation :* 12 questions clivantes, calcul du score d'accord sur 100%, podium Top 3 personnalisé et classement des 32 candidats.
+   - *Test d'orientation :* 12 questions clivantes, calcul du score d'accord sur 100%, podium Top 3 personnalisé et classement des candidats en lice.
 
 4. 🏛️ **Simulateur de Majorité Parlementaire & Hémicycle 2027 :**
    - [Simulateur_Gouvernabilite_Assemblee_2027.html](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Simulateur_Gouvernabilite_Assemblee_2027.html)
    - *3e tour législatif :* projection des 577 sièges de l'Assemblée nationale, faisabilité du vote budgétaire et risque de censure par candidat.
    - 📑 [10_Analyse_Gouvernabilite_et_Majorites_Legislatives.md](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/10_Analyse_Gouvernabilite_et_Majorites_Legislatives.md)
 
-5. 📊 **Grand Atlas Graphique des 32 Candidats (10 Graphiques Thématiques) :**
+5. 📊 **Grand Atlas Graphique des Candidats 2027 (10 Graphiques Thématiques) :**
    - [Visualisation_Comparatif_Tous_Candidats_2027.html](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Visualisation_Comparatif_Tous_Candidats_2027.html)
    - *10 Graphiques interactifs :* Retraites, SMIC, IR, entreprises, EPR, immigration, prisons, fonctionnaires, boussole 2D, macro APU.
 
@@ -109,10 +109,10 @@ L'outil intègre désormais **8 visualisations graphiques interactives** répart
 
 ---
 
-## 4. Matrices Transversales Thématiques (Comparatif Mesure par Mesure des 32 Candidats)
+## 4. Matrices Transversales Thématiques (Comparatif Mesure par Mesure des Candidats 2027)
 
 📊 **Classeur Excel Transversal Complet :** [Matrices_Thematiques_Transversales_2027.xlsx](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Matrices_Thematiques_Transversales_2027.xlsx)
-> **Nouveau :** Les **8 onglets thématiques** intègrent désormais chacun un **Graphique BarChart natif Excel** comparant l'ensemble des 32 candidats (âge de retraite, SMIC, taux d'IR, impact fiscal entreprises, réacteurs EPR, fermeté migratoire, places de prison, coupes de fonctionnaires).
+> **Nouveau :** Les **8 onglets thématiques** intègrent désormais chacun un **Graphique BarChart natif Excel** comparant l'ensemble des candidats (âge de retraite, SMIC, taux d'IR, impact fiscal entreprises, réacteurs EPR, fermeté migratoire, places de prison, coupes de fonctionnaires).
 
 ### Les 8 Fiches Comparatives Thématiques :
 1. 👴 [01_Comparatif_Retraites_et_Pensions.md](./01_Comparatif_Retraites_et_Pensions.md) : Âge légal (de 55 à 67 ans), durée de cotisation et pénibilité.
@@ -151,5 +151,5 @@ L'ensemble des dossiers individuels détaillés (comprenant chacun 28 à 30 fich
 ### Fonctionnement du Questionnaire :
 - **12 Questions Clivantes :** Retraites (55 à 67 ans), Salaires (SMIC 1400 à 2000 €), Fiscalité des ménages (ISF, TMI IR 40 à 90%), Fiscalité entreprises (allègement vs superprofits), Énergie (EPR vs 100% renouvelable), Dépenses publiques, Fonctionnaires (0 à -500k), Immigration (régularisation vs priorité nationale), Sécurité, Europe (Frexit vs UE intégrée), Institutions (Ve vs VIe République) et Condition animale.
 - **Podium Instantané :** Révèle le Top 3 des candidats les plus proches avec leur score d'accord en % et liens vers leurs dossiers.
-- **Histogramme Complet :** Visualise le taux d'affinité pour chacun des 32 candidats.
+- **Histogramme Complet :** Visualise le taux d'affinité pour chacun des candidats en lice.
 

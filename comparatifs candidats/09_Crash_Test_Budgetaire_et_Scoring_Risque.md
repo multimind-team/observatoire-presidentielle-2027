@@ -1,4 +1,4 @@
-# CRASH-TEST BUDGÉTAIRE, SOUTENABILITÉ DE LA DETTE & SCORING DE RISQUE (32 CANDIDATS)
+# CRASH-TEST BUDGÉTAIRE, SOUTENABILITÉ DE LA DETTE & SCORING DE RISQUE (CANDIDATS 2027)
 
 > **Observatoire Présidentielle 2027** | Direction des Études Financières & Constitutionnelles  
 > **Méthodologie :** Modélisation de stress-test inspirée des critères du Haut Conseil des Finances Publiques (HCFP), de l'OFCE et des agences de notation souveraine.
@@ -21,7 +21,7 @@ Chaque programme présidentiel a été soumis à un **stress-test multifactoriel
 
 ---
 
-## 2. Tableau Général du Crash-Test des 32 Candidats
+## 2. Tableau Général du Crash-Test des Candidats 2027
 
 | N° | Candidat | Parti / Mouvement | Score Global (/100) | Rating | Risque Spread OAT | Choc Taux (+200 bps) | Appréciation Synthétique |
 | :---: | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
