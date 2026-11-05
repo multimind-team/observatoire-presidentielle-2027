@@ -184,8 +184,8 @@
             <p>La plateforme indépendante d'évaluation encyclopédique, de chiffrage macroéconomique consolidé (APU) et de simulation citoyenne pour l'élection présidentielle française de 2027.</p>
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <div class="num">32</div>
-                    <div class="lbl">Candidats Décortiqués</div>
+                    <div class="num">16</div>
+<div class="lbl">Candidats Réels en Lice</div>
                 </div>
                 <div class="hero-stat">
                     <div class="num">1 514 Mds €</div>
@@ -263,12 +263,14 @@
         <!-- REPERTOIRE DES 32 CANDIDATS -->
         <h2 class="section-title" id="candidats">👥 Les 32 Candidats à la Loupe (Dossiers Complets)</h2>
         <div class="filters-bar">
-            <span style="font-size:12px; font-weight:bold; color:var(--text-muted); text-transform:uppercase;">Filtrer :</span>
-            <button class="filter-btn active" onclick="filterCands('all')">Tous (32)</button>
-            <button class="filter-btn" onclick="filterCands('green')">🟢 500+ parrainages validés (16)</button>
-            <button class="filter-btn" onclick="filterCands('orange')">🟠 En Bonne Voie (8)</button>
-            <button class="filter-btn" onclick="filterCands('red')">🔴 En Difficulté (8)</button>
-        </div>
+    <span style="font-size:12px; font-weight:bold; color:var(--text-muted); text-transform:uppercase;">Filtres Réalité 2027 :</span>
+    <button class="filter-btn active" onclick="filterCands('primary')">🎯 16 Candidats Réels en Lice</button>
+    <button class="filter-btn" onclick="filterCands('green')">🟢 500+ parrainages validés (7)</button>
+    <button class="filter-btn" onclick="filterCands('orange')">🟠 300-499 en bonne voie (5)</button>
+    <button class="filter-btn" onclick="filterCands('red')">🔴 &lt;300 en difficulté (4)</button>
+    <button class="filter-btn" style="border:1px dashed #f59e0b; color:#f59e0b;" onclick="filterCands('excluded')">📁 16 Hypothèses Écartées (Bardella, Attal...)</button>
+    <button class="filter-btn" onclick="filterCands('all')">🌐 Vue Globale (32)</button>
+</div>
 
         <div class="cands-grid" id="candsGrid">
             <!-- Injected via JS -->
@@ -1020,7 +1022,7 @@
             } else if (status === 'excluded') {
                 renderGrid(cands.filter(c => !c.is_primary));
             } else if (status === 'all') {
-                renderGrid(cands.filter(c => c.is_primary));
+                renderGrid(cands);
             } else {
                 renderGrid(cands.filter(c => c.is_primary && c.parr_status === status));
             }
