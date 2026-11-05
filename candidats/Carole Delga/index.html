@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossier Officiel & Encyclopédique : Carole Delga | Présidentielle 2027</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --bg-main: #0a0f1d;
+            --bg-card: #111827;
+            --bg-card-hover: #1e293b;
+            --border: #334155;
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --cand-color: #f43f5e;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-main);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Navigation */
+        .top-navbar {
+            background: #0f172a;
+            border-bottom: 1px solid var(--border);
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .brand-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+        .nav-link:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.05);
+            border-color: var(--border);
+        }
+
+        /* Candidate Hero */
+        .cand-hero {
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.4) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 28px 24px 20px 24px;
+        }
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .hero-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .hero-title {
+            font-size: 28px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: #fff;
+        }
+        .color-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--cand-color);
+            display: inline-block;
+            box-shadow: 0 0 10px var(--cand-color);
+        }
+        .hero-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        .hero-tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 4px;
+        }
+        .tag-badge {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: #1e293b;
+        }
+        .tag-badge.parr {
+            background: #065f46;
+            border-color: #10b981;
+            color: #fff;
+        }
+
+        /* Action Toolbar */
+        .hero-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .btn-act {
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: #1e293b;
+            color: #fff;
+        }
+        .btn-act:hover {
+            background: #334155;
+            transform: translateY(-1px);
+        }
+        .btn-act.primary {
+            background: #2563eb;
+            border-color: #3b82f6;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        .btn-act.primary:hover {
+            background: #1d4ed8;
+        }
+        .btn-act.accent {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: #10b981;
+            color: #34d399;
+        }
+        .btn-act.accent:hover {
+            background: #10b981;
+            color: #fff;
+        }
+
+        /* Metrics Strip */
+        .metrics-strip {
+            max-width: 1400px;
+            margin: 20px auto 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+        .metric-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 16px;
+        }
+        .m-lbl { font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; }
+        .m-val { font-size: 20px; font-weight: 800; color: #fff; margin-top: 4px; }
+        .m-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+        /* Main Workspace Layout */
+        .workspace {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 0 20px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 20px;
+            flex: 1;
+        }
+
+        /* Sidebar: Dossier Tree */
+        .sidebar {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            height: calc(100vh - 280px);
+            position: sticky;
+            top: 70px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .sidebar-title {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .dossier-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .dossier-header {
+            font-size: 12px;
+            font-weight: 700;
+            color: #93c5fd;
+            padding: 6px 8px;
+            background: rgba(59, 130, 246, 0.08);
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .dossier-header:hover {
+            background: rgba(59, 130, 246, 0.16);
+        }
+        .file-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            padding-left: 8px;
+            margin-top: 4px;
+        }
+        .file-btn {
+            font-size: 11px;
+            color: var(--text-muted);
+            padding: 5px 8px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: block;
+            border: 1px solid transparent;
+            transition: all 0.15s;
+            cursor: pointer;
+            text-align: left;
+            background: none;
+            width: 100%;
+        }
+        .file-btn:hover {
+            color: #fff;
+            background: #1e293b;
+        }
+        .file-btn.active {
+            color: #fff;
+            background: #2563eb;
+            font-weight: 600;
+        }
+
+        /* Central Reader & Tabs */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .tabs-header {
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+        .tab-btn {
+            background: #1e293b;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .tab-btn:hover {
+            color: #fff;
+            background: #334155;
+        }
+        .tab-btn.active {
+            background: #2563eb;
+            color: #fff;
+            border-color: #3b82f6;
+        }
+
+        /* Document Viewer */
+        .doc-viewer {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 32px;
+            min-height: 600px;
+            line-height: 1.6;
+        }
+        .doc-header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+        .doc-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #fff;
+        }
+        .doc-link-raw {
+            font-size: 12px;
+            color: #60a5fa;
+            text-decoration: none;
+            padding: 4px 10px;
+            border: 1px solid #3b82f6;
+            border-radius: 6px;
+        }
+        .doc-link-raw:hover {
+            background: #3b82f6;
+            color: #fff;
+        }
+
+        /* Markdown Styling inside doc-viewer */
+        .markdown-body h1 { font-size: 24px; margin-bottom: 16px; color: #fff; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+        .markdown-body h2 { font-size: 18px; margin-top: 24px; margin-bottom: 12px; color: #93c5fd; }
+        .markdown-body h3 { font-size: 15px; margin-top: 18px; margin-bottom: 8px; color: #cbd5e1; }
+        .markdown-body p { margin-bottom: 12px; color: #cbd5e1; }
+        .markdown-body ul, .markdown-body ol { margin-left: 20px; margin-bottom: 14px; color: #cbd5e1; }
+        .markdown-body li { margin-bottom: 6px; }
+        .markdown-body table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+        .markdown-body th, .markdown-body td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
+        .markdown-body th { background: #1e293b; color: #fff; font-weight: 700; }
+        .markdown-body tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+        .markdown-body blockquote { border-left: 3px solid #3b82f6; padding-left: 14px; margin: 14px 0; color: #94a3b8; font-style: italic; }
+
+        /* Iframe Tab */
+        .iframe-container {
+            display: none;
+            width: 100%;
+            height: calc(100vh - 280px);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .iframe-container.active {
+            display: block;
+        }
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 900px) {
+            .workspace { grid-template-columns: 1fr; }
+            .sidebar { position: static; height: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="top-navbar">
+        <a href="../../index.html" class="brand-link">
+            <span>🗳️</span>
+            <span>OBSERVATOIRE PRÉSIDENTIELLE 2027</span>
+        </a>
+        <nav class="nav-links">
+            <a href="../../index.html" class="nav-link">🏠 Accueil Portail</a>
+            <a href="../../comparatifs candidats/Boussole_Electorale_Test_Affinite.html" class="nav-link">🧭 Boussole Électorale</a>
+            <a href="../../comparatifs candidats/Comparateur_Interactif_Face_a_Face.html" class="nav-link">⚖️ Comparateur Face-à-Face</a>
+            <a href="../../comparatifs candidats/Simulateur_Gouvernabilite_Assemblee_2027.html" class="nav-link">🏛️ Simulateur Assemblée</a>
+            <a href="../../comparatifs candidats/Simulateur_Pouvoir_Achat_Citoyen.html" class="nav-link">💶 Pouvoir d'Achat</a>
+        </nav>
+    </header>
+
+    <!-- Candidate Hero -->
+    <section class="cand-hero">
+        <div class="hero-container">
+            <div class="hero-info">
+                <div class="hero-title">
+                    <span class="color-dot"></span>
+                    <span>Carole Delga</span>
+                </div>
+                <div class="hero-subtitle">
+                    <span><strong>Parti :</strong> Parti Socialiste / Régions de France</span>
+                    <span>•</span>
+                    <span><strong>Famille :</strong> Gauche territoriale & girondine</span>
+                    <span>•</span>
+                    <span><strong>Orientation :</strong> Gauche</span>
+                </div>
+                <div class="hero-tags">
+                    <span class="tag-badge parr">🟢 500+ parrainages validés</span>
+                    <span class="tag-badge">Crash Test : A</span>
+                </div>
+            </div>
+
+            <div class="hero-actions">
+                <a href="./Visualisation_Programme_et_Comparatif_Budget_Carole_Delga.html" class="btn-act primary" target="_blank">
+                    <span>📊</span>
+                    <span>Tableau de Bord Graphique</span>
+                </a>
+                <a href="./Chiffrage_Programme_Carole_Delga_2027.xlsx" class="btn-act accent" download target="_blank">
+                    <span>📥</span>
+                    <span>Télécharger Modèle Excel</span>
+                </a>
+                <a href="../../comparatifs candidats/Simulateur_Gouvernabilite_Assemblee_2027.html" class="btn-act">
+                    <span>🏛️</span>
+                    <span>Projection Députés</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Metrics Strip -->
+        <div class="metrics-strip">
+            <div class="metric-card">
+                <div class="m-lbl">Dépenses Publiques An 5</div>
+                <div class="m-val">1534.0 Mds €</div>
+                <div class="m-sub">Réf. État/APU : 1 514 Mds €</div>
+            </div>
+            <div class="metric-card">
+                <div class="m-lbl">Solde / Déficit Public</div>
+                <div class="m-val" style="color: #f43f5e">-3.1 % PIB</div>
+                <div class="m-sub">-112.0 Mds € / an</div>
+            </div>
+            <div class="metric-card">
+                <div class="m-lbl">Note Risque Budgétaire</div>
+                <div class="m-val" style="color: #38bdf8;">Score A</div>
+                <div class="m-sub">Soutenabilité de la dette</div>
+            </div>
+            <div class="metric-card">
+                <div class="m-lbl">Dossiers Thématiques</div>
+                <div class="m-val">11 Dossiers</div>
+                <div class="m-sub">28 Fiches analytiques</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Workspace -->
+    <main class="workspace">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-title">
+                <span>📚 11 Dossiers Thématiques</span>
+                <span style="font-size:11px; color:#60a5fa;">28 Fiches</span>
+            </div>
+
+            <div style="margin-bottom:6px;">
+                <button class="file-btn active" id="btnFicheSynthese" onclick="loadFicheSynthese()">
+                    📋 <strong>Fiche de Synthèse & Biographie</strong>
+                </button>
+            </div>
+
+            <div id="dossiersContainer" class="dossier-group">
+                <!-- Injected via JavaScript -->
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <section class="content-area">
+            <div class="tabs-header">
+                <button class="tab-btn active" id="tabDoc" onclick="switchMainTab('doc')">📄 Lecteur de Fiche & Programme</button>
+                <button class="tab-btn" id="tabGraph" onclick="switchMainTab('graph')">📊 Tableau Graphique Intégré</button>
+                <button class="tab-btn" id="tabExcel" onclick="switchMainTab('excel')">📥 Modèle Budgétaire Excel (5 Onglets)</button>
+            </div>
+
+            <!-- Tab 1: Markdown Reader -->
+            <div id="panelDoc" class="doc-viewer">
+                <div class="doc-header-bar">
+                    <div class="doc-title" id="docDisplayTitle">Fiche de Synthèse - Carole Delga</div>
+                    <a id="docRawLink" href="./FICHE_CANDIDAT.md" target="_blank" class="doc-link-raw">Ouvrir le fichier source (.md) ↗</a>
+                </div>
+                <div id="markdownOutput" class="markdown-body">
+                    <!-- Markdown rendered here -->
+                </div>
+            </div>
+
+            <!-- Tab 2: Embedded Interactive Graph -->
+            <div id="panelGraph" class="iframe-container">
+                <iframe src="./Visualisation_Programme_et_Comparatif_Budget_Carole_Delga.html" title="Tableau de bord Carole Delga"></iframe>
+            </div>
+
+            <!-- Tab 3: Excel Overview -->
+            <div id="panelExcel" class="doc-viewer" style="display:none;">
+                <div class="doc-header-bar">
+                    <div class="doc-title">Modèle Budgétaire Excel : Chiffrage_Programme_Carole_Delga_2027.xlsx</div>
+                    <a href="./Chiffrage_Programme_Carole_Delga_2027.xlsx" download class="btn-act primary" style="font-size:12px; padding:6px 14px;">📥 Télécharger le classeur (.xlsx)</a>
+                </div>
+                <div class="markdown-body">
+                    <p>Le classeur Excel officiel de chiffrage pour <strong>Carole Delga</strong> a été modélisé selon les standards de la commission des finances et de l'observatoire 2027.</p>
+                    <h3>Composition des 5 onglets natifs :</h3>
+                    <ul>
+                        <li><strong>Onglet 1 : Synthèse Macroéconomique</strong> - PIB, inflation, recettes, dépenses et trajectoire pluriannuelle sur le quinquennat (An 1 à An 5).</li>
+                        <li><strong>Onglet 2 : Mesures Dépenses</strong> - Chiffrage détaillé ligne à ligne des économies ou surcoûts par ministère et grand domaine.</li>
+                        <li><strong>Onglet 3 : Mesures Recettes & Fiscalité</strong> - Rendement des impôts, réformes fiscales (IR, IS, cotisations, TVA) et hypothèses de bouclage.</li>
+                        <li><strong>Onglet 4 : Trajectoire Dette & Solde</strong> - Ratio Dette/PIB, charge d'intérêts et écart à la trajectoire APU / Maastricht.</li>
+                        <li><strong>Onglet 5 : Cas-Types Ménages</strong> - Simulation de l'impact net sur le pouvoir d'achat pour 6 typologies de contribuables.</li>
+                    </ul>
+                    <p style="margin-top:20px;">
+                        <a href="./Chiffrage_Programme_Carole_Delga_2027.xlsx" download class="btn-act accent">
+                            <span>📥</span>
+                            <span>Télécharger le fichier complet (Chiffrage_Programme_Carole_Delga_2027.xlsx)</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const initialMd = "# Fiche Candidat : Carole Delga\n\n## 1. Identit\u00e9 & Appartenance\n- **Nom complet :** Carole Delga\n- **Parti / Mouvement :** Parti Socialiste / Occitanie\n- **Famille politique :** Gauche territoriale & girondine\n- **Statut \u00e9lectoral 2027 :** Candidate pressentie\n\n## 2. Ligne Politique & Grandes Orientations\nAncrage local fort, r\u00e9industrialisation verte des r\u00e9gions, soutien au monde rural et agricole, proximit\u00e9 avec les Fran\u00e7ais.\n\n## 3. Structure Pr\u00e9vue pour le Suivi de Campagne\nCe dossier personnel contient l'espace d'analyse structur\u00e9 :\n- `Programme/` : Recueil des propositions officielles, du manifeste et des prises de parole\n- `Chiffrage_Budget/` : Fichiers d'\u00e9valuation budg\u00e9taire et impact sur les finances publiques\n- `Comparatif_Etat/` : Analyse comparative avec le Budget G\u00e9n\u00e9ral de l'\u00c9tat (503,6 Mds \u20ac) et les APU (1 514 Mds \u20ac)\n- `Sources_et_Medias/` : Liens vers interviews, articles, interventions vid\u00e9o et r\u00e9seaux sociaux\n\n---\n*Dossier cr\u00e9\u00e9 automatiquement dans le cadre de l'observatoire de l'\u00e9lection pr\u00e9sidentielle 2027.*\n";
+        const dossiers = [{"dir_name": "00_Introduction_et_Candidature", "title": "00 Introduction et Candidature", "files": [{"file_name": "01_Biographie_Parcours_et_Positionnement.md", "title": "01 Biographie Parcours et Positionnement", "path": "./00_Introduction_et_Candidature/01_Biographie_Parcours_et_Positionnement.md"}, {"file_name": "02_Parti_Mouvement_Equipe_et_Reseaux.md", "title": "02 Parti Mouvement Equipe et Reseaux", "path": "./00_Introduction_et_Candidature/02_Parti_Mouvement_Equipe_et_Reseaux.md"}, {"file_name": "03_Doctrine_Philosophie_et_Vision_2027.md", "title": "03 Doctrine Philosophie et Vision 2027", "path": "./00_Introduction_et_Candidature/03_Doctrine_Philosophie_et_Vision_2027.md"}]}, {"dir_name": "01_Economie_et_Finances_Publiques", "title": "01 Economie et Finances Publiques", "files": [{"file_name": "01_Fiscalite_Impots_Menages_et_Patrimoine.md", "title": "01 Fiscalite Impots Menages et Patrimoine", "path": "./01_Economie_et_Finances_Publiques/01_Fiscalite_Impots_Menages_et_Patrimoine.md"}, {"file_name": "02_Entreprises_Production_et_Competitivite.md", "title": "02 Entreprises Production et Competitivite", "path": "./01_Economie_et_Finances_Publiques/02_Entreprises_Production_et_Competitivite.md"}, {"file_name": "03_Travail_Salaires_et_Pouvoir_d_Achat.md", "title": "03 Travail Salaires et Pouvoir d Achat", "path": "./01_Economie_et_Finances_Publiques/03_Travail_Salaires_et_Pouvoir_d_Achat.md"}, {"file_name": "04_Dette_Depense_Publique_et_Trajectoire.md", "title": "04 Dette Depense Publique et Trajectoire", "path": "./01_Economie_et_Finances_Publiques/04_Dette_Depense_Publique_et_Trajectoire.md"}]}, {"dir_name": "02_Securite_Justice_et_Immigration", "title": "02 Securite Justice et Immigration", "files": [{"file_name": "01_Securite_Police_Gendarmerie_et_Ordre_Public.md", "title": "01 Securite Police Gendarmerie et Ordre Public", "path": "./02_Securite_Justice_et_Immigration/01_Securite_Police_Gendarmerie_et_Ordre_Public.md"}, {"file_name": "02_Justice_Prisons_et_Politique_Penale.md", "title": "02 Justice Prisons et Politique Penale", "path": "./02_Securite_Justice_et_Immigration/02_Justice_Prisons_et_Politique_Penale.md"}, {"file_name": "03_Immigration_Frontieres_Assimilation_et_Laicite.md", "title": "03 Immigration Frontieres Assimilation et Laicite", "path": "./02_Securite_Justice_et_Immigration/03_Immigration_Frontieres_Assimilation_et_Laicite.md"}]}, {"dir_name": "03_Sante_et_Affaires_Sociales", "title": "03 Sante et Affaires Sociales", "files": [{"file_name": "01_Hopital_Medecine_de_Ville_et_Deserts_Medicaux.md", "title": "01 Hopital Medecine de Ville et Deserts Medicaux", "path": "./03_Sante_et_Affaires_Sociales/01_Hopital_Medecine_de_Ville_et_Deserts_Medicaux.md"}, {"file_name": "02_Retraites_et_Financement_Protection_Sociale.md", "title": "02 Retraites et Financement Protection Sociale", "path": "./03_Sante_et_Affaires_Sociales/02_Retraites_et_Financement_Protection_Sociale.md"}, {"file_name": "03_Minima_Sociaux_RSA_Chomage_et_Lutte_Anti_Fraude.md", "title": "03 Minima Sociaux RSA Chomage et Lutte Anti Fraude", "path": "./03_Sante_et_Affaires_Sociales/03_Minima_Sociaux_RSA_Chomage_et_Lutte_Anti_Fraude.md"}]}, {"dir_name": "04_Education_Culture_et_Jeunesse", "title": "04 Education Culture et Jeunesse", "files": [{"file_name": "01_Ecole_Savoirs_Fondamentaux_et_Enseignants.md", "title": "01 Ecole Savoirs Fondamentaux et Enseignants", "path": "./04_Education_Culture_et_Jeunesse/01_Ecole_Savoirs_Fondamentaux_et_Enseignants.md"}, {"file_name": "02_Universites_Recherche_et_Innovation.md", "title": "02 Universites Recherche et Innovation", "path": "./04_Education_Culture_et_Jeunesse/02_Universites_Recherche_et_Innovation.md"}, {"file_name": "03_Culture_Patrimoine_Audiovisuel_et_Jeunesse.md", "title": "03 Culture Patrimoine Audiovisuel et Jeunesse", "path": "./04_Education_Culture_et_Jeunesse/03_Culture_Patrimoine_Audiovisuel_et_Jeunesse.md"}]}, {"dir_name": "05_Ecologie_Energie_et_Agriculture", "title": "05 Ecologie Energie et Agriculture", "files": [{"file_name": "01_Politique_Energetique_Nucleaire_et_Renouvelables.md", "title": "01 Politique Energetique Nucleaire et Renouvelables", "path": "./05_Ecologie_Energie_et_Agriculture/01_Politique_Energetique_Nucleaire_et_Renouvelables.md"}, {"file_name": "02_Ecologie_Transports_et_Industrie_Verte.md", "title": "02 Ecologie Transports et Industrie Verte", "path": "./05_Ecologie_Energie_et_Agriculture/02_Ecologie_Transports_et_Industrie_Verte.md"}, {"file_name": "03_Agriculture_Peche_et_Souverainete_Alimentaire.md", "title": "03 Agriculture Peche et Souverainete Alimentaire", "path": "./05_Ecologie_Energie_et_Agriculture/03_Agriculture_Peche_et_Souverainete_Alimentaire.md"}]}, {"dir_name": "06_Institutions_et_Decentralisation", "title": "06 Institutions et Decentralisation", "files": [{"file_name": "01_Institutions_Constitution_Referendum_et_Democratie.md", "title": "01 Institutions Constitution Referendum et Democratie", "path": "./06_Institutions_et_Decentralisation/01_Institutions_Constitution_Referendum_et_Democratie.md"}, {"file_name": "02_Reforme_de_l_Etat_Fonction_Publique_et_Collectivites.md", "title": "02 Reforme de l Etat Fonction Publique et Collectivites", "path": "./06_Institutions_et_Decentralisation/02_Reforme_de_l_Etat_Fonction_Publique_et_Collectivites.md"}]}, {"dir_name": "07_Europe_et_Geopolitique", "title": "07 Europe et Geopolitique", "files": [{"file_name": "01_Union_Europeenne_Traites_et_Commerce.md", "title": "01 Union Europeenne Traites et Commerce", "path": "./07_Europe_et_Geopolitique/01_Union_Europeenne_Traites_et_Commerce.md"}, {"file_name": "02_Defense_Armees_Diplomatie_et_Francophonie.md", "title": "02 Defense Armees Diplomatie et Francophonie", "path": "./07_Europe_et_Geopolitique/02_Defense_Armees_Diplomatie_et_Francophonie.md"}]}, {"dir_name": "08_Veille_Numerique_et_Sources", "title": "08 Veille Numerique et Sources", "files": [{"file_name": "01_Presence_Numerique_YouTube_Reseaux_Sociaux.md", "title": "01 Presence Numerique YouTube Reseaux Sociaux", "path": "./08_Veille_Numerique_et_Sources/01_Presence_Numerique_YouTube_Reseaux_Sociaux.md"}, {"file_name": "02_Bibliographie_Discours_Cl\u00e9s_et_Sources_Verifiees.md", "title": "02 Bibliographie Discours Cl\u00e9s et Sources Verifiees", "path": "./08_Veille_Numerique_et_Sources/02_Bibliographie_Discours_Cl\u00e9s_et_Sources_Verifiees.md"}]}, {"dir_name": "09_Logement_Famille_et_Demographie", "title": "09 Logement Famille et Demographie", "files": [{"file_name": "01_Logement_Construction_et_Fiscalite_Immobiliere.md", "title": "01 Logement Construction et Fiscalite Immobiliere", "path": "./09_Logement_Famille_et_Demographie/01_Logement_Construction_et_Fiscalite_Immobiliere.md"}, {"file_name": "02_Politique_Familiale_Natalite_et_Transmission.md", "title": "02 Politique Familiale Natalite et Transmission", "path": "./09_Logement_Famille_et_Demographie/02_Politique_Familiale_Natalite_et_Transmission.md"}]}, {"dir_name": "10_Chiffrage_et_Simulateurs_Budgetaires", "title": "10 Chiffrage et Simulateurs Budgetaires", "files": [{"file_name": "01_Chiffrage_Ligne_a_Ligne_par_Famille.md", "title": "01 Chiffrage Ligne a Ligne par Famille", "path": "./10_Chiffrage_et_Simulateurs_Budgetaires/01_Chiffrage_Ligne_a_Ligne_par_Famille.md"}, {"file_name": "02_Impact_Macroeconomique_et_Cas_Types_Menages.md", "title": "02 Impact Macroeconomique et Cas Types Menages", "path": "./10_Chiffrage_et_Simulateurs_Budgetaires/02_Impact_Macroeconomique_et_Cas_Types_Menages.md"}]}];
+
+        // Render Sidebar
+        const container = document.getElementById('dossiersContainer');
+        dossiers.forEach((d, dIdx) => {
+            const group = document.createElement('div');
+            group.className = 'dossier-group';
+            
+            const head = document.createElement('div');
+            head.className = 'dossier-header';
+            head.innerHTML = `<span>📂 ${d.title}</span> <span>(${d.files.length})</span>`;
+            
+            const fileList = document.createElement('div');
+            fileList.className = 'file-list';
+            
+            d.files.forEach(f => {
+                const btn = document.createElement('button');
+                btn.className = 'file-btn';
+                btn.innerText = `📄 ${f.title}`;
+                btn.onclick = () => loadFile(f.path, f.title, btn);
+                fileList.appendChild(btn);
+            });
+            
+            group.appendChild(head);
+            group.appendChild(fileList);
+            container.appendChild(group);
+        });
+
+        // Render Initial Document
+        function renderMarkdown(mdText) {
+            if (typeof marked !== 'undefined') {
+                document.getElementById('markdownOutput').innerHTML = marked.parse(mdText);
+            } else {
+                document.getElementById('markdownOutput').innerText = mdText;
+            }
+        }
+
+        renderMarkdown(initialMd);
+
+        function loadFicheSynthese() {
+            document.querySelectorAll('.file-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('btnFicheSynthese').classList.add('active');
+            document.getElementById('docDisplayTitle').innerText = "Fiche de Synthèse - Carole Delga";
+            document.getElementById('docRawLink').href = "./FICHE_CANDIDAT.md";
+            renderMarkdown(initialMd);
+            switchMainTab('doc');
+        }
+
+        function loadFile(path, title, btnElem) {
+            document.querySelectorAll('.file-btn').forEach(b => b.classList.remove('active'));
+            if (btnElem) btnElem.classList.add('active');
+            document.getElementById('docDisplayTitle').innerText = title;
+            document.getElementById('docRawLink').href = path;
+            switchMainTab('doc');
+
+            // Fetch markdown content
+            fetch(path)
+                .then(res => {
+                    if (!res.ok) throw new Error("Fichier introuvable");
+                    return res.text();
+                })
+                .then(text => {
+                    renderMarkdown(text);
+                })
+                .catch(err => {
+                    document.getElementById('markdownOutput').innerHTML = `
+                        <div style="padding:20px; background:rgba(239, 68, 68, 0.1); border:1px solid #ef4444; border-radius:8px;">
+                            <p style="color:#f87171; font-weight:bold;">Impossible de charger ce fichier directement dans le lecteur :</p>
+                            <p style="color:#cbd5e1; margin-top:8px;">${err.message}</p>
+                            <p style="margin-top:12px;"><a href="${path}" target="_blank" class="btn-act" style="display:inline-block;">Ouvrir le fichier brut dans un nouvel onglet ↗</a></p>
+                        </div>
+                    `;
+                });
+        }
+
+        function switchMainTab(tab) {
+            document.getElementById('tabDoc').classList.remove('active');
+            document.getElementById('tabGraph').classList.remove('active');
+            document.getElementById('tabExcel').classList.remove('active');
+
+            document.getElementById('panelDoc').style.display = 'none';
+            document.getElementById('panelGraph').classList.remove('active');
+            document.getElementById('panelExcel').style.display = 'none';
+
+            if (tab === 'doc') {
+                document.getElementById('tabDoc').classList.add('active');
+                document.getElementById('panelDoc').style.display = 'block';
+            } else if (tab === 'graph') {
+                document.getElementById('tabGraph').classList.add('active');
+                document.getElementById('panelGraph').classList.add('active');
+            } else if (tab === 'excel') {
+                document.getElementById('tabExcel').classList.add('active');
+                document.getElementById('panelExcel').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
