@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dossier Officiel & Encyclopédique : Nathalie Arthaud | Présidentielle 2027</title>
+    <meta name="theme-color" content="#0f172a">
+    <link rel="manifest" href="../../manifest.json">
     <meta property="og:title" content="Dossier Officiel & Encyclopédique : Nathalie Arthaud | Présidentielle 2027">
     <meta property="og:description" content="Observatoire Indépendant des Programmes & Budgets Présidentielle 2027 — 16 Candidats Déclarés.">
     <meta property="og:type" content="website">
@@ -187,7 +189,7 @@
             margin: 20px auto 0 auto;
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
             gap: 12px;
         }
         .metric-card {
@@ -405,6 +407,222 @@
         }
 
     </style>
+
+
+    <style id="agy-mobile-pack-css">
+        /* === PACK RESPONSIVE MOBILE & TABLETTE (OBSERVATOIRE 2027) === */
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+        }
+        * { min-width: 0; }
+
+        /* Bouton Menu Mobile (masqué sur Desktop) */
+        .agy-mobile-menu-btn {
+            display: none;
+            background: #1e293b;
+            border: 1px solid #475569;
+            color: #f8fafc;
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+        .agy-mobile-menu-btn.active {
+            background: #3b82f6;
+            border-color: #60a5fa;
+            color: #fff;
+        }
+
+        /* Bouton Accordéon Dossiers sur Mobile (masqué sur Desktop) */
+        .agy-mobile-dossier-toggle {
+            display: none;
+            width: 100%;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 1px solid #3b82f6;
+            color: #60a5fa;
+            padding: 11px 14px;
+            border-radius: 9px;
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        /* Bouton Flottant Retour en Haut */
+        #agyBackToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 18px;
+            z-index: 9999;
+            background: #2563eb;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 999px;
+            padding: 10px 15px;
+            font-size: 13px;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            gap: 5px;
+            transition: transform 0.2s, background 0.2s;
+        }
+        #agyBackToTop:hover { background: #1d4ed8; transform: translateY(-2px); }
+
+        @media (max-width: 1024px) {
+            .agy-mobile-dossier-toggle {
+                display: flex !important;
+            }
+            .agy-collapsible-mobile-closed {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 980px) {
+            /* Barre de navigation compacte avec tiroir Menu */
+            .navbar, .top-navbar, .top-nav, .obs-global-nav {
+                padding: 8px 12px !important;
+                gap: 6px !important;
+            }
+            .navbar .brand, .top-navbar .brand, .top-nav .brand, .navbar .nav-brand {
+                font-size: 13.5px !important;
+            }
+            .top-navbar select {
+                padding: 4px 8px !important;
+                font-size: 11.5px !important;
+                max-width: 155px !important;
+            }
+            .agy-mobile-menu-btn {
+                display: inline-flex !important;
+                margin-left: auto;
+                padding: 5px 10px !important;
+                font-size: 12px !important;
+            }
+            .navbar .nav-links, .top-navbar .nav-links, .top-nav .nav-links, .obs-global-nav .obs-nav-links {
+                display: none !important;
+                width: 100% !important;
+                flex-basis: 100% !important;
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 6px !important;
+                padding-top: 8px !important;
+                margin-top: 4px !important;
+                border-top: 1px solid #334155 !important;
+            }
+            .navbar .nav-links.agy-nav-open,
+            .top-navbar .nav-links.agy-nav-open,
+            .top-nav .nav-links.agy-nav-open,
+            .obs-global-nav .obs-nav-links.agy-nav-open {
+                display: grid !important;
+            }
+            .navbar .nav-link, .top-navbar .nav-link, .top-nav .nav-link, .obs-global-nav a {
+                font-size: 11.5px !important;
+                padding: 7px 9px !important;
+                background: rgba(30, 41, 59, 0.75);
+                border: 1px solid rgba(255,255,255,0.06);
+                border-radius: 6px;
+                text-align: left;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            .container, .main-container, .workspace, .content-wrapper {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+                max-width: 100vw !important;
+            }
+            .hero, .hero-banner, .hero-header, .cand-hero {
+                padding: 20px 14px !important;
+                margin-bottom: 18px !important;
+            }
+            .hero h1, .hero-title, .hero-header h1 {
+                font-size: 22px !important;
+                line-height: 1.25 !important;
+            }
+            .hero p, .hero-sub, .hero-header p {
+                font-size: 13.5px !important;
+            }
+            .section-title {
+                font-size: 18px !important;
+                margin: 24px 0 14px !important;
+            }
+
+            /* Grilles 1 colonne sans débordement */
+            .cands-grid, .tools-grid, .charts-grid, .grid-2, .grid-3, .duel-grid, .sim-grid, .reader-layout, .workspace-grid, .main-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                gap: 14px !important;
+            }
+            /* KPI en 2 colonnes compactes sur mobile */
+            .kpi-grid, .kpi-strip, .hero-stats {
+                 display: grid !important;
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 10px !important;
+            }
+            .hero-stat {
+                min-width: 0 !important;
+                padding: 10px 12px !important;
+            }
+            .hero-stat .num, .kpi-val {
+                font-size: 20px !important;
+            }
+
+            /* Rubans horizontaux tactiles (1 seule ligne glissable au doigt) */
+            .topic-pills, .filters-bar, .xlsx-subtabs-bar, .main-tabs {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                gap: 8px !important;
+                padding: 10px 12px !important;
+            }
+            .topic-pills::-webkit-scrollbar, .filters-bar::-webkit-scrollbar, .xlsx-subtabs-bar::-webkit-scrollbar, .main-tabs::-webkit-scrollbar {
+                display: none;
+            }
+            .topic-pill, .filter-btn, .xlsx-subtab, .tab-btn {
+                flex-shrink: 0 !important;
+                white-space: nowrap !important;
+            }
+
+            /* Tableaux scrollables horizontalement sans élargir la page */
+            .content-panel, .doc-viewer, .markdown-body, .md-body, .flow-section, .table-card, .chart-card, .card {
+                padding: 14px 12px !important;
+                max-width: 100% !important;
+                overflow-x: auto !important;
+            }
+            table {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+            }
+            .canvas-wrap, .chart-container {
+                height: 270px !important;
+                max-width: 100% !important;
+            }
+            #panelDashboard iframe {
+                height: 1150px !important;
+            }
+        }
+    </style>
+
 </head>
 <body>
 
@@ -718,5 +936,119 @@ Quinquennat (Mds €)</th><th>QUI EST CONCERNÉ ?</th><th>COMMENT & QUAND ?</th>
             }
         }
     </script>
+
+
+    <script id="agy-mobile-pack-js">
+        (function() {
+            function initMobilePack() {
+                // 1. Bouton Menu Mobile dans la barre de navigation
+                const nav = document.querySelector('.navbar, .top-navbar, .top-nav, .obs-global-nav');
+                if (nav) {
+                    const navLinks = nav.querySelector('.nav-links, .obs-nav-links');
+                    if (navLinks && !nav.querySelector('.agy-mobile-menu-btn')) {
+                        const btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.className = 'agy-mobile-menu-btn';
+                        btn.innerHTML = '☰ Menu';
+                        btn.addEventListener('click', function() {
+                            const isOpen = navLinks.classList.toggle('agy-nav-open');
+                            btn.classList.toggle('active', isOpen);
+                            btn.innerHTML = isOpen ? '✕ Fermer' : '☰ Menu';
+                        });
+                        nav.insertBefore(btn, navLinks);
+                        navLinks.querySelectorAll('a').forEach(function(link) {
+                            link.addEventListener('click', function() {
+                                navLinks.classList.remove('agy-nav-open');
+                                btn.classList.remove('active');
+                                btn.innerHTML = '☰ Menu';
+                            });
+                        });
+                    }
+                }
+
+                // 2. Accordéon repliable sur Mobile pour la liste des Dossiers / Monographies
+                const dossiersContainer = document.getElementById('dossiersContainer') || document.getElementById('docList');
+                if (dossiersContainer && !document.getElementById('agyDossierToggleBtn')) {
+                    const isCandidatePage = dossiersContainer.id === 'dossiersContainer';
+                    const toggleBtn = document.createElement('button');
+                    toggleBtn.type = 'button';
+                    toggleBtn.id = 'agyDossierToggleBtn';
+                    toggleBtn.className = 'agy-mobile-dossier-toggle';
+                    const countItems = dossiersContainer.querySelectorAll('.file-btn, .doc-item').length || 30;
+                    const labelClosed = isCandidatePage
+                        ? '📂 Choisir une fiche thématique (' + countItems + ' fiches) ▼'
+                        : '📚 Choisir une synthèse (' + countItems + ' documents) ▼';
+                    const labelOpen = isCandidatePage
+                        ? '📂 Masquer le sommaire des fiches ▲'
+                        : '📚 Masquer la liste des documents ▲';
+
+                    if (window.innerWidth <= 1024) {
+                        dossiersContainer.classList.add('agy-collapsible-mobile-closed');
+                        toggleBtn.innerHTML = labelClosed;
+                    } else {
+                        toggleBtn.innerHTML = labelOpen;
+                    }
+
+                    toggleBtn.addEventListener('click', function() {
+                        const isClosed = dossiersContainer.classList.toggle('agy-collapsible-mobile-closed');
+                        toggleBtn.innerHTML = isClosed ? labelClosed : labelOpen;
+                    });
+
+                    dossiersContainer.parentNode.insertBefore(toggleBtn, dossiersContainer);
+
+                    // Auto-replier et scroller vers le lecteur quand on clique sur une fiche sur mobile
+                    dossiersContainer.addEventListener('click', function(e) {
+                        const item = e.target.closest('.file-btn, .doc-item');
+                        if (item && window.innerWidth <= 1024) {
+                            dossiersContainer.classList.add('agy-collapsible-mobile-closed');
+                            toggleBtn.innerHTML = labelClosed;
+                            const targetViewer = document.getElementById('panelReader') || document.getElementById('mdViewer') || document.getElementById('markdownOutput');
+                            if (targetViewer) {
+                                setTimeout(function() {
+                                    targetViewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }, 60);
+                            }
+                        }
+                    });
+                }
+
+                // 3. Adapter les légendes Chart.js sur mobile (position: 'right' -> 'bottom')
+                if (window.innerWidth <= 768 && window.Chart && Chart.instances) {
+                    Object.values(Chart.instances).forEach(function(ch) {
+                        if (ch && ch.options && ch.options.plugins && ch.options.plugins.legend) {
+                            if (ch.options.plugins.legend.position === 'right') {
+                                ch.options.plugins.legend.position = 'bottom';
+                                ch.update();
+                            }
+                        }
+                    });
+                }
+
+                // 4. Bouton flottant Retour en Haut
+                if (!document.getElementById('agyBackToTop')) {
+                    const topBtn = document.createElement('button');
+                    topBtn.type = 'button';
+                    topBtn.id = 'agyBackToTop';
+                    topBtn.innerHTML = '↑ Haut';
+                    topBtn.setAttribute('aria-label', 'Retour en haut de page');
+                    topBtn.addEventListener('click', function() {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                    document.body.appendChild(topBtn);
+                    window.addEventListener('scroll', function() {
+                        topBtn.style.display = window.scrollY > 320 ? 'inline-flex' : 'none';
+                    }, { passive: true });
+                }
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMobilePack);
+            } else {
+                initMobilePack();
+            }
+            window.addEventListener('load', initMobilePack);
+        })();
+    </script>
+
 </body>
 </html>
