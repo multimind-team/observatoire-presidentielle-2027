@@ -2,216 +2,277 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Tableau de Bord Graphique : Budget de l'État Français (Recettes vs Dépenses)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Référentiel 2026 : Budget de l'État Français (1 514 Mds €) | Observatoire 2027</title>
+    <meta property="og:title" content="Référentiel 2026 : Budget de l'État Français (1 514 Mds €) | Observatoire 2027">
+    <meta property="og:description" content="Observatoire Indépendant des Programmes & Budgets Présidentielle 2027 — 16 Candidats Déclarés.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Cpath d='M12 14h13v36H12z' fill='%232563eb'/%3E%3Cpath d='M25 14h14v36H25z' fill='%23f8fafc'/%3E%3Cpath d='M39 14h13v36H39z' fill='%23ef4444'/%3E%3C/svg%3E">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     :root {
-      --navy: #1B365D;
-      --blue: #2C5282;
-      --green: #16A34A;
-      --red: #DC2626;
-      --amber: #D97706;
-      --bg: #F3F4F6;
-      --card: #FFFFFF;
+      --bg-main: #070a13;
+      --bg-card: #0f172a;
+      --border-color: #334155;
+      --navy: #3b82f6;
+      --blue: #60a5fa;
+      --green: #10b981;
+      --red: #f43f5e;
+      --amber: #f59e0b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
-    body { background: var(--bg); color: #1F2937; padding: 24px; }
-    header {
-      background: linear-gradient(135deg, var(--navy), var(--blue));
-      color: white; padding: 28px 32px; border-radius: 14px; margin-bottom: 24px;
-      box-shadow: 0 10px 25px rgba(27,54,93,0.18);
+    body { background: var(--bg-main); color: var(--text-main); padding-bottom: 60px; }
+    .top-navbar {
+      background: #0f172a;
+      border-bottom: 1px solid var(--border-color);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      gap: 12px;
+      flex-wrap: wrap;
     }
-    header h1 { font-size: 24px; margin-bottom: 8px; }
-    header p { opacity: 0.9; font-size: 14px; }
+    .brand { font-size: 15px; font-weight: 800; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .nav-links { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #fff; background: rgba(59, 130, 246, 0.2); }
+
+    .container { max-width: 1400px; margin: 24px auto; padding: 0 24px; }
+    .hero-header {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+      border: 1px solid var(--border-color);
+      color: white; padding: 28px 32px; border-radius: 14px; margin-bottom: 24px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
+    }
+    .hero-header h1 { font-size: 24px; font-weight: 900; margin-bottom: 8px; }
+    .hero-header p { color: var(--text-muted); font-size: 14px; max-width: 820px; }
+    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-act {
+      background: #059669; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700;
+      padding: 9px 15px; border-radius: 8px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .btn-act.secondary { background: #1e293b; border: 1px solid var(--border-color); color: #e2e8f0; }
+
     .kpi-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 16px; margin-bottom: 24px;
     }
     .kpi-card {
-      background: var(--card); padding: 18px 20px; border-radius: 12px;
-      border-left: 5px solid var(--navy); box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      background: var(--bg-card); padding: 18px 20px; border-radius: 12px;
+      border: 1px solid var(--border-color); border-left: 5px solid var(--navy);
     }
     .kpi-card.green { border-left-color: var(--green); }
     .kpi-card.red { border-left-color: var(--red); }
     .kpi-card.amber { border-left-color: var(--amber); }
-    .kpi-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #6B7280; font-weight: 600; }
-    .kpi-val { font-size: 26px; font-weight: 800; margin: 6px 0 4px; color: #111827; }
-    .kpi-sub { font-size: 12px; color: #4B5563; }
+    .kpi-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 700; }
+    .kpi-val { font-size: 25px; font-weight: 800; margin: 6px 0 4px; color: #fff; }
+    .kpi-sub { font-size: 12px; color: #cbd5e1; }
     .charts-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
       gap: 22px; margin-bottom: 24px;
     }
     .chart-card {
-      background: var(--card); padding: 22px; border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      background: var(--bg-card); padding: 22px; border-radius: 12px;
+      border: 1px solid var(--border-color);
     }
-    .chart-card h2 { font-size: 16px; color: var(--navy); margin-bottom: 6px; }
-    .chart-card p.desc { font-size: 12.5px; color: #6B7280; margin-bottom: 16px; }
+    .chart-card h2 { font-size: 16px; color: #60a5fa; margin-bottom: 6px; font-weight: 800; }
+    .chart-card p.desc { font-size: 12.5px; color: var(--text-muted); margin-bottom: 16px; }
     .canvas-wrap { position: relative; height: 340px; width: 100%; }
     .flow-section {
-      background: var(--card); padding: 24px; border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06); margin-bottom: 24px;
+      background: var(--bg-card); padding: 24px; border-radius: 12px;
+      border: 1px solid var(--border-color); margin-bottom: 24px; overflow-x: auto;
     }
-    .flow-section h2 { font-size: 18px; color: var(--navy); margin-bottom: 14px; }
+    .flow-section h2 { font-size: 18px; color: #60a5fa; margin-bottom: 14px; font-weight: 800; }
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    th { background: var(--navy); color: white; padding: 10px 12px; text-align: left; }
-    td { padding: 10px 12px; border-bottom: 1px solid #E5E7EB; }
-    tr:nth-child(even) { background: #F9FAFB; }
-    .badge-in { background: #DCFCE7; color: #166534; padding: 3px 8px; border-radius: 6px; font-weight: 600; }
-    .badge-out { background: #FEE2E2; color: #991B1B; padding: 3px 8px; border-radius: 6px; font-weight: 600; }
+    th { background: #1e293b; color: white; padding: 11px 12px; text-align: left; border: 1px solid var(--border-color); }
+    td { padding: 10px 12px; border: 1px solid rgba(255,255,255,0.07); color: #e2e8f0; }
+    tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+    .badge-in { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); padding: 3px 8px; border-radius: 6px; font-weight: 700; display: inline-block; }
+    .badge-out { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.35); padding: 3px 8px; border-radius: 6px; font-weight: 700; display: inline-block; }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>📊 Tableau de Bord Graphique : Budget de l'État & Finances Publiques Françaises</h1>
-  <p>Comparaison directe Recettes vs Dépenses actuelles — Comprendre en un coup d'œil d'où vient l'argent et où il va (en Milliards d'euros et sur 1 000 €)</p>
+<header class="top-navbar">
+  <a href="./index.html" class="brand">🏛️ Observatoire Présidentielle 2027</a>
+  <nav class="nav-links">
+    <a href="./index.html" class="nav-link">🏠 Portail</a>
+    <a href="./Visualisation_Graphiques_Budget_Etat.html" class="nav-link active">🏛️ Budget État (1 514 Mds €)</a>
+    <a href="./comparatifs%20candidats/Boussole_Electorale_Test_Affinite.html" class="nav-link">🧭 Boussole</a>
+    <a href="./comparatifs%20candidats/Simulateur_Pouvoir_Achat_Citoyen.html" class="nav-link">💶 Pouvoir d'Achat</a>
+    <a href="./comparatifs%20candidats/Visualisation_Comparatif_Tous_Candidats_2027.html" class="nav-link">📊 Grand Atlas</a>
+    <a href="./comparatifs%20candidats/Comparateur_Interactif_Face_a_Face.html" class="nav-link">⚖️ Face-à-Face</a>
+    <a href="./comparatifs%20candidats/Simulateur_Gouvernabilite_Assemblee_2027.html" class="nav-link">🏛️ Assemblée</a>
+    <a href="./comparatifs%20candidats/Crash_Test_Budgetaire_et_Scoring_Risque.html" class="nav-link">💥 Crash-Test</a>
+    <a href="./comparatifs%20candidats/Observatoire_Sondages_2027.html" class="nav-link">📈 Sondages</a>
+    <a href="./comparatifs%20candidats/Grand_Livre_Blanc_et_Syntheses_Thematiques.html" class="nav-link">📖 Livre Blanc</a>
+  </nav>
 </header>
 
-<div class="kpi-grid">
-  <div class="kpi-card green">
-    <div class="kpi-label">Recettes Nettes de l'État</div>
-    <div class="kpi-val">308,3 Mds €</div>
-    <div class="kpi-sub">535,5 Mds € bruts − 155,4 dégrèvements − 71,8 Mairies/UE</div>
-  </div>
-  <div class="kpi-card red">
-    <div class="kpi-label">Dépenses du Budget Général</div>
-    <div class="kpi-val">503,6 Mds €</div>
-    <div class="kpi-sub">32 missions ministérielles (dont 151 Mds € salaires)</div>
-  </div>
-  <div class="kpi-card amber">
-    <div class="kpi-label">Déficit de l'État (Emprunt)</div>
-    <div class="kpi-val">-195,3 Mds €</div>
-    <div class="kpi-sub">38,8 % du budget de l'État est financé à crédit !</div>
-  </div>
-  <div class="kpi-card">
-    <div class="kpi-label">Dépense Publique Totale (État+Sécu+Mairies)</div>
-    <div class="kpi-val">1 514,0 Mds €</div>
-    <div class="kpi-sub">52,7 % du PIB consolidé (Déficit Maastricht : -146 Mds €)</div>
-  </div>
-  <div class="kpi-card red">
-    <div class="kpi-label">Dette Publique Totale</div>
-    <div class="kpi-val">3 228,4 Mds €</div>
-    <div class="kpi-sub">112,3 % du PIB (Intérêts : 54,8 Mds €/an pour l'État)</div>
-  </div>
-</div>
-
-<div class="charts-grid">
-  <div class="chart-card">
-    <h2>1. Le Face-à-Face : Recettes Réelles vs Dépenses Actuelles (Mds €)</h2>
-    <p class="desc">Comparaison entre ce qui rentre réellement dans les caisses et ce qui est dépensé pour l'État, la Sécurité Sociale et les Collectivités.</p>
-    <div class="canvas-wrap"><canvas id="chartVs"></canvas></div>
+<div class="container">
+  <div class="hero-header">
+    <div>
+      <h1>📊 Référentiel Socle 2026 : Budget de l'État & Finances Publiques Françaises</h1>
+      <p>Socle officiel de comparaison des 16 candidats déclarés — Recettes vs Dépenses actuelles consolidées (État, Sécurité sociale et Collectivités locales : 1 514,0 Mds €).</p>
+    </div>
+    <div class="hero-actions">
+      <a href="./Budget_Detaille_Etat_Francais.xlsx" download class="btn-act">📥 Télécharger Budget Détaillé (.xlsx)</a>
+      <button onclick="window.print()" class="btn-act secondary">🖨️ Imprimer / PDF</button>
+    </div>
   </div>
 
-  <div class="chart-card">
-    <h2>2. D'où vient l'argent du Budget de l'État ? (Entrées + Emprunt)</h2>
-    <p class="desc">Sur 503,6 Mds € dépensés par l'État (après les 71,8 Mds € reversés aux Mairies et à l'UE), voici qui finance chaque euro :</p>
-    <div class="canvas-wrap"><canvas id="chartSources"></canvas></div>
+  <div class="kpi-grid">
+    <div class="kpi-card green">
+      <div class="kpi-label">Recettes Nettes de l'État</div>
+      <div class="kpi-val">308,3 Mds €</div>
+      <div class="kpi-sub">535,5 Mds € bruts − 155,4 dégrèvements − 71,8 Mairies/UE</div>
+    </div>
+    <div class="kpi-card red">
+      <div class="kpi-label">Dépenses du Budget Général</div>
+      <div class="kpi-val">503,6 Mds €</div>
+      <div class="kpi-sub">32 missions ministérielles (dont 151 Mds € salaires)</div>
+    </div>
+    <div class="kpi-card amber">
+      <div class="kpi-label">Déficit de l'État (Emprunt)</div>
+      <div class="kpi-val">-195,3 Mds €</div>
+      <div class="kpi-sub">38,8 % du budget de l'État est financé à crédit !</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Dépense Publique Totale (État+Sécu+Mairies)</div>
+      <div class="kpi-val">1 514,0 Mds €</div>
+      <div class="kpi-sub">52,7 % du PIB consolidé (Déficit Maastricht : -146 Mds €)</div>
+    </div>
+    <div class="kpi-card red">
+      <div class="kpi-label">Dette Publique Totale</div>
+      <div class="kpi-val">3 228,4 Mds €</div>
+      <div class="kpi-sub">112,3 % du PIB (Intérêts : 54,8 Mds €/an pour l'État)</div>
+    </div>
   </div>
 
-  <div class="chart-card">
-    <h2>3. Où va l'argent du Budget de l'État ? (Top Pôles de Dépenses en Mds €)</h2>
-    <p class="desc">Répartition des 503,6 Mds € de Crédits de Paiement du Budget Général par grande mission publique :</p>
-    <div class="canvas-wrap"><canvas id="chartDestEtat"></canvas></div>
+  <div class="charts-grid">
+    <div class="chart-card">
+      <h2>1. Le Face-à-Face : Recettes Réelles vs Dépenses Actuelles (Mds €)</h2>
+      <p class="desc">Comparaison entre ce qui rentre réellement dans les caisses et ce qui est dépensé pour l'État, la Sécurité Sociale et les Collectivités.</p>
+      <div class="canvas-wrap"><canvas id="chartVs"></canvas></div>
+    </div>
+
+    <div class="chart-card">
+      <h2>2. D'où vient l'argent du Budget de l'État ? (Entrées + Emprunt)</h2>
+      <p class="desc">Sur 503,6 Mds € dépensés par l'État (après les 71,8 Mds € reversés aux Mairies et à l'UE), voici qui finance chaque euro :</p>
+      <div class="canvas-wrap"><canvas id="chartSources"></canvas></div>
+    </div>
+
+    <div class="chart-card">
+      <h2>3. Où va l'argent du Budget de l'État ? (Top Pôles de Dépenses en Mds €)</h2>
+      <p class="desc">Répartition des 503,6 Mds € de Crédits de Paiement du Budget Général par grande mission publique :</p>
+      <div class="canvas-wrap"><canvas id="chartDestEtat"></canvas></div>
+    </div>
+
+    <div class="chart-card">
+      <h2>4. Vision Globale France Entière (État + Sécu + Mairies = 1 514 Mds €)</h2>
+      <p class="desc">Sur 1 000 € de dépense publique totale en France, 605 € vont à la protection sociale (Retraites, Santé, Famille, Chômage) :</p>
+      <div class="canvas-wrap"><canvas id="chartGlobalAPU"></canvas></div>
+    </div>
   </div>
 
-  <div class="chart-card">
-    <h2>4. Vision Globale France Entière (État + Sécu + Mairies = 1 514 Mds €)</h2>
-    <p class="desc">Sur 1 000 € de dépense publique totale en France, 605 € vont à la protection sociale (Retraites, Santé, Famille, Chômage) :</p>
-    <div class="canvas-wrap"><canvas id="chartGlobalAPU"></canvas></div>
+  <div class="flow-section">
+    <h2>🧭 Synthèse Visuelle : Sur 1 000 € dépensés par l'État, d'où viennent-ils et où vont-ils ?</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>D'OÙ VIENT L'ARGENT (SUR 1 000 €)</th>
+          <th>Montant</th>
+          <th>Qui paie & Quand ?</th>
+          <th>OÙ VA L'ARGENT (SUR 1 000 €)</th>
+          <th>Montant</th>
+          <th>Pour qui & Pourquoi ?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge-in">EMPRUNT (Dette nouvelle)</span></td>
+          <td><strong>388 €</strong> (195,3 Mds €)</td>
+          <td>Marchés financiers (53 % étrangers), chaque lundi/jeudi</td>
+          <td><span class="badge-out">1. Éducation, Universités & Recherche</span></td>
+          <td><strong>193 €</strong> (97,0 Mds €)</td>
+          <td>1,15 M de profs/chercheurs/AESH (le 28 du mois) + CROUS</td>
+        </tr>
+        <tr>
+          <td><span class="badge-in">Impôt sur le Revenu (IR net)</span></td>
+          <td><strong>191 €</strong> (96,4 Mds €)</td>
+          <td>18,7 M de foyers imposables (le 15 du mois à la source)</td>
+          <td><span class="badge-out">2. Intérêts de la Dette (Banques)</span></td>
+          <td><strong>109 €</strong> (54,8 Mds €)</td>
+          <td>Créanciers détenteurs d'OAT (25 avril/mai/oct/nov)</td>
+        </tr>
+        <tr>
+          <td><span class="badge-in">Impôt sur les Sociétés (IS net)</span></td>
+          <td><strong>136 €</strong> (68,6 Mds €)</td>
+          <td>Sociétés bénéficiaires (15 mars, juin, sept, déc)</td>
+          <td><span class="badge-out">3. Solidarités (AAH, Prime activité, APL)</span></td>
+          <td><strong>103 €</strong> (51,9 Mds €)</td>
+          <td>11 M d'allocataires CAF/APL/AME (viré le 5 du mois)</td>
+        </tr>
+        <tr>
+          <td><span class="badge-in">TVA Nette conservée par l'État</span></td>
+          <td><strong>81 €</strong> (40,8 Mds €)</td>
+          <td>Tous les consommateurs (sur 214,5 Mds € bruts payés)</td>
+          <td><span class="badge-out">4. Défense Nationale & Armées</span></td>
+          <td><strong>102 €</strong> (51,3 Mds €)</td>
+          <td>270 000 militaires/civils + usines Rafale/Sous-marins</td>
+        </tr>
+        <tr>
+          <td><span class="badge-in">Dividendes, 5G, Autoroutes, Radars</span></td>
+          <td><strong>76 €</strong> (38,3 Mds €)</td>
+          <td>EDF, Bpifrance, Télécoms, Automobilistes flashés</td>
+          <td><span class="badge-out">5. Emploi, Apprentissage, France 2030</span></td>
+          <td><strong>83 €</strong> (42,0 Mds €)</td>
+          <td>1 M d'apprentis, France Travail, industrie, agriculteurs</td>
+        </tr>
+        <tr>
+          <td><span class="badge-in">Successions, Donations, IFI, DMTO</span></td>
+          <td><strong>60 €</strong> (30,0 Mds €)</td>
+          <td>Héritiers (à 6 mois du décès), acheteurs immo, IFI (juin)</td>
+          <td><span class="badge-out">6. Police, Gendarmerie, Justice, Prisons</span></td>
+          <td><strong>77 €</strong> (38,7 Mds €)</td>
+          <td>257 000 policiers/gendarmes, magistrats, 188 prisons</td>
+        </tr>
+        <tr>
+          <td><span class="badge-in">Taxes Carburants, Tabac, Bourse, GAFAM</span></td>
+          <td><strong>68 €</strong> (34,2 Mds €)</td>
+          <td>Automobilistes à la pompe, fumeurs, CAC40, GAFAM</td>
+          <td><span class="badge-out">7. Écologie, SNCF, Admin. Bercy & Autres</span></td>
+          <td><strong>333 €</strong> (167,9 Mds €)</td>
+          <td>SNCF Réseau, MaPrimeRénov, DGFiP, Diplomatie, Culture</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-</div>
-
-<div class="flow-section">
-  <h2>🧭 Synthèse Visuelle : Sur 1 000 € dépensés par l'État, d'où viennent-ils et où vont-ils ?</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>D'OÙ VIENT L'ARGENT (SUR 1 000 €)</th>
-        <th>Montant</th>
-        <th>Qui paie & Quand ?</th>
-        <th>OÙ VA L'ARGENT (SUR 1 000 €)</th>
-        <th>Montant</th>
-        <th>Pour qui & Pourquoi ?</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="badge-in">EMPRUNT (Dette nouvelle)</span></td>
-        <td><strong>388 €</strong> (195,3 Mds €)</td>
-        <td>Marchés financiers (53 % étrangers), chaque lundi/jeudi</td>
-        <td><span class="badge-out">1. Éducation, Universités & Recherche</span></td>
-        <td><strong>193 €</strong> (97,0 Mds €)</td>
-        <td>1,15 M de profs/chercheurs/AESH (le 28 du mois) + CROUS</td>
-      </tr>
-      <tr>
-        <td><span class="badge-in">Impôt sur le Revenu (IR net)</span></td>
-        <td><strong>191 €</strong> (96,4 Mds €)</td>
-        <td>18,7 M de foyers imposables (le 15 du mois à la source)</td>
-        <td><span class="badge-out">2. Intérêts de la Dette (Banques)</span></td>
-        <td><strong>109 €</strong> (54,8 Mds €)</td>
-        <td>Créanciers détenteurs d'OAT (25 avril/mai/oct/nov)</td>
-      </tr>
-      <tr>
-        <td><span class="badge-in">Impôt sur les Sociétés (IS net)</span></td>
-        <td><strong>136 €</strong> (68,6 Mds €)</td>
-        <td>Sociétés bénéficiaires (15 mars, juin, sept, déc)</td>
-        <td><span class="badge-out">3. Solidarités (AAH, Prime activité, APL)</span></td>
-        <td><strong>103 €</strong> (51,9 Mds €)</td>
-        <td>11 M d'allocataires CAF/APL/AME (viré le 5 du mois)</td>
-      </tr>
-      <tr>
-        <td><span class="badge-in">TVA Nette conservée par l'État</span></td>
-        <td><strong>81 €</strong> (40,8 Mds €)</td>
-        <td>Tous les consommateurs (sur 214,5 Mds € bruts payés)</td>
-        <td><span class="badge-out">4. Défense Nationale & Armées</span></td>
-        <td><strong>102 €</strong> (51,3 Mds €)</td>
-        <td>270 000 militaires/civils + usines Rafale/Sous-marins</td>
-      </tr>
-      <tr>
-        <td><span class="badge-in">Dividendes, 5G, Autoroutes, Radars</span></td>
-        <td><strong>76 €</strong> (38,3 Mds €)</td>
-        <td>EDF, Bpifrance, Télécoms, Automobilistes flashés</td>
-        <td><span class="badge-out">5. Emploi, Apprentissage, France 2030</span></td>
-        <td><strong>83 €</strong> (42,0 Mds €)</td>
-        <td>1 M d'apprentis, France Travail, industrie, agriculteurs</td>
-      </tr>
-      <tr>
-        <td><span class="badge-in">Successions, Donations, IFI, DMTO</span></td>
-        <td><strong>60 €</strong> (30,0 Mds €)</td>
-        <td>Héritiers (à 6 mois du décès), acheteurs immo, IFI (juin)</td>
-        <td><span class="badge-out">6. Police, Gendarmerie, Justice, Prisons</span></td>
-        <td><strong>77 €</strong> (38,7 Mds €)</td>
-        <td>257 000 policiers/gendarmes, magistrats, 188 prisons</td>
-      </tr>
-      <tr>
-        <td><span class="badge-in">Taxes Carburants, Tabac, Bourse, GAFAM</span></td>
-        <td><strong>68 €</strong> (34,2 Mds €)</td>
-        <td>Automobilistes à la pompe, fumeurs, CAC40, GAFAM</td>
-        <td><span class="badge-out">7. Écologie, SNCF, Admin. Bercy & Autres</span></td>
-        <td><strong>333 €</strong> (167,9 Mds €)</td>
-        <td>SNCF Réseau, MaPrimeRénov, DGFiP, Diplomatie, Culture</td>
-      </tr>
-    </tbody>
-  </table>
 </div>
 
 <script>
-  // Chart 1: Recettes vs Dépenses
+  Chart.defaults.color = '#cbd5e1';
+  Chart.defaults.borderColor = 'rgba(255,255,255,0.08)';
+
   new Chart(document.getElementById('chartVs'), {
     type: 'bar',
     data: {
       labels: ['Budget de l\'État', 'Sécurité Sociale (ASSO)', 'Collectivités Locales', 'TOTAL FRANCE (Consolidé)'],
       datasets: [
-        { label: 'Recettes Réelles (Mds €)', data: [308.3, 656.2, 318.4, 1368.0], backgroundColor: '#16A34A', borderRadius: 6 },
-        { label: 'Dépenses Payées (Mds €)', data: [503.6, 672.8, 328.6, 1514.0], backgroundColor: '#DC2626', borderRadius: 6 },
-        { label: 'Déficit financé par Emprunt (Mds €)', data: [-195.3, -16.6, -10.2, -146.0], backgroundColor: '#D97706', borderRadius: 6 }
+        { label: 'Recettes Réelles (Mds €)', data: [308.3, 656.2, 318.4, 1368.0], backgroundColor: '#10b981', borderRadius: 6 },
+        { label: 'Dépenses Payées (Mds €)', data: [503.6, 672.8, 328.6, 1514.0], backgroundColor: '#f43f5e', borderRadius: 6 },
+        { label: 'Déficit financé par Emprunt (Mds €)', data: [-195.3, -16.6, -10.2, -146.0], backgroundColor: '#f59e0b', borderRadius: 6 }
       ]
     },
     options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' } } }
   });
 
-  // Chart 2: D'où vient l'argent de l'État
   new Chart(document.getElementById('chartSources'), {
     type: 'doughnut',
     data: {
@@ -226,13 +287,12 @@
       ],
       datasets: [{
         data: [195.3, 96.4, 68.6, 40.8, 38.3, 34.2, 30.0],
-        backgroundColor: ['#DC2626', '#1B365D', '#2563EB', '#0D9488', '#16A34A', '#D97706', '#7C3AED']
+        backgroundColor: ['#f43f5e', '#3b82f6', '#0ea5e9', '#14b8a6', '#10b981', '#f59e0b', '#8b5cf6']
       }]
     },
     options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right' } } }
   });
 
-  // Chart 3: Où va l'argent de l'État
   new Chart(document.getElementById('chartDestEtat'), {
     type: 'bar',
     data: {
@@ -247,14 +307,13 @@
       datasets: [{
         label: 'Dépenses en Milliards €',
         data: [98.7, 96.8, 64.6, 58.7, 54.8, 30.0],
-        backgroundColor: ['#1B365D', '#2563EB', '#0D9488', '#D97706', '#DC2626', '#6B7280'],
+        backgroundColor: ['#3b82f6', '#6366f1', '#14b8a6', '#f59e0b', '#f43f5e', '#64748b'],
         borderRadius: 6
       }]
     },
     options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
   });
 
-  // Chart 4: France entière (1 514 Mds €)
   new Chart(document.getElementById('chartGlobalAPU'), {
     type: 'pie',
     data: {
@@ -271,7 +330,7 @@
       ],
       datasets: [{
         data: [382, 254, 212, 168, 162, 112, 98, 68, 58],
-        backgroundColor: ['#1B365D', '#2563EB', '#3B82F6', '#0D9488', '#16A34A', '#4F46E5', '#D97706', '#9333EA', '#DC2626']
+        backgroundColor: ['#1e3a8a', '#2563eb', '#3b82f6', '#0d9488', '#10b981', '#6366f1', '#f59e0b', '#a855f7', '#f43f5e']
       }]
     },
     options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right' } } }

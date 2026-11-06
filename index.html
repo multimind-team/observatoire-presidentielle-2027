@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portail Officiel : Observatoire des Programmes & Budgets Présidentielle 2027</title>
+    <title>Portail Officiel : Observatoire des Programmes & Budgets Présidentielle 2027 (16 Candidats)</title>
+    <meta name="description" content="Plateforme indépendante d'évaluation encyclopédique, de chiffrage macroéconomique consolidé (APU 1 514 Mds €) et de simulation citoyenne pour les 16 candidats déclarés à la présidentielle 2027.">
+    <meta property="og:title" content="Observatoire Présidentielle 2027 — Programmes & Budgets des 16 Candidats Déclarés">
+    <meta property="og:description" content="Comparez ligne à ligne les programmes, chiffrages budgétaires, simulateurs de pouvoir d'achat et crash-tests souverains des 16 candidats déclarés.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Cpath d='M12 14h13v36H12z' fill='%232563eb'/%3E%3Cpath d='M25 14h14v36H25z' fill='%23f8fafc'/%3E%3Cpath d='M39 14h13v36H39z' fill='%23ef4444'/%3E%3C/svg%3E">
     <style>
         :root {
-            --bg-body: #070a12;
+            --bg-dark: #070a13;
             --bg-card: #0f172a;
             --bg-card-hover: #1e293b;
             --border-color: #1e293b;
             --accent-blue: #3b82f6;
             --accent-green: #10b981;
-            --accent-rose: #f43f5e;
+            --accent-red: #f43f5e;
             --accent-amber: #f59e0b;
             --accent-purple: #8b5cf6;
             --text-main: #f8fafc;
@@ -20,60 +26,95 @@
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-body);
+            background-color: var(--bg-dark);
             color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
+            padding-bottom: 60px;
         }
-        
-        /* Top Navigation Bar */
         .navbar {
-            position: sticky; top: 0; z-index: 1000;
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(15, 23, 42, 0.92);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
-            padding: 12px 24px;
-            display: flex; justify-content: space-between; align-items: center;
+            padding: 14px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
         }
-        .nav-brand { font-size: 16px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; }
-        .nav-links { display: flex; gap: 10px; overflow-x: auto; }
+        .nav-brand {
+            font-size: 18px;
+            font-weight: 900;
+            background: linear-gradient(90deg, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .nav-links { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
         .nav-link {
-            color: var(--text-muted); text-decoration: none; font-size: 12px; font-weight: 700;
-            padding: 6px 12px; border-radius: 6px; transition: all 0.2s; white-space: nowrap;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: all 0.2s;
         }
-        .nav-link:hover { background: rgba(59, 130, 246, 0.15); color: #fff; }
-        .nav-link.active { background: var(--accent-blue); color: #fff; }
-        
-        /* Container */
-        .container { max-width: 1400px; margin: 0 auto; padding: 24px; }
-        
-        /* Hero Section */
+        .nav-link:hover, .nav-link.active {
+            color: #fff;
+            background: rgba(59, 130, 246, 0.18);
+        }
+        .container { max-width: 1500px; margin: 0 auto; padding: 0 24px; }
         .hero {
-            background: linear-gradient(135deg, #0b132b 0%, #1e1b4b 50%, #064e3b 100%);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
             text-align: center;
+            padding: 46px 20px 36px;
+            background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15), transparent 70%);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 36px;
         }
-        .hero h1 { font-size: 34px; font-weight: 900; color: #fff; margin-bottom: 12px; }
-        .hero p { font-size: 15px; color: #cbd5e1; max-width: 950px; margin: 0 auto 24px auto; }
-        
+        .hero h1 {
+            font-size: 38px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 16px;
+            color: var(--text-muted);
+            max-width: 850px;
+            margin: 0 auto 24px;
+        }
         .hero-stats {
-            display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
         }
         .hero-stat {
-            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
-            padding: 12px 24px; border-radius: 12px; text-align: center;
+            background: var(--bg-card);
+            border: 1px solid #334155;
+            padding: 14px 24px;
+            border-radius: 12px;
+            min-width: 180px;
         }
-        .hero-stat .num { font-size: 22px; font-weight: 900; color: var(--accent-green); }
-        .hero-stat .lbl { font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
-        
-        /* Tool Modules Grid */
+        .hero-stat .num { font-size: 26px; font-weight: 900; color: #60a5fa; }
+        .hero-stat .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-muted); font-weight: 700; }
         .section-title {
-            font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 18px;
-            border-left: 4px solid var(--accent-blue); padding-left: 12px;
+            font-size: 22px;
+            font-weight: 800;
+            margin: 36px 0 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 14px;
         }
         .tools-grid {
             display: grid;
@@ -82,69 +123,181 @@
             margin-bottom: 40px;
         }
         .tool-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            background: linear-gradient(145deg, #0f172a, #131c31);
+            border: 1px solid #334155;
             border-radius: 14px;
             padding: 24px;
-            display: flex; flex-direction: column; justify-content: space-between;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
         }
-        .tool-card:hover { transform: translateY(-4px); border-color: var(--accent-blue); }
-        .tool-icon { font-size: 32px; margin-bottom: 12px; }
-        .tool-title { font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 8px; }
-        .tool-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 18px; line-height: 1.5; }
+        .tool-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.3);
+        }
+        .tool-icon { font-size: 28px; margin-bottom: 12px; }
+        .tool-title { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+        .tool-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 18px; }
         .btn-launch {
-            display: inline-block; text-align: center; background: rgba(59, 130, 246, 0.15);
-            color: #60a5fa; border: 1px solid #3b82f6; padding: 10px 16px; border-radius: 8px;
-            text-decoration: none; font-size: 12px; font-weight: 800; transition: all 0.2s;
+            display: inline-block;
+            text-align: center;
+            background: var(--accent-blue);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            transition: background 0.2s;
         }
-        .btn-launch:hover { background: var(--accent-blue); color: #fff; }
-        
-        /* Candidates Grid */
+        .btn-launch:hover { background: #2563eb; }
+
         .filters-bar {
-            display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; align-items: center;
+            display: flex;
+            gap: 10px;
+            margin-bottom: 22px;
+            flex-wrap: wrap;
+            align-items: center;
+            background: var(--bg-card);
+            padding: 12px 18px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
         }
         .filter-btn {
-            background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-muted);
-            padding: 8px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer;
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: var(--text-muted);
+            padding: 7px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
             transition: all 0.2s;
         }
-        .filter-btn:hover, .filter-btn.active { background: var(--accent-blue); color: #fff; border-color: var(--accent-blue); }
-        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--accent-blue);
+            color: #fff;
+            border-color: var(--accent-blue);
+        }
+
+        .topic-pills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        .topic-pill {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid #334155;
+            color: #cbd5e1;
+            padding: 5px 11px;
+            border-radius: 20px;
+            font-size: 11.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .topic-pill:hover, .topic-pill.active {
+            background: rgba(59, 130, 246, 0.25);
+            border-color: #60a5fa;
+            color: #fff;
+        }
+
+        .theme-matrix-box {
+            background: #0f172a;
+            border: 1px solid #3b82f6;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 22px;
+            display: none;
+        }
+        .theme-matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12.5px;
+            margin-top: 12px;
+        }
+        .theme-matrix-table th {
+            background: #1e293b;
+            color: #fff;
+            padding: 9px 12px;
+            text-align: left;
+            border: 1px solid #334155;
+        }
+        .theme-matrix-table td {
+            padding: 8px 12px;
+            border: 1px solid rgba(255,255,255,0.08);
+            color: #e2e8f0;
+        }
+        .theme-matrix-table tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+
         .cands-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
             gap: 16px;
-            margin-bottom: 40px;
         }
         .cand-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            border: 1px solid #1e293b;
             border-radius: 12px;
             padding: 18px;
             transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .cand-card:hover { transform: translateY(-3px); border-color: var(--accent-blue); }
+        .cand-card:hover {
+            border-color: #475569;
+            background: #131d33;
+        }
         .cand-head {
-            display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            gap: 10px;
         }
-        .cand-name { font-size: 16px; font-weight: 800; color: #fff; }
-        .cand-party { font-size: 11px; color: var(--text-muted); }
+        .cand-identity {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+        .cand-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 9px;
+            color: #fff;
+            font-weight: 900;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+        }
+        .cand-name { font-size: 16px; font-weight: 800; color: #fff; line-height: 1.25; }
+        .cand-party { font-size: 11.5px; color: var(--text-muted); font-weight: 600; margin-top: 2px; }
         .badge-parr {
-            font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 12px;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 12px;
+            white-space: nowrap;
         }
-        .badge-green { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid #10b981; }
-        .badge-orange { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid #f59e0b; }
-        .badge-red { background: rgba(244, 63, 94, 0.15); color: #f43f5e; border: 1px solid #f43f5e; }
-        
+        .badge-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .badge-orange { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .badge-red { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.3); }
+
         .cand-metrics {
             display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 12px 0;
             background: rgba(255,255,255,0.02); padding: 8px; border-radius: 6px; text-align: center;
         }
         .cand-m-lbl { font-size: 9px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
         .cand-m-val { font-size: 14px; font-weight: 800; color: #fff; margin-top: 1px; }
-        
+
         .cand-actions {
             display: flex; gap: 8px; margin-top: 12px;
         }
@@ -156,7 +309,7 @@
         .btn-cand:hover { background: #1e293b; color: #fff; border-color: #475569; }
         .btn-cand.primary { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border-color: #3b82f6; }
         .btn-cand.primary:hover { background: #3b82f6; color: #fff; }
-        
+
         .footer { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 40px; padding: 24px 0; border-top: 1px solid var(--border-color); }
     </style>
 </head>
@@ -166,19 +319,20 @@
     <div class="navbar">
         <div class="nav-brand">🏛️ Observatoire Présidentielle 2027</div>
         <div class="nav-links">
-            <a href="#outils" class="nav-link active">🛠️ Outils & Simulateurs</a>
-            <a href="./comparatifs%20candidats/Boussole_Electorale_Test_Affinite.html" class="nav-link" target="_blank">🧭 Boussole (Quiz)</a>
-            <a href="./comparatifs%20candidats/Simulateur_Pouvoir_Achat_Citoyen.html" class="nav-link" target="_blank">💶 Mon Pouvoir d'Achat</a>
-            <a href="./comparatifs%20candidats/Visualisation_Comparatif_Tous_Candidats_2027.html" class="nav-link" target="_blank">📊 Grand Atlas</a>
-            <a href="./comparatifs%20candidats/Comparateur_Interactif_Face_a_Face.html" class="nav-link" target="_blank">⚔️ Duels</a>
-            <a href="./comparatifs%20candidats/Simulateur_Gouvernabilite_Assemblee_2027.html" class="nav-link" target="_blank">🏛️ Hémicycle</a>
-            <a href="./comparatifs%20candidats/Crash_Test_Budgetaire_et_Scoring_Risque.html" class="nav-link" target="_blank">⚠️ Crash-Test</a>
-            <a href="./comparatifs%20candidats/Observatoire_Sondages_2027.html" class="nav-link" target="_blank">📈 Sondages 2027</a>
-            <a href="./comparatifs%20candidats/Grand_Livre_Blanc_et_Syntheses_Thematiques.html" class="nav-link" target="_blank">📖 Livre Blanc & Synthèses</a>
-            <a href="./comparatifs%20candidats/Faisabilite_Juridique_et_Constitutionnelle.html" class="nav-link" target="_blank">⚖️ Faisabilité Juridique</a>
-            <a href="./comparatifs%20candidats/METHODOLOGIE_ET_SOURCES.html" class="nav-link" target="_blank">📚 Méthodologie</a>
-            <a href="./comparatifs%20candidats/A_PROPOS_ET_TRANSPARENCE.html" class="nav-link" target="_blank">ℹ️ À Propos</a>
-            <a href="#candidats" class="nav-link">👥 Les Candidats</a>
+            <a href="#candidats" class="nav-link active">👥 Les 16 Candidats</a>
+            <a href="#outils" class="nav-link">🛠️ Outils & Simulateurs</a>
+            <a href="./comparatifs%20candidats/Boussole_Electorale_Test_Affinite.html" class="nav-link">🧭 Boussole (Quiz)</a>
+            <a href="./comparatifs%20candidats/Simulateur_Pouvoir_Achat_Citoyen.html" class="nav-link">💶 Mon Pouvoir d'Achat</a>
+            <a href="./comparatifs%20candidats/Visualisation_Comparatif_Tous_Candidats_2027.html" class="nav-link">📊 Grand Atlas</a>
+            <a href="./comparatifs%20candidats/Comparateur_Interactif_Face_a_Face.html" class="nav-link">⚔️ Duels</a>
+            <a href="./comparatifs%20candidats/Simulateur_Gouvernabilite_Assemblee_2027.html" class="nav-link">🏛️ Hémicycle</a>
+            <a href="./comparatifs%20candidats/Crash_Test_Budgetaire_et_Scoring_Risque.html" class="nav-link">⚠️ Crash-Test</a>
+            <a href="./comparatifs%20candidats/Observatoire_Sondages_2027.html" class="nav-link">📈 Sondages 2027</a>
+            <a href="./comparatifs%20candidats/Grand_Livre_Blanc_et_Syntheses_Thematiques.html" class="nav-link">📖 Livre Blanc & Synthèses</a>
+            <a href="./comparatifs%20candidats/Faisabilite_Juridique_et_Constitutionnelle.html" class="nav-link">⚖️ Faisabilité Juridique</a>
+            <a href="./comparatifs%20candidats/METHODOLOGIE_ET_SOURCES.html" class="nav-link">📚 Méthodologie</a>
+            <a href="./comparatifs%20candidats/A_PROPOS_ET_TRANSPARENCE.html" class="nav-link">ℹ️ À Propos</a>
+            <a href="#opendata" class="nav-link">📥 Open Data Excel</a>
         </div>
     </div>
 
@@ -186,14 +340,14 @@
         <!-- HERO -->
         <div class="hero">
             <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); color:#34d399; font-size:12px; font-weight:700; padding:6px 14px; border-radius:20px; margin-bottom:14px;">
-                🟢 Plateforme actualisée : Novembre 2026 • Données budgétaires & constitutionnelles consolidées
+                🟢 Plateforme actualisée : Novembre 2026 • Périmètre exclusif des 16 candidats déclarés
             </div>
             <h1>🇫🇷 Grand Observatoire des Candidats & Budgets 2027</h1>
             <p>La plateforme indépendante d'évaluation encyclopédique, de chiffrage macroéconomique consolidé (APU) et de simulation citoyenne pour l'élection présidentielle française de 2027.</p>
             <div class="hero-stats">
                 <div class="hero-stat">
                     <div class="num">16</div>
-<div class="lbl">Candidats Réels en Lice</div>
+                    <div class="lbl">Candidats Déclarés en Lice</div>
                 </div>
                 <div class="hero-stat">
                     <div class="num">1 514 Mds €</div>
@@ -204,144 +358,70 @@
                     <div class="lbl">Déficit Public Actuel (-5,1%)</div>
                 </div>
                 <div class="hero-stat">
-                    <div class="num">1 100+</div>
-                    <div class="lbl">Fichiers d'Analyse Générés</div>
+                    <div class="num">500+</div>
+                    <div class="lbl">Fiches & Modèles Chiffrés</div>
                 </div>
             </div>
         </div>
 
-        <!-- OUTILS ET SIMULATEURS MAJEURS -->
-        <h2 class="section-title" id="outils">🚀 Les Applications & Simulateurs Interactifs Déployés</h2>
-        <div class="tools-grid">
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">📖</div>
-                    <div class="tool-title">Grand Livre Blanc & 10 Synthèses Thématiques</div>
-                    <div class="tool-desc">Liseuse intégrale du Rapport Exécutif consolidé et des 10 monographies comparatives (Retraites, Salaires, Fiscalité, Énergie, Régalien, Institutions) + téléchargement des 3 bases Excel maîtres.</div>
-                </div>
-                <a href="./comparatifs%20candidats/Grand_Livre_Blanc_et_Syntheses_Thematiques.html" class="btn-launch" target="_blank">Lire le Grand Livre Blanc →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">🧭</div>
-                    <div class="tool-title">Boussole Électorale & Test d'Affinité</div>
-                    <div class="tool-desc">12 questions clivantes sur les retraites, les salaires, les impôts, l'énergie et la dette. Révèle instantanément votre Top 3 des candidats les plus proches et votre classement complet sur 100%.</div>
-                </div>
-                <a href="./comparatifs%20candidats/Boussole_Electorale_Test_Affinite.html" class="btn-launch" target="_blank">Lancer le Test d'Affinité →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">💶</div>
-                    <div class="tool-title">Simulateur Mon Pouvoir d'Achat</div>
-                    <div class="tool-desc">Entrez votre salaire brut, vos enfants, vos kilomètres en voiture et votre patrimoine pour calculer en direct votre gain ou perte nette en euros (€/mois et €/an) sous chaque président.</div>
-                </div>
-                <a href="./comparatifs%20candidats/Simulateur_Pouvoir_Achat_Citoyen.html" class="btn-launch" target="_blank">Calculer Mon Portefeuille →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">📊</div>
-                    <div class="tool-title">Grand Atlas Graphique (10 Thèmes)</div>
-                    <div class="tool-desc">Navigation interactive par onglets comparant les candidats en lice sur 10 graphiques : retraites, SMIC, taux d'IR, entreprises, nucléaire, immigration, prisons, fonction publique et boussole 2D.</div>
-                </div>
-                <a href="./comparatifs%20candidats/Visualisation_Comparatif_Tous_Candidats_2027.html" class="btn-launch" target="_blank">Explorer les 10 Graphiques →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">⚔️</div>
-                    <div class="tool-title">Comparateur Face-à-Face (Duels)</div>
-                    <div class="tool-desc">Sélectionnez 2 ou 3 candidats pour confronter en direct leurs radars doctrinaux à 6 axes, leurs trajectoires de déficit sur 5 ans, la ventilation sectorielle de leurs dépenses et leurs fiches thématiques.</div>
-                </div>
-                <a href="./comparatifs%20candidats/Comparateur_Interactif_Face_a_Face.html" class="btn-launch" target="_blank">Confronter les Candidats →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">🏛️</div>
-                    <div class="tool-title">Hémicycle & Majorité Parlementaire</div>
-                    <div class="tool-desc">Simulation du 3e tour législatif : projection des 577 sièges de l'Assemblée nationale selon le président élu, faisabilité du vote budgétaire et évaluation du risque de censure ou dissolution.</div>
-                </div>
-                <a href="./comparatifs%20candidats/Simulateur_Gouvernabilite_Assemblee_2027.html" class="btn-launch" target="_blank">Simuler l'Assemblée →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">⚠️</div>
-                    <div class="tool-title">Crash-Test & Stress-Test Taux</div>
-                    <div class="tool-desc">Notation souveraine de robustesse (A+ à D-), détection des angles morts juridiques et simulateur d'impact sur la charge de la dette en cas de tension sur les marchés obligataires (+50 à +300 bps).</div>
-                </div>
-                <a href="./comparatifs%20candidats/Crash_Test_Budgetaire_et_Scoring_Risque.html" class="btn-launch" target="_blank">Tester le Risque de Dette →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">📈</div>
-                    <div class="tool-title">Observatoire Permanent des Sondages</div>
-                    <div class="tool-desc">Synthèse consolidée des intentions de vote 1er et 2nd tour (Ifop, Ipsos, Elabe, OpinionWay). Fourchettes d'incertitude et calculateur scientifique de marge d'erreur à 95%.</div>
-                </div>
-                <a href="./comparatifs%20candidats/Observatoire_Sondages_2027.html" class="btn-launch" target="_blank">Consulter les Sondages 2027 →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">⚖️</div>
-                    <div class="tool-title">Faisabilité Juridique & Constitutionnelle</div>
-                    <div class="tool-desc">Matrice de passage à l'acte : Décret, Loi ordinaire, Loi organique, Révision constitutionnelle (art. 89 vs 11) et Droit de l'Union européenne. Analyse des risques de censure.</div>
-                </div>
-                <a href="./comparatifs%20candidats/Faisabilite_Juridique_et_Constitutionnelle.html" class="btn-launch" target="_blank">Explorer la Matrice Juridique →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">📚</div>
-                    <div class="tool-title">Méthodologie, Chiffrage & Sources</div>
-                    <div class="tool-desc">Référentiel des Administrations Publiques (APU 1 514 Mds €) vs Budget de l'État (503 Mds €). Formule du Crash-Test sur 100 points, modèle Excel 5 onglets et hiérarchie documentaire.</div>
-                </div>
-                <a href="./comparatifs%20candidats/METHODOLOGIE_ET_SOURCES.html" class="btn-launch" target="_blank">Lire le Manuel Méthodologique →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">ℹ️</div>
-                    <div class="tool-title">À Propos, Éthique & Transparence</div>
-                    <div class="tool-desc">Charte d'indépendance stricte, absence totale de traçage et respect absolu de la vie privée (zéro cookies), données citoyennes ouvertes et protocole de signalement d'erreur.</div>
-                </div>
-                <a href="./comparatifs%20candidats/A_PROPOS_ET_TRANSPARENCE.html" class="btn-launch" target="_blank">Consulter la Charte d'Éthique →</a>
-            </div>
-        </div>
-
-        <!-- CENTRE OPEN DATA EXCEL -->
-        <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 14px; padding: 18px 24px; margin: 24px 0 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-            <div>
-                <div style="font-size: 13px; font-weight: 800; color: #34d399; text-transform: uppercase; letter-spacing: 0.5px;">📥 Open Data Citoyen : Bases Excel Maîtres Consolidées (16 Candidats Déclarés)</div>
-                <div style="font-size: 13px; color: #cbd5e1; margin-top: 4px;">Téléchargez les 3 classeurs analytiques transversaux avec formules natives et graphiques Excel :</div>
-            </div>
-            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <a href="./comparatifs%20candidats/Comparatif_Budgetaire_Tous_Candidats_2027.xlsx" download style="background: #059669; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">📊 Comparatif Budgétaire Global (.xlsx)</a>
-                <a href="./comparatifs%20candidats/Matrices_Thematiques_Transversales_2027.xlsx" download style="background: #059669; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">📋 8 Matrices Thématiques (.xlsx)</a>
-                <a href="./comparatifs%20candidats/Crash_Test_Budgetaire_et_Scoring_Risque.xlsx" download style="background: #059669; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">⚠️ Modèle Crash-Test & Taux (.xlsx)</a>
-            </div>
-        </div>
-
-        <!-- REPERTOIRE DES CANDIDATS 2027 -->
+        <!-- 1. REPERTOIRE DES CANDIDATS 2027 (EN PREMIER) -->
         <h2 class="section-title" id="candidats">👥 Les Candidats à la Loupe (Dossiers Complets)</h2>
-        
-        <!-- Moteur de recherche instantané -->
-        <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px 20px; margin-bottom: 18px; display: flex; flex-direction: column; gap: 10px;">
+
+        <!-- Moteur de recherche instantané + Comparateur Rapide par Thème -->
+        <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid #334155; border-radius: 12px; padding: 16px 20px; margin-bottom: 18px; display: flex; flex-direction: column; gap: 10px;">
             <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
                 <div style="position: relative; flex: 1; min-width: 280px;">
                     <span style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 16px; color: var(--text-muted); pointer-events: none;">🔍</span>
-                    <input type="text" id="candSearchInput" placeholder="Rechercher par candidat, parti ou mot-clé (ex: retraite, SMIC, nucléaire, impôt, dette, régalien...)" oninput="handleSearch()" style="width: 100%; background: #1e293b; border: 1px solid #334155; color: #fff; padding: 10px 14px 10px 40px; border-radius: 8px; font-size: 14px; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#334155'">
+                    <input type="text" id="candSearchInput" placeholder="Rechercher un candidat, un parti ou une mesure (ex: retraite, SMIC, nucléaire, TVA, hôpital, école, OTAN, logement...)" oninput="handleSearch()" style="width: 100%; background: #1e293b; border: 1px solid #334155; color: #fff; padding: 10px 14px 10px 40px; border-radius: 8px; font-size: 14px; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#334155'">
                 </div>
                 <button onclick="clearSearch()" style="background: #334155; border: none; color: #cbd5e1; padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='#475569'" onmouseout="this.style.background='#334155'">
                     Réinitialiser
                 </button>
             </div>
+            <div>
+                <div style="font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px;">⚡ Comparer instantanément les 16 candidats sur un thème clé :</div>
+                <div class="topic-pills" id="topicPillsBar">
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('retraite', this)">👴 Retraites & Âge Légal</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('salaire', this)">💶 Salaires & SMIC</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('impot', this)">🏠 Impôts, TVA & ISF</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('entreprise', this)">🏭 Entreprises & Production</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('energie', this)">⚡ Nucléaire & Énergie</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('immigration', this)">🛂 Immigration & Frontières</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('securite', this)">🛡️ Police, Justice & Prisons</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('institution', this)">🏛️ Institutions & RIC</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('sante', this)">🏥 Santé & Hôpital</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('education', this)">🎓 Éducation & Recherche</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('europe', this)">🌍 Europe, Défense & OTAN</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('logement', this)">🏘️ Logement & Famille</button>
+                </div>
+            </div>
             <div id="searchResultsCount" style="font-size: 12px; color: var(--text-muted); font-weight: 600;">
-                Affichage : 16 candidats réels en lice (par défaut)
+                Affichage : 16 candidats déclarés en lice (par défaut)
+            </div>
+        </div>
+
+        <!-- Tableau comparatif instantané par thème -->
+        <div id="themeMatrixBox" class="theme-matrix-box">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                <div>
+                    <span style="font-size:11px; font-weight:800; color:#60a5fa; text-transform:uppercase;">Comparatif Transversal Instantané (16 Candidats Déclarés)</span>
+                    <h3 id="themeMatrixTitle" style="font-size:18px; font-weight:800; color:#fff;"></h3>
+                </div>
+                <button type="button" onclick="closeThemeMatrix()" style="background:#1e293b; border:1px solid #475569; color:#cbd5e1; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer;">✕ Fermer le tableau thématique</button>
+            </div>
+            <div style="overflow-x:auto;">
+                <table class="theme-matrix-table">
+                    <thead>
+                        <tr>
+                            <th>Candidat</th>
+                            <th>Parti / Mouvement</th>
+                            <th>Famille Politique</th>
+                            <th>Mesure Phare & Position Officielle</th>
+                            <th>Dossier</th>
+                        </tr>
+                    </thead>
+                    <tbody id="themeMatrixBody"></tbody>
+                </table>
             </div>
         </div>
 
@@ -356,10 +436,136 @@
         <div class="cands-grid" id="candsGrid">
             <!-- Injected via JS -->
         </div>
+
+        <!-- 2. OUTILS ET SIMULATEURS MAJEURS (APRES LES CANDIDATS) -->
+        <h2 class="section-title" id="outils" style="margin-top: 52px;">🚀 Les Applications & Simulateurs Interactifs Déployés</h2>
+        <div class="tools-grid">
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">📖</div>
+                    <div class="tool-title">Grand Livre Blanc & 14 Synthèses Thématiques</div>
+                    <div class="tool-desc">Liseuse intégrale du Rapport Exécutif consolidé, du Référentiel Budget de l'État et des 14 monographies comparatives (Retraites, Salaires, Fiscalité, Énergie, Santé, Éducation, Défense, Logement...).</div>
+                </div>
+                <a href="./comparatifs%20candidats/Grand_Livre_Blanc_et_Syntheses_Thematiques.html" class="btn-launch">Lire le Grand Livre Blanc →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">🧭</div>
+                    <div class="tool-title">Boussole Électorale & Test d'Affinité</div>
+                    <div class="tool-desc">12 questions clivantes sur les retraites, les salaires, les impôts, l'énergie et la dette. Révèle instantanément votre Top 3 des candidats les plus proches et votre classement complet sur 100%.</div>
+                </div>
+                <a href="./comparatifs%20candidats/Boussole_Electorale_Test_Affinite.html" class="btn-launch">Lancer le Test d'Affinité →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">💶</div>
+                    <div class="tool-title">Simulateur Mon Pouvoir d'Achat</div>
+                    <div class="tool-desc">Entrez votre salaire brut, vos enfants, vos kilomètres en voiture et votre patrimoine pour calculer en direct votre gain ou perte nette en euros (€/mois et €/an) sous chaque président.</div>
+                </div>
+                <a href="./comparatifs%20candidats/Simulateur_Pouvoir_Achat_Citoyen.html" class="btn-launch">Calculer Mon Portefeuille →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">📊</div>
+                    <div class="tool-title">Grand Atlas Graphique (10 Thèmes)</div>
+                    <div class="tool-desc">Navigation interactive par onglets comparant les 16 candidats en lice sur 10 graphiques : retraites, SMIC, taux d'IR, entreprises, nucléaire, immigration, prisons, fonction publique et boussole 2D.</div>
+                </div>
+                <a href="./comparatifs%20candidats/Visualisation_Comparatif_Tous_Candidats_2027.html" class="btn-launch">Explorer les 10 Graphiques →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">⚔️</div>
+                    <div class="tool-title">Comparateur Face-à-Face (Duels)</div>
+                    <div class="tool-desc">Sélectionnez 2 ou 3 candidats pour confronter en direct leurs radars doctrinaux à 6 axes, leurs trajectoires de déficit sur 5 ans, la ventilation sectorielle de leurs dépenses et leurs fiches thématiques.</div>
+                </div>
+                <a href="./comparatifs%20candidats/Comparateur_Interactif_Face_a_Face.html" class="btn-launch">Confronter les Candidats →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">🏛️</div>
+                    <div class="tool-title">Hémicycle & Majorité Parlementaire</div>
+                    <div class="tool-desc">Simulation du 3e tour législatif : projection des 577 sièges de l'Assemblée nationale selon le président élu, faisabilité du vote budgétaire et évaluation du risque de censure ou dissolution.</div>
+                </div>
+                <a href="./comparatifs%20candidats/Simulateur_Gouvernabilite_Assemblee_2027.html" class="btn-launch">Simuler l'Assemblée →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">⚠️</div>
+                    <div class="tool-title">Crash-Test & Stress-Test Taux</div>
+                    <div class="tool-desc">Notation souveraine de robustesse (A+ à D-), détection des angles morts juridiques et simulateur d'impact sur la charge de la dette en cas de tension sur les marchés obligataires (+50 à +300 bps).</div>
+                </div>
+                <a href="./comparatifs%20candidats/Crash_Test_Budgetaire_et_Scoring_Risque.html" class="btn-launch">Tester le Risque de Dette →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">📈</div>
+                    <div class="tool-title">Observatoire Permanent des Sondages</div>
+                    <div class="tool-desc">Synthèse consolidée des intentions de vote 1er et 2nd tour (Ifop, Ipsos, Elabe, OpinionWay). Fourchettes d'incertitude et calculateur scientifique de marge d'erreur à 95%.</div>
+                </div>
+                <a href="./comparatifs%20candidats/Observatoire_Sondages_2027.html" class="btn-launch">Consulter les Sondages 2027 →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">⚖️</div>
+                    <div class="tool-title">Faisabilité Juridique & Constitutionnelle</div>
+                    <div class="tool-desc">Matrice de passage à l'acte : Décret, Loi ordinaire, Loi organique, Révision constitutionnelle (art. 89 vs 11) et Droit de l'Union européenne. Analyse des risques de censure.</div>
+                </div>
+                <a href="./comparatifs%20candidats/Faisabilite_Juridique_et_Constitutionnelle.html" class="btn-launch">Explorer la Matrice Juridique →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">🇫🇷</div>
+                    <div class="tool-title">Référentiel : Budget de l'État Français (1 514 Mds €)</div>
+                    <div class="tool-desc">Tableau de bord interactif du budget actuel de la France (État, Sécurité sociale, Collectivités locales) : d'où vient l'argent et où il va sur 1 000 € de dépense publique.</div>
+                </div>
+                <a href="./Visualisation_Graphiques_Budget_Etat.html" class="btn-launch">Explorer le Budget de l'État →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">📚</div>
+                    <div class="tool-title">Méthodologie, Chiffrage & Sources</div>
+                    <div class="tool-desc">Référentiel des Administrations Publiques (APU 1 514 Mds €) vs Budget de l'État (503 Mds €). Formule du Crash-Test sur 100 points, modèle Excel 5 onglets et hiérarchie documentaire.</div>
+                </div>
+                <a href="./comparatifs%20candidats/METHODOLOGIE_ET_SOURCES.html" class="btn-launch">Lire le Manuel Méthodologique →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">ℹ️</div>
+                    <div class="tool-title">À Propos, Éthique & Transparence</div>
+                    <div class="tool-desc">Charte d'indépendance stricte, absence totale de traçage et respect absolu de la vie privée (zéro cookies), données citoyennes ouvertes et protocole de signalement d'erreur.</div>
+                </div>
+                <a href="./comparatifs%20candidats/A_PROPOS_ET_TRANSPARENCE.html" class="btn-launch">Consulter la Charte d'Éthique →</a>
+            </div>
+        </div>
+
+        <!-- 3. CENTRE OPEN DATA EXCEL (A LA FIN) -->
+        <div id="opendata" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 14px; padding: 22px 26px; margin: 24px 0 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div>
+                <div style="font-size: 14px; font-weight: 800; color: #34d399; text-transform: uppercase; letter-spacing: 0.5px;">📥 Open Data Citoyen : Bases Excel Maîtres Consolidées (16 Candidats Déclarés)</div>
+                <div style="font-size: 13px; color: #cbd5e1; margin-top: 4px;">Téléchargez librement les 4 classeurs analytiques transversaux avec formules natives et graphiques Excel :</div>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="./comparatifs%20candidats/Comparatif_Budgetaire_Tous_Candidats_2027.xlsx" download style="background: #059669; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">📊 Comparatif Budgétaire Global (.xlsx)</a>
+                <a href="./comparatifs%20candidats/Matrices_Thematiques_Transversales_2027.xlsx" download style="background: #059669; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">📋 12 Matrices Thématiques (.xlsx)</a>
+                <a href="./comparatifs%20candidats/Crash_Test_Budgetaire_et_Scoring_Risque.xlsx" download style="background: #059669; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">⚠️ Modèle Crash-Test & Taux (.xlsx)</a>
+                <a href="./Budget_Detaille_Etat_Francais.xlsx" download style="background: #0f766e; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">🏛️ Budget Détaillé de l'État (.xlsx)</a>
+            </div>
+        </div>
     </div>
 
     <div class="footer">
-        Grand Observatoire Présidentiel 2027 — Plateforme Budgétaire & Stratégique
+        Grand Observatoire Présidentiel 2027 — Plateforme Budgétaire & Stratégique (16 Candidats Déclarés)
     </div>
 
     <script>
@@ -701,6 +907,13 @@
     "status_candidature": "Candidat en campagne"
   }
 ];
+        const thematicMatrices = {"retraite": {"label": "👴 Retraites & Âge Légal", "keywords": "retraite pension 60 62 64 65 67 annuites cor", "rows": [{"cand": "David Lisnard", "parti": "Nouvelle Énergie", "famille": "Droite libérale & souveraine", "mesure": "65 ans (alignement public/privé, fin des régimes spéciaux, capitalisation)"}, {"cand": "Fabien Roussel", "parti": "Parti Communiste Français (PCF)", "famille": "Gauche républicaine & ouvrière", "mesure": "60 ans à 37,5 à 40 annuités pour tous, pensions minimales au niveau du SMIC"}, {"cand": "François Asselineau", "parti": "Union Populaire Républicaine (UPR)", "famille": "Souverainisme & Frexit juridique", "mesure": "Abrogation des 64 ans, retour aux 40 annuités conformément au programme du CNR"}, {"cand": "François Bayrou", "parti": "Mouvement Démocrate (MoDem)", "famille": "Centre humaniste & démocrate", "mesure": "Système universel par points (1 € cotisé = les mêmes droits pour tous)"}, {"cand": "François Ruffin", "parti": "Picardie Debout ! / Debout !", "famille": "Gauche populaire & sociale", "mesure": "60 ans pour les métiers pénibles et ouvriers, 40 annuités maximum"}, {"cand": "Jean Lassalle", "parti": "Résistons !", "famille": "Ruralité & Démocratie authentique", "mesure": "60 ans pour les agriculteurs, artisans et ouvriers ruraux, revalorisation pensions"}, {"cand": "Jean-Luc Mélenchon", "parti": "La France Insoumise (LFI)", "famille": "Gauche radicale & populaire", "mesure": "60 ans à taux plein pour 40 annuités, minimum vieillesse au SMIC pour tous"}, {"cand": "Laurent Wauquiez", "parti": "La Droite Républicaine (LR)", "famille": "Droite républicaine & régalienne", "mesure": "65 ans (effort nécessaire pour financer le modèle social et préserver la dette)"}, {"cand": "Marine Le Pen", "parti": "Rassemblement National (RN)", "famille": "Droite nationale & souverainiste", "mesure": "60 à 62 ans pour carrières longues (40 à 42 annuités), suppression réforme 64 ans"}, {"cand": "Marine Tondelier", "parti": "Les Écologistes (EELV)", "famille": "Écologie politique", "mesure": "Abrogation des 64 ans, retour à 60-62 ans avec prise en compte pénibilité environnementale"}, {"cand": "Nathalie Arthaud", "parti": "Lutte Ouvrière (LO)", "famille": "Extrême gauche ouvrière", "mesure": "60 ans maximum avec 37,5 annuités, financé à 100% sur les profits capitalistes"}, {"cand": "Nicolas Dupont-Aignan", "parti": "Debout la France (DLF)", "famille": "Gaullisme souverainiste", "mesure": "62 ans avec 40 annuités, annulation de la réforme Macron des 64 ans"}, {"cand": "Philippe Poutou", "parti": "Nouveau Parti Anticapitaliste (NPA)", "famille": "Extrême gauche anticapitaliste", "mesure": "55 à 60 ans à taux plein, 37,5 annuités, aucune pension inférieure à 2 000 €"}, {"cand": "Raphaël Glucksmann", "parti": "Place Publique", "famille": "Social-démocratie & Pro-européen", "mesure": "64 ans avec refonte pénibilité et égalité de carrière femmes-hommes"}, {"cand": "Édouard Philippe", "parti": "Horizons", "famille": "Centre-droit / Bloc central", "mesure": "67 ans progressif (seul moyen d'équilibrer les comptes sans baisser les pensions)"}, {"cand": "Éric Zemmour", "parti": "Reconquête !", "famille": "Droite identitaire & civilisationnelle", "mesure": "64-65 ans (nécessité démographique et contributive pour sauvegarder la France)"}]}, "salaire": {"label": "💶 Salaires, SMIC & Travail", "keywords": "salaire smic travail 35h 32h heures sup pouvoir achat", "rows": [{"cand": "David Lisnard", "parti": "Nouvelle Énergie", "famille": "Droite libérale & souveraine", "mesure": "Suppression des 35h (accords d'entreprise), défiscalisation totale des heures sup"}, {"cand": "Fabien Roussel", "parti": "Parti Communiste Français (PCF)", "famille": "Gauche républicaine & ouvrière", "mesure": "SMIC net à 1 800 €, conférence générale des salaires, salaire étudiant dès 18 ans"}, {"cand": "François Asselineau", "parti": "Union Populaire Républicaine (UPR)", "famille": "Souverainisme & Frexit juridique", "mesure": "Augmentation du salaire net par la baisse des cotisations salariales, smic revalorisé"}, {"cand": "François Bayrou", "parti": "Mouvement Démocrate (MoDem)", "famille": "Centre humaniste & démocrate", "mesure": "Désmicardisation, intéressement obligatoire dans toutes les entreprises"}, {"cand": "François Ruffin", "parti": "Picardie Debout ! / Debout !", "famille": "Gauche populaire & sociale", "mesure": "SMIC net à 1 600 €, revalorisation massive métiers du soin (auxiliaires, AESH)"}, {"cand": "Jean Lassalle", "parti": "Résistons !", "famille": "Ruralité & Démocratie authentique", "mesure": "Augmentation directe du salaire net des ouvriers et artisans des campagnes"}, {"cand": "Jean-Luc Mélenchon", "parti": "La France Insoumise (LFI)", "famille": "Gauche radicale & populaire", "mesure": "SMIC net à 1 600 €, blocage des prix des biens de première nécessité et énergie"}, {"cand": "Laurent Wauquiez", "parti": "La Droite Républicaine (LR)", "famille": "Droite républicaine & régalienne", "mesure": "Plafonnement des aides sociales à 70% SMIC, 15h d'activité obligatoire RSA"}, {"cand": "Marine Le Pen", "parti": "Rassemblement National (RN)", "famille": "Droite nationale & souverainiste", "mesure": "Hausse des salaires nets de 10% sans coût patronal (exonération cotisations)"}, {"cand": "Marine Tondelier", "parti": "Les Écologistes (EELV)", "famille": "Écologie politique", "mesure": "SMIC revalorisé, conférence salariale écologique, partage obligatoire de la valeur"}, {"cand": "Nathalie Arthaud", "parti": "Lutte Ouvrière (LO)", "famille": "Extrême gauche ouvrière", "mesure": "SMIC à 2 000 € net, interdiction totale des licenciements boursiers ou économiques"}, {"cand": "Nicolas Dupont-Aignan", "parti": "Debout la France (DLF)", "famille": "Gaullisme souverainiste", "mesure": "Hausse des salaires par suppression des cotisations patronales inutiles, patriotisme"}, {"cand": "Philippe Poutou", "parti": "Nouveau Parti Anticapitaliste (NPA)", "famille": "Extrême gauche anticapitaliste", "mesure": "Semaine de 30 heures, SMIC à 2 000 € net, interdiction des licenciements"}, {"cand": "Raphaël Glucksmann", "parti": "Place Publique", "famille": "Social-démocratie & Pro-européen", "mesure": "Conférence européenne des salaires, égalité salariale stricte sanctionnée"}, {"cand": "Édouard Philippe", "parti": "Horizons", "famille": "Centre-droit / Bloc central", "mesure": "Semaine de travail flexible, négociation collective décentralisée, participation"}, {"cand": "Éric Zemmour", "parti": "Reconquête !", "famille": "Droite identitaire & civilisationnelle", "mesure": "Baisse des charges salariales pour augmenter le pouvoir d'achat net des travailleurs"}]}, "impot": {"label": "🏠 Impôts Ménages, IR, TVA & ISF", "keywords": "impot fiscalite ir isf ifi tva succession heritage patrimoine", "rows": [{"cand": "David Lisnard", "parti": "Nouvelle Énergie", "famille": "Droite libérale & souveraine", "mesure": "Baisse de 20 Mds € d'impôts, suppression IFI, 0 droit succession en ligne directe"}, {"cand": "Fabien Roussel", "parti": "Parti Communiste Français (PCF)", "famille": "Gauche républicaine & ouvrière", "mesure": "Barème progressif renforcé, TVA 0% sur gaz, électricité et alimentation de base"}, {"cand": "François Asselineau", "parti": "Union Populaire Républicaine (UPR)", "famille": "Souverainisme & Frexit juridique", "mesure": "Baisse TVA première nécessité, rétablissement égalité républicaine devant l'impôt"}, {"cand": "François Bayrou", "parti": "Mouvement Démocrate (MoDem)", "famille": "Centre humaniste & démocrate", "mesure": "Stabilité fiscale globale, soutien aux classes moyennes par le quotient familial"}, {"cand": "François Ruffin", "parti": "Picardie Debout ! / Debout !", "famille": "Gauche populaire & sociale", "mesure": "ISF élargi au capital financier, impôt à taux marginal 75% sur les super-salaires"}, {"cand": "Jean Lassalle", "parti": "Résistons !", "famille": "Ruralité & Démocratie authentique", "mesure": "Suppression des taxes sur carburants pour déplacements ruraux indispensables"}, {"cand": "Jean-Luc Mélenchon", "parti": "La France Insoumise (LFI)", "famille": "Gauche radicale & populaire", "mesure": "14 tranches d'IR (taux max 90% > 400k€), ISF renforcé, plafonnement héritage à 12 M€"}, {"cand": "Laurent Wauquiez", "parti": "La Droite Républicaine (LR)", "famille": "Droite républicaine & régalienne", "mesure": "Défiscalisation heures sup, suppression impôt sur transmission familiale PME"}, {"cand": "Marine Le Pen", "parti": "Rassemblement National (RN)", "famille": "Droite nationale & souverainiste", "mesure": "TVA à 5,5% énergie/carburant, exonération totale IR pour les -30 ans, part fiscale 3e enf"}, {"cand": "Marine Tondelier", "parti": "Les Écologistes (EELV)", "famille": "Écologie politique", "mesure": "ISF climatique ciblant les patrimoines très carbonés (+15 Mds €), IR progressif"}, {"cand": "Nathalie Arthaud", "parti": "Lutte Ouvrière (LO)", "famille": "Extrême gauche ouvrière", "mesure": "Suppression des impôts indirects (TVA) pesant sur les classes laborieuses"}, {"cand": "Nicolas Dupont-Aignan", "parti": "Debout la France (DLF)", "famille": "Gaullisme souverainiste", "mesure": "Baisse TVA carburants à 5,5%, suppression taxe foncière résidence principale modeste"}, {"cand": "Philippe Poutou", "parti": "Nouveau Parti Anticapitaliste (NPA)", "famille": "Extrême gauche anticapitaliste", "mesure": "Abolition de la TVA, impôt très fortement progressif sur les hauts patrimoines"}, {"cand": "Raphaël Glucksmann", "parti": "Place Publique", "famille": "Social-démocratie & Pro-européen", "mesure": "ISF vert européen, barème progressif de l'impôt sur le revenu harmonisé"}, {"cand": "Édouard Philippe", "parti": "Horizons", "famille": "Centre-droit / Bloc central", "mesure": "Stabilité fiscale absolue, allègements ciblés sur les classes moyennes actives"}, {"cand": "Éric Zemmour", "parti": "Reconquête !", "famille": "Droite identitaire & civilisationnelle", "mesure": "Suppression des droits de succession jusqu'à 1 million d'euros par enfant"}]}, "entreprise": {"label": "🏭 Entreprises, Production & Aides", "keywords": "entreprise production cvae c3s is dividende nationalisation pme", "rows": [{"cand": "David Lisnard", "parti": "Nouvelle Énergie", "famille": "Droite libérale & souveraine", "mesure": "Baisse de 45 Mds € d'impôts de production (fin C3S, baisse CFE), IS à 20%"}, {"cand": "Fabien Roussel", "parti": "Parti Communiste Français (PCF)", "famille": "Gauche républicaine & ouvrière", "mesure": "Prélèvement à la source des bénéfices financiers du CAC 40, nationalisation EDF/Total"}, {"cand": "François Asselineau", "parti": "Union Populaire Républicaine (UPR)", "famille": "Souverainisme & Frexit juridique", "mesure": "Nationalisation autoroutes, TF1, banques systémiques, baisse charges PME"}, {"cand": "François Bayrou", "parti": "Mouvement Démocrate (MoDem)", "famille": "Centre humaniste & démocrate", "mesure": "Baisse continue impôts de production, pacte d'investissement technologique"}, {"cand": "François Ruffin", "parti": "Picardie Debout ! / Debout !", "famille": "Gauche populaire & sociale", "mesure": "Taxation des dividendes records, conditionnalité stricte des aides publiques"}, {"cand": "Jean Lassalle", "parti": "Résistons !", "famille": "Ruralité & Démocratie authentique", "mesure": "Exonération fiscale totale des artisans et commerçants s'installant en village"}, {"cand": "Jean-Luc Mélenchon", "parti": "La France Insoumise (LFI)", "famille": "Gauche radicale & populaire", "mesure": "Taxe superprofits, taux réel d'IS à 33%, suppression totale du CICE"}, {"cand": "Laurent Wauquiez", "parti": "La Droite Républicaine (LR)", "famille": "Droite républicaine & régalienne", "mesure": "Baisse de 40 Mds € d'impôts sur la production pour doper la compétitivité"}, {"cand": "Marine Le Pen", "parti": "Rassemblement National (RN)", "famille": "Droite nationale & souverainiste", "mesure": "Suppression C3S, baisse IFI transformé en IFF (impôt fortune financière)"}, {"cand": "Marine Tondelier", "parti": "Les Écologistes (EELV)", "famille": "Écologie politique", "mesure": "Conditionnalité verte stricte des aides publiques, fin des niches fiscales brunes"}, {"cand": "Nathalie Arthaud", "parti": "Lutte Ouvrière (LO)", "famille": "Extrême gauche ouvrière", "mesure": "Réquisition des profits privés, expropriation sans indemnité des grands actionnaires"}, {"cand": "Nicolas Dupont-Aignan", "parti": "Debout la France (DLF)", "famille": "Gaullisme souverainiste", "mesure": "Nationalisation des autoroutes concédées (-20% péages), baisse impôts PME françaises"}, {"cand": "Philippe Poutou", "parti": "Nouveau Parti Anticapitaliste (NPA)", "famille": "Extrême gauche anticapitaliste", "mesure": "Expropriation et socialisation du secteur bancaire, pharmaceutique et énergétique"}, {"cand": "Raphaël Glucksmann", "parti": "Place Publique", "famille": "Social-démocratie & Pro-européen", "mesure": "Buy European Act pour marchés publics, taxe carbone aux frontières de l'Europe"}, {"cand": "Édouard Philippe", "parti": "Horizons", "famille": "Centre-droit / Bloc central", "mesure": "Suppression de la C3S, sanctuarisation du CIR et du taux d'IS à 25%"}, {"cand": "Éric Zemmour", "parti": "Reconquête !", "famille": "Droite identitaire & civilisationnelle", "mesure": "Baisse de 30 Mds € d'impôts de production, suppression de la C3S et baisse CFE"}]}, "energie": {"label": "⚡ Énergie, Nucléaire & Climat", "keywords": "energie nucleaire epr renouvelable eolien climat ecologie sncf", "rows": [{"cand": "David Lisnard", "parti": "Nouvelle Énergie", "famille": "Droite libérale & souveraine", "mesure": "Mix 70% nucléaire (14 nouveaux EPR), dérégulation, écologie incitative de marché"}, {"cand": "Fabien Roussel", "parti": "Parti Communiste Français (PCF)", "famille": "Gauche républicaine & ouvrière", "mesure": "Mix souverain 100% décarboné fondé sur 14 nouveaux EPR et l'hydroélectricité"}, {"cand": "François Asselineau", "parti": "Union Populaire Républicaine (UPR)", "famille": "Souverainisme & Frexit juridique", "mesure": "Nucléaire nationalisé (EDF), sortie des directives européennes de concurrence énergie"}, {"cand": "François Bayrou", "parti": "Mouvement Démocrate (MoDem)", "famille": "Centre humaniste & démocrate", "mesure": "Nucléaire EPR + solaire et hydraulique, indépendance énergétique européenne"}, {"cand": "François Ruffin", "parti": "Picardie Debout ! / Debout !", "famille": "Gauche populaire & sociale", "mesure": "Plan isolation thermique intégrale des logements, train gratuit jeunes, nucléaire encadré"}, {"cand": "Jean Lassalle", "parti": "Résistons !", "famille": "Ruralité & Démocratie authentique", "mesure": "Maintien du nucléaire, refus des méga-parcs éoliens défigurant les paysages ruraux"}, {"cand": "Jean-Luc Mélenchon", "parti": "La France Insoumise (LFI)", "famille": "Gauche radicale & populaire", "mesure": "100% renouvelable d'ici 2050, sortie programmée du nucléaire, gratuité premiers m3 d'eau"}, {"cand": "Laurent Wauquiez", "parti": "La Droite Républicaine (LR)", "famille": "Droite républicaine & régalienne", "mesure": "Nucléaire relancé massivement, opposition ferme aux éoliennes terrestres"}, {"cand": "Marine Le Pen", "parti": "Rassemblement National (RN)", "famille": "Droite nationale & souverainiste", "mesure": "Grand plan nucléaire civil, arrêt des subventions aux éoliennes et démantèlement"}, {"cand": "Marine Tondelier", "parti": "Les Écologistes (EELV)", "famille": "Écologie politique", "mesure": "100 Mds € plan rail, sortie programmée du nucléaire civil, développement solaire citoyen"}, {"cand": "Nathalie Arthaud", "parti": "Lutte Ouvrière (LO)", "famille": "Extrême gauche ouvrière", "mesure": "Contrôle ouvrier sur les géants de l'énergie (Total, EDF), gratuité des besoins vitaux"}, {"cand": "Nicolas Dupont-Aignan", "parti": "Debout la France (DLF)", "famille": "Gaullisme souverainiste", "mesure": "Nucléaire 100% public, sortie du marché européen de l'électricité, hydrogène"}, {"cand": "Philippe Poutou", "parti": "Nouveau Parti Anticapitaliste (NPA)", "famille": "Extrême gauche anticapitaliste", "mesure": "Sortie immédiate du nucléaire et des énergies fossiles, 100% énergies citoyennes"}, {"cand": "Raphaël Glucksmann", "parti": "Place Publique", "famille": "Social-démocratie & Pro-européen", "mesure": "Plan Marshall européen pour les renouvelables et le rail, mix décarboné"}, {"cand": "Édouard Philippe", "parti": "Horizons", "famille": "Centre-droit / Bloc central", "mesure": "Nucléaire socle (EPR 2) + accélération renouvelables solaires et éolien offshore"}, {"cand": "Éric Zemmour", "parti": "Reconquête !", "famille": "Droite identitaire & civilisationnelle", "mesure": "Nucléaire massif (14 EPR), suppression des subventions aux éoliennes, souveraineté"}]}, "immigration": {"label": "🛂 Immigration, Frontières & Asile", "keywords": "immigration frontiere asile oqtf ame droit du sol quotas", "rows": [{"cand": "David Lisnard", "parti": "Nouvelle Énergie", "famille": "Droite libérale & souveraine", "mesure": "Quotas stricts votés au Parlement, suppression AME, carence de 5 ans aides sociales"}, {"cand": "Fabien Roussel", "parti": "Parti Communiste Français (PCF)", "famille": "Gauche républicaine & ouvrière", "mesure": "Régularisation des travailleurs de l'ombre, co-développement solidaire international"}, {"cand": "François Asselineau", "parti": "Union Populaire Républicaine (UPR)", "famille": "Souverainisme & Frexit juridique", "mesure": "Rétablissement des frontières nationales douanières et policières, souveraineté totale"}, {"cand": "François Bayrou", "parti": "Mouvement Démocrate (MoDem)", "famille": "Centre humaniste & démocrate", "mesure": "Maîtrise européenne des frontières (Frontex armé), intégration républicaine exigeante"}, {"cand": "François Ruffin", "parti": "Picardie Debout ! / Debout !", "famille": "Gauche populaire & sociale", "mesure": "Accueil décent, régularisation des travailleurs de l'ombre, lutte contre le dumping"}, {"cand": "Jean Lassalle", "parti": "Résistons !", "famille": "Ruralité & Démocratie authentique", "mesure": "Arrêt de l'immigration incontrôlée, intégration par l'école rurale et le travail"}, {"cand": "Jean-Luc Mélenchon", "parti": "La France Insoumise (LFI)", "famille": "Gauche radicale & populaire", "mesure": "Régularisation globale sans-papiers, fermeture CRA, citoyenneté universelle, AME"}, {"cand": "Laurent Wauquiez", "parti": "La Droite Républicaine (LR)", "famille": "Droite républicaine & régalienne", "mesure": "Carence de 5 ans pour aides sociales, quotas stricts, expulsion délinquants"}, {"cand": "Marine Le Pen", "parti": "Rassemblement National (RN)", "famille": "Droite nationale & souverainiste", "mesure": "Référendum priorité nationale, suppression droit du sol, fin AME remplacée par AMU"}, {"cand": "Marine Tondelier", "parti": "Les Écologistes (EELV)", "famille": "Écologie politique", "mesure": "Accueil digne et solidaire, droit au travail immédiat des demandeurs d'asile, AME"}, {"cand": "Nathalie Arthaud", "parti": "Lutte Ouvrière (LO)", "famille": "Extrême gauche ouvrière", "mesure": "Ouverture des frontières, égalité absolue de tous les travailleurs français et étrangers"}, {"cand": "Nicolas Dupont-Aignan", "parti": "Debout la France (DLF)", "famille": "Gaullisme souverainiste", "mesure": "Contrôle strict des frontières nationales, suppression de l'AME, expulsion OQTF"}, {"cand": "Philippe Poutou", "parti": "Nouveau Parti Anticapitaliste (NPA)", "famille": "Extrême gauche anticapitaliste", "mesure": "Liberté totale de circulation et d'installation, fermeture de tous les CRA"}, {"cand": "Raphaël Glucksmann", "parti": "Place Publique", "famille": "Social-démocratie & Pro-européen", "mesure": "Pacte asile et migration européen solidaire, accueil digne, voies légales d'entrée"}, {"cand": "Édouard Philippe", "parti": "Horizons", "famille": "Centre-droit / Bloc central", "mesure": "Loi annuelle sur les quotas d'immigration économique, durcissement des OQTF"}, {"cand": "Éric Zemmour", "parti": "Reconquête !", "famille": "Droite identitaire & civilisationnelle", "mesure": "Immigration zéro, remigration des clandestins/délinquants, suppression droit du sol"}]}, "securite": {"label": "🛡️ Police, Justice & Prisons", "keywords": "securite police justice prison peine mineur gendarmerie", "rows": [{"cand": "David Lisnard", "parti": "Nouvelle Énergie", "famille": "Droite libérale & souveraine", "mesure": "LPM à 2,5% PIB, 15 000 places de prison, décentralisation police municipale armée"}, {"cand": "Fabien Roussel", "parti": "Parti Communiste Français (PCF)", "famille": "Gauche républicaine & ouvrière", "mesure": "Rétablissement police de proximité armée, justice réarmée, sortie de l'OTAN"}, {"cand": "François Asselineau", "parti": "Union Populaire Républicaine (UPR)", "famille": "Souverainisme & Frexit juridique", "mesure": "Sortie unilatérale de l'OTAN, réarmement dissuasion nucléaire, Banque de France souveraine"}, {"cand": "François Bayrou", "parti": "Mouvement Démocrate (MoDem)", "famille": "Centre humaniste & démocrate", "mesure": "Programmation militaire respectée, justice dotée de moyens numériques modernes"}, {"cand": "François Ruffin", "parti": "Picardie Debout ! / Debout !", "famille": "Gauche populaire & sociale", "mesure": "Police du quotidien républicaine, justice civile et prud'homale réarmée"}, {"cand": "Jean Lassalle", "parti": "Résistons !", "famille": "Ruralité & Démocratie authentique", "mesure": "Réouverture des gendarmeries de canton, défense de la chasse traditionnelle et de la forêt"}, {"cand": "Jean-Luc Mélenchon", "parti": "La France Insoumise (LFI)", "famille": "Gauche radicale & populaire", "mesure": "Sortie de l'OTAN, dissolution BRAV-M, police de proximité désarmée, justice +3 Mds"}, {"cand": "Laurent Wauquiez", "parti": "La Droite Républicaine (LR)", "famille": "Droite républicaine & régalienne", "mesure": "Réarmement police/gendarmerie, prisons régionales sécurisées, fermeté justice"}, {"cand": "Marine Le Pen", "parti": "Rassemblement National (RN)", "famille": "Droite nationale & souverainiste", "mesure": "20 000 places de prison, perpétuité réelle incompressible, soutien total FDO"}, {"cand": "Marine Tondelier", "parti": "Les Écologistes (EELV)", "famille": "Écologie politique", "mesure": "Police de proximité apaisée, fin des LBD et armes mutilantes, justice environnementale"}, {"cand": "Nathalie Arthaud", "parti": "Lutte Ouvrière (LO)", "famille": "Extrême gauche ouvrière", "mesure": "Désarmement des forces de répression étatiques, pouvoir aux comités de travailleurs"}, {"cand": "Nicolas Dupont-Aignan", "parti": "Debout la France (DLF)", "famille": "Gaullisme souverainiste", "mesure": "Sortie des traités européens néolibéraux, réarmement LPM à 2,5% PIB, double monnaie"}, {"cand": "Philippe Poutou", "parti": "Nouveau Parti Anticapitaliste (NPA)", "famille": "Extrême gauche anticapitaliste", "mesure": "Désarmement et dissolution de la police nationale militarisée, auto-organisation"}, {"cand": "Raphaël Glucksmann", "parti": "Place Publique", "famille": "Social-démocratie & Pro-européen", "mesure": "Défense européenne intégrée, soutien total armé à l'Ukraine, LPM consolidée"}, {"cand": "Édouard Philippe", "parti": "Horizons", "famille": "Centre-droit / Bloc central", "mesure": "Respect strict de la LPM (2% puis 2,2% PIB), poursuite du plan 15 000 places de prison"}, {"cand": "Éric Zemmour", "parti": "Reconquête !", "famille": "Droite identitaire & civilisationnelle", "mesure": "15 000 places de prison, expulsion automatique des étrangers condamnés, peines dures"}]}, "institution": {"label": "🏛️ Institutions, RIC & État", "keywords": "institution ric referendum proportionnelle 6e republique fonctionnaire decentralisation", "rows": [{"cand": "David Lisnard", "parti": "Nouvelle Énergie", "famille": "Droite libérale & souveraine", "mesure": "Fin de la bureaucratie, non-remplacement de 500k fonctionnaires, autonomie des maires"}, {"cand": "Fabien Roussel", "parti": "Parti Communiste Français (PCF)", "famille": "Gauche républicaine & ouvrière", "mesure": "République démocratique, retour du contrôle public sur les banques et secteurs stratégiques"}, {"cand": "François Asselineau", "parti": "Union Populaire Républicaine (UPR)", "famille": "Souverainisme & Frexit juridique", "mesure": "Frexit juridique par l'article 50, respect scrupuleux de la Constitution de 1958"}, {"cand": "François Bayrou", "parti": "Mouvement Démocrate (MoDem)", "famille": "Centre humaniste & démocrate", "mesure": "Règle d'or budgétaire constitutionnelle, proportionnelle aux législatives, Plan d'État"}, {"cand": "François Ruffin", "parti": "Picardie Debout ! / Debout !", "famille": "Gauche populaire & sociale", "mesure": "RIC, fin de la monarchie présidentielle, statut protecteur des lanceurs d'alerte"}, {"cand": "Jean Lassalle", "parti": "Résistons !", "famille": "Ruralité & Démocratie authentique", "mesure": "Démocratie directe communale, référendums locaux contraignants, rôle clé des maires"}, {"cand": "Jean-Luc Mélenchon", "parti": "La France Insoumise (LFI)", "famille": "Gauche radicale & populaire", "mesure": "Assemblée constituante pour la VIe République, référendum d'initiative citoyenne (RIC)"}, {"cand": "Laurent Wauquiez", "parti": "La Droite Républicaine (LR)", "famille": "Droite républicaine & régalienne", "mesure": "Non-remplacement de fonctionnaires administratifs, autonomie des Régions de droite"}, {"cand": "Marine Le Pen", "parti": "Rassemblement National (RN)", "famille": "Droite nationale & souverainiste", "mesure": "Référendum d'initiative populaire régulier, révision constitutionnelle souveraineté"}, {"cand": "Marine Tondelier", "parti": "Les Écologistes (EELV)", "famille": "Écologie politique", "mesure": "Démocratie continue, proportionnelle intégrale, droit de veto écologique citoyen"}, {"cand": "Nathalie Arthaud", "parti": "Lutte Ouvrière (LO)", "famille": "Extrême gauche ouvrière", "mesure": "Démocratie ouvrière directe, abolition du pouvoir présidentiel monarchique"}, {"cand": "Nicolas Dupont-Aignan", "parti": "Debout la France (DLF)", "famille": "Gaullisme souverainiste", "mesure": "Référendum d'initiative citoyenne, respect de la Constitution gaullienne de 1958"}, {"cand": "Philippe Poutou", "parti": "Nouveau Parti Anticapitaliste (NPA)", "famille": "Extrême gauche anticapitaliste", "mesure": "Abolition de la Ve République et du présidentialisme, pouvoir populaire à la base"}, {"cand": "Raphaël Glucksmann", "parti": "Place Publique", "famille": "Social-démocratie & Pro-européen", "mesure": "Démocratie parlementaire active, contrôle des lobbies, transparence absolue"}, {"cand": "Édouard Philippe", "parti": "Horizons", "famille": "Centre-droit / Bloc central", "mesure": "Débureaucratisation, contrat de stabilité financière État-Collectivités sur 5 ans"}, {"cand": "Éric Zemmour", "parti": "Reconquête !", "famille": "Droite identitaire & civilisationnelle", "mesure": "Suppression des aides sociales aux étrangers extra-européens (-20 Mds €), Ve restaurée"}]}, "sante": {"label": "🏥 Santé, Hôpital & Grand Âge", "keywords": "sante hopital medecin desert medical ehpad secu ondam", "rows": [{"cand": "David Lisnard", "parti": "Nouvelle Énergie", "famille": "Droite libérale & souveraine", "mesure": "Débureaucratisation hospitalière (1/3 temps admin supprimé), incitations fiscales déserts médicaux, assurance santé universelle responsabilisante"}, {"cand": "Fabien Roussel", "parti": "Parti Communiste Français (PCF)", "famille": "Gauche républicaine & ouvrière", "mesure": "100% Sécu intégral, suppression des dépassements d'honoraires, +100 000 soignants hospitaliers, pôle public du médicament"}, {"cand": "François Asselineau", "parti": "Union Populaire Républicaine (UPR)", "famille": "Souverainisme & Frexit juridique", "mesure": "Sortie des critères d'austérité européens sur l'hôpital, relocalisation stratégique des principes actifs pharmaceutiques"}, {"cand": "François Bayrou", "parti": "Mouvement Démocrate (MoDem)", "famille": "Centre humaniste & démocrate", "mesure": "Maisons de santé pluriprofessionnelles dans chaque canton, loi Grand Âge financée par la solidarité nationale"}, {"cand": "François Ruffin", "parti": "Picardie Debout ! / Debout !", "famille": "Gauche populaire & sociale", "mesure": "Revalorisation salariale massive des aides-soignantes, infirmières et auxiliaires de vie (EHPAD), fin de la tarification à l'acte (T2A)"}, {"cand": "Jean Lassalle", "parti": "Résistons !", "famille": "Ruralité & Démocratie authentique", "mesure": "Obligation d'exercice de 3 ans en zone rurale pour les jeunes médecins diplômés, maintien de toutes les maternités et urgences de proximité"}, {"cand": "Jean-Luc Mélenchon", "parti": "La France Insoumise (LFI)", "famille": "Gauche radicale & populaire", "mesure": "Remboursement à 100% par la Sécurité sociale, conventionnement sélectif des médecins, +100 000 recrutements hospitaliers et EHPAD 100% publics"}, {"cand": "Laurent Wauquiez", "parti": "La Droite Républicaine (LR)", "famille": "Droite républicaine & régalienne", "mesure": "Lutte implacable contre la fraude à la carte Vitale (carte biométrique), suppression de l'AME, revalorisation des gardes médicales en régions"}, {"cand": "Marine Le Pen", "parti": "Rassemblement National (RN)", "famille": "Droite nationale & souverainiste", "mesure": "Transformation de l'AME en aide d'urgence vitale, cumul emploi-retraite défiscalisé pour médecins en déserts médicaux, +20 Mds € sur 5 ans pour l'hôpital"}, {"cand": "Marine Tondelier", "parti": "Les Écologistes (EELV)", "famille": "Écologie politique", "mesure": "Santé environnementale (interdiction PFAS et pesticides), régulation de l'installation des médecins, plan d'urgence psychiatrie et hôpital public"}, {"cand": "Nathalie Arthaud", "parti": "Lutte Ouvrière (LO)", "famille": "Extrême gauche ouvrière", "mesure": "Expropriation des grands groupes pharmaceutiques et cliniques privées lucratives, embauche massive immédiate dans les hôpitaux et EHPAD"}, {"cand": "Nicolas Dupont-Aignan", "parti": "Debout la France (DLF)", "famille": "Gaullisme souverainiste", "mesure": "Fin des fermetures de lits d'hôpitaux, suppression des ARS bureaucratiques au profit des médecins chefs de service, souveraineté du médicament"}, {"cand": "Philippe Poutou", "parti": "Nouveau Parti Anticapitaliste (NPA)", "famille": "Extrême gauche anticapitaliste", "mesure": "Socialisation intégrale du secteur pharmaceutique et des EHPAD privés (type Orpea), gratuité totale des soins, recrutement de 200 000 soignants"}, {"cand": "Raphaël Glucksmann", "parti": "Place Publique", "famille": "Social-démocratie & Pro-européen", "mesure": "Investissement massif dans la prévention, la santé mentale des jeunes et le 5e risque Dépendance, régulation incitative et solidaire des déserts médicaux"}, {"cand": "Édouard Philippe", "parti": "Horizons", "famille": "Centre-droit / Bloc central", "mesure": "Délégation d'actes accrue aux infirmiers et pharmaciens, télémédecine assistée, autonomie de gestion des chefs de pôle hospitaliers, maîtrise ONDAM"}, {"cand": "Éric Zemmour", "parti": "Reconquête !", "famille": "Droite identitaire & civilisationnelle", "mesure": "Suppression totale de l'AME, carte Vitale biométrique, défiscalisation complète des médecins retraités reprenant du service dans les campagnes"}]}, "education": {"label": "🎓 Éducation, École & Recherche", "keywords": "education ecole enseignant college parcoursup universite recherche uniforme", "rows": [{"cand": "David Lisnard", "parti": "Nouvelle Énergie", "famille": "Droite libérale & souveraine", "mesure": "Autonomie des chefs d'établissement (recrutement, primes), priorité absolue lire-écrire-compter au primaire, uniforme, fin du collège unique rigide"}, {"cand": "Fabien Roussel", "parti": "Parti Communiste Français (PCF)", "famille": "Gauche républicaine & ouvrière", "mesure": "Recrutement de 60 000 enseignants, maximum 20 élèves par classe, suppression de Parcoursup, allocation d'autonomie étudiante universelle"}, {"cand": "François Asselineau", "parti": "Union Populaire Républicaine (UPR)", "famille": "Souverainisme & Frexit juridique", "mesure": "Restauration des programmes nationaux exigeants (français, histoire, mathématiques), sortie du processus de Bologne, défense de la langue française"}, {"cand": "François Bayrou", "parti": "Mouvement Démocrate (MoDem)", "famille": "Centre humaniste & démocrate", "mesure": "Priorité absolue à la maîtrise de la lecture et de l'écriture dès le CP, revalorisation du métier d'enseignant, soutien à la recherche fondamentale"}, {"cand": "François Ruffin", "parti": "Picardie Debout ! / Debout !", "famille": "Gauche populaire & sociale", "mesure": "Titularisation et salaire décent à temps plein pour les 130 000 AESH (accompagnants d'élèves handicapés), rénovation thermique des écoles, mixité sociale"}, {"cand": "Jean Lassalle", "parti": "Résistons !", "famille": "Ruralité & Démocratie authentique", "mesure": "Interdiction de fermer toute classe d'école rurale, revalorisation des filières professionnelles, artisanales et agricoles dès le collège"}, {"cand": "Jean-Luc Mélenchon", "parti": "La France Insoumise (LFI)", "famille": "Gauche radicale & populaire", "mesure": "Scolarité obligatoire de 3 à 18 ans 100% gratuite (cantine, fournitures), abrogation de Parcoursup, garantie d'autonomie jeunes à 1 150 €/mois"}, {"cand": "Laurent Wauquiez", "parti": "La Droite Républicaine (LR)", "famille": "Droite républicaine & régalienne", "mesure": "Examen d'entrée en 6e, port de l'uniforme, suspension des allocations familiales en cas d'absentéisme ou d'atteinte à la laïcité, filières d'excellence"}, {"cand": "Marine Le Pen", "parti": "Rassemblement National (RN)", "famille": "Droite nationale & souverainiste", "mesure": "50% du temps au primaire consacré au français et aux maths, uniforme à l'école primaire et au collège, suppression de Parcoursup au profit d'orientation par filière"}, {"cand": "Marine Tondelier", "parti": "Les Écologistes (EELV)", "famille": "Écologie politique", "mesure": "Éducation à l'écologie et au vivant, cantines 100% bio et locales gratuites pour les modestes, baisse des effectifs par classe, revenu étudiant"}, {"cand": "Nathalie Arthaud", "parti": "Lutte Ouvrière (LO)", "famille": "Extrême gauche ouvrière", "mesure": "Dédoublement généralisé des classes dans les quartiers populaires, arrêt des subventions à l'enseignement privé, salaire étudiant"}, {"cand": "Nicolas Dupont-Aignan", "parti": "Debout la France (DLF)", "famille": "Gaullisme souverainiste", "mesure": "Retour au certificat d'études primaires, restauration de l'autorité du maître, apprentissage dès 14 ans revalorisé, méritocratie républicaine"}, {"cand": "Philippe Poutou", "parti": "Nouveau Parti Anticapitaliste (NPA)", "famille": "Extrême gauche anticapitaliste", "mesure": "Nationalisation de l'enseignement privé sous contrat dans un service public unique laïque, gratuité totale des études et salaire étudiant"}, {"cand": "Raphaël Glucksmann", "parti": "Place Publique", "famille": "Social-démocratie & Pro-européen", "mesure": "Investissement massif dans l'école maternelle et primaire, mixité sociale dans le privé sous contrat, objectif 3% du PIB pour la Recherche (ESR)"}, {"cand": "Édouard Philippe", "parti": "Horizons", "famille": "Centre-droit / Bloc central", "mesure": "Révolution du primaire (dédoublements ciblés, évaluation nationale), autonomie accrue des recteurs et directeurs d'école, pôles universitaires d'excellence IA"}, {"cand": "Éric Zemmour", "parti": "Reconquête !", "famille": "Droite identitaire & civilisationnelle", "mesure": "Suppression du collège unique, retour au certificat d'études, uniforme obligatoire, fin du pédagogisme, enseignement chronologique de l'Histoire de France"}]}, "europe": {"label": "🌍 Europe, Défense & OTAN", "keywords": "europe ue frexit defense armee otan ukraine lpm souverainete", "rows": [{"cand": "David Lisnard", "parti": "Nouvelle Énergie", "famille": "Droite libérale & souveraine", "mesure": "Budget Défense porté vers 3% du PIB (2e porte-avions, dissuasion sanctuarisée), Europe des nations souveraines, primauté constitutionnelle sur les sujets régaliens"}, {"cand": "Fabien Roussel", "parti": "Parti Communiste Français (PCF)", "famille": "Gauche républicaine & ouvrière", "mesure": "Non-alignement diplomatique, sortie du commandement intégré de l'OTAN, maintien de la dissuasion nucléaire souveraine, désobéissance aux traités d'austérité UE"}, {"cand": "François Asselineau", "parti": "Union Populaire Républicaine (UPR)", "famille": "Souverainisme & Frexit juridique", "mesure": "Frexit intégral par l'article 50 du TUE, sortie de l'euro et de l'OTAN, indépendance diplomatique et militaire totale selon la doctrine gaullienne"}, {"cand": "François Bayrou", "parti": "Mouvement Démocrate (MoDem)", "famille": "Centre humaniste & démocrate", "mesure": "Pilier européen de la défense au sein de l'Alliance atlantique, solidarité stratégique européenne, respect de la Loi de Programmation Militaire (LPM)"}, {"cand": "François Ruffin", "parti": "Picardie Debout ! / Debout !", "famille": "Gauche populaire & sociale", "mesure": "Protectionnisme écologique et social aux frontières françaises et européennes, refus du libre-échange (Mercosur), diplomatie de paix"}, {"cand": "Jean Lassalle", "parti": "Résistons !", "famille": "Ruralité & Démocratie authentique", "mesure": "Refus absolu des traités de libre-échange (Mercosur, CETA) sacrifiant l'agriculture française, armée de réserve territoriale, non-alignement"}, {"cand": "Jean-Luc Mélenchon", "parti": "La France Insoumise (LFI)", "famille": "Gauche radicale & populaire", "mesure": "Retrait immédiat de l'OTAN, diplomatie non-alignée et altermondialiste, plan B de désobéissance aux traités européens (pacte budgétaire, concurrence)"}, {"cand": "Laurent Wauquiez", "parti": "La Droite Républicaine (LR)", "famille": "Droite républicaine & régalienne", "mesure": "Renforcement de la LPM (>2,5% PIB), bouclier constitutionnel de souveraineté face à la CJUE et la CEDH sur l'immigration, arrêt des élargissements UE"}, {"cand": "Marine Le Pen", "parti": "Rassemblement National (RN)", "famille": "Droite nationale & souverainiste", "mesure": "Sortie du commandement militaire intégré de l'OTAN, Alliance européenne des Nations (fin de la Commission supranationale), budget Défense à 3% du PIB"}, {"cand": "Marine Tondelier", "parti": "Les Écologistes (EELV)", "famille": "Écologie politique", "mesure": "Fédéralisme européen écologique et démocratique, soutien ferme à l'Ukraine face à la Russie, cyberdéfense et arrêt des traités climaticides"}, {"cand": "Nathalie Arthaud", "parti": "Lutte Ouvrière (LO)", "famille": "Extrême gauche ouvrière", "mesure": "Opposition internationaliste à tous les budgets militaires et guerres impérialistes, reconversion des crédits d'armement vers les hôpitaux et écoles"}, {"cand": "Nicolas Dupont-Aignan", "parti": "Debout la France (DLF)", "famille": "Gaullisme souverainiste", "mesure": "Dénonciation des traités européens au profit d'une Europe des nations libres, sortie du commandement intégré de l'OTAN, budget Défense à 3% du PIB"}, {"cand": "Philippe Poutou", "parti": "Nouveau Parti Anticapitaliste (NPA)", "famille": "Extrême gauche anticapitaliste", "mesure": "Désarmement nucléaire unilatéral, sortie immédiate de l'OTAN, arrêt des exportations d'armes françaises, solidarité internationale des peuples"}, {"cand": "Raphaël Glucksmann", "parti": "Place Publique", "famille": "Social-démocratie & Pro-européen", "mesure": "Emprunt commun européen de 500 Mds € pour la Défense européenne, soutien militaire total à l'Ukraine, préférence industrielle européenne (Buy European Act)"}, {"cand": "Édouard Philippe", "parti": "Horizons", "famille": "Centre-droit / Bloc central", "mesure": "Effort de défense porté à 2,5 - 3% du PIB (haute intensité, drones, spatial), pilier européen fort dans l'OTAN, tandem franco-allemand renouvelé"}, {"cand": "Éric Zemmour", "parti": "Reconquête !", "famille": "Droite identitaire & civilisationnelle", "mesure": "Sortie du commandement intégré de l'OTAN, primauté absolue du droit national sur la CEDH et la CJUE, budget des Armées porté à 3% du PIB (70 Mds €/an)"}]}, "logement": {"label": "🏘️ Logement, Famille & Culture", "keywords": "logement zan dpe loyer hlm famille natalite culture", "rows": [{"cand": "David Lisnard", "parti": "Nouvelle Énergie", "famille": "Droite libérale & souveraine", "mesure": "Abrogation du ZAN (Zéro Artificialisation Nette) et refonte des interdictions DPE, choc d'offre foncière par les maires, rétablissement de l'universalité des allocations familiales"}, {"cand": "Fabien Roussel", "parti": "Parti Communiste Français (PCF)", "famille": "Gauche républicaine & ouvrière", "mesure": "Construction de 200 000 logements sociaux publics par an, encadrement national des loyers, 1% du budget de l'État sanctuarisé pour la création culturelle"}, {"cand": "François Asselineau", "parti": "Union Populaire Républicaine (UPR)", "famille": "Souverainisme & Frexit juridique", "mesure": "Sauvegarde du patrimoine historique communal, protection de la francophonie, arrêt des normes européennes DPE pénalisant les petits propriétaires"}, {"cand": "François Bayrou", "parti": "Mouvement Démocrate (MoDem)", "famille": "Centre humaniste & démocrate", "mesure": "Politique familiale universelle relancée pour enrayer l'hiver démographique, prêt à taux zéro élargi pour les primo-accédants"}, {"cand": "François Ruffin", "parti": "Picardie Debout ! / Debout !", "famille": "Gauche populaire & sociale", "mesure": "Plan massif de rénovation thermique prise en charge jusqu'à 100% pour les ménages modestes, encadrement strict des loyers et d'Airbnb"}, {"cand": "Jean Lassalle", "parti": "Résistons !", "famille": "Ruralité & Démocratie authentique", "mesure": "Abrogation immédiate de la loi ZAN qui interdit aux villages de construire, soutien à la rénovation du bâti ancien rural et aux fêtes patrimoniales"}, {"cand": "Jean-Luc Mélenchon", "parti": "La France Insoumise (LFI)", "famille": "Gauche radicale & populaire", "mesure": "Garantie universelle du logement, baisse de 10% et blocage des loyers, réquisition des logements vacants spéculatifs, 200 000 HLM/an, statut intermittent protégé"}, {"cand": "Laurent Wauquiez", "parti": "La Droite Républicaine (LR)", "famille": "Droite républicaine & régalienne", "mesure": "Fin du ZAN imposé aux maires, expulsion sous 48h des squatteurs et mauvais payeurs récidivistes, priorité aux travailleurs dans l'attribution des HLM"}, {"cand": "Marine Le Pen", "parti": "Rassemblement National (RN)", "famille": "Droite nationale & souverainiste", "mesure": "Prêt public à 0% de 100 000 € (remis au 3e enfant) pour les jeunes couples français, priorité nationale HLM, moratoire sur les interdictions de location DPE"}, {"cand": "Marine Tondelier", "parti": "Les Écologistes (EELV)", "famille": "Écologie politique", "mesure": "Application stricte du ZAN contre le bétonnage, 10 Mds €/an pour l'isolation thermique des passoires énergétiques, encadrement des loyers partout"}, {"cand": "Nathalie Arthaud", "parti": "Lutte Ouvrière (LO)", "famille": "Extrême gauche ouvrière", "mesure": "Interdiction absolue des expulsions locatives, réquisition du parc immobilier des grands groupes financiers et assureurs, plafonnement des loyers à 10% du salaire"}, {"cand": "Nicolas Dupont-Aignan", "parti": "Debout la France (DLF)", "famille": "Gaullisme souverainiste", "mesure": "Rétablissement intégral du quotient familial, prêt immobilier à taux zéro pour jeunes ménages, sauvegarde des églises et monuments des communes"}, {"cand": "Philippe Poutou", "parti": "Nouveau Parti Anticapitaliste (NPA)", "famille": "Extrême gauche anticapitaliste", "mesure": "Réquisition immédiate des logements vides, gratuité de l'énergie de base, service public du logement hors marché capitaliste"}, {"cand": "Raphaël Glucksmann", "parti": "Place Publique", "famille": "Social-démocratie & Pro-européen", "mesure": "Application rigoureuse de la loi SRU (25% de logements sociaux), congé parental bien rémunéré dès le 1er enfant, défense de l'audiovisuel public et de la culture"}, {"cand": "Édouard Philippe", "parti": "Horizons", "famille": "Centre-droit / Bloc central", "mesure": "Simplification drastique des normes de construction, réforme du statut du bailleur privé pour relancer le locatif, maintien du Pass Culture réformé"}, {"cand": "Éric Zemmour", "parti": "Reconquête !", "famille": "Droite identitaire & civilisationnelle", "mesure": "Prime de naissance de 10 000 € en ruralité, priorité nationale sur le logement social, abrogation des normes DPE punitives, défense du patrimoine historique"}]}};
+
+        function getInitials(name) {
+            const parts = name.split(/[\s-]+/).filter(Boolean);
+            if (parts.length >= 3) return (parts[0][0] + parts[1][0] + parts[parts.length - 1][0]).toUpperCase();
+            return parts.slice(0, 2).map(p => p[0].toUpperCase()).join('');
+        }
 
         function renderGrid(filtered) {
             const grid = document.getElementById('candsGrid');
@@ -710,11 +923,15 @@
                 const card = document.createElement('div');
                 card.className = "cand-card";
                 card.style.borderTop = `3px solid ${c.color}`;
+                const initials = getInitials(c.name);
                 card.innerHTML = `
                     <div class="cand-head">
-                        <div>
-                            <div class="cand-name">${c.name}</div>
-                            <div class="cand-party">${c.parti}</div>
+                        <div class="cand-identity">
+                            <div class="cand-avatar" style="background:${c.color};">${initials}</div>
+                            <div>
+                                <div class="cand-name">${c.name}</div>
+                                <div class="cand-party">${c.parti}</div>
+                            </div>
                         </div>
                         <span class="badge-parr badge-${c.parr_status}">${c.parr_label}</span>
                     </div>
@@ -733,43 +950,97 @@
                     </div>
 
                     <div class="cand-actions">
-                        <a href="${c.url_html}" class="btn-cand primary" target="_blank">Tableau Web</a>
-                        <a href="${c.url_xlsx}" class="btn-cand" download target="_blank">Excel Natif</a>
-                        <a href="${c.url_dir}" class="btn-cand" target="_blank">Dossier</a>
+                        <a href="${c.url_html}" class="btn-cand primary">Tableau Web</a>
+                        <a href="${c.url_xlsx}" class="btn-cand" download>Excel Natif</a>
+                        <a href="${c.url_dir}" class="btn-cand">Dossier</a>
                     </div>
                 `;
                 grid.appendChild(card);
             });
         }
 
-        // Dictionnaire de mots-clés thématiques pour la recherche instantanée
         const candidateKeywords = {
-            "David Lisnard": "retraite 65 ans baisse impots autonomie decentralisation libertes debureaucratisation dette nucleaire transmission regalien tva proportionnelle",
-            "Marine Le Pen": "retraite 60 ans carriere longue preference nationale immigration securite baisse tva energie nucleaire souverainete pouvoir achat frontieres",
-            "Édouard Philippe": "retraite 67 ans competitivite budget regalien dette dette publique autorite laicite ecologie de marche reforme de letat",
-            "Jean-Luc Mélenchon": "retraite 60 ans smic 1600 blocage prix 6e republique constituante isf climatique sortie otan bifurcation ecologique services publics",
-            "Raphaël Glucksmann": "defense europeenne soutien ukraine ecologie justice fiscale isf europeen rearmement vert social-democratie reindustrialisation",
-            "François Ruffin": "smic travail ouvriers reindustrialisation protectionnisme ecologique superprofits souverainete industrielle alimentation agriculture",
-            "Laurent Wauquiez": "travail valeur travail autorite baisse depenses publiques decentralisation nucleaire fermete immigration securite",
-            "Éric Zemmour": "immigration zero remigration assimilation baisse cotisations sociales transmission libre identite souverainisme",
-            "Fabien Roussel": "energie gratuite smic 2000 pouvoir achat nucleaire reindustrialisation droit au travail alimentation",
-            "Marine Tondelier": "climat ecologie fin du nucleaire transports gratuits justice sociale sortie des energies fossiles egalite femmes hommes",
-            "François Bayrou": "proportionnelle moralisation dette education moderation republicaine dialogue social",
-            "Nicolas Dupont-Aignan": "souverainete frexit ric energie gaullisme frontieres baisse taxes",
-            "Jean Lassalle": "ruralite terroirs souverainete des campagnes proximite liberte refus austerite",
+            "David Lisnard": "retraite 65 ans baisse impots autonomie decentralisation libertes debureaucratisation dette nucleaire transmission regalien tva proportionnelle ecole hopital zan logement defense 3% pib",
+            "Marine Le Pen": "retraite 60 ans carriere longue preference nationale immigration securite baisse tva energie nucleaire souverainete pouvoir achat frontieres natalisme hopital",
+            "Édouard Philippe": "retraite 67 ans competitivite budget regalien dette dette publique autorite laicite ecologie de marche reforme de letat ecole primaire defense",
+            "Jean-Luc Mélenchon": "retraite 60 ans smic 1600 blocage prix 6e republique constituante isf climatique sortie otan bifurcation ecologique services publics 100% secu loyers",
+            "Raphaël Glucksmann": "defense europeenne soutien ukraine ecologie justice fiscale isf europeen rearmement vert social-democratie reindustrialisation recherche ecole",
+            "François Ruffin": "smic travail ouvriers reindustrialisation protectionnisme ecologique superprofits souverainete industrielle alimentation agriculture aesh hopital",
+            "Laurent Wauquiez": "travail valeur travail autorite baisse depenses publiques decentralisation nucleaire fermete immigration securite rsa uniforme",
+            "Éric Zemmour": "immigration zero remigration assimilation baisse cotisations sociales transmission libre identite souverainisme certificat etudes",
+            "Fabien Roussel": "energie gratuite smic 1800 pouvoir achat nucleaire reindustrialisation droit au travail alimentation 100% secu logement social",
+            "Marine Tondelier": "climat ecologie fin du nucleaire transports gratuits justice sociale sortie des energies fossiles egalite femmes hommes isf climatique zan",
+            "François Bayrou": "proportionnelle moralisation dette education moderation republicaine dialogue social retraite par points",
+            "Nicolas Dupont-Aignan": "souverainete frexit ric energie gaullisme frontieres baisse taxes autoroutes",
+            "Jean Lassalle": "ruralite terroirs souverainete des campagnes proximite liberte refus austerite zan maternites",
             "François Asselineau": "frexit article 50 sortie ue sortie euro sortie otan souverainete nationale nationalisation",
-            "Philippe Poutou": "semaine 32h desarmer la police interdiction licenciements anticapitalisme expropriation banques partage des richesses",
-            "Nathalie Arthaud": "lutte des classes controle ouvrier expropriation indexation salaires revolutionnaire anticapitaliste"
+            "Philippe Poutou": "semaine 30h 32h desarmer la police interdiction licenciements anticapitalisme expropriation banques partage des richesses smic 2000",
+            "Nathalie Arthaud": "lutte des classes controle ouvrier expropriation indexation salaires revolutionnaire anticapitaliste smic 2000"
         };
 
         let currentStatusFilter = 'primary';
+        let activeTopicKey = null;
+
+        function selectTopicPill(topicKey, btnElem) {
+            document.querySelectorAll('.topic-pill').forEach(b => b.classList.remove('active'));
+            if (activeTopicKey === topicKey) {
+                closeThemeMatrix();
+                return;
+            }
+            activeTopicKey = topicKey;
+            if (btnElem) btnElem.classList.add('active');
+            renderThemeMatrix(topicKey);
+        }
+
+        function renderThemeMatrix(topicKey) {
+            const box = document.getElementById('themeMatrixBox');
+            const titleEl = document.getElementById('themeMatrixTitle');
+            const bodyEl = document.getElementById('themeMatrixBody');
+            const data = thematicMatrices[topicKey];
+            if (!data) {
+                box.style.display = 'none';
+                return;
+            }
+            titleEl.textContent = data.label;
+            bodyEl.innerHTML = data.rows.map(r => {
+                const cObj = cands.find(c => c.name === r.cand);
+                const urlDir = cObj ? cObj.url_dir : '#';
+                const color = cObj ? cObj.color : '#3b82f6';
+                return `<tr>
+                    <td><strong style="color:#fff; border-left:3px solid ${color}; padding-left:8px;">${r.cand}</strong></td>
+                    <td>${r.parti}</td>
+                    <td>${r.famille}</td>
+                    <td>${r.mesure}</td>
+                    <td><a href="${urlDir}" style="color:#60a5fa; font-weight:700; text-decoration:none;">Ouvrir →</a></td>
+                </tr>`;
+            }).join('');
+            box.style.display = 'block';
+        }
+
+        function closeThemeMatrix() {
+            activeTopicKey = null;
+            document.querySelectorAll('.topic-pill').forEach(b => b.classList.remove('active'));
+            document.getElementById('themeMatrixBox').style.display = 'none';
+        }
 
         function handleSearch() {
+            const q = (document.getElementById('candSearchInput').value || '').toLowerCase().trim();
+            if (q.length >= 3) {
+                for (const [tKey, tData] of Object.entries(thematicMatrices)) {
+                    if (tData.keywords.split(' ').some(w => w.length >= 3 && (q.includes(w) || w.includes(q)))) {
+                        renderThemeMatrix(tKey);
+                        break;
+                    }
+                }
+            } else if (!activeTopicKey) {
+                document.getElementById('themeMatrixBox').style.display = 'none';
+            }
             applyCombinedFilters();
         }
 
         function clearSearch() {
             document.getElementById('candSearchInput').value = '';
+            closeThemeMatrix();
             applyCombinedFilters();
         }
 
@@ -783,7 +1054,6 @@
         function applyCombinedFilters() {
             const query = (document.getElementById('candSearchInput') ? document.getElementById('candSearchInput').value : '').toLowerCase().trim();
 
-            // 1. Filtrage par statut de candidature
             let filtered = cands;
             let statusLabel = "";
 
@@ -797,30 +1067,29 @@
                 else if (currentStatusFilter === 'red') statusLabel = "candidats avec <300 parrainages";
             }
 
-            // 2. Filtrage par recherche textuelle multi-champs
             if (query.length > 0) {
                 filtered = filtered.filter(c => {
                     const name = (c.name || '').toLowerCase();
                     const parti = (c.parti || '').toLowerCase();
                     const famille = (c.famille || '').toLowerCase();
                     const orientation = (c.orientation || '').toLowerCase();
-                    const reason = (c.exclusion_reason || '').toLowerCase();
                     const kw = (candidateKeywords[c.name] || '').toLowerCase();
 
                     return name.includes(query) ||
                            parti.includes(query) ||
                            famille.includes(query) ||
                            orientation.includes(query) ||
-                           reason.includes(query) ||
                            kw.includes(query);
                 });
+                if (filtered.length === 0) {
+                    filtered = cands;
+                }
             }
 
-            // Mise à jour du compteur
             const countElem = document.getElementById('searchResultsCount');
             if (countElem) {
                 if (query.length > 0) {
-                    countElem.innerHTML = `Affichage : <strong>${filtered.length}</strong> profil(s) trouvé(s) pour la recherche « <em>${query}</em> » (${statusLabel})`;
+                    countElem.innerHTML = `Affichage : <strong>${filtered.length}</strong> profil(s) correspondant à « <em>${query}</em> » (${statusLabel})`;
                 } else {
                     countElem.innerHTML = `Affichage : <strong>${filtered.length}</strong> profil(s) (${statusLabel})`;
                 }
@@ -829,7 +1098,6 @@
             renderGrid(filtered);
         }
 
-        // Initialisation au chargement
         window.addEventListener('DOMContentLoaded', () => {
             applyCombinedFilters();
         });
