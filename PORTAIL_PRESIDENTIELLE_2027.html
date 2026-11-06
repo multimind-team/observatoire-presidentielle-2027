@@ -507,7 +507,7 @@
                 align-items: center;
                 justify-content: center;
             }
-        }
+
             /* KPI en 2 colonnes compactes sur mobile */
             .kpi-grid, .kpi-strip, .hero-stats {
                  display: grid !important;
@@ -638,53 +638,63 @@
             <!-- Injected via JS -->
         </div>
 
-        <!-- 2. OUTILS DE RECHERCHE ET FILTRES (APRES LA LISTE) -->
-                <div style="margin-top:36px; margin-bottom:16px; border-top:1px solid #334155; padding-top:24px;">
-            <div style="font-size:15px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
-                <span>🔍</span> Filtrer les Candidats & Comparer par Thème
+                <!-- 2. OUTILS DE RECHERCHE ET FILTRES (APRES LA LISTE) -->
+        <div style="margin-top:36px; margin-bottom:16px; border-top:1px solid #334155; padding-top:24px;">
+            <div style="font-size:16px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
+                <span>🔍</span> Filtrer les Candidats &amp; Comparer par Thème
             </div>
-            <p style="font-size:12.5px; color:#94a3b8; margin-top:2px;">
+            <p style="font-size:13px; color:#94a3b8; margin-top:4px;">
                 Affinez l'affichage de la grille ci-dessus par statut de parrainages, recherchez un mot-clé ou comparez instantanément leurs propositions.
             </p>
         </div>
 
-        <!-- Filtrage des Parrainages -->
-        <div class="filters-wrap" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px 16px; margin-bottom: 22px;">
-            <div style="font-size:11px; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">Filtres Parrainages (16 Candidats Déclarés) :</div>
-            <div class="filters-bar" style="background:transparent; border:none; padding:0; margin-bottom:0;">
-                <button class="filter-btn active" onclick="filterCands('primary')">🎯 Tous les 16 Candidats Déclarés</button>
-                <button class="filter-btn" onclick="filterCands('green')">🟢 500+ parrainages validés (7)</button>
-                <button class="filter-btn" onclick="filterCands('orange')">🟠 300-499 en bonne voie (5)</button>
-                <button class="filter-btn" onclick="filterCands('red')">🔴 &lt;300 en difficulté (4)</button>
-            </div>
-        </div>
-
-        <!-- Moteur de recherche et Comparateur Thématique -->
-        <!-- Moteur de recherche instantané + Comparateur Rapide par Thème -->
-        <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid #334155; border-radius: 12px; padding: 16px 20px; margin-bottom: 18px; display: flex; flex-direction: column; gap: 12px;">
+        <!-- Boîte Unifiée : Recherche + Filtres Parrainages + Comparateur Thématique -->
+        <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid #334155; border-radius: 14px; padding: 18px 20px; margin-bottom: 22px; display: flex; flex-direction: column; gap: 16px;">
+            <!-- Barre de recherche textuelle -->
             <div style="position: relative; width: 100%;">
                 <span style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 16px; color: var(--text-muted); pointer-events: none;">🔍</span>
                 <input type="text" id="candSearchInput" placeholder="Rechercher un candidat, un parti ou une mesure (ex: retraite, SMIC, nucléaire, TVA...)" oninput="handleSearch()" style="width: 100%; background: #1e293b; border: 1px solid #334155; color: #fff; padding: 11px 40px 11px 40px; border-radius: 8px; font-size: 14px; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#334155'">
                 <button type="button" id="candSearchClearBtn" onclick="clearSearch()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: #334155; border: none; color: #cbd5e1; width: 24px; height: 24px; border-radius: 50%; font-size: 12px; cursor: pointer; display: none; align-items: center; justify-content: center;" title="Effacer">✕</button>
             </div>
+
+            <!-- Filtres Parrainages (Ruban défilable au doigt) -->
             <div>
-                <div style="font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 8px;">⚡ Comparer instantanément les 16 candidats sur un thème clé :</div>
-                <div class="topic-pills" id="topicPillsBar">
-                    <button type="button" class="topic-pill" onclick="selectTopicPill('retraite', this)">👴 Retraites & Âge Légal</button>
-                    <button type="button" class="topic-pill" onclick="selectTopicPill('salaire', this)">💶 Salaires & SMIC</button>
-                    <button type="button" class="topic-pill" onclick="selectTopicPill('impot', this)">🏠 Impôts, TVA & ISF</button>
-                    <button type="button" class="topic-pill" onclick="selectTopicPill('entreprise', this)">🏭 Entreprises & Production</button>
-                    <button type="button" class="topic-pill" onclick="selectTopicPill('energie', this)">⚡ Nucléaire & Énergie</button>
-                    <button type="button" class="topic-pill" onclick="selectTopicPill('immigration', this)">🛂 Immigration & Frontières</button>
-                    <button type="button" class="topic-pill" onclick="selectTopicPill('securite', this)">🛡️ Police, Justice & Prisons</button>
-                    <button type="button" class="topic-pill" onclick="selectTopicPill('institution', this)">🏛️ Institutions & RIC</button>
-                    <button type="button" class="topic-pill" onclick="selectTopicPill('sante', this)">🏥 Santé & Hôpital</button>
-                    <button type="button" class="topic-pill" onclick="selectTopicPill('education', this)">🎓 Éducation & Recherche</button>
-                    <button type="button" class="topic-pill" onclick="selectTopicPill('europe', this)">🌍 Europe, Défense & OTAN</button>
-                    <button type="button" class="topic-pill" onclick="selectTopicPill('logement', this)">🏘️ Logement & Famille</button>
+                <div style="font-size: 11px; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;">
+                    <span>🎯 Filtrer par Parrainages (16 Candidats Déclarés) :</span>
+                    <span style="font-size: 10px; color: #64748b; font-weight: normal;">👉 Défiler horizontalement</span>
+                </div>
+                <div class="filters-bar" style="background: transparent; border: none; padding: 2px 0; margin-bottom: 0;">
+                    <button class="filter-btn active" onclick="filterCands('primary')">🎯 Tous les 16 Candidats Déclarés</button>
+                    <button class="filter-btn" onclick="filterCands('green')">🟢 500+ parrainages validés (7)</button>
+                    <button class="filter-btn" onclick="filterCands('orange')">🟠 300-499 en bonne voie (5)</button>
+                    <button class="filter-btn" onclick="filterCands('red')">🔴 &lt;300 en difficulté (4)</button>
                 </div>
             </div>
-            <div id="searchResultsCount"    style="font-size: 12px; color: var(--text-muted); font-weight: 600;">
+
+            <!-- Comparateur rapide par thème -->
+            <div>
+                <div style="font-size: 11px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;">
+                    <span>⚡ Comparer instantanément les 16 candidats sur un thème clé :</span>
+                    <span style="font-size: 10px; color: #64748b; font-weight: normal;">👉 Défiler horizontalement</span>
+                </div>
+                <div class="topic-pills" id="topicPillsBar" style="padding: 2px 0;">
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('retraite', this)">👴 Retraites &amp; Âge Légal</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('salaire', this)">💶 Salaires &amp; SMIC</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('impot', this)">🏠 Impôts, TVA &amp; ISF</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('entreprise', this)">🏭 Entreprises &amp; Production</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('energie', this)">⚡ Nucléaire &amp; Énergie</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('immigration', this)">🛂 Immigration &amp; Frontières</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('securite', this)">🛡️ Police, Justice &amp; Prisons</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('institution', this)">🏛️ Institutions &amp; RIC</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('sante', this)">🏥 Santé &amp; Hôpital</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('education', this)">🎓 Éducation &amp; Recherche</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('europe', this)">🌍 Europe, Défense &amp; OTAN</button>
+                    <button type="button" class="topic-pill" onclick="selectTopicPill('logement', this)">🏘️ Logement &amp; Famille</button>
+                </div>
+            </div>
+
+            <!-- Compteur dynamique -->
+            <div id="searchResultsCount" style="font-size: 12.5px; color: var(--text-muted); font-weight: 600; padding-top: 4px; border-top: 1px solid rgba(255,255,255,0.06);">
                 Affichage : 16 candidats déclarés en lice (par défaut)
             </div>
         </div>
@@ -705,22 +715,12 @@
                             <th>Candidat</th>
                             <th>Parti / Mouvement</th>
                             <th>Famille Politique</th>
-                            <th>Mesure Phare & Position Officielle</th>
+                            <th>Mesure Phare &amp; Position Officielle</th>
                             <th>Dossier</th>
                         </tr>
                     </thead>
                     <tbody id="themeMatrixBody"></tbody>
                 </table>
-            </div>
-        </div>
-
-                <div class="filters-wrap" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px 16px; margin-bottom: 22px;">
-            <div style="font-size:11px; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">Filtres Parrainages (16 Candidats Déclarés) :</div>
-            <div class="filters-bar" style="background:transparent; border:none; padding:0; margin-bottom:0;">
-                <button class="filter-btn active" onclick="filterCands('primary')">🎯 Tous les 16 Candidats Déclarés</button>
-                <button class="filter-btn" onclick="filterCands('green')">🟢 500+ parrainages validés (7)</button>
-                <button class="filter-btn" onclick="filterCands('orange')">🟠 300-499 en bonne voie (5)</button>
-                <button class="filter-btn" onclick="filterCands('red')">🔴 &lt;300 en difficulté (4)</button>
             </div>
         </div>
 
