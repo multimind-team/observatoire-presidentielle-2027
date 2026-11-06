@@ -5,7 +5,16 @@
     "hypothese": "1er tour Élection Présidentielle 2027 (Hypothèse avec Édouard Philippe pour le bloc central)",
     "institut_reference": "Agrégation consolidée des intentions de vote (IFOP, Elabe, OpinionWay, Ipsos)",
     "echantillon_moyen": 1500,
-    "marge_erreur_statistique": "± 1,5 à 2,5 points (IC 95%)"
+    "marge_erreur_statistique": "± 1,5 à 2,5 points (IC 95%)",
+    "derniere_veille_automatique": "2026-11-06 13:08:51",
+    "statut_veille": "Vérification automatisée GitHub Actions du lundi 18h",
+    "dernieres_alertes_detectees": [
+      "Présidentielle 2027 : pour battre Marine Le Pen et Jean-Luc Mélenchon, Emmanuel Macron préconise une large alliance au sein de l’espace central",
+      "Election à la présidence des maires de France : le sortant, David Lisnard, sous pression",
+      "Présidentielle 2027 : Bruno Retailleau juge qu’il faudra une primaire en début d’année",
+      "«Je suis convaincu qu’on va faire campagne ensemble» : à Saint-Ouen, Glucksmann tend la main à Bouamrane",
+      "« Vous imaginez la tension politique ? » : pour Darmanin, il n’y a pas de raisons de changer la date de la présidentielle"
+    ]
   },
   "sondages": [
     {

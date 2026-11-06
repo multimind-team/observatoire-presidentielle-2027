@@ -1,21 +1,18 @@
-name: Veille Automatique et Synchronisation des Données
+name: Veille Hebdomadaire Sondages & Actualisation (Lundi 18h)
 
 on:
-  # Déclenchement automatique hebdomadaire (chaque lundi à 08:00 UTC)
+  # Déclenchement automatique chaque lundi à 18h00 (Heure de Paris / 17:00 UTC)
   schedule:
-    - cron: '0 8 * * 1'
+    - cron: '0 17 * * 1'
   
   # Déclenchement manuel à la demande depuis l'onglet Actions de GitHub
   workflow_dispatch:
     inputs:
-      action_type:
-        description: 'Action à effectuer'
+      forcer_actualisation:
+        description: 'Forcer la synchronisation même sans nouveau sondage'
         required: true
-        default: 'sync_only'
-        type: choice
-        options:
-          - sync_only
-          - check_and_sync
+        default: true
+        type: boolean
 
 permissions:
   contents: write
@@ -27,26 +24,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Récupération du code source
+      - name: 📥 Récupération du code source
         uses: actions/checkout@v4
 
-      - name: Configuration de Python
+      - name: 🐍 Configuration de Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Exécution du script de synchronisation
+      - name: 🔍 Exécution de la veille hebdomadaire
+        run: |
+          python scripts/veille_sondages_hebdo.py
+
+      - name: 🔄 Synchronisation des données JSON vers les pages HTML
         run: |
           python scripts/sync_data.py
 
-      - name: Détection et commit des modifications éventuelles
+      - name: 🚀 Commit et Déploiement automatique si modifications
         run: |
           git config user.name "ObservatoireBot"
           git config user.email "bot@observatoire-presidentielle-2027.fr"
           git add -A
           if git diff --staged --quiet; then
-            echo "Aucune modification détectée. Les pages sont déjà parfaitement à jour."
+            echo "✅ Aucune modification détectée. Les pages sont déjà parfaitement synchronisées."
           else
-            git commit -m "chore(data-sync): synchronisation automatique des sondages et données candidats"
+            git commit -m "chore(veille-hebdo): veille automatique sondages du lundi 18h et synchronisation des données"
             git push origin main
+            echo "🚀 Mises à jour publiées avec succès sur la branche main !"
           fi
