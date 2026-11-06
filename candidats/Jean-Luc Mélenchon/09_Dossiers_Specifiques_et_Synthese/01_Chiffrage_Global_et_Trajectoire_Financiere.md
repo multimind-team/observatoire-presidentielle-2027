@@ -27,6 +27,6 @@ Relance keynésienne et écologique massive portant les dépenses publiques cons
 
 ## 3. Récapitulatif Financier Consolidé (Périmètre APU 2027-2032)
 
-Le classeur Excel natif `Chiffrage_Programme_Jean-Luc_Mélenchon_2027.xlsx` détaille sur 5 onglets l'évolution annuelle menant aux cibles de fin de mandat : **1640.0 Mds € de dépenses**, **1530.0 Mds € de recettes** et **-110.0 Mds € de solde (-2.8 % du PIB)**.
+Le classeur Excel natif `Chiffrage_Programme_Jean_Luc_Mélenchon_2027.xlsx` détaille sur 5 onglets l'évolution annuelle menant aux cibles de fin de mandat : **1640.0 Mds € de dépenses**, **1530.0 Mds € de recettes** et **-110.0 Mds € de solde (-2.8 % du PIB)**.
 
 - **Portée démocratique et exécution :** La mise en œuvre de ce volet dès mai-juin 2027 s'inscrit dans le calendrier des 100 premiers jours (*1. Décret portant le SMIC à 1 600 € net et décret de blocage des prix des produits alimentaires de base et des carburants ; 2. Convocation par référendum de l'Assemblée Constituante pour la VIe République ; 3. Loi d'abrogation de la retraite à 64 ans et retour aux 60 ans ; 4. Collectif budgétaire instaurant l'IR à 14 tranches et l'ISF climatique.*) et sera soumise au vote de la représentation nationale ou du peuple par voie référendaire selon la nature constitutionnelle des textes.

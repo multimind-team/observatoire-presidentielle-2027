@@ -264,13 +264,7 @@
             return 'rating-D';
         }
 
-        function setScope(scope) {
-            currentScope = scope;
-            document.getElementById('btnScopePrimary').classList.toggle('active', scope === 'primary');
-            document.getElementById('btnScopeAll').classList.toggle('active', scope === 'all');
-            updateAll();
-        }
-
+        function filterRating(r) { setRating(r); }
         function setRating(r) {
             currentFilter = r;
             document.querySelectorAll('#ratingGroup .filter-btn').forEach(b => b.classList.remove('active'));
@@ -289,7 +283,7 @@
         function updateAll() {
             // 1. Filter dataset
             const filtered = data.filter(c => {
-                const matchesScope = (currentScope === 'all') || (KEPT_16.includes(c.name));
+                const matchesScope = true;
                 const matchesRating = (currentFilter === 'ALL') || (c.rating.startsWith(currentFilter));
                 return matchesScope && matchesRating;
             });

@@ -7,7 +7,7 @@
 
 ## 1. Organisation de Rassemblement National (RN) et Dynamique des 500 Parrainages
 
-La campagne présidentielle 2027 de **Marine Le Pen** s'appuie sur la structure militante et territoriale de **Rassemblement National (RN)**. Dispositif exécutif et alliances : Ticket exécutif annoncé avec Jordan Bardella (pressenti à Matignon en cas de victoire présidentielle).
+La campagne présidentielle 2027 de **Marine Le Pen** s'appuie sur la structure militante et territoriale de **Rassemblement National (RN)**. Dispositif exécutif et alliances : Ticket exécutif annoncé avec la présidence du Rassemblement National (tandem exécutif pressenti à Matignon en cas de victoire présidentielle).
 
 ---
 

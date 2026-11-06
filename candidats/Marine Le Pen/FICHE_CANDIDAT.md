@@ -10,7 +10,7 @@
 ## 1. Identité Politique, Mandats & État des Parrainages
 
 - **Parcours & Mandats de référence :** Députée du Pas-de-Calais, Présidente du groupe RN à l'Assemblée nationale, finaliste des élections présidentielles de 2017 et 2022.
-- **Architecture politique & Alliances :** Ticket exécutif annoncé avec Jordan Bardella (pressenti à Matignon en cas de victoire présidentielle).
+- **Architecture politique & Alliances :** Ticket exécutif annoncé avec la présidence du Rassemblement National (tandem exécutif pressenti à Matignon en cas de victoire présidentielle).
 - **Situation des 500 parrainages d'élus :** 300 à 499 parrainages (en bonne voie grâce à l'ancrage territorial accru des députés et élus locaux RN).
 - **Statut dans l'Observatoire 2027 :** **Candidat déclaré en lice** (Périmètre officiel des 16 candidats évalués ligne à ligne).
 

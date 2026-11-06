@@ -7,8 +7,8 @@
 
 ## 📄 Documents Centraux & Modèles Financiers
 - 📋 [Fiche de Synthèse & Cadrage Officiel (`FICHE_CANDIDAT.md`)](./FICHE_CANDIDAT.md)
-- 📊 [Tableau de Bord Graphique Interactif (`.html`)](./Visualisation_Programme_et_Comparatif_Budget_Nicolas_Dupont-Aignan.html)
-- 📥 [Modèle Budgétaire Excel Natif 5 Onglets (`.xlsx`)](./Chiffrage_Programme_Nicolas_Dupont-Aignan_2027.xlsx)
+- 📊 [Tableau de Bord Graphique Interactif (`.html`)](./Visualisation_Programme_et_Comparatif_Budget_Nicolas_Dupont_Aignan.html)
+- 📥 [Modèle Budgétaire Excel Natif 5 Onglets (`.xlsx`)](./Chiffrage_Programme_Nicolas_Dupont_Aignan_2027.xlsx)
 
 ---
 

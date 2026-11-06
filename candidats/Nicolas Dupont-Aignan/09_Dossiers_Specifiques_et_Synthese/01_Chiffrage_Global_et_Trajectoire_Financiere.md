@@ -27,6 +27,6 @@ Trajectoire de redressement national ramenant les dépenses publiques à 1 460,0
 
 ## 3. Récapitulatif Financier Consolidé (Périmètre APU 2027-2032)
 
-Le classeur Excel natif `Chiffrage_Programme_Nicolas_Dupont-Aignan_2027.xlsx` détaille sur 5 onglets l'évolution annuelle menant aux cibles de fin de mandat : **1460.0 Mds € de dépenses**, **1370.0 Mds € de recettes** et **-90.0 Mds € de solde (-2.7 % du PIB)**.
+Le classeur Excel natif `Chiffrage_Programme_Nicolas_Dupont_Aignan_2027.xlsx` détaille sur 5 onglets l'évolution annuelle menant aux cibles de fin de mandat : **1460.0 Mds € de dépenses**, **1370.0 Mds € de recettes** et **-90.0 Mds € de solde (-2.7 % du PIB)**.
 
 - **Portée démocratique et exécution :** La mise en œuvre de ce volet dès mai-juin 2027 s'inscrit dans le calendrier des 100 premiers jours (*1. Sortie du marché européen de l'électricité et baisse de la TVA sur l'énergie à 5,5 % ; 2. Loi instaurant la TVA sociale anti-délocalisations (+5 % de salaire net immédiat) ; 3. Référendum sur le rétablissement des frontières nationales et le RIC ; 4. Abrogation de la loi NOTRe pour rendre leurs pouvoirs aux maires.*) et sera soumise au vote de la représentation nationale ou du peuple par voie référendaire selon la nature constitutionnelle des textes.

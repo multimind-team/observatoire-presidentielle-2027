@@ -11,7 +11,7 @@
 ## SOMMAIRE EXÉCUTIF
 
 1. [Cadrage Macroéconomique & Périmètre Budgétaire](#1-cadrage-macroéconomique--périmètre-budgétaire)
-2. [Grand Registre Synoptique des 16 Trajectoires Budgétaires](#2-grand-registre-synoptique-des-32-trajectoires-budgétaires)
+2. [Grand Registre Synoptique des 16 Trajectoires Budgétaires](#2-grand-registre-synoptique-des-16-trajectoires-budgétaires)
 3. [Typologie des 5 Grandes Visions Budgétaires de la France](#3-typologie-des-5-grandes-visions-budgétaires-de-la-france)
 4. [Synthèse Transversale des 8 Chocs Programmatiques](#4-synthèse-transversale-des-8-chocs-programmatiques)
 5. [Enseignements du Crash-Test & Stress-Test des Taux d'Intérêt](#5-enseignements-du-crash-test--stress-test-des-taux-dintérêt)
@@ -148,7 +148,7 @@ Tous les outils créés dans le cadre de ce travail sont reliés et accessibles 
    - [`Matrices_Thematiques_Transversales_2027.xlsx`](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Matrices_Thematiques_Transversales_2027.xlsx) (avec 8 graphiques natifs)
    - [`Crash_Test_Budgetaire_et_Scoring_Risque.xlsx`](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Crash_Test_Budgetaire_et_Scoring_Risque.xlsx)
 9. 📋 **Hub de Navigation :** [`INDEX_COMPARATIFS.md`](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/INDEX_COMPARATIFS.md)
-10. 👥 **Répertoire des Dossiers Individuels :** `C:\Users\user\Desktop\projets_IA\projets\presidentielle\candidats\` (32 dossiers colorés par parrainages).
+10. 👥 **Répertoire des Dossiers Individuels :** `C:\Users\user\Desktop\projets_IA\projets\presidentielle\candidats\` (16 dossiers des candidats déclarés colorés par parrainages).
 
 ---
 *Fin du Grand Livre Blanc — Document officiel de référence.*

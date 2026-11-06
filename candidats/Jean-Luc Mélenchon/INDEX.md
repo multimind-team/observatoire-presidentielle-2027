@@ -7,8 +7,8 @@
 
 ## 📄 Documents Centraux & Modèles Financiers
 - 📋 [Fiche de Synthèse & Cadrage Officiel (`FICHE_CANDIDAT.md`)](./FICHE_CANDIDAT.md)
-- 📊 [Tableau de Bord Graphique Interactif (`.html`)](./Visualisation_Programme_et_Comparatif_Budget_Jean-Luc_Mélenchon.html)
-- 📥 [Modèle Budgétaire Excel Natif 5 Onglets (`.xlsx`)](./Chiffrage_Programme_Jean-Luc_Mélenchon_2027.xlsx)
+- 📊 [Tableau de Bord Graphique Interactif (`.html`)](./Visualisation_Programme_et_Comparatif_Budget_Jean_Luc_Mélenchon.html)
+- 📥 [Modèle Budgétaire Excel Natif 5 Onglets (`.xlsx`)](./Chiffrage_Programme_Jean_Luc_Mélenchon_2027.xlsx)
 
 ---
 
