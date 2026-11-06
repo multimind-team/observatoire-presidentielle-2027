@@ -1,50 +1,67 @@
-# INDEX GÉNÉRAL : CANDIDATURE & PROGRAMME PRÉSIDENTIEL DE RAPHAËL GLUCKSMANN (2027)
+# 🗂️ Sommaire Général du Dossier Encyclopédique : Raphaël Glucksmann
 
-> **Mouvement :** Place Publique  
-> **Ligne :** Social-démocratie & Pro-européen (Centre-gauche européen)  
-> **Slogan / Philosophie :** « Une Europe Puissante, une France Solidaire : Défense de la Démocratie & Écologie »  
-> **Statut électoral :** Candidat suivi dans le cadre de l'Observatoire Présidentiel 2027
+> **Parti :** Place Publique | **Famille :** Social-démocratie européenne & écologique | **Orientation :** Centre-gauche réformiste, pro-européen & réindustrialiste  
+> **Trajectoire Budgétaire An 5 :** Dépenses **1535.0 Mds €** | Recettes **1425.0 Mds €** | Déficit **-110.0 Mds € (-3.2 % PIB)** | Crash-Test **81/100 (`A`)**
 
 ---
 
-## 1. Vue d'Ensemble & Carte d'Identité Stratégique
-
-Le programme présidentiel de **Raphaël Glucksmann** pour 2027 repose sur quatre axes majeurs :
-1. **Soutien total et armement de l'Ukraine face à l'impérialisme russe et défense européenne**
-2. **Instauration d'un ISF écologique européen et taxation des transactions financières**
-3. **Buy European Act pour protéger nos industries vertes face au dumping chinois**
-4. **Revalorisation de l'école publique, de la recherche et de la justice républicaine**
+## 📄 Documents Centraux & Modèles Financiers
+- 📋 [Fiche de Synthèse & Cadrage Officiel (`FICHE_CANDIDAT.md`)](./FICHE_CANDIDAT.md)
+- 📊 [Tableau de Bord Graphique Interactif (`.html`)](./Visualisation_Programme_et_Comparatif_Budget_Raphaël_Glucksmann.html)
+- 📥 [Modèle Budgétaire Excel Natif 5 Onglets (`.xlsx`)](./Chiffrage_Programme_Raphaël_Glucksmann_2027.xlsx)
 
 ---
 
-## 2. Tableau de Bord Budgétaire Synthétique (An 1 vs An 5 Plein Régime)
+## 📚 Les 11 Dossiers Thématiques (30 Fiches Analytiques Complètes)
 
-| Agrégat Budgétaire (APU) | Budget Actuel (Réf. 2026) | Trajectoire Raphaël Glucksmann An 1 | Trajectoire Raphaël Glucksmann An 5 | Écart Net An 5 |
-| :--- | :---: | :---: | :---: | :---: |
-| **Dépenses Publiques Totales** | **1 514,0 Mds €** (52,7 % PIB) | **1525.0 Mds €** | **1535.0 Mds €** | **+21.0 Mds €/an** |
-| **Recettes Publiques Totales** | **1 368,0 Mds €** (44,7 % PIB) | **1395.0 Mds €** | **1425.0 Mds €** | **+57.0 Mds €/an** |
-| **Déficit Public Consolidé (Maastricht)** | **-146,0 Mds €** (-5,1 % PIB) | **-130.0 Mds €** | **-110.0 Mds €** (~ **-3.2 % PIB**) | **+36.0 Mds €** |
-| **Budget de l'État seul (LOLF)** | **503,6 Mds €** | **507.3 Mds €** | **490.0 Mds €** | **-13.6 Mds €/an** |
+### 00. Introduction et Candidature
+1. [01. Biographie, Parcours et Positionnement](./00_Introduction_et_Candidature/01_Biographie_Parcours_et_Positionnement.md)
+2. [02. Parti, Mouvement, Équipe et Réseaux](./00_Introduction_et_Candidature/02_Parti_Mouvement_Equipe_et_Reseaux.md)
+3. [03. Doctrine, Philosophie et Vision 2027](./00_Introduction_et_Candidature/03_Doctrine_Philosophie_et_Vision_2027.md)
 
----
+### 01. Économie et Finances Publiques
+4. [01. Fiscalité, Impôts des Ménages et Patrimoine](./01_Economie_et_Finances_Publiques/01_Fiscalite_Impots_Menages_et_Patrimoine.md)
+5. [02. Entreprises, Production et Compétitivité](./01_Economie_et_Finances_Publiques/02_Entreprises_Production_et_Competitivite.md)
+6. [03. Travail, Salaires et Pouvoir d'Achat](./01_Economie_et_Finances_Publiques/03_Travail_Salaires_et_Pouvoir_d_Achat.md)
+7. [04. Dette, Dépense Publique et Trajectoire](./01_Economie_et_Finances_Publiques/04_Dette_Depense_Publique_et_Trajectoire.md)
 
-## 3. Sommaire des 11 Dossiers Thématiques
+### 02. Sécurité, Justice et Immigration
+8. [01. Sécurité, Police, Gendarmerie et Ordre Public](./02_Securite_Justice_et_Immigration/01_Securite_Police_Gendarmerie_et_Ordre_Public.md)
+9. [02. Justice, Prisons et Réforme Judiciaire](./02_Securite_Justice_et_Immigration/02_Justice_Prisons_et_Reforme_Judiciaire.md)
+10. [03. Immigration, Asile et Intégration](./02_Securite_Justice_et_Immigration/03_Immigration_Asile_et_Integration.md)
 
-- [00_Introduction_et_Candidature](./00_Introduction_et_Candidature/) : Biographie, parti, doctrine.
-- [01_Economie_et_Finances_Publiques](./01_Economie_et_Finances_Publiques/) : Fiscalité, entreprises, travail, dette.
-- [02_Securite_Justice_et_Immigration](./02_Securite_Justice_et_Immigration/) : Police, tribunaux, frontières.
-- [03_Sante_et_Solidarites](./03_Sante_et_Solidarites/) : Hôpital public, Sécurité sociale, autonomie.
-- [04_Education_Enseignement_et_Recherche](./04_Education_Enseignement_et_Recherche/) : Écoles, universités, recherche.
-- [05_Transition_Ecologique_et_Energie](./05_Transition_Ecologique_et_Energie/) : Mix énergétique, transports, agriculture.
-- [06_Societe_Culture_et_Jeunesse](./06_Societe_Culture_et_Jeunesse/) : Laïcité, culture, jeunesse.
-- [07_Institutions_et_Gouvernance](./07_Institutions_et_Gouvernance/) : Réforme de l'État, institutions, démocratie.
-- [08_International_Europe_et_Defense](./08_International_Europe_et_Defense/) : Europe, diplomatie, défense nationale.
-- [09_Dossiers_Specifiques_et_Synthese](./09_Dossiers_Specifiques_et_Synthese/) : Chiffrage macro, 100 jours, analyse SWOT.
-- [10_Annexes_et_Sources](./10_Annexes_et_Sources/) : Sources et bibliographie officielle.
+### 03. Santé et Solidarités
+11. [01. Hôpital Public, Soignants et Déserts Médicaux](./03_Sante_et_Solidarites/01_Hopital_Public_Soignants_et_Deserts_Medicaux.md)
+12. [02. Sécurité Sociale et Assurance Maladie](./03_Sante_et_Solidarites/02_Securite_Sociale_et_Assurance_Maladie.md)
+13. [03. Grand Âge, Autonomie et Handicap](./03_Sante_et_Solidarites/03_Grand_Age_Autonomie_et_Handicap.md)
 
----
+### 04. Éducation, Enseignement et Recherche
+14. [01. École, Collège et Lycée](./04_Education_Enseignement_et_Recherche/01_Ecole_College_et_Lycee.md)
+15. [02. Enseignement Supérieur et Recherche](./04_Education_Enseignement_et_Recherche/02_Enseignement_Superieur_et_Recherche.md)
 
-## 4. Outils d'Analyse et Livrables Associés
+### 05. Transition Écologique et Énergie
+16. [01. Mix Énergétique : Nucléaire et Renouvelables](./05_Transition_Ecologique_et_Energie/01_Mix_Energetique_Nucleaire_et_Renouvelables.md)
+17. [02. Transports, Mobilités et Infrastructures](./05_Transition_Ecologique_et_Energie/02_Transports_Mobilites_et_Infrastructures.md)
+18. [03. Agriculture, Alimentation et Forêt](./05_Transition_Ecologique_et_Energie/03_Agriculture_Alimentation_et_Foret.md)
 
-1. 📊 **Modélisation Financière Complète :** [`Chiffrage_Programme_Raphaël_Glucksmann_2027.xlsx`](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/candidats/Raphaël Glucksmann/Chiffrage_Programme_Raphaël_Glucksmann_2027.xlsx) (5 onglets dynamiques et 5 graphiques natifs).
-2. 💻 **Tableau de Bord Interactif HTML :** [`Visualisation_Programme_et_Comparatif_Budget_Raphaël_Glucksmann.html`](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/candidats/Raphaël Glucksmann/Visualisation_Programme_et_Comparatif_Budget_Raphaël_Glucksmann.html) (6 graphiques Chart.js interactifs).
+### 06. Société, Culture et Jeunesse
+19. [01. Laïcité, Valeurs Républicaines et Cultes](./06_Societe_Culture_et_Jeunesse/01_Laicite_Valeurs_Republicaines_et_Cultes.md)
+20. [02. Culture, Médias et Patrimoine](./06_Societe_Culture_et_Jeunesse/02_Culture_Medias_et_Patrimoine.md)
+21. [03. Jeunesse, Sports et Vie Associative](./06_Societe_Culture_et_Jeunesse/03_Jeunesse_Sports_et_Vie_Associative.md)
+
+### 07. Institutions et Gouvernance
+22. [01. Réforme de l'État et Décentralisation](./07_Institutions_et_Gouvernance/01_Reforme_de_l_Etat_et_Decentralisation.md)
+23. [02. Institutions, Parlement et Démocratie Citoyenne](./07_Institutions_et_Gouvernance/02_Institutions_Parlement_et_Democratie_Citoyenne.md)
+
+### 08. International, Europe et Défense
+24. [01. Union Européenne et Souveraineté Économique](./08_International_Europe_et_Defense/01_Union_Europeenne_et_Souverainete_Economique.md)
+25. [02. Diplomatie, Francophonie et Géopolitique](./08_International_Europe_et_Defense/02_Diplomatie_Francophonie_et_Geopolitique.md)
+26. [03. Défense Nationale et Armées](./08_International_Europe_et_Defense/03_Defense_Nationale_et_Armees.md)
+
+### 09. Dossiers Spécifiques et Synthèse
+27. [01. Chiffrage Global et Trajectoire Financière](./09_Dossiers_Specifiques_et_Synthese/01_Chiffrage_Global_et_Trajectoire_Financiere.md)
+28. [02. Calendrier des 100 Jours et Priorités](./09_Dossiers_Specifiques_et_Synthese/02_Calendrier_100_Jours_et_Priorites.md)
+29. [03. Analyse Critique : Forces, Faiblesses et Risques](./09_Dossiers_Specifiques_et_Synthese/03_Analyse_Critique_Forces_Faiblesses_et_Risques.md)
+
+### 10. Annexes et Sources
+30. [01. Sources Officielles et Bibliographie](./10_Annexes_et_Sources/01_Sources_Officielles_et_Bibliographie.md)

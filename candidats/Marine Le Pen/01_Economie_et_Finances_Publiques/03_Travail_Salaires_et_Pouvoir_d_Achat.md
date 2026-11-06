@@ -1,3 +1,32 @@
-# Travail, Salaires et Pouvoir d'Achat : Programme de Marine Le Pen
+# Travail, Salaires, Retraites et Pouvoir d'Achat : Marine Le Pen
 
-Mesures prioritaires pour la valorisation du travail réel, l'amélioration du pouvoir d'achat et la réforme du modèle social : Référendum constitutionnel pour inscrire la priorité nationale et la maîtrise de l'immigration.
+> **Candidat :** Marine Le Pen (Rassemblement National (RN)) | **Famille :** Droite nationale & souverainiste  
+> **Cadrage Budgétaire An 5 :** Dépenses `1485.0 Mds €` | Recettes `1370.0 Mds €` | Solde `-115.0 Mds € (-3.4% PIB)` | Crash-Test `61/100 (C)`
+
+---
+
+## 1. Rémunération du Travail, Durée d'Activité et Réforme du Système de Retraites
+
+Incitation à une hausse de +10 % des salaires jusqu'à 3 SMIC par exonération de cotisations patronales sur la part d'augmentation. Défiscalisation et désocialisation intégrale des heures supplémentaires. Rétablissement de la retraite à 60 ans avec 40 annuités pour ceux entrés dans la vie active avant 20 ans, et âge légal progressif entre 60 et 62 ans selon l'âge d'entrée.
+
+---
+
+## 2. Dispositif Programmatique, Mesures Clés & Chiffrage Budgétaire
+
+- **Axe majeur et mesures opérationnelles :** Baisse immédiate de la TVA de 20 % à 5,5 % sur l'énergie (électricité, gaz, fioul, carburants : -12 Mds €/an) et à 0 % sur un panier de 100 produits alimentaires et d'hygiène de première nécessité (-4 Mds €/an). Exonération totale d'Impôt sur le Revenu pour tous les jeunes actifs jusqu'à 30 ans (-2,5 Mds €/an). Rétablissement de la demi-part fiscale des veuves et veufs et part pleine dès le 2e enfant. Remplacement de l'IFI par un Impôt sur la Fortune Financière (IFF) excluant la résidence principale et l'outil professionnel.
+- **Articulation sectorielle et cohérence d'ensemble :** Revalorisation des petites retraites au-dessus de 1 200 € net pour une carrière complète, création d'un statut national d'aidant familial rémunéré et validant des trimestres de retraite, plan de contrôle strict des EHPAD privés lucratifs et développement du maintien à domicile.
+
+| Paramètre d'Évaluation Consolidé | Référence Actuelle (APU) | Trajectoire Marine Le Pen (An 5) | Impact / Vecteur Normatif |
+| :--- | :---: | :---: | :--- |
+| **Dépenses Publiques Totales** | 1 514,0 Mds € | **1485.0 Mds €** | Écart : -29.0 Mds € / an (PLF / PLFSS) |
+| **Recettes Publiques Totales** | 1 368,0 Mds € | **1370.0 Mds €** | Écart : +2.0 Mds € / an (Loi de finances) |
+| **Solde Public Consolidé** | -146,0 Mds € (-5,1%) | **-115.0 Mds € (-3.4%)** | Dette fin de mandat : 115.8 % du PIB |
+| **Robustesse Souveraine & Taux** | Base OAT 10 ans | **Score 61/100 (`C`)** | Spread `+75 bps` / Choc +200 bps : `+8,2 Mds €` |
+
+---
+
+## 3. Équilibre Financier de la Protection Sociale et Effets sur l'Emploi
+
+Les arbitrages de Marine Le Pen sur le salaire net, le SMIC, les cotisations sociales et l'âge de départ à la retraite constituent le cœur de son pacte social, directement intégrés dans le chiffrage de la branche vieillesse et des comptes sociaux.
+
+- **Portée démocratique et exécution :** La mise en œuvre de ce volet dès mai-juin 2027 s'inscrit dans le calendrier des 100 premiers jours (*1. Convocation par décret présidentiel (Art. 11) du référendum sur l'immigration et la priorité nationale ; 2. Loi d'urgence pouvoir d'achat (TVA à 5,5 % sur l'énergie et les carburants, TVA à 0 % sur 100 produits de première nécessité) ; 3. Moratoire immédiat par décret sur tous les nouveaux projets éoliens et sortie du marché européen de l'électricité ; 4. Loi de programmation sécurité-justice (peines planchers, légitime défense police).*) et sera soumise au vote de la représentation nationale ou du peuple par voie référendaire selon la nature constitutionnelle des textes.

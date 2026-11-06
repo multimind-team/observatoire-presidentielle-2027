@@ -2,7 +2,7 @@
 ### *Rapport d'Évaluation Macroéconomique Consolidée, Stress-Test Souverain & Analyse Stratégique des Candidats en Lice (16 Candidats Réels)*
 
 > **Auteur :** Grand Observatoire Indépendant de la Présidentielle 2027  
-> **Périmètre d'analyse :** 16 candidats réels en lice (et 16 hypothèses alternatives analysées)  
+> **Périmètre d'analyse :** 16 candidats réels en lice (périmètre officiel exclusif)  
 > **Base de référence officielle :** Budget consolidé des Administrations Publiques françaises (APU) 2026 : **1 514,0 Mds € de dépenses** / **1 368,0 Mds € de recettes** / **-146,0 Mds € de déficit (-5,1 % du PIB)** / **Dette publique : 3 228 Mds € (112,5 % du PIB)**.  
 > **Répertoire dédié :** `C:\Users\user\Desktop\projets_IA\projets\presidentielle\comparatifs candidats\`
 
@@ -11,7 +11,7 @@
 ## SOMMAIRE EXÉCUTIF
 
 1. [Cadrage Macroéconomique & Périmètre Budgétaire](#1-cadrage-macroéconomique--périmètre-budgétaire)
-2. [Grand Registre Synoptique des 32 Trajectoires Budgétaires](#2-grand-registre-synoptique-des-32-trajectoires-budgétaires)
+2. [Grand Registre Synoptique des 16 Trajectoires Budgétaires](#2-grand-registre-synoptique-des-32-trajectoires-budgétaires)
 3. [Typologie des 5 Grandes Visions Budgétaires de la France](#3-typologie-des-5-grandes-visions-budgétaires-de-la-france)
 4. [Synthèse Transversale des 8 Chocs Programmatiques](#4-synthèse-transversale-des-8-chocs-programmatiques)
 5. [Enseignements du Crash-Test & Stress-Test des Taux d'Intérêt](#5-enseignements-du-crash-test--stress-test-des-taux-dintérêt)
@@ -36,7 +36,7 @@ Pour comparer rigoureusement les candidats, l'Observatoire a consolidé l'ensemb
 
 ---
 
-## 2. Grand Registre Synoptique des 32 Trajectoires Budgétaires
+## 2. Grand Registre Synoptique des 16 Trajectoires Budgétaires
 
 Le tableau ci-dessous présente la situation consolidée en **An 5 de mandat (plein régime des réformes)** :
 
@@ -44,67 +44,51 @@ Le tableau ci-dessous présente la situation consolidée en **An 5 de mandat (pl
 | :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **—** | **RÉFÉRENCE ÉTAT** | **Statu Quo 2026** | **1 514,0 Mds** | **0,0 Md** | **1 368,0 Mds** | **-146,0 Mds** | **-5,1 %** | **118,5 %** | **B** | **—** |
 | 1 | **David Lisnard** | Nouvelle Énergie | 1 394,0 Mds | -120,0 Mds | 1 324,0 Mds | -70,0 Mds | **-2,2 %** | **104,0 %** | **B+ (74)** | 🟢 500+ Assurés |
-| 2 | **Marion Maréchal** | Identité-Libertés | 1 410,0 Mds | -104,0 Mds | 1 330,0 Mds | -80,0 Mds | **-2,5 %** | **105,5 %** | **D+ (42)** | 🔴 <300 Risque |
-| 3 | **Éric Zemmour** | Reconquête ! | 1 410,0 Mds | -104,0 Mds | 1 335,0 Mds | -75,0 Mds | **-2,3 %** | **105,0 %** | **D+ (43)** | 🔴 <300 Risque |
-| 4 | **Bruno Retailleau** | Les Républicains | 1 411,5 Mds | -102,5 Mds | 1 332,0 Mds | -79,5 Mds | **-2,5 %** | **105,5 %** | **B+ (73)** | 🟢 500+ Assurés |
-| 5 | **Laurent Wauquiez** | La Droite Républicaine | 1 420,0 Mds | -94,0 Mds | 1 345,0 Mds | -75,0 Mds | **-2,3 %** | **105,0 %** | **B+ (72)** | 🟢 500+ Assurés |
-| 6 | **Florian Philippot** | Les Patriotes | 1 430,0 Mds | -84,0 Mds | 1 350,0 Mds | -80,0 Mds | **-2,4 %** | **106,0 %** | **D (38)** | 🔴 <300 Risque |
-| 7 | **Édouard Philippe** | Horizons | 1 434,0 Mds | -80,0 Mds | 1 354,0 Mds | -80,0 Mds | **-2,5 %** | **109,5 %** | **A (83)** | 🟢 500+ Assurés |
-| 8 | **François Bayrou** | MoDem | 1 450,0 Mds | -64,0 Mds | 1 375,0 Mds | -75,0 Mds | **-2,3 %** | **108,0 %** | **A+ (86)** | 🟢 500+ Assurés |
-| 9 | **Gabriel Attal** | Renaissance | 1 460,0 Mds | -54,0 Mds | 1 370,0 Mds | -90,0 Mds | **-2,7 %** | **110,0 %** | **A (78)** | 🟢 500+ Assurés |
-| 10 | **Nicolas Dupont-Aignan** | Debout la France | 1 460,0 Mds | -54,0 Mds | 1 370,0 Mds | -90,0 Mds | **-2,7 %** | **110,0 %** | **C+ (52)** | 🟠 300-499 Voie |
-| 11 | **Xavier Bertrand** | Nous France / LR | 1 460,0 Mds | -54,0 Mds | 1 380,0 Mds | -80,0 Mds | **-2,4 %** | **108,5 %** | **B+ (72)** | 🟢 500+ Assurés |
-| 12 | **Gérald Darmanin** | Populaire / Ren. | 1 465,0 Mds | -49,0 Mds | 1 375,0 Mds | -90,0 Mds | **-2,7 %** | **110,0 %** | **B+ (71)** | 🟢 500+ Assurés |
-| 13 | **François Asselineau** | UPR | 1 470,0 Mds | -44,0 Mds | 1 380,0 Mds | -90,0 Mds | **-2,7 %** | **110,5 %** | **D (35)** | 🔴 <300 Risque |
-| 14 | **Michel Barnier** | Les Républicains | 1 470,0 Mds | -44,0 Mds | 1 390,0 Mds | -80,0 Mds | **-2,5 %** | **109,0 %** | **A+ (85)** | 🟢 500+ Assurés |
-| 15 | **Jordan Bardella** | Rassemblement National | 1 480,0 Mds | -34,0 Mds | 1 370,0 Mds | -110,0 Mds | **-3,3 %** | **116,0 %** | **C (50)** | 🟠 300-499 Voie |
-| 16 | **Marine Le Pen** | Rassemblement National | 1 485,0 Mds | -29,0 Mds | 1 370,0 Mds | -115,0 Mds | **-3,4 %** | **116,5 %** | **C (48)** | 🟠 300-499 Voie |
-| 17 | **Yaël Braun-Pivet** | Renaissance | 1 485,0 Mds | -29,0 Mds | 1 385,0 Mds | -100,0 Mds | **-3,0 %** | **112,0 %** | **A (80)** | 🟢 500+ Assurés |
-| 18 | **Jean-Marc Governatori** | Écologie au Centre | 1 500,0 Mds | -14,0 Mds | 1 385,0 Mds | -115,0 Mds | **-3,4 %** | **115,0 %** | **B (68)** | 🔴 <300 Risque |
-| 19 | **Hélène Thouy** | Parti Animaliste | 1 505,0 Mds | -9,0 Mds | 1 375,0 Mds | -130,0 Mds | **-4,0 %** | **117,0 %** | **B- (61)** | 🔴 <300 Risque |
-| 20 | **Jean Lassalle** | Résistons ! | 1 510,0 Mds | -4,0 Mds | 1 380,0 Mds | -130,0 Mds | **-3,9 %** | **117,0 %** | **B- (62)** | 🟠 300-499 Voie |
-| 21 | **François Hollande** | Parti Socialiste | 1 525,0 Mds | +11,0 Mds | 1 410,0 Mds | -115,0 Mds | **-3,3 %** | **115,0 %** | **A (78)** | 🟢 500+ Assurés |
-| 22 | **Bernard Cazeneuve** | La Convention | 1 526,0 Mds | +12,0 Mds | 1 426,0 Mds | -100,0 Mds | **-2,8 %** | **112,5 %** | **A (81)** | 🟢 500+ Assurés |
-| 23 | **Dominique de Villepin** | La France Humaniste | 1 528,0 Mds | +14,0 Mds | 1 422,0 Mds | -106,0 Mds | **-2,8 %** | **113,0 %** | **B+ (70)** | 🟠 300-499 Voie |
-| 24 | **Carole Delga** | PS / Régions de France | 1 534,0 Mds | +20,0 Mds | 1 422,0 Mds | -112,0 Mds | **-3,1 %** | **114,0 %** | **A (79)** | 🟢 500+ Assurés |
-| 25 | **Raphaël Glucksmann** | Place Publique | 1 535,0 Mds | +21,0 Mds | 1 425,0 Mds | -110,0 Mds | **-3,2 %** | **114,5 %** | **A (76)** | 🟠 300-499 Voie |
-| 26 | **Marine Tondelier** | Les Écologistes (EELV) | 1 570,0 Mds | +56,0 Mds | 1 460,0 Mds | -110,0 Mds | **-3,2 %** | **116,0 %** | **C+ (56)** | 🟢 500+ Assurés |
-| 27 | **François Ruffin** | Picardie Debout ! | 1 580,0 Mds | +66,0 Mds | 1 470,0 Mds | -110,0 Mds | **-3,1 %** | **117,0 %** | **C+ (55)** | 🟠 300-499 Voie |
-| 28 | **Clémentine Autain** | L'Après | 1 600,0 Mds | +86,0 Mds | 1 490,0 Mds | -110,0 Mds | **-3,0 %** | **118,0 %** | **C (54)** | 🟠 300-499 Voie |
-| 29 | **Fabien Roussel** | PCF | 1 620,0 Mds | +106,0 Mds | 1 510,0 Mds | -110,0 Mds | **-2,9 %** | **119,0 %** | **C (52)** | 🟢 500+ Assurés |
-| 30 | **Jean-Luc Mélenchon** | La France Insoumise | 1 640,0 Mds | +126,0 Mds | 1 530,0 Mds | -110,0 Mds | **-2,8 %** | **122,0 %** | **D+ (44)** | 🟢 500+ Assurés |
-| 31 | **Nathalie Arthaud** | Lutte Ouvrière | 1 650,0 Mds | +136,0 Mds | 1 560,0 Mds | -90,0 Mds | **-2,4 %** | **123,0 %** | **D- (28)** | 🔴 <300 Risque |
-| 32 | **Philippe Poutou** | NPA | 1 660,0 Mds | +146,0 Mds | 1 570,0 Mds | -90,0 Mds | **-2,3 %** | **124,0 %** | **D- (25)** | 🔴 <300 Risque |
+| 2 | **Éric Zemmour** | Reconquête ! | 1 410,0 Mds | -104,0 Mds | 1 335,0 Mds | -75,0 Mds | **-2,3 %** | **105,0 %** | **D+ (43)** | 🔴 <300 Risque |
+| 3 | **Laurent Wauquiez** | La Droite Républicaine | 1 420,0 Mds | -94,0 Mds | 1 345,0 Mds | -75,0 Mds | **-2,3 %** | **105,0 %** | **B+ (72)** | 🟢 500+ Assurés |
+| 4 | **Édouard Philippe** | Horizons | 1 434,0 Mds | -80,0 Mds | 1 354,0 Mds | -80,0 Mds | **-2,5 %** | **109,5 %** | **A (83)** | 🟢 500+ Assurés |
+| 5 | **François Bayrou** | MoDem | 1 450,0 Mds | -64,0 Mds | 1 375,0 Mds | -75,0 Mds | **-2,3 %** | **108,0 %** | **A+ (86)** | 🟢 500+ Assurés |
+| 6 | **Nicolas Dupont-Aignan** | Debout la France | 1 460,0 Mds | -54,0 Mds | 1 370,0 Mds | -90,0 Mds | **-2,7 %** | **110,0 %** | **C+ (52)** | 🟠 300-499 Voie |
+| 7 | **François Asselineau** | UPR | 1 470,0 Mds | -44,0 Mds | 1 380,0 Mds | -90,0 Mds | **-2,7 %** | **110,5 %** | **D (35)** | 🔴 <300 Risque |
+| 8 | **Marine Le Pen** | Rassemblement National | 1 485,0 Mds | -29,0 Mds | 1 370,0 Mds | -115,0 Mds | **-3,4 %** | **116,5 %** | **C (48)** | 🟠 300-499 Voie |
+| 9 | **Jean Lassalle** | Résistons ! | 1 510,0 Mds | -4,0 Mds | 1 380,0 Mds | -130,0 Mds | **-3,9 %** | **117,0 %** | **B- (62)** | 🟠 300-499 Voie |
+| 10 | **Raphaël Glucksmann** | Place Publique | 1 535,0 Mds | +21,0 Mds | 1 425,0 Mds | -110,0 Mds | **-3,2 %** | **114,5 %** | **A (76)** | 🟠 300-499 Voie |
+| 11 | **Marine Tondelier** | Les Écologistes (EELV) | 1 570,0 Mds | +56,0 Mds | 1 460,0 Mds | -110,0 Mds | **-3,2 %** | **116,0 %** | **C+ (56)** | 🟢 500+ Assurés |
+| 12 | **François Ruffin** | Picardie Debout ! | 1 580,0 Mds | +66,0 Mds | 1 470,0 Mds | -110,0 Mds | **-3,1 %** | **117,0 %** | **C+ (55)** | 🟠 300-499 Voie |
+| 13 | **Fabien Roussel** | PCF | 1 620,0 Mds | +106,0 Mds | 1 510,0 Mds | -110,0 Mds | **-2,9 %** | **119,0 %** | **C (52)** | 🟢 500+ Assurés |
+| 14 | **Jean-Luc Mélenchon** | La France Insoumise | 1 640,0 Mds | +126,0 Mds | 1 530,0 Mds | -110,0 Mds | **-2,8 %** | **122,0 %** | **D+ (44)** | 🟢 500+ Assurés |
+| 15 | **Nathalie Arthaud** | Lutte Ouvrière | 1 650,0 Mds | +136,0 Mds | 1 560,0 Mds | -90,0 Mds | **-2,4 %** | **123,0 %** | **D- (28)** | 🔴 <300 Risque |
+| 16 | **Philippe Poutou** | NPA | 1 660,0 Mds | +146,0 Mds | 1 570,0 Mds | -90,0 Mds | **-2,3 %** | **124,0 %** | **D- (25)** | 🔴 <300 Risque |
 
 ---
 
 ## 3. Typologie des 5 Grandes Visions Budgétaires de la France
 
-### A. L'École Libérale & Régalienne de Rétablissement (Lisnard, Retailleau, Wauquiez)
+### A. L'École Libérale & Régalienne de Rétablissement (David Lisnard, Laurent Wauquiez)
 - **Le diagnostic :** La France souffre d'un excès structurel de dépenses courantes et de bureaucratie, doublé d'impôts de production asphyxiant les entreprises.
 - **La méthode :** Réduction de -94 à -120 Mds € de dépenses, non-remplacement de 350k à 500k fonctionnaires administratifs, suppression intégrale de la C3S et de la CVAE, report de l'âge légal à 65 ans.
 - **Le résultat macro :** Ramène le déficit sous les 2,3 % du PIB et enclenche un désendettement net (la dette repasse sous les 105 % du PIB).
 - **Le point de vigilance :** Risque social élevé d'opposition syndicale et de blocage des services publics.
 
-### B. L'École Centrale & Gestionnaire (Philippe, Attal, Bayrou, Barnier)
+### B. L'École Centrale & Gestionnaire (Édouard Philippe, François Bayrou)
 - **Le diagnostic :** Le modèle social français doit être préservé mais consolidé par l'augmentation de la durée du travail et la stabilité fiscale absolue.
 - **La méthode :** Retraite à 64-67 ans, incitations au travail (désmicardisation, intéressement), ciblage des économies sur l'efficacité de l'État (-50 à -80 Mds €).
 - **Le résultat macro :** Déficit ramené entre -2,3 % et -2,7 % du PIB, notation de crédit souveraine préservée au plus haut niveau (Classe A / A+).
 - **Le point de vigilance :** Réformes plus lentes, réduction timide du poids de la dette publique.
 
-### C. L'École de la Gauche Populaire & Rupture Sociale (Mélenchon, Roussel, Ruffin, Autain)
+### C. L'École de la Gauche Populaire & Rupture Sociale (Jean-Luc Mélenchon, Fabien Roussel, François Ruffin, Marine Tondelier)
 - **Le diagnostic :** L'austérité budgétaire détruit les services publics et précarise les classes populaires ; la relance doit s'opérer par la demande et la redistribution radicale du capital.
 - **La méthode :** SMIC net à 1 600 - 1 800 €, retraite à 60 ans, ISF renforcé, 14 tranches d'IR (taux max 75-90 %), embauches massives de fonctionnaires.
 - **Le résultat macro :** Hausse de +66 à +126 Mds € des dépenses, compensée sur le papier par des hausses fiscales colossales.
 - **Le point de vigilance :** Risque systémique d'exil fiscal, fuite des capitaux et envolée de la dette souveraine (>122 % PIB).
 
-### D. L'École Nationale-Souverainiste (Le Pen, Bardella, Zemmour, Maréchal)
+### D. L'École Nationale-Souverainiste (Marine Le Pen, Éric Zemmour, Nicolas Dupont-Aignan, François Asselineau)
 - **Le diagnostic :** L'immigration incontrôlée et le carcan des traités européens coûtent des dizaines de milliards à la France.
 - **La méthode :** Priorité nationale pour les aides sociales (-15 à -20 Mds € espérés), baisse de la TVA à 5,5% sur l'énergie, exonération d'IR pour les moins de 30 ans, 14 à 20 réacteurs nucléaires EPR.
 - **Le résultat macro :** Déficit stagnant autour de -3,3 % à -3,4 % du PIB chez le RN car les baisses d'impôts (TVA) dépassent les économies réalisables.
 - **Le point de vigilance :** Fragilité juridique extrême face au Conseil Constitutionnel et aux traités de l'UE.
 
-### E. L'École Sociale-Démocrate Républicaine (Cazeneuve, Delga, Hollande, Glucksmann)
+### E. L'École Sociale-Démocrate Européenne (Raphaël Glucksmann)
 - **Le diagnostic :** La France a besoin d'apaisement institutionnel, de dialogue social et de décentralisation, adossés à une transition écologique industrielle.
 - **La méthode :** Justice fiscale progressive sans choc punitif, conditionnalité des aides aux entreprises, plan rail, respect du cadre européen.
 - **Le résultat macro :** Trajectoire équilibrée autour de -2,8 % à -3,2 % de déficit, forte crédibilité auprès des partenaires européens.
@@ -135,8 +119,6 @@ Le tableau ci-dessous présente la situation consolidée en **An 5 de mandat (pl
 L'Observatoire a modélisé un **choc de spread de +100 et +200 points de base** sur la dette souveraine française :
 1. **Facteur d'amplification mécanique :** Chaque hausse de 1% des taux directeurs alourdit la charge d'intérêts de la France de +4,5 Mds € la première année, et jusqu'à **+14,5 Mds € par an** au bout de 5 ans lors du refinancement des lignes obligataires échues.
 2. **Le palmarès de la résilience :**
-   - **Meilleurs profils (Classe A+ / A) :** François Bayrou (86), Michel Barnier (85), Édouard Philippe (83), Bernard Cazeneuve (81).
-   - **Profils à risque d'exécution (Classe B+ / B) :** David Lisnard (74), Bruno Retailleau (73), Laurent Wauquiez (72). Le programme Lisnard est le plus solide mathématiquement (-70 Mds € de déficit) mais exige une volonté politique d'acier face aux grèves prévisibles.
    - **Profils à haut risque de crise obligataire (Classe D) :** Jean-Luc Mélenchon (44), Éric Zemmour (43), Philippe Poutou (25). Un choc de taux immédiat de +200 bps porterait leur charge d'intérêts à plus de **24 Mds € supplémentaires par an**, ruinant le modèle de financement.
 
 ---
@@ -144,8 +126,8 @@ L'Observatoire a modélisé un **choc de spread de +100 et +200 points de base**
 ## 6. Gouvernabilité & 3ᵉ Tour Législatif (Majorités Parlementaires 2027)
 
 Le mode de scrutin majoritaire à deux tours pour les 577 sièges de l'Assemblée nationale impose de projeter la composition parlementaire :
-- **Seul le bloc Droite Républicaine + Centre (Lisnard, Philippe, Retailleau) peut atteindre ou frôler la majorité absolue (285 à 295 députés)** avec le soutien décisif d'un Sénat acquis.
-- **Le Rassemblement National (Bardella, Le Pen)** plafonnerait entre 230 et 250 députés sans accord formel de coalition, s'exposant à une censure parlementaire immédiate dès l'examen du Budget à l'automne 2027.
+- **Seul le bloc Droite Républicaine + Centre (David Lisnard, Édouard Philippe, Laurent Wauquiez) peut atteindre ou frôler la majorité absolue (285 à 295 députés)** avec le soutien décisif d'un Sénat acquis.
+- **Le Rassemblement National (Marine Le Pen)** plafonnerait entre 230 et 250 députés sans accord formel de coalition, s'exposant à une censure parlementaire immédiate dès l'examen du Budget à l'automne 2027.
 - **La Gauche Populaire (Mélenchon)** ferait face à un blocage institutionnel insoluble entre une Assemblée fragmentée (210 à 235 députés NFP) et un Sénat hostile à 90%.
 
 ---

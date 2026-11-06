@@ -1,3 +1,0 @@
-# Analyse Critique, Matrice SWOT et Risques d'Exécution : Gérald Darmanin
-
-Évaluation objective des atouts, défis politiques, faisabilité budgétaire et points de vigilance de la candidature.

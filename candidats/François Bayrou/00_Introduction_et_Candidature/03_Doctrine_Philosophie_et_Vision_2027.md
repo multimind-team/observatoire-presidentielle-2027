@@ -1,7 +1,32 @@
-# Doctrine, Philosophie et Vision Présidentielle 2027 : François Bayrou
+# Doctrine Politique, Philosophie Républicaine et Vision 2027 : François Bayrou
 
-## Les 4 Piliers Fondamentaux du Projet :
-1. **Règle d'or constitutionnelle d'équilibre budgétaire et maîtrise absolue de la dette**
-2. **Système universel de retraite par points (1 € cotisé donne les mêmes droits)**
-3. **Grand Commissariat au Plan pour réindustrialiser les filières stratégiques**
-4. **Instauration de la proportionnelle aux législatives et moralisation publique**
+> **Candidat :** François Bayrou (Mouvement Démocrate (MoDem)) | **Famille :** Centre humaniste, démocrate & européen  
+> **Cadrage Budgétaire An 5 :** Dépenses `1450.0 Mds €` | Recettes `1375.0 Mds €` | Solde `-75.0 Mds € (-2.3% PIB)` | Crash-Test `91/100 (A+)`
+
+---
+
+## 1. Les Fondements Idéologiques du Projet « La République du Contrat : Réconcilier les Français, sauver notre modèle social et désendetter la Nation »
+
+La philosophie politique de **François Bayrou** repose sur une lecture structurée des crises française et européenne (Responsabilité budgétaire, Proportionnelle & Commissariat au Plan). Son projet articule la question sociale, la souveraineté productive et l'ordre institutionnel.
+
+---
+
+## 2. Dispositif Programmatique, Mesures Clés & Chiffrage Budgétaire
+
+- **Axe majeur et mesures opérationnelles :** Pacte social contractuel : revalorisation du travail par le partage obligatoire de la valeur ajoutée (dividendes / salaires / investissement), mise en place progressive d'un système universel de retraite par points (1 € cotisé = les mêmes droits pour tous) piloté par les partenaires sociaux avec âge pivot d'équilibre à 64 ans et retraite progressive choisie.
+- **Articulation sectorielle et cohérence d'ensemble :** Fédéralisme européen pragmatique : défense commune européenne, politique industrielle et énergétique commune, budget de la zone euro contrôlé par le Parlement européen.
+
+| Paramètre d'Évaluation Consolidé | Référence Actuelle (APU) | Trajectoire François Bayrou (An 5) | Impact / Vecteur Normatif |
+| :--- | :---: | :---: | :--- |
+| **Dépenses Publiques Totales** | 1 514,0 Mds € | **1450.0 Mds €** | Écart : -64.0 Mds € / an (PLF / PLFSS) |
+| **Recettes Publiques Totales** | 1 368,0 Mds € | **1375.0 Mds €** | Écart : +7.0 Mds € / an (Loi de finances) |
+| **Solde Public Consolidé** | -146,0 Mds € (-5,1%) | **-75.0 Mds € (-2.3%)** | Dette fin de mandat : 103.8 % du PIB |
+| **Robustesse Souveraine & Taux** | Base OAT 10 ans | **Score 91/100 (`A+`)** | Spread `+15 bps` / Choc +200 bps : `+4,5 Mds €` |
+
+---
+
+## 3. Articulation entre État, Marché et Nation
+
+Dans la matrice doctrinale de l'Observatoire 2027, la vision de François Bayrou se traduit par un volume de dépenses publiques consolidées de **1450.0 Mds €** et des recettes de **1375.0 Mds €**, reflétant ses choix fondamentaux sur le rôle de la puissance publique.
+
+- **Portée démocratique et exécution :** La mise en œuvre de ce volet dès mai-juin 2027 s'inscrit dans le calendrier des 100 premiers jours (*1. Loi électorale instaurant la proportionnelle mixte à l'Assemblée nationale et la Banque de la Démocratie ; 2. Loi constitutionnelle inscrivant la Règle d'Or d'équilibre des comptes publics ; 3. Lancement du Grand Plan Géothermie et Hydroélectricité ; 4. Pacte national sur l'école primaire et la lecture.*) et sera soumise au vote de la représentation nationale ou du peuple par voie référendaire selon la nature constitutionnelle des textes.

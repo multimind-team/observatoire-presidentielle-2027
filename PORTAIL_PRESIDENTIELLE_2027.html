@@ -174,6 +174,7 @@
             <a href="./comparatifs%20candidats/Simulateur_Gouvernabilite_Assemblee_2027.html" class="nav-link" target="_blank">🏛️ Hémicycle</a>
             <a href="./comparatifs%20candidats/Crash_Test_Budgetaire_et_Scoring_Risque.html" class="nav-link" target="_blank">⚠️ Crash-Test</a>
             <a href="./comparatifs%20candidats/Observatoire_Sondages_2027.html" class="nav-link" target="_blank">📈 Sondages 2027</a>
+            <a href="./comparatifs%20candidats/Grand_Livre_Blanc_et_Syntheses_Thematiques.html" class="nav-link" target="_blank">📖 Livre Blanc & Synthèses</a>
             <a href="./comparatifs%20candidats/Faisabilite_Juridique_et_Constitutionnelle.html" class="nav-link" target="_blank">⚖️ Faisabilité Juridique</a>
             <a href="./comparatifs%20candidats/METHODOLOGIE_ET_SOURCES.html" class="nav-link" target="_blank">📚 Méthodologie</a>
             <a href="./comparatifs%20candidats/A_PROPOS_ET_TRANSPARENCE.html" class="nav-link" target="_blank">ℹ️ À Propos</a>
@@ -212,6 +213,15 @@
         <!-- OUTILS ET SIMULATEURS MAJEURS -->
         <h2 class="section-title" id="outils">🚀 Les Applications & Simulateurs Interactifs Déployés</h2>
         <div class="tools-grid">
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">📖</div>
+                    <div class="tool-title">Grand Livre Blanc & 10 Synthèses Thématiques</div>
+                    <div class="tool-desc">Liseuse intégrale du Rapport Exécutif consolidé et des 10 monographies comparatives (Retraites, Salaires, Fiscalité, Énergie, Régalien, Institutions) + téléchargement des 3 bases Excel maîtres.</div>
+                </div>
+                <a href="./comparatifs%20candidats/Grand_Livre_Blanc_et_Syntheses_Thematiques.html" class="btn-launch" target="_blank">Lire le Grand Livre Blanc →</a>
+            </div>
+
             <div class="tool-card">
                 <div>
                     <div class="tool-icon">🧭</div>
@@ -303,6 +313,19 @@
             </div>
         </div>
 
+        <!-- CENTRE OPEN DATA EXCEL -->
+        <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 14px; padding: 18px 24px; margin: 24px 0 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div>
+                <div style="font-size: 13px; font-weight: 800; color: #34d399; text-transform: uppercase; letter-spacing: 0.5px;">📥 Open Data Citoyen : Bases Excel Maîtres Consolidées (16 Candidats Déclarés)</div>
+                <div style="font-size: 13px; color: #cbd5e1; margin-top: 4px;">Téléchargez les 3 classeurs analytiques transversaux avec formules natives et graphiques Excel :</div>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="./comparatifs%20candidats/Comparatif_Budgetaire_Tous_Candidats_2027.xlsx" download style="background: #059669; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">📊 Comparatif Budgétaire Global (.xlsx)</a>
+                <a href="./comparatifs%20candidats/Matrices_Thematiques_Transversales_2027.xlsx" download style="background: #059669; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">📋 8 Matrices Thématiques (.xlsx)</a>
+                <a href="./comparatifs%20candidats/Crash_Test_Budgetaire_et_Scoring_Risque.xlsx" download style="background: #059669; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">⚠️ Modèle Crash-Test & Taux (.xlsx)</a>
+            </div>
+        </div>
+
         <!-- REPERTOIRE DES CANDIDATS 2027 -->
         <h2 class="section-title" id="candidats">👥 Les Candidats à la Loupe (Dossiers Complets)</h2>
         
@@ -323,14 +346,12 @@
         </div>
 
         <div class="filters-bar">
-    <span style="font-size:12px; font-weight:bold; color:var(--text-muted); text-transform:uppercase;">Filtres Réalité 2027 :</span>
-    <button class="filter-btn active" onclick="filterCands('primary')">🎯 16 Candidats Réels en Lice</button>
-    <button class="filter-btn" onclick="filterCands('green')">🟢 500+ parrainages validés (7)</button>
-    <button class="filter-btn" onclick="filterCands('orange')">🟠 300-499 en bonne voie (5)</button>
-    <button class="filter-btn" onclick="filterCands('red')">🔴 &lt;300 en difficulté (4)</button>
-    <button class="filter-btn" style="border:1px dashed #f59e0b; color:#f59e0b;" onclick="filterCands('excluded')">📁 16 Hypothèses Écartées (Bardella, Attal...)</button>
-    <button class="filter-btn" onclick="filterCands('all')">🌐 Vue Globale (32)</button>
-</div>
+            <span style="font-size:12px; font-weight:bold; color:var(--text-muted); text-transform:uppercase;">Filtres Parrainages (16 Candidats Déclarés) :</span>
+            <button class="filter-btn active" onclick="filterCands('primary')">🎯 Tous les 16 Candidats Déclarés</button>
+            <button class="filter-btn" onclick="filterCands('green')">🟢 500+ parrainages validés (7)</button>
+            <button class="filter-btn" onclick="filterCands('orange')">🟠 300-499 en bonne voie (5)</button>
+            <button class="filter-btn" onclick="filterCands('red')">🔴 &lt;300 en difficulté (4)</button>
+        </div>
 
         <div class="cands-grid" id="candsGrid">
             <!-- Injected via JS -->
@@ -343,94 +364,6 @@
 
     <script>
         const cands = [
-  {
-    "name": "Bernard Cazeneuve",
-    "parti": "La Convention",
-    "famille": "Gauche républicaine & laïque",
-    "orientation": "Centre-gauche",
-    "color": "#1e3a8a",
-    "dep_an5": 1526.0,
-    "def_an5": -100.0,
-    "def_pct": -2.8,
-    "crash_score": "A",
-    "parr_status": "green",
-    "parr_label": "🟢 500+ parrainages validés",
-    "url_dir": "./candidats/Bernard Cazeneuve/index.html",
-    "url_html": "./candidats/Bernard Cazeneuve/Visualisation_Programme_et_Comparatif_Budget_Bernard_Cazeneuve.html",
-    "url_xlsx": "./candidats/Bernard Cazeneuve/Chiffrage_Programme_Bernard_Cazeneuve_2027.xlsx",
-    "folder_name": "Bernard Cazeneuve",
-    "real_xlsx": "Chiffrage_Programme_Bernard_Cazeneuve_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Bernard_Cazeneuve.html",
-    "is_primary": false,
-    "status_candidature": "Hypothèse écartée / Doublon",
-    "exclusion_reason": "Doublon social-démocrate républicain : mouvement La Convention, absence de base électorale suffisante hors PS."
-  },
-  {
-    "name": "Bruno Retailleau",
-    "parti": "Les Républicains (LR)",
-    "famille": "Droite républicaine & conservatrice",
-    "orientation": "Droite",
-    "color": "#0284c7",
-    "dep_an5": 1411.5,
-    "def_an5": -79.5,
-    "def_pct": -2.5,
-    "crash_score": "B+",
-    "parr_status": "green",
-    "parr_label": "🟢 500+ parrainages validés",
-    "url_dir": "./candidats/Bruno Retailleau/index.html",
-    "url_html": "./candidats/Bruno Retailleau/Visualisation_Programme_et_Comparatif_Budget_Bruno_Retailleau.html",
-    "url_xlsx": "./candidats/Bruno Retailleau/Chiffrage_Programme_Bruno_Retailleau_2027.xlsx",
-    "folder_name": "Bruno Retailleau",
-    "real_xlsx": "Chiffrage_Programme_Bruno_Retailleau_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Bruno_Retailleau.html",
-    "is_primary": false,
-    "status_candidature": "Hypothèse écartée / Doublon",
-    "exclusion_reason": "Doublon Droite républicaine : ministre de l'Intérieur, rivalité interne tranchée au profit du candidat unique LR."
-  },
-  {
-    "name": "Carole Delga",
-    "parti": "Parti Socialiste / Régions de France",
-    "famille": "Gauche territoriale & girondine",
-    "orientation": "Gauche",
-    "color": "#f43f5e",
-    "dep_an5": 1534.0,
-    "def_an5": -112.0,
-    "def_pct": -3.1,
-    "crash_score": "A",
-    "parr_status": "green",
-    "parr_label": "🟢 500+ parrainages validés",
-    "url_dir": "./candidats/Carole Delga/index.html",
-    "url_html": "./candidats/Carole Delga/Visualisation_Programme_et_Comparatif_Budget_Carole_Delga.html",
-    "url_xlsx": "./candidats/Carole Delga/Chiffrage_Programme_Carole_Delga_2027.xlsx",
-    "folder_name": "Carole Delga",
-    "real_xlsx": "Chiffrage_Programme_Carole_Delga_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Carole_Delga.html",
-    "is_primary": false,
-    "status_candidature": "Hypothèse écartée / Doublon",
-    "exclusion_reason": "Doublon socialiste : présidente de Région Occitanie, soutiendra la candidature sociale-démocrate unifiée."
-  },
-  {
-    "name": "Clémentine Autain",
-    "parti": "L'Après",
-    "famille": "Gauche unitaire & féministe",
-    "orientation": "Gauche radicale",
-    "color": "#a855f7",
-    "dep_an5": 1600.0,
-    "def_an5": -110.0,
-    "def_pct": -3.0,
-    "crash_score": "C+",
-    "parr_status": "orange",
-    "parr_label": "🟠 300-499 parrainages (en voie)",
-    "url_dir": "./candidats/Clémentine Autain/index.html",
-    "url_html": "./candidats/Clémentine Autain/Visualisation_Programme_et_Comparatif_Budget_Clementine_Autain.html",
-    "url_xlsx": "./candidats/Clémentine Autain/Chiffrage_Programme_Clementine_Autain_2027.xlsx",
-    "folder_name": "Clémentine Autain",
-    "real_xlsx": "Chiffrage_Programme_Clementine_Autain_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Clementine_Autain.html",
-    "is_primary": false,
-    "status_candidature": "Hypothèse écartée / Doublon",
-    "exclusion_reason": "Doublon gauche radicale : mouvement L'Après, recherche d'un accord unitaire et refus de candidature testimoniale."
-  },
   {
     "name": "David Lisnard",
     "parti": "Nouvelle Énergie",
@@ -453,28 +386,6 @@
     "status_candidature": "Candidat en campagne"
   },
   {
-    "name": "Dominique de Villepin",
-    "parti": "La France Humaniste",
-    "famille": "Gaullisme souverainiste & diplomatique",
-    "orientation": "Gaullisme",
-    "color": "#1d4ed8",
-    "dep_an5": 1528.0,
-    "def_an5": -106.0,
-    "def_pct": -2.8,
-    "crash_score": "B",
-    "parr_status": "orange",
-    "parr_label": "🟠 300-499 parrainages (en voie)",
-    "url_dir": "./candidats/Dominique de Villepin/index.html",
-    "url_html": "./candidats/Dominique de Villepin/Visualisation_Programme_et_Comparatif_Budget_Dominique_de_Villepin.html",
-    "url_xlsx": "./candidats/Dominique de Villepin/Chiffrage_Programme_Dominique_de_Villepin_2027.xlsx",
-    "folder_name": "Dominique de Villepin",
-    "real_xlsx": "Chiffrage_Programme_Dominique_de_Villepin_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Dominique_de_Villepin.html",
-    "is_primary": false,
-    "status_candidature": "Hypothèse écartée / Doublon",
-    "exclusion_reason": "Figure diplomatique : aucune structure militante, pas de parti, pas de réseau de 500 parrainages."
-  },
-  {
     "name": "Fabien Roussel",
     "parti": "Parti Communiste Français (PCF)",
     "famille": "Gauche républicaine & ouvrière",
@@ -494,28 +405,6 @@
     "real_html": "Visualisation_Programme_et_Comparatif_Budget_Fabien_Roussel.html",
     "is_primary": true,
     "status_candidature": "Candidat en campagne"
-  },
-  {
-    "name": "Florian Philippot",
-    "parti": "Les Patriotes",
-    "famille": "Souverainisme & Frexit citoyen",
-    "orientation": "Souverainisme radical",
-    "color": "#1e40af",
-    "dep_an5": 1430.0,
-    "def_an5": -80.0,
-    "def_pct": -2.4,
-    "crash_score": "D",
-    "parr_status": "red",
-    "parr_label": "🔴 <300 parrainages (en difficulté)",
-    "url_dir": "./candidats/Florian Philippot/index.html",
-    "url_html": "./candidats/Florian Philippot/Visualisation_Programme_et_Comparatif_Budget_Florian_Philippot.html",
-    "url_xlsx": "./candidats/Florian Philippot/Chiffrage_Programme_Florian_Philippot_2027.xlsx",
-    "folder_name": "Florian Philippot",
-    "real_xlsx": "Chiffrage_Programme_Florian_Philippot_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Florian_Philippot.html",
-    "is_primary": false,
-    "status_candidature": "Hypothèse écartée / Doublon",
-    "exclusion_reason": "Doublon souverainiste : Les Patriotes, candidature redondante avec Dupont-Aignan et Asselineau."
   },
   {
     "name": "François Asselineau",
@@ -560,28 +449,6 @@
     "status_candidature": "Candidat en campagne"
   },
   {
-    "name": "François Hollande",
-    "parti": "Parti Socialiste (PS)",
-    "famille": "Social-démocratie gouvernementale",
-    "orientation": "Centre-gauche",
-    "color": "#e11d48",
-    "dep_an5": 1525.0,
-    "def_an5": -115.0,
-    "def_pct": -3.3,
-    "crash_score": "A",
-    "parr_status": "green",
-    "parr_label": "🟢 500+ parrainages validés",
-    "url_dir": "./candidats/François Hollande/index.html",
-    "url_html": "./candidats/François Hollande/Visualisation_Programme_et_Comparatif_Budget_François_Hollande.html",
-    "url_xlsx": "./candidats/François Hollande/Chiffrage_Programme_François_Hollande_2027.xlsx",
-    "folder_name": "François Hollande",
-    "real_xlsx": "Chiffrage_Programme_François_Hollande_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_François_Hollande.html",
-    "is_primary": false,
-    "status_candidature": "Hypothèse écartée / Doublon",
-    "exclusion_reason": "Doublon social-démocrate : ancien président, ne se présentera pas face à l'offre établie de la social-démocratie."
-  },
-  {
     "name": "François Ruffin",
     "parti": "Picardie Debout ! / Debout !",
     "famille": "Gauche populaire & sociale",
@@ -601,72 +468,6 @@
     "real_html": "Visualisation_Programme_et_Comparatif_Budget_François_Ruffin.html",
     "is_primary": true,
     "status_candidature": "Candidat en campagne"
-  },
-  {
-    "name": "Gabriel Attal",
-    "parti": "Renaissance",
-    "famille": "Centre progressiste & libéral",
-    "orientation": "Centre libéral",
-    "color": "#6366f1",
-    "dep_an5": 1460.0,
-    "def_an5": -90.0,
-    "def_pct": -2.7,
-    "crash_score": "A",
-    "parr_status": "green",
-    "parr_label": "🟢 500+ parrainages validés",
-    "url_dir": "./candidats/Gabriel Attal/index.html",
-    "url_html": "./candidats/Gabriel Attal/Visualisation_Programme_et_Comparatif_Budget_Gabriel_Attal.html",
-    "url_xlsx": "./candidats/Gabriel Attal/Chiffrage_Programme_Gabriel_Attal_2027.xlsx",
-    "folder_name": "Gabriel Attal",
-    "real_xlsx": "Chiffrage_Programme_Gabriel_Attal_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Gabriel_Attal.html",
-    "is_primary": false,
-    "status_candidature": "Hypothèse écartée / Doublon",
-    "exclusion_reason": "Doublon de majorité : chef du groupe Renaissance, ne concurrencera pas la candidature déjà déclarée d'Édouard Philippe."
-  },
-  {
-    "name": "Gérald Darmanin",
-    "parti": "Populaire / Renaissance",
-    "famille": "Centre-droit populaire / Gaullisme social",
-    "orientation": "Centre-droit populaire",
-    "color": "#3b82f6",
-    "dep_an5": 1465.0,
-    "def_an5": -90.0,
-    "def_pct": -2.7,
-    "crash_score": "B",
-    "parr_status": "green",
-    "parr_label": "🟢 500+ parrainages validés",
-    "url_dir": "./candidats/Gérald Darmanin/index.html",
-    "url_html": "./candidats/Gérald Darmanin/Visualisation_Programme_et_Comparatif_Budget_Gérald_Darmanin.html",
-    "url_xlsx": "./candidats/Gérald Darmanin/Chiffrage_Programme_Gérald_Darmanin_2027.xlsx",
-    "folder_name": "Gérald Darmanin",
-    "real_xlsx": "Chiffrage_Programme_Gérald_Darmanin_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Gérald_Darmanin.html",
-    "is_primary": false,
-    "status_candidature": "Hypothèse écartée / Doublon",
-    "exclusion_reason": "Doublon de majorité : mouvement Populaires, soutien d'une candidature unique du bloc central."
-  },
-  {
-    "name": "Hélène Thouy",
-    "parti": "Parti Animaliste",
-    "famille": "Condition animale",
-    "orientation": "Écologie animale",
-    "color": "#14b8a6",
-    "dep_an5": 1505.0,
-    "def_an5": -130.0,
-    "def_pct": -4.0,
-    "crash_score": "B",
-    "parr_status": "red",
-    "parr_label": "🔴 <300 parrainages (en difficulté)",
-    "url_dir": "./candidats/Hélène Thouy/index.html",
-    "url_html": "./candidats/Hélène Thouy/Visualisation_Programme_et_Comparatif_Budget_Hélène_Thouy.html",
-    "url_xlsx": "./candidats/Hélène Thouy/Chiffrage_Programme_Hélène_Thouy_2027.xlsx",
-    "folder_name": "Hélène Thouy",
-    "real_xlsx": "Chiffrage_Programme_Hélène_Thouy_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Hélène_Thouy.html",
-    "is_primary": false,
-    "status_candidature": "Hypothèse écartée / Doublon",
-    "exclusion_reason": "Candidature thématique : Parti Animaliste, absence de maillage d'élus pour sécuriser les 500 parrainages."
   },
   {
     "name": "Jean Lassalle",
@@ -709,50 +510,6 @@
     "real_html": "Visualisation_Programme_et_Comparatif_Budget_Jean_Luc_Mélenchon.html",
     "is_primary": true,
     "status_candidature": "Candidat en campagne"
-  },
-  {
-    "name": "Jean-Marc Governatori",
-    "parti": "Écologie au Centre",
-    "famille": "Écologie indépendante & centriste",
-    "orientation": "Écologie centriste",
-    "color": "#10b981",
-    "dep_an5": 1500.0,
-    "def_an5": -115.0,
-    "def_pct": -3.4,
-    "crash_score": "B",
-    "parr_status": "red",
-    "parr_label": "🔴 <300 parrainages (en difficulté)",
-    "url_dir": "./candidats/Jean-Marc Governatori/index.html",
-    "url_html": "./candidats/Jean-Marc Governatori/Visualisation_Programme_et_Comparatif_Budget_Jean_Marc_Governatori.html",
-    "url_xlsx": "./candidats/Jean-Marc Governatori/Chiffrage_Programme_Jean_Marc_Governatori_2027.xlsx",
-    "folder_name": "Jean-Marc Governatori",
-    "real_xlsx": "Chiffrage_Programme_Jean_Marc_Governatori_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Jean_Marc_Governatori.html",
-    "is_primary": false,
-    "status_candidature": "Hypothèse écartée / Doublon",
-    "exclusion_reason": "Doublon écologiste : Écologie au Centre, sans dynamique électorale présidentielle."
-  },
-  {
-    "name": "Jordan Bardella",
-    "parti": "Rassemblement National (RN)",
-    "famille": "Droite nationale & patriotique",
-    "orientation": "Droite nationale",
-    "color": "#1e3a8a",
-    "dep_an5": 1480.0,
-    "def_an5": -110.0,
-    "def_pct": -3.3,
-    "crash_score": "C",
-    "parr_status": "orange",
-    "parr_label": "🟠 300-499 parrainages (en voie)",
-    "url_dir": "./candidats/Jordan Bardella/index.html",
-    "url_html": "./candidats/Jordan Bardella/Visualisation_Programme_et_Comparatif_Budget_Jordan_Bardella.html",
-    "url_xlsx": "./candidats/Jordan Bardella/Chiffrage_Programme_Jordan_Bardella_2027.xlsx",
-    "folder_name": "Jordan Bardella",
-    "real_xlsx": "Chiffrage_Programme_Jordan_Bardella_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Jordan_Bardella.html",
-    "is_primary": false,
-    "status_candidature": "Hypothèse écartée / Doublon",
-    "exclusion_reason": "Ne se présente pas : forme un ticket exécutif avec Marine Le Pen (cible Matignon). Plan B uniquement en cas d'inéligibilité judiciaire de Marine Le Pen."
   },
   {
     "name": "Laurent Wauquiez",
@@ -816,50 +573,6 @@
     "real_html": "Visualisation_Programme_et_Comparatif_Budget_Marine_Tondelier.html",
     "is_primary": true,
     "status_candidature": "Candidat en campagne"
-  },
-  {
-    "name": "Marion Maréchal",
-    "parti": "Identité-Libertés",
-    "famille": "Droite conservatrice & libérale",
-    "orientation": "Droite conservatrice libérale",
-    "color": "#334155",
-    "dep_an5": 1410.0,
-    "def_an5": -80.0,
-    "def_pct": -2.5,
-    "crash_score": "D+",
-    "parr_status": "red",
-    "parr_label": "🔴 <300 parrainages (en difficulté)",
-    "url_dir": "./candidats/Marion Maréchal/index.html",
-    "url_html": "./candidats/Marion Maréchal/Visualisation_Programme_et_Comparatif_Budget_Marion_Maréchal.html",
-    "url_xlsx": "./candidats/Marion Maréchal/Chiffrage_Programme_Marion_Maréchal_2027.xlsx",
-    "folder_name": "Marion Maréchal",
-    "real_xlsx": "Chiffrage_Programme_Marion_Maréchal_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Marion_Maréchal.html",
-    "is_primary": false,
-    "status_candidature": "Hypothèse écartée / Doublon",
-    "exclusion_reason": "Doublon droite nationale : mouvement Identité-Libertés, a expressément refusé de se présenter contre le RN."
-  },
-  {
-    "name": "Michel Barnier",
-    "parti": "Les Républicains (LR)",
-    "famille": "Droite modérée & européenne",
-    "orientation": "Droite républicaine modérée",
-    "color": "#0369a1",
-    "dep_an5": 1470.0,
-    "def_an5": -80.0,
-    "def_pct": -2.5,
-    "crash_score": "A+",
-    "parr_status": "green",
-    "parr_label": "🟢 500+ parrainages validés",
-    "url_dir": "./candidats/Michel Barnier/index.html",
-    "url_html": "./candidats/Michel Barnier/Visualisation_Programme_et_Comparatif_Budget_Michel_Barnier.html",
-    "url_xlsx": "./candidats/Michel Barnier/Chiffrage_Programme_Michel_Barnier_2027.xlsx",
-    "folder_name": "Michel Barnier",
-    "real_xlsx": "Chiffrage_Programme_Michel_Barnier_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Michel_Barnier.html",
-    "is_primary": false,
-    "status_candidature": "Hypothèse écartée / Doublon",
-    "exclusion_reason": "Ne se présente pas : 73 ans, a expressément exclu une candidature à l'Élysée après son passage à Matignon."
   },
   {
     "name": "Nathalie Arthaud",
@@ -944,50 +657,6 @@
     "real_html": "Visualisation_Programme_et_Comparatif_Budget_Raphaël_Glucksmann.html",
     "is_primary": true,
     "status_candidature": "Candidat en campagne"
-  },
-  {
-    "name": "Xavier Bertrand",
-    "parti": "Nous France / LR",
-    "famille": "Droite gaulliste & sociale",
-    "orientation": "Droite populaire",
-    "color": "#0284c7",
-    "dep_an5": 1460.0,
-    "def_an5": -80.0,
-    "def_pct": -2.4,
-    "crash_score": "B+",
-    "parr_status": "green",
-    "parr_label": "🟢 500+ parrainages validés",
-    "url_dir": "./candidats/Xavier Bertrand/index.html",
-    "url_html": "./candidats/Xavier Bertrand/Visualisation_Programme_et_Comparatif_Budget_Xavier_Bertrand.html",
-    "url_xlsx": "./candidats/Xavier Bertrand/Chiffrage_Programme_Xavier_Bertrand_2027.xlsx",
-    "folder_name": "Xavier Bertrand",
-    "real_xlsx": "Chiffrage_Programme_Xavier_Bertrand_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Xavier_Bertrand.html",
-    "is_primary": false,
-    "status_candidature": "Hypothèse écartée / Doublon",
-    "exclusion_reason": "Doublon Droite républicaine : président des Hauts-de-France, ralliement au candidat investi."
-  },
-  {
-    "name": "Yaël Braun-Pivet",
-    "parti": "Renaissance",
-    "famille": "Centre républicain & institutionnel",
-    "orientation": "Centre institutionnel",
-    "color": "#8b5cf6",
-    "dep_an5": 1485.0,
-    "def_an5": -100.0,
-    "def_pct": -3.0,
-    "crash_score": "A",
-    "parr_status": "green",
-    "parr_label": "🟢 500+ parrainages validés",
-    "url_dir": "./candidats/Yaël Braun-Pivet/index.html",
-    "url_html": "./candidats/Yaël Braun-Pivet/Visualisation_Programme_et_Comparatif_Budget_Yaël_Braun_Pivet.html",
-    "url_xlsx": "./candidats/Yaël Braun-Pivet/Chiffrage_Programme_Yaël_Braun_Pivet_2027.xlsx",
-    "folder_name": "Yaël Braun-Pivet",
-    "real_xlsx": "Chiffrage_Programme_Yaël_Braun_Pivet_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Yaël_Braun_Pivet.html",
-    "is_primary": false,
-    "status_candidature": "Hypothèse écartée / Doublon",
-    "exclusion_reason": "Doublon de majorité : présidente de l'Assemblée nationale, positionnée en figure institutionnelle."
   },
   {
     "name": "Édouard Philippe",
@@ -1077,27 +746,20 @@
         const candidateKeywords = {
             "David Lisnard": "retraite 65 ans baisse impots autonomie decentralisation libertes debureaucratisation dette nucleaire transmission regalien tva proportionnelle",
             "Marine Le Pen": "retraite 60 ans carriere longue preference nationale immigration securite baisse tva energie nucleaire souverainete pouvoir achat frontieres",
-            "Edouard Philippe": "retraite 67 ans competitivite budget regalien dette dette publique autorite laicite ecologie de marche reforme de letat",
-            "Jean-Luc Melenchon": "retraite 60 ans smic 1600 blocage prix 6e republique constituante isf climatique sortie otan bifurcation ecologique services publics",
-            "Gabriel Attal": "rearmement civique autorite laicite baisse impots classes moyennes travail nucleaire sante ecologie pragmatique",
-            "Raphael Glucksmann": "defense europeenne soutien ukraine ecologie justice fiscale isf europeen rearmement vert social-democratie reindustrialisation",
-            "Francois Ruffin": "smic travail ouvriers reindustrialisation protectionnisme ecologique superprofits souverainete industrielle alimentation agriculture",
+            "Édouard Philippe": "retraite 67 ans competitivite budget regalien dette dette publique autorite laicite ecologie de marche reforme de letat",
+            "Jean-Luc Mélenchon": "retraite 60 ans smic 1600 blocage prix 6e republique constituante isf climatique sortie otan bifurcation ecologique services publics",
+            "Raphaël Glucksmann": "defense europeenne soutien ukraine ecologie justice fiscale isf europeen rearmement vert social-democratie reindustrialisation",
+            "François Ruffin": "smic travail ouvriers reindustrialisation protectionnisme ecologique superprofits souverainete industrielle alimentation agriculture",
             "Laurent Wauquiez": "travail valeur travail autorite baisse depenses publiques decentralisation nucleaire fermete immigration securite",
-            "Eric Zemmour": "immigration zero remigration assimilation baisse cotisations sociales transmission libre identite souverainisme",
-            "Bernard Cazeneuve": "ordre republicain justice sociale defense des services publics serieux budgetaire transition ecologique laicite",
+            "Éric Zemmour": "immigration zero remigration assimilation baisse cotisations sociales transmission libre identite souverainisme",
             "Fabien Roussel": "energie gratuite smic 2000 pouvoir achat nucleaire reindustrialisation droit au travail alimentation",
             "Marine Tondelier": "climat ecologie fin du nucleaire transports gratuits justice sociale sortie des energies fossiles egalite femmes hommes",
-            "Francois Bayrou": "proportionnelle moralisation dette education modération republicaine dialogue social",
+            "François Bayrou": "proportionnelle moralisation dette education moderation republicaine dialogue social",
             "Nicolas Dupont-Aignan": "souverainete frexit ric energie gaullisme frontieres baisse taxes",
-            "Jean Lassalle": "ruralite terroirs souverainete des campagnes proximite liberte refus austérité",
+            "Jean Lassalle": "ruralite terroirs souverainete des campagnes proximite liberte refus austerite",
+            "François Asselineau": "frexit article 50 sortie ue sortie euro sortie otan souverainete nationale nationalisation",
             "Philippe Poutou": "semaine 32h desarmer la police interdiction licenciements anticapitalisme expropriation banques partage des richesses",
-            "Nathalie Arthaud": "lutte des classes controle ouvrier expropriation indexation salaires revolutionnaire anticapitaliste",
-            "Jordan Bardella": "matignon premier ministre rassemblement national securite immigration",
-            "Bruno Le Maire": "budget dette croissance industrie attractivite",
-            "Gerald Darmanin": "securite police ordre public immigration autorite",
-            "Bruno Retailleau": "ordre autorite immigration securite souverainete justice fermete",
-            "Xavier Bertrand": "valeur travail territoires autorite pouvoir d'achat",
-            "Michel Barnier": "rigueur compromis ordre maitrise dette budget negociations"
+            "Nathalie Arthaud": "lutte des classes controle ouvrier expropriation indexation salaires revolutionnaire anticapitaliste"
         };
 
         let currentStatusFilter = 'primary';
@@ -1126,14 +788,8 @@
             let statusLabel = "";
 
             if (currentStatusFilter === 'primary') {
-                filtered = cands.filter(c => c.is_primary);
-                statusLabel = "16 candidats réels en lice";
-            } else if (currentStatusFilter === 'excluded') {
-                filtered = cands.filter(c => !c.is_primary);
-                statusLabel = "16 hypothèses écartées & doublons";
-            } else if (currentStatusFilter === 'all') {
                 filtered = cands;
-                statusLabel = "vue globale (tous profils)";
+                statusLabel = "16 candidats déclarés en lice";
             } else {
                 filtered = cands.filter(c => c.is_primary && c.parr_status === currentStatusFilter);
                 if (currentStatusFilter === 'green') statusLabel = "candidats avec 500+ parrainages validés";

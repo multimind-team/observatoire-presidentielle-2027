@@ -1,5 +1,5 @@
 # ÉTAT DES LIEUX DES PARRAINAGES - PRÉSIDENTIELLE 2027
-*(Filtre Option B : 16 Candidats Réels en Campagne)*
+*(Périmètre Officiel : 16 Candidats Déclarés en Lice)*
 
 Chaque candidat doit recueillir au moins **500 parrainages** d'élus d'au moins 30 départements ou collectivités d'outre-mer différents pour que sa candidature soit validée par le Conseil constitutionnel.
 
@@ -39,10 +39,3 @@ Risque réel de non-qualification par manque de signatures d'élus :
 
 ---
 
-## 📁 4. RAPPEL SUR LES 16 HYPOTHÈSES ÉCARTÉES (NON CANDIDATS)
-* **Jordan Bardella :** N'a pas de collecte propre car il ne se présente pas (ticket exécutif avec Marine Le Pen).
-* **Michel Barnier :** A exclu 2027.
-* **Gabriel Attal, Gérald Darmanin, Yaël Braun-Pivet :** Doublons du bloc central derrière Édouard Philippe.
-* **Bruno Retailleau, Xavier Bertrand :** Doublons LR.
-* **François Hollande, Bernard Cazeneuve, Carole Delga :** Doublons socialistes.
-* **Clémentine Autain, Marion Maréchal, Dominique de Villepin, Florian Philippot, Hélène Thouy, Jean-Marc Governatori :** Doublons ou retraits.

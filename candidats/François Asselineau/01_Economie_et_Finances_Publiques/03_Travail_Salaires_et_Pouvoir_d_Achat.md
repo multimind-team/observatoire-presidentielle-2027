@@ -1,3 +1,32 @@
-# Travail, Salaires et Pouvoir d'Achat : Programme de François Asselineau
+# Travail, Salaires, Retraites et Pouvoir d'Achat : François Asselineau
 
-Mesures prioritaires pour la valorisation du travail réel, l'amélioration du pouvoir d'achat et la réforme du modèle social : Application stricte de l'article 50 du TUE pour sortir légalement de l'Union européenne.
+> **Candidat :** François Asselineau (Union Populaire Républicaine (UPR)) | **Famille :** Souverainisme intégral & Frexit  
+> **Cadrage Budgétaire An 5 :** Dépenses `1470.0 Mds €` | Recettes `1380.0 Mds €` | Solde `-90.0 Mds € (-2.7% PIB)` | Crash-Test `46/100 (D)`
+
+---
+
+## 1. Rémunération du Travail, Durée d'Activité et Réforme du Système de Retraites
+
+Abrogation immédiate des réformes des retraites dictées par les « Grandes Orientations des Politiques Économiques » (GOPE) de Bruxelles : retour à la retraite à 60 ans avec 40 annuités, revalorisation du SMIC et des salaires grâce à la compétitivité retrouvée d'une monnaie nationale ajustée à l'économie française, suppression de la directive européenne sur les travailleurs détachés.
+
+---
+
+## 2. Dispositif Programmatique, Mesures Clés & Chiffrage Budgétaire
+
+- **Axe majeur et mesures opérationnelles :** Restauration de la souveraineté fiscale : baisse de la TVA sur les produits de première nécessité et l'énergie rendue possible par la sortie des directives européennes sur la TVA, maintien d'un Impôt sur le Revenu progressif juste, lutte implacable contre l'évasion fiscale rendue possible par le rétablissement du contrôle des mouvements de capitaux aux frontières (fin de l'article 63 du TFUE).
+- **Articulation sectorielle et cohérence d'ensemble :** Maintien d'un service public hospitalier et d'EHPAD publics ou associatifs à but non lucratif, indexation garantie des pensions sur l'inflation.
+
+| Paramètre d'Évaluation Consolidé | Référence Actuelle (APU) | Trajectoire François Asselineau (An 5) | Impact / Vecteur Normatif |
+| :--- | :---: | :---: | :--- |
+| **Dépenses Publiques Totales** | 1 514,0 Mds € | **1470.0 Mds €** | Écart : -44.0 Mds € / an (PLF / PLFSS) |
+| **Recettes Publiques Totales** | 1 368,0 Mds € | **1380.0 Mds €** | Écart : +12.0 Mds € / an (Loi de finances) |
+| **Solde Public Consolidé** | -146,0 Mds € (-5,1%) | **-90.0 Mds € (-2.7%)** | Dette fin de mandat : 106.5 % du PIB |
+| **Robustesse Souveraine & Taux** | Base OAT 10 ans | **Score 46/100 (`D`)** | Spread `+170 bps` / Choc +200 bps : `+14,2 Mds €` |
+
+---
+
+## 3. Équilibre Financier de la Protection Sociale et Effets sur l'Emploi
+
+Les arbitrages de François Asselineau sur le salaire net, le SMIC, les cotisations sociales et l'âge de départ à la retraite constituent le cœur de son pacte social, directement intégrés dans le chiffrage de la branche vieillesse et des comptes sociaux.
+
+- **Portée démocratique et exécution :** La mise en œuvre de ce volet dès mai-juin 2027 s'inscrit dans le calendrier des 100 premiers jours (*1. Jour 1 : Notification officielle au Conseil européen de l'activation de l'article 50 du TUE (Frexit) et retrait de l'OTAN ; 2. Rétablissement du contrôle des mouvements de capitaux et des frontières nationales ; 3. Sortie du marché européen de l'électricité et blocage des tarifs de l'énergie ; 4. Loi constitutionnelle instaurant le RIC.*) et sera soumise au vote de la représentation nationale ou du peuple par voie référendaire selon la nature constitutionnelle des textes.

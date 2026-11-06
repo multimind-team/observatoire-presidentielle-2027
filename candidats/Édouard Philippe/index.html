@@ -388,22 +388,44 @@
             .workspace { grid-template-columns: 1fr; }
             .sidebar { position: static; height: auto; }
         }
+    
+        @media print {
+            body { background: #ffffff !important; color: #000000 !important; }
+            .top-navbar, .sidebar, .tabs-header, .hero-actions, .doc-link-raw, .print-hide { display: none !important; }
+            .workspace { display: block !important; max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+            .cand-hero { background: #f8fafc !important; color: #000 !important; border-bottom: 2px solid #000 !important; padding: 12px 0 !important; }
+            .hero-title, .m-val, .doc-title, .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body p, .markdown-body li, .markdown-body td, .markdown-body th { color: #000000 !important; }
+            .doc-viewer, .metric-card { background: #ffffff !important; border: 1px solid #cbd5e1 !important; box-shadow: none !important; }
+            .markdown-body th { background: #f1f5f9 !important; }
+        }
+
     </style>
 </head>
 <body>
 
     <!-- Navigation Header -->
-    <header class="top-navbar">
-        <a href="../../index.html" class="brand-link">
-            <span>🗳️</span>
-            <span>OBSERVATOIRE PRÉSIDENTIELLE 2027</span>
-        </a>
-        <nav class="nav-links">
-            <a href="../../index.html" class="nav-link">🏠 Accueil Portail</a>
-            <a href="../../comparatifs candidats/Boussole_Electorale_Test_Affinite.html" class="nav-link">🧭 Boussole Électorale</a>
-            <a href="../../comparatifs candidats/Comparateur_Interactif_Face_a_Face.html" class="nav-link">⚖️ Comparateur Face-à-Face</a>
-            <a href="../../comparatifs candidats/Simulateur_Gouvernabilite_Assemblee_2027.html" class="nav-link">🏛️ Simulateur Assemblée</a>
+        <header class="top-navbar" style="flex-wrap:wrap; gap:10px;">
+        <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+            <a href="../../index.html" class="brand-link">
+                <span>🗳️</span>
+                <span>OBSERVATOIRE 2027</span>
+            </a>
+            <select onchange="if(this.value) window.location.href=this.value" style="background:#1e293b; color:#fff; border:1px solid #3b82f6; border-radius:6px; padding:5px 10px; font-size:12px; font-weight:700; cursor:pointer; outline:none;" title="Passer directement à un autre candidat déclaré">
+                <option value="../David Lisnard/index.html">👤 David Lisnard</option><option value="../Fabien Roussel/index.html">👤 Fabien Roussel</option><option value="../François Asselineau/index.html">👤 François Asselineau</option><option value="../François Bayrou/index.html">👤 François Bayrou</option><option value="../François Ruffin/index.html">👤 François Ruffin</option><option value="../Jean Lassalle/index.html">👤 Jean Lassalle</option><option value="../Jean-Luc Mélenchon/index.html">👤 Jean-Luc Mélenchon</option><option value="../Laurent Wauquiez/index.html">👤 Laurent Wauquiez</option><option value="../Marine Le Pen/index.html">👤 Marine Le Pen</option><option value="../Marine Tondelier/index.html">👤 Marine Tondelier</option><option value="../Nathalie Arthaud/index.html">👤 Nathalie Arthaud</option><option value="../Nicolas Dupont-Aignan/index.html">👤 Nicolas Dupont-Aignan</option><option value="../Philippe Poutou/index.html">👤 Philippe Poutou</option><option value="../Raphaël Glucksmann/index.html">👤 Raphaël Glucksmann</option><option value="../Édouard Philippe/index.html" selected>👤 Édouard Philippe</option><option value="../Éric Zemmour/index.html">👤 Éric Zemmour</option>
+            </select>
+        </div>
+        <nav class="nav-links" style="flex-wrap:wrap; gap:6px;">
+            <a href="../../index.html" class="nav-link">🏠 Portail</a>
+            <a href="../../comparatifs candidats/Boussole_Electorale_Test_Affinite.html" class="nav-link">🧭 Boussole</a>
             <a href="../../comparatifs candidats/Simulateur_Pouvoir_Achat_Citoyen.html" class="nav-link">💶 Pouvoir d'Achat</a>
+            <a href="../../comparatifs candidats/Visualisation_Comparatif_Tous_Candidats_2027.html" class="nav-link">📊 Grand Atlas</a>
+            <a href="../../comparatifs candidats/Comparateur_Interactif_Face_a_Face.html" class="nav-link">⚖️ Face-à-Face</a>
+            <a href="../../comparatifs candidats/Simulateur_Gouvernabilite_Assemblee_2027.html" class="nav-link">🏛️ Assemblée</a>
+            <a href="../../comparatifs candidats/Crash_Test_Budgetaire_et_Scoring_Risque.html" class="nav-link">💥 Crash-Test</a>
+            <a href="../../comparatifs candidats/Observatoire_Sondages_2027.html" class="nav-link">📈 Sondages</a>
+            <a href="../../comparatifs candidats/Grand_Livre_Blanc_et_Syntheses_Thematiques.html" class="nav-link">📖 Livre Blanc</a>
+            <a href="../../comparatifs candidats/Faisabilite_Juridique_et_Constitutionnelle.html" class="nav-link">⚖️ Juridique</a>
+            <a href="../../comparatifs candidats/METHODOLOGIE_ET_SOURCES.html" class="nav-link">📚 Méthodologie</a>
         </nav>
     </header>
 
@@ -441,6 +463,10 @@
                     <span>🏛️</span>
                     <span>Projection Députés</span>
                 </a>
+                <button onclick="window.print()" class="btn-act print-hide" title="Imprimer ou exporter la fiche active en PDF">
+                    <span>🖨️</span>
+                    <span>Imprimer / PDF</span>
+                </button>
             </div>
         </div>
 
@@ -543,9 +569,1013 @@
     </main>
 
     <script>
-        const initialMd = "# Fiche Candidat : \u00c9douard Philippe\n\n## 1. Identit\u00e9 & Appartenance\n- **Nom complet :** \u00c9douard Philippe\n- **Parti / Mouvement :** Horizons\n- **Famille politique :** Centre-droit / Bloc central\n- **Statut \u00e9lectoral 2027 :** Candidat d\u00e9clar\u00e9\n\n## 2. Ligne Politique & Grandes Orientations\nMettre de l'ordre dans les comptes et dans la rue, valorisation du travail et du m\u00e9rite, refondation de l'\u00c9ducation nationale, pragmatisme institutionnel.\n\n## 3. Structure Pr\u00e9vue pour le Suivi de Campagne\nCe dossier personnel contient l'espace d'analyse structur\u00e9 :\n- `Programme/` : Recueil des propositions officielles, du manifeste et des prises de parole\n- `Chiffrage_Budget/` : Fichiers d'\u00e9valuation budg\u00e9taire et impact sur les finances publiques\n- `Comparatif_Etat/` : Analyse comparative avec le Budget G\u00e9n\u00e9ral de l'\u00c9tat (503,6 Mds \u20ac) et les APU (1 514 Mds \u20ac)\n- `Sources_et_Medias/` : Liens vers interviews, articles, interventions vid\u00e9o et r\u00e9seaux sociaux\n\n---\n*Dossier cr\u00e9\u00e9 automatiquement dans le cadre de l'observatoire de l'\u00e9lection pr\u00e9sidentielle 2027.*\n";
-        const dossiers = [{"dir_name": "00_Introduction_et_Candidature", "title": "00 Introduction et Candidature", "files": [{"file_name": "01_Biographie_Parcours_et_Positionnement.md", "title": "01 Biographie Parcours et Positionnement", "path": "./00_Introduction_et_Candidature/01_Biographie_Parcours_et_Positionnement.md"}, {"file_name": "02_Parti_Mouvement_Equipe_et_Reseaux.md", "title": "02 Parti Mouvement Equipe et Reseaux", "path": "./00_Introduction_et_Candidature/02_Parti_Mouvement_Equipe_et_Reseaux.md"}, {"file_name": "03_Doctrine_Philosophie_et_Vision_2027.md", "title": "03 Doctrine Philosophie et Vision 2027", "path": "./00_Introduction_et_Candidature/03_Doctrine_Philosophie_et_Vision_2027.md"}]}, {"dir_name": "01_Economie_et_Finances_Publiques", "title": "01 Economie et Finances Publiques", "files": [{"file_name": "01_Fiscalite_Impots_Menages_et_Patrimoine.md", "title": "01 Fiscalite Impots Menages et Patrimoine", "path": "./01_Economie_et_Finances_Publiques/01_Fiscalite_Impots_Menages_et_Patrimoine.md"}, {"file_name": "02_Entreprises_Production_et_Competitivite.md", "title": "02 Entreprises Production et Competitivite", "path": "./01_Economie_et_Finances_Publiques/02_Entreprises_Production_et_Competitivite.md"}, {"file_name": "03_Travail_Salaires_et_Pouvoir_d_Achat.md", "title": "03 Travail Salaires et Pouvoir d Achat", "path": "./01_Economie_et_Finances_Publiques/03_Travail_Salaires_et_Pouvoir_d_Achat.md"}, {"file_name": "04_Dette_Depense_Publique_et_Trajectoire.md", "title": "04 Dette Depense Publique et Trajectoire", "path": "./01_Economie_et_Finances_Publiques/04_Dette_Depense_Publique_et_Trajectoire.md"}]}, {"dir_name": "02_Securite_Justice_et_Immigration", "title": "02 Securite Justice et Immigration", "files": [{"file_name": "01_Securite_Police_Gendarmerie_et_Ordre_Public.md", "title": "01 Securite Police Gendarmerie et Ordre Public", "path": "./02_Securite_Justice_et_Immigration/01_Securite_Police_Gendarmerie_et_Ordre_Public.md"}, {"file_name": "02_Justice_Prisons_et_Politique_Penale.md", "title": "02 Justice Prisons et Politique Penale", "path": "./02_Securite_Justice_et_Immigration/02_Justice_Prisons_et_Politique_Penale.md"}, {"file_name": "03_Immigration_Frontieres_Assimilation_et_Laicite.md", "title": "03 Immigration Frontieres Assimilation et Laicite", "path": "./02_Securite_Justice_et_Immigration/03_Immigration_Frontieres_Assimilation_et_Laicite.md"}]}, {"dir_name": "03_Sante_et_Affaires_Sociales", "title": "03 Sante et Affaires Sociales", "files": [{"file_name": "01_Hopital_Medecine_de_Ville_et_Deserts_Medicaux.md", "title": "01 Hopital Medecine de Ville et Deserts Medicaux", "path": "./03_Sante_et_Affaires_Sociales/01_Hopital_Medecine_de_Ville_et_Deserts_Medicaux.md"}, {"file_name": "02_Retraites_et_Financement_Protection_Sociale.md", "title": "02 Retraites et Financement Protection Sociale", "path": "./03_Sante_et_Affaires_Sociales/02_Retraites_et_Financement_Protection_Sociale.md"}, {"file_name": "03_Minima_Sociaux_RSA_Chomage_et_Lutte_Anti_Fraude.md", "title": "03 Minima Sociaux RSA Chomage et Lutte Anti Fraude", "path": "./03_Sante_et_Affaires_Sociales/03_Minima_Sociaux_RSA_Chomage_et_Lutte_Anti_Fraude.md"}]}, {"dir_name": "04_Education_Culture_et_Jeunesse", "title": "04 Education Culture et Jeunesse", "files": [{"file_name": "01_Ecole_Savoirs_Fondamentaux_et_Enseignants.md", "title": "01 Ecole Savoirs Fondamentaux et Enseignants", "path": "./04_Education_Culture_et_Jeunesse/01_Ecole_Savoirs_Fondamentaux_et_Enseignants.md"}, {"file_name": "02_Universites_Recherche_et_Innovation.md", "title": "02 Universites Recherche et Innovation", "path": "./04_Education_Culture_et_Jeunesse/02_Universites_Recherche_et_Innovation.md"}, {"file_name": "03_Culture_Patrimoine_Audiovisuel_et_Jeunesse.md", "title": "03 Culture Patrimoine Audiovisuel et Jeunesse", "path": "./04_Education_Culture_et_Jeunesse/03_Culture_Patrimoine_Audiovisuel_et_Jeunesse.md"}]}, {"dir_name": "05_Ecologie_Energie_et_Agriculture", "title": "05 Ecologie Energie et Agriculture", "files": [{"file_name": "01_Politique_Energetique_Nucleaire_et_Renouvelables.md", "title": "01 Politique Energetique Nucleaire et Renouvelables", "path": "./05_Ecologie_Energie_et_Agriculture/01_Politique_Energetique_Nucleaire_et_Renouvelables.md"}, {"file_name": "02_Ecologie_Transports_et_Industrie_Verte.md", "title": "02 Ecologie Transports et Industrie Verte", "path": "./05_Ecologie_Energie_et_Agriculture/02_Ecologie_Transports_et_Industrie_Verte.md"}, {"file_name": "03_Agriculture_Peche_et_Souverainete_Alimentaire.md", "title": "03 Agriculture Peche et Souverainete Alimentaire", "path": "./05_Ecologie_Energie_et_Agriculture/03_Agriculture_Peche_et_Souverainete_Alimentaire.md"}]}, {"dir_name": "06_Institutions_et_Decentralisation", "title": "06 Institutions et Decentralisation", "files": [{"file_name": "01_Institutions_Constitution_Referendum_et_Democratie.md", "title": "01 Institutions Constitution Referendum et Democratie", "path": "./06_Institutions_et_Decentralisation/01_Institutions_Constitution_Referendum_et_Democratie.md"}, {"file_name": "02_Reforme_de_l_Etat_Fonction_Publique_et_Collectivites.md", "title": "02 Reforme de l Etat Fonction Publique et Collectivites", "path": "./06_Institutions_et_Decentralisation/02_Reforme_de_l_Etat_Fonction_Publique_et_Collectivites.md"}]}, {"dir_name": "07_Europe_et_Geopolitique", "title": "07 Europe et Geopolitique", "files": [{"file_name": "01_Union_Europeenne_Traites_et_Commerce.md", "title": "01 Union Europeenne Traites et Commerce", "path": "./07_Europe_et_Geopolitique/01_Union_Europeenne_Traites_et_Commerce.md"}, {"file_name": "02_Defense_Armees_Diplomatie_et_Francophonie.md", "title": "02 Defense Armees Diplomatie et Francophonie", "path": "./07_Europe_et_Geopolitique/02_Defense_Armees_Diplomatie_et_Francophonie.md"}]}, {"dir_name": "08_Veille_Numerique_et_Sources", "title": "08 Veille Numerique et Sources", "files": [{"file_name": "01_Presence_Numerique_YouTube_Reseaux_Sociaux.md", "title": "01 Presence Numerique YouTube Reseaux Sociaux", "path": "./08_Veille_Numerique_et_Sources/01_Presence_Numerique_YouTube_Reseaux_Sociaux.md"}, {"file_name": "02_Bibliographie_Discours_Cl\u00e9s_et_Sources_Verifiees.md", "title": "02 Bibliographie Discours Cl\u00e9s et Sources Verifiees", "path": "./08_Veille_Numerique_et_Sources/02_Bibliographie_Discours_Cl\u00e9s_et_Sources_Verifiees.md"}]}, {"dir_name": "09_Logement_Famille_et_Demographie", "title": "09 Logement Famille et Demographie", "files": [{"file_name": "01_Logement_Construction_et_Fiscalite_Immobiliere.md", "title": "01 Logement Construction et Fiscalite Immobiliere", "path": "./09_Logement_Famille_et_Demographie/01_Logement_Construction_et_Fiscalite_Immobiliere.md"}, {"file_name": "02_Politique_Familiale_Natalite_et_Transmission.md", "title": "02 Politique Familiale Natalite et Transmission", "path": "./09_Logement_Famille_et_Demographie/02_Politique_Familiale_Natalite_et_Transmission.md"}]}, {"dir_name": "10_Chiffrage_et_Simulateurs_Budgetaires", "title": "10 Chiffrage et Simulateurs Budgetaires", "files": [{"file_name": "01_Chiffrage_Ligne_a_Ligne_par_Famille.md", "title": "01 Chiffrage Ligne a Ligne par Famille", "path": "./10_Chiffrage_et_Simulateurs_Budgetaires/01_Chiffrage_Ligne_a_Ligne_par_Famille.md"}, {"file_name": "02_Impact_Macroeconomique_et_Cas_Types_Menages.md", "title": "02 Impact Macroeconomique et Cas Types Menages", "path": "./10_Chiffrage_et_Simulateurs_Budgetaires/02_Impact_Macroeconomique_et_Cas_Types_Menages.md"}]}];
-        const fileContents = {"./FICHE_CANDIDAT.md": "# Fiche Candidat : \u00c9douard Philippe\n\n## 1. Identit\u00e9 & Appartenance\n- **Nom complet :** \u00c9douard Philippe\n- **Parti / Mouvement :** Horizons\n- **Famille politique :** Centre-droit / Bloc central\n- **Statut \u00e9lectoral 2027 :** Candidat d\u00e9clar\u00e9\n\n## 2. Ligne Politique & Grandes Orientations\nMettre de l'ordre dans les comptes et dans la rue, valorisation du travail et du m\u00e9rite, refondation de l'\u00c9ducation nationale, pragmatisme institutionnel.\n\n## 3. Structure Pr\u00e9vue pour le Suivi de Campagne\nCe dossier personnel contient l'espace d'analyse structur\u00e9 :\n- `Programme/` : Recueil des propositions officielles, du manifeste et des prises de parole\n- `Chiffrage_Budget/` : Fichiers d'\u00e9valuation budg\u00e9taire et impact sur les finances publiques\n- `Comparatif_Etat/` : Analyse comparative avec le Budget G\u00e9n\u00e9ral de l'\u00c9tat (503,6 Mds \u20ac) et les APU (1 514 Mds \u20ac)\n- `Sources_et_Medias/` : Liens vers interviews, articles, interventions vid\u00e9o et r\u00e9seaux sociaux\n\n---\n*Dossier cr\u00e9\u00e9 automatiquement dans le cadre de l'observatoire de l'\u00e9lection pr\u00e9sidentielle 2027.*\n", "./INDEX.md": "# Fiche Candidat : \u00c9douard Philippe\n\n## 1. Identit\u00e9 & Appartenance\n- **Nom complet :** \u00c9douard Philippe\n- **Parti / Mouvement :** Horizons\n- **Famille politique :** Centre-droit / Bloc central\n- **Statut \u00e9lectoral 2027 :** Candidat d\u00e9clar\u00e9\n\n## 2. Ligne Politique & Grandes Orientations\nMettre de l'ordre dans les comptes et dans la rue, valorisation du travail et du m\u00e9rite, refondation de l'\u00c9ducation nationale, pragmatisme institutionnel.\n\n## 3. Structure Pr\u00e9vue pour le Suivi de Campagne\nCe dossier personnel contient l'espace d'analyse structur\u00e9 :\n- `Programme/` : Recueil des propositions officielles, du manifeste et des prises de parole\n- `Chiffrage_Budget/` : Fichiers d'\u00e9valuation budg\u00e9taire et impact sur les finances publiques\n- `Comparatif_Etat/` : Analyse comparative avec le Budget G\u00e9n\u00e9ral de l'\u00c9tat (503,6 Mds \u20ac) et les APU (1 514 Mds \u20ac)\n- `Sources_et_Medias/` : Liens vers interviews, articles, interventions vid\u00e9o et r\u00e9seaux sociaux\n\n---\n*Dossier cr\u00e9\u00e9 automatiquement dans le cadre de l'observatoire de l'\u00e9lection pr\u00e9sidentielle 2027.*\n", "./00_Introduction_et_Candidature/01_Biographie_Parcours_et_Positionnement.md": "# Biographie, Parcours et Positionnement d'\u00c9douard Philippe\n\n## 1. Origines, Formation et D\u00e9buts Politiques\nN\u00e9 le 28 novembre 1970 \u00e0 Rouen, fils d'enseignants, \u00c9douard Philippe suit un cursus d'excellence r\u00e9publicaine : hypokh\u00e2gne au lyc\u00e9e Janson-de-Sailly, dipl\u00f4m\u00e9 de l'Institut d'\u00c9tudes Politiques de Paris (Sciences Po) en 1992, puis \u00e9l\u00e8ve de l'\u00c9cole Nationale d'Administration (ENA - promotion Marc Bloch, 1995-1997). \u00c0 sa sortie de l'ENA, il int\u00e8gre le Conseil d'\u00c9tat.\n\nInitialement engag\u00e9 au Parti Socialiste sous la banni\u00e8re rocardienne durant ses ann\u00e9es d'\u00e9tudes, il s'\u00e9loigne de la gauche pour rejoindre la droite lib\u00e9rale et r\u00e9publicaine. En 2002, il participe activement \u00e0 la cr\u00e9ation de l'Union pour un Mouvement Populaire (UMP) aux c\u00f4t\u00e9s d'Alain Jupp\u00e9, dont il devient l'un des plus proches disciples et directeurs g\u00e9n\u00e9raux des services du parti.\n\n## 2. L'Ancrage Havrais et l'Ascension Parlementaire\n\u00c9douard Philippe s'\u00e9tablit solidement au Havre, ville industrielle et portuaire embl\u00e9matique :\n- \u00c9lu adjoint au maire du Havre en 2001, il devient maire du Havre en 2010 suite \u00e0 la d\u00e9mission d'Antoine Rufenacht.\n- Il est r\u00e9\u00e9lu maire en 2014 d\u00e8s le premier tour, puis \u00e0 nouveau en 2020 apr\u00e8s son d\u00e9part de Matignon.\n- Parall\u00e8lement, il est \u00e9lu d\u00e9put\u00e9 de la 7e circonscription de la Seine-Maritime de 2012 \u00e0 2017.\n- Au Havre, il d\u00e9veloppe une pratique politique pragmatique, centr\u00e9e sur le d\u00e9veloppement portuaire, l'attractivit\u00e9 industrielle, la transition maritime et une gestion budg\u00e9taire rigoureuse.\n\n## 3. Premier Ministre de la R\u00e9publique (2017-2020)\nNomm\u00e9 Premier ministre par Emmanuel Macron le 15 mai 2017, il dirige deux gouvernements cons\u00e9cutifs pendant trois ann\u00e9es marqu\u00e9es par des crises majeures :\n- **R\u00e9formes structurelles (2017-2018) :** Ordonnances travail r\u00e9formant le Code du travail, suppression de l'ISF remplac\u00e9 par l'IFI, r\u00e9forme de la SNCF (fin du statut de cheminot \u00e0 l'embauche), vote de la loi ELAN sur le logement.\n- **Crise des Gilets Jaunes (2018-2019) :** Gestion de la contestation sociale, recul sur la hausse de la taxe carbone, organisation du Grand D\u00e9bat National.\n- **Projet de r\u00e9forme des retraites \u00e0 points (2019-2020) :** Porteur de la r\u00e9forme syst\u00e9mique avec \u00ab \u00e2ge pivot \u00bb, interrompue par la pand\u00e9mie.\n- **Gestion de crise sanitaire Covid-19 (printemps 2020) :** Confinement national, mise en place du \u00ab quoi qu'il en co\u00fbte \u00bb et points presse quotidiens tr\u00e8s suivis.\nIl quitte Matignon le 3 juillet 2020 avec un niveau de popularit\u00e9 exceptionnel, nettement sup\u00e9rieur \u00e0 celui du pr\u00e9sident de la R\u00e9publique.\n\n## 4. Fondation d'Horizons et D\u00e9claration Pr\u00e9sidentielle 2027\nEn octobre 2021, il fonde au Havre son propre parti politique, **Horizons**, positionn\u00e9 au centre-droit, autonome mais alli\u00e9 de la majorit\u00e9 sortante :\n- Il construit patiemment un maillage territorial de maires et d'\u00e9lus locaux, et constitue un groupe parlementaire solide \u00e0 l'Assembl\u00e9e nationale et au S\u00e9nat.\n- D\u00e9but septembre 2024, il franchit le pas et officialise sa candidature \u00e0 l'\u00e9lection pr\u00e9sidentielle de 2027 : *\u00ab Je serai candidat \u00e0 la prochaine \u00e9lection pr\u00e9sidentielle. Je me pr\u00e9pare pour proposer des choses massives et coh\u00e9rentes aux Fran\u00e7ais. \u00bb*\n", "00_Introduction_et_Candidature/01_Biographie_Parcours_et_Positionnement.md": "# Biographie, Parcours et Positionnement d'\u00c9douard Philippe\n\n## 1. Origines, Formation et D\u00e9buts Politiques\nN\u00e9 le 28 novembre 1970 \u00e0 Rouen, fils d'enseignants, \u00c9douard Philippe suit un cursus d'excellence r\u00e9publicaine : hypokh\u00e2gne au lyc\u00e9e Janson-de-Sailly, dipl\u00f4m\u00e9 de l'Institut d'\u00c9tudes Politiques de Paris (Sciences Po) en 1992, puis \u00e9l\u00e8ve de l'\u00c9cole Nationale d'Administration (ENA - promotion Marc Bloch, 1995-1997). \u00c0 sa sortie de l'ENA, il int\u00e8gre le Conseil d'\u00c9tat.\n\nInitialement engag\u00e9 au Parti Socialiste sous la banni\u00e8re rocardienne durant ses ann\u00e9es d'\u00e9tudes, il s'\u00e9loigne de la gauche pour rejoindre la droite lib\u00e9rale et r\u00e9publicaine. En 2002, il participe activement \u00e0 la cr\u00e9ation de l'Union pour un Mouvement Populaire (UMP) aux c\u00f4t\u00e9s d'Alain Jupp\u00e9, dont il devient l'un des plus proches disciples et directeurs g\u00e9n\u00e9raux des services du parti.\n\n## 2. L'Ancrage Havrais et l'Ascension Parlementaire\n\u00c9douard Philippe s'\u00e9tablit solidement au Havre, ville industrielle et portuaire embl\u00e9matique :\n- \u00c9lu adjoint au maire du Havre en 2001, il devient maire du Havre en 2010 suite \u00e0 la d\u00e9mission d'Antoine Rufenacht.\n- Il est r\u00e9\u00e9lu maire en 2014 d\u00e8s le premier tour, puis \u00e0 nouveau en 2020 apr\u00e8s son d\u00e9part de Matignon.\n- Parall\u00e8lement, il est \u00e9lu d\u00e9put\u00e9 de la 7e circonscription de la Seine-Maritime de 2012 \u00e0 2017.\n- Au Havre, il d\u00e9veloppe une pratique politique pragmatique, centr\u00e9e sur le d\u00e9veloppement portuaire, l'attractivit\u00e9 industrielle, la transition maritime et une gestion budg\u00e9taire rigoureuse.\n\n## 3. Premier Ministre de la R\u00e9publique (2017-2020)\nNomm\u00e9 Premier ministre par Emmanuel Macron le 15 mai 2017, il dirige deux gouvernements cons\u00e9cutifs pendant trois ann\u00e9es marqu\u00e9es par des crises majeures :\n- **R\u00e9formes structurelles (2017-2018) :** Ordonnances travail r\u00e9formant le Code du travail, suppression de l'ISF remplac\u00e9 par l'IFI, r\u00e9forme de la SNCF (fin du statut de cheminot \u00e0 l'embauche), vote de la loi ELAN sur le logement.\n- **Crise des Gilets Jaunes (2018-2019) :** Gestion de la contestation sociale, recul sur la hausse de la taxe carbone, organisation du Grand D\u00e9bat National.\n- **Projet de r\u00e9forme des retraites \u00e0 points (2019-2020) :** Porteur de la r\u00e9forme syst\u00e9mique avec \u00ab \u00e2ge pivot \u00bb, interrompue par la pand\u00e9mie.\n- **Gestion de crise sanitaire Covid-19 (printemps 2020) :** Confinement national, mise en place du \u00ab quoi qu'il en co\u00fbte \u00bb et points presse quotidiens tr\u00e8s suivis.\nIl quitte Matignon le 3 juillet 2020 avec un niveau de popularit\u00e9 exceptionnel, nettement sup\u00e9rieur \u00e0 celui du pr\u00e9sident de la R\u00e9publique.\n\n## 4. Fondation d'Horizons et D\u00e9claration Pr\u00e9sidentielle 2027\nEn octobre 2021, il fonde au Havre son propre parti politique, **Horizons**, positionn\u00e9 au centre-droit, autonome mais alli\u00e9 de la majorit\u00e9 sortante :\n- Il construit patiemment un maillage territorial de maires et d'\u00e9lus locaux, et constitue un groupe parlementaire solide \u00e0 l'Assembl\u00e9e nationale et au S\u00e9nat.\n- D\u00e9but septembre 2024, il franchit le pas et officialise sa candidature \u00e0 l'\u00e9lection pr\u00e9sidentielle de 2027 : *\u00ab Je serai candidat \u00e0 la prochaine \u00e9lection pr\u00e9sidentielle. Je me pr\u00e9pare pour proposer des choses massives et coh\u00e9rentes aux Fran\u00e7ais. \u00bb*\n", "./00_Introduction_et_Candidature/02_Parti_Mouvement_Equipe_et_Reseaux.md": "# Parti, Mouvement, \u00c9quipe et R\u00e9seaux : Le Parti Horizons\n\n## 1. La Structure Partisane : Horizons\nFond\u00e9 le 9 octobre 2021 au Havre, le parti **Horizons** se veut une formation politique \u00ab pour voir loin \u00bb :\n- **Ligne politique :** Lib\u00e9rale, r\u00e9publicaine, europ\u00e9enne, girondine et r\u00e9galienne.\n- **Implantation territoriale :** Horizons revendique plus de 30 000 adh\u00e9rents et plus de 800 maires affili\u00e9s, misant sur l'ancrage municipal pour contrebalancer le centralisme parisien.\n- **Repr\u00e9sentation parlementaire :** Un groupe parlementaire \u00e0 l'Assembl\u00e9e nationale (pr\u00e9sid\u00e9 par Laurent Marcangeli) et un groupe influent au S\u00e9nat (Les Ind\u00e9pendants).\n\n## 2. L'\u00c9quipe Rapproch\u00e9e et Cadres Cl\u00e9s\n- **Laurent Marcangeli :** D\u00e9put\u00e9 et ancien maire d'Ajaccio, patron des d\u00e9put\u00e9s Horizons, relais politique et territorial central.\n- **Christophe B\u00e9chu :** Ancien ministre de la Transition \u00e9cologique, secr\u00e9taire g\u00e9n\u00e9ral d'Horizons, maire d'Angers, strat\u00e8ge territorial.\n- **Thomas Mesnier :** Ancien d\u00e9put\u00e9 et m\u00e9decin urgentiste, r\u00e9f\u00e9rent th\u00e9matique sur la sant\u00e9 et les affaires sociales.\n- **Gilles Boyer :** D\u00e9put\u00e9 europ\u00e9en, conseiller historique et intime d'\u00c9douard Philippe (co-auteur de leurs polars politiques).\n- **St\u00e9phanie von Euw :** Maire de Pontoise, vice-pr\u00e9sidente d'Horizons, charg\u00e9e de la coh\u00e9sion r\u00e9publicaine.\n- **Pierre-Yves Bournazel :** Conseiller de Paris, figure de proue parisienne du mouvement.\n\n## 3. R\u00e9seaux d'Influence et Soutiens\n- **R\u00e9seau des \u00e9lus locaux :** F\u00e9d\u00e9ration de maires ind\u00e9pendants et de droite mod\u00e9r\u00e9e s\u00e9duits par la d\u00e9centralisation.\n- **Monde \u00e9conomique et chefs d'entreprise :** Soutien de dirigeants du CAC 40, d'ETI et du MEDEF favorables \u00e0 son \u00ab deal fiscal \u00bb (-50 Mds \u20ac d'imp\u00f4ts de production) et \u00e0 la sortie des 35 heures.\n- **Cercle intellectuel et technocratique :** Hauts fonctionnaires, conseillers d'\u00c9tat, \u00e9conomistes lib\u00e9raux et diplomates r\u00e9unis autour de ses s\u00e9minaires programmatiques.\n", "00_Introduction_et_Candidature/02_Parti_Mouvement_Equipe_et_Reseaux.md": "# Parti, Mouvement, \u00c9quipe et R\u00e9seaux : Le Parti Horizons\n\n## 1. La Structure Partisane : Horizons\nFond\u00e9 le 9 octobre 2021 au Havre, le parti **Horizons** se veut une formation politique \u00ab pour voir loin \u00bb :\n- **Ligne politique :** Lib\u00e9rale, r\u00e9publicaine, europ\u00e9enne, girondine et r\u00e9galienne.\n- **Implantation territoriale :** Horizons revendique plus de 30 000 adh\u00e9rents et plus de 800 maires affili\u00e9s, misant sur l'ancrage municipal pour contrebalancer le centralisme parisien.\n- **Repr\u00e9sentation parlementaire :** Un groupe parlementaire \u00e0 l'Assembl\u00e9e nationale (pr\u00e9sid\u00e9 par Laurent Marcangeli) et un groupe influent au S\u00e9nat (Les Ind\u00e9pendants).\n\n## 2. L'\u00c9quipe Rapproch\u00e9e et Cadres Cl\u00e9s\n- **Laurent Marcangeli :** D\u00e9put\u00e9 et ancien maire d'Ajaccio, patron des d\u00e9put\u00e9s Horizons, relais politique et territorial central.\n- **Christophe B\u00e9chu :** Ancien ministre de la Transition \u00e9cologique, secr\u00e9taire g\u00e9n\u00e9ral d'Horizons, maire d'Angers, strat\u00e8ge territorial.\n- **Thomas Mesnier :** Ancien d\u00e9put\u00e9 et m\u00e9decin urgentiste, r\u00e9f\u00e9rent th\u00e9matique sur la sant\u00e9 et les affaires sociales.\n- **Gilles Boyer :** D\u00e9put\u00e9 europ\u00e9en, conseiller historique et intime d'\u00c9douard Philippe (co-auteur de leurs polars politiques).\n- **St\u00e9phanie von Euw :** Maire de Pontoise, vice-pr\u00e9sidente d'Horizons, charg\u00e9e de la coh\u00e9sion r\u00e9publicaine.\n- **Pierre-Yves Bournazel :** Conseiller de Paris, figure de proue parisienne du mouvement.\n\n## 3. R\u00e9seaux d'Influence et Soutiens\n- **R\u00e9seau des \u00e9lus locaux :** F\u00e9d\u00e9ration de maires ind\u00e9pendants et de droite mod\u00e9r\u00e9e s\u00e9duits par la d\u00e9centralisation.\n- **Monde \u00e9conomique et chefs d'entreprise :** Soutien de dirigeants du CAC 40, d'ETI et du MEDEF favorables \u00e0 son \u00ab deal fiscal \u00bb (-50 Mds \u20ac d'imp\u00f4ts de production) et \u00e0 la sortie des 35 heures.\n- **Cercle intellectuel et technocratique :** Hauts fonctionnaires, conseillers d'\u00c9tat, \u00e9conomistes lib\u00e9raux et diplomates r\u00e9unis autour de ses s\u00e9minaires programmatiques.\n", "./00_Introduction_et_Candidature/03_Doctrine_Philosophie_et_Vision_2027.md": "# Doctrine, Philosophie et Vision pour 2027\n\n## 1. La Doctrine du Centre-Droit R\u00e9galien et Lib\u00e9ral\n\u00c9douard Philippe th\u00e9orise sa vision dans son ouvrage *Des lieux qui disent* (2023) :\n- **Le constat de l'affaissement :** Une France surendett\u00e9e, bureaucratis\u00e9e, aux services publics d\u00e9grad\u00e9s malgr\u00e9 une d\u00e9pense record, et travers\u00e9e par un sentiment diffus de perte d'autorit\u00e9 et d'ensauvagement.\n- **La m\u00e9thode :** Dire la v\u00e9rit\u00e9 aux Fran\u00e7ais, refuser la d\u00e9magogie de la d\u00e9pense facile, assumer des r\u00e9formes difficiles d\u00e8s les premiers mois par r\u00e9f\u00e9rendum ou ordonnances.\n- **Le triptyque programmatique :** Ordre dans les comptes, ordre dans la rue, libert\u00e9 pour les acteurs \u00e9conomiques et \u00e9ducatifs.\n\n## 2. Le R\u00e9alisme Budg\u00e9taire \u00c9lev\u00e9 au Rang Constitutionnel\nContrairement au \u00ab quoi qu'il en co\u00fbte \u00bb des ann\u00e9es de crise sanitaire, \u00c9douard Philippe pr\u00f4ne une discipline budg\u00e9taire stricte :\n- Inscription d'une **\u00ab r\u00e8gle d'or \u00bb constitutionnelle** interdisant de financer le fonctionnement courant de l'\u00c9tat par la dette.\n- R\u00e9duction du d\u00e9ficit public consolid\u00e9 \u00e0 **2 % du PIB** \u00e0 l'horizon 2032.\n- R\u00e9duction de la part de la d\u00e9pense publique de plus de 52,7 % \u00e0 moins de 48 % du PIB.\n\n## 3. Travailler Plus : Le Socle du Redressement Fran\u00e7ais\nPour \u00c9douard Philippe, le mal fran\u00e7ais r\u00e9side dans un volume d'heures travaill\u00e9es insuffisant \u00e0 l'\u00e9chelle de la vie et de l'ann\u00e9e :\n- Casser le carcan rigide des 35 heures en exon\u00e9rant totalement de cotisations patronales le travail au-del\u00e0 de 37 heures.\n- Garantir l'\u00e9quilibre du syst\u00e8me de retraite par le travail et une dose de capitalisation collective.\n- Recentrer l'action publique sur le c\u0153ur r\u00e9galien de l'\u00c9tat : D\u00e9fense, S\u00e9curit\u00e9, Justice, Fronti\u00e8res, \u00c9cole.\n", "00_Introduction_et_Candidature/03_Doctrine_Philosophie_et_Vision_2027.md": "# Doctrine, Philosophie et Vision pour 2027\n\n## 1. La Doctrine du Centre-Droit R\u00e9galien et Lib\u00e9ral\n\u00c9douard Philippe th\u00e9orise sa vision dans son ouvrage *Des lieux qui disent* (2023) :\n- **Le constat de l'affaissement :** Une France surendett\u00e9e, bureaucratis\u00e9e, aux services publics d\u00e9grad\u00e9s malgr\u00e9 une d\u00e9pense record, et travers\u00e9e par un sentiment diffus de perte d'autorit\u00e9 et d'ensauvagement.\n- **La m\u00e9thode :** Dire la v\u00e9rit\u00e9 aux Fran\u00e7ais, refuser la d\u00e9magogie de la d\u00e9pense facile, assumer des r\u00e9formes difficiles d\u00e8s les premiers mois par r\u00e9f\u00e9rendum ou ordonnances.\n- **Le triptyque programmatique :** Ordre dans les comptes, ordre dans la rue, libert\u00e9 pour les acteurs \u00e9conomiques et \u00e9ducatifs.\n\n## 2. Le R\u00e9alisme Budg\u00e9taire \u00c9lev\u00e9 au Rang Constitutionnel\nContrairement au \u00ab quoi qu'il en co\u00fbte \u00bb des ann\u00e9es de crise sanitaire, \u00c9douard Philippe pr\u00f4ne une discipline budg\u00e9taire stricte :\n- Inscription d'une **\u00ab r\u00e8gle d'or \u00bb constitutionnelle** interdisant de financer le fonctionnement courant de l'\u00c9tat par la dette.\n- R\u00e9duction du d\u00e9ficit public consolid\u00e9 \u00e0 **2 % du PIB** \u00e0 l'horizon 2032.\n- R\u00e9duction de la part de la d\u00e9pense publique de plus de 52,7 % \u00e0 moins de 48 % du PIB.\n\n## 3. Travailler Plus : Le Socle du Redressement Fran\u00e7ais\nPour \u00c9douard Philippe, le mal fran\u00e7ais r\u00e9side dans un volume d'heures travaill\u00e9es insuffisant \u00e0 l'\u00e9chelle de la vie et de l'ann\u00e9e :\n- Casser le carcan rigide des 35 heures en exon\u00e9rant totalement de cotisations patronales le travail au-del\u00e0 de 37 heures.\n- Garantir l'\u00e9quilibre du syst\u00e8me de retraite par le travail et une dose de capitalisation collective.\n- Recentrer l'action publique sur le c\u0153ur r\u00e9galien de l'\u00c9tat : D\u00e9fense, S\u00e9curit\u00e9, Justice, Fronti\u00e8res, \u00c9cole.\n", "./01_Economie_et_Finances_Publiques/01_Fiscalite_Impots_Menages_et_Patrimoine.md": "# Fiscalit\u00e9 des M\u00e9nages, Imp\u00f4ts et Patrimoine\n\n## 1. Moratoire Fiscal d'un Quinquennat\n\u00c9douard Philippe s'engage \u00e0 appliquer un **moratoire fiscal absolu** pendant cinq ans :\n- Aucune cr\u00e9ation de nouvelle taxe ou d'imp\u00f4t nouveau.\n- Refus cat\u00e9gorique du retour de l'ISF ou d'une fiscalit\u00e9 punitive sur le capital productif.\n- P\u00e9rennisation du Pr\u00e9l\u00e8vement Forfaitaire Unique (PFU - Flat Tax \u00e0 30 %) sur les revenus du capital mobilier.\n\n## 2. Soutien aux Revenus du Travail et Heures Suppl\u00e9mentaires\n- **Z\u00e9ro charge patronale au-del\u00e0 de la 37e heure :** Inciter les entreprises \u00e0 payer plus d'heures suppl\u00e9mentaires d\u00e9fiscalis\u00e9es et d\u00e9socialis\u00e9es pour doper le pouvoir d'achat des salari\u00e9s.\n- Maintien du bar\u00e8me de l'Imp\u00f4t sur le Revenu index\u00e9 sur l'inflation pour pr\u00e9server le pouvoir d'achat des classes moyennes.\n- Encouragement \u00e0 la transmission patrimoniale familiale anticip\u00e9e par l'all\u00e8gement des droits de donation du vivant.\n\n## 3. Impact Budg\u00e9taire Chiffr\u00e9\n- Exon\u00e9ration totale de cotisations au-del\u00e0 de 37 heures : co\u00fbt brut estim\u00e9 \u00e0 **-10,0 Mds \u20ac/an** en r\u00e9gime de croisi\u00e8re.\n- Mesures de soutien \u00e0 l'\u00e9pargne productive et transmission : **-3,0 Mds \u20ac/an**.\n- Total all\u00e8gements fiscaux et sociaux m\u00e9nages/actifs : **-13,0 Mds \u20ac/an**.\n", "01_Economie_et_Finances_Publiques/01_Fiscalite_Impots_Menages_et_Patrimoine.md": "# Fiscalit\u00e9 des M\u00e9nages, Imp\u00f4ts et Patrimoine\n\n## 1. Moratoire Fiscal d'un Quinquennat\n\u00c9douard Philippe s'engage \u00e0 appliquer un **moratoire fiscal absolu** pendant cinq ans :\n- Aucune cr\u00e9ation de nouvelle taxe ou d'imp\u00f4t nouveau.\n- Refus cat\u00e9gorique du retour de l'ISF ou d'une fiscalit\u00e9 punitive sur le capital productif.\n- P\u00e9rennisation du Pr\u00e9l\u00e8vement Forfaitaire Unique (PFU - Flat Tax \u00e0 30 %) sur les revenus du capital mobilier.\n\n## 2. Soutien aux Revenus du Travail et Heures Suppl\u00e9mentaires\n- **Z\u00e9ro charge patronale au-del\u00e0 de la 37e heure :** Inciter les entreprises \u00e0 payer plus d'heures suppl\u00e9mentaires d\u00e9fiscalis\u00e9es et d\u00e9socialis\u00e9es pour doper le pouvoir d'achat des salari\u00e9s.\n- Maintien du bar\u00e8me de l'Imp\u00f4t sur le Revenu index\u00e9 sur l'inflation pour pr\u00e9server le pouvoir d'achat des classes moyennes.\n- Encouragement \u00e0 la transmission patrimoniale familiale anticip\u00e9e par l'all\u00e8gement des droits de donation du vivant.\n\n## 3. Impact Budg\u00e9taire Chiffr\u00e9\n- Exon\u00e9ration totale de cotisations au-del\u00e0 de 37 heures : co\u00fbt brut estim\u00e9 \u00e0 **-10,0 Mds \u20ac/an** en r\u00e9gime de croisi\u00e8re.\n- Mesures de soutien \u00e0 l'\u00e9pargne productive et transmission : **-3,0 Mds \u20ac/an**.\n- Total all\u00e8gements fiscaux et sociaux m\u00e9nages/actifs : **-13,0 Mds \u20ac/an**.\n", "./01_Economie_et_Finances_Publiques/02_Entreprises_Production_et_Competitivite.md": "# Entreprises, Comp\u00e9titivit\u00e9 et Imp\u00f4ts de Production\n\n## 1. Le \u00ab Deal Fiscal \u00bb : 50 Mds \u20ac contre 50 Mds \u20ac\nLa mesure phare du projet \u00e9conomique d'\u00c9douard Philippe repose sur un grand accord national de comp\u00e9titivit\u00e9 :\n- **50 Mds \u20ac de baisses d'imp\u00f4ts de production et de cotisations patronales** accord\u00e9s aux entreprises.\n- En contrepartie, **suppression de 50 Mds \u20ac de subventions et aides publiques aux entreprises jug\u00e9es inefficaces, complexes ou saupoudr\u00e9es** (aides de guichet, niches administratives).\n- Objectif : remettre les entreprises fran\u00e7aises au m\u00eame niveau de co\u00fbt fiscal de production que leurs concurrentes allemandes et nord-europ\u00e9ennes.\n\n## 2. Suppression D\u00e9finitive des Imp\u00f4ts de Production Nuisibles\n- Suppression totale et d\u00e9finitive de la C3S (Contribution Sociale de Solidarit\u00e9 des Soci\u00e9t\u00e9s), assise sur le chiffre d'affaires et non sur le b\u00e9n\u00e9fice.\n- Extinction compl\u00e8te du reliquat de la CVAE et all\u00e8gement cibl\u00e9 de la CFE industrielle.\n- Stabilisation du taux de l'Imp\u00f4t sur les Soci\u00e9t\u00e9s (IS) \u00e0 un taux comp\u00e9titif garanti sans surtaxe.\n\n## 3. Moratoire Normatif et Lib\u00e9ration des \u00c9nergies\n- Moratoire d'un quinquennat interdisant toute nouvelle contrainte administrative ou transposition surtranspos\u00e9e des directives europ\u00e9ennes.\n- R\u00e8gle stricte du \u00ab 1 pour 2 \u00bb : suppression de deux r\u00e9glementations ou formulaires existants pour toute nouvelle mesure technique indispensable.\n", "01_Economie_et_Finances_Publiques/02_Entreprises_Production_et_Competitivite.md": "# Entreprises, Comp\u00e9titivit\u00e9 et Imp\u00f4ts de Production\n\n## 1. Le \u00ab Deal Fiscal \u00bb : 50 Mds \u20ac contre 50 Mds \u20ac\nLa mesure phare du projet \u00e9conomique d'\u00c9douard Philippe repose sur un grand accord national de comp\u00e9titivit\u00e9 :\n- **50 Mds \u20ac de baisses d'imp\u00f4ts de production et de cotisations patronales** accord\u00e9s aux entreprises.\n- En contrepartie, **suppression de 50 Mds \u20ac de subventions et aides publiques aux entreprises jug\u00e9es inefficaces, complexes ou saupoudr\u00e9es** (aides de guichet, niches administratives).\n- Objectif : remettre les entreprises fran\u00e7aises au m\u00eame niveau de co\u00fbt fiscal de production que leurs concurrentes allemandes et nord-europ\u00e9ennes.\n\n## 2. Suppression D\u00e9finitive des Imp\u00f4ts de Production Nuisibles\n- Suppression totale et d\u00e9finitive de la C3S (Contribution Sociale de Solidarit\u00e9 des Soci\u00e9t\u00e9s), assise sur le chiffre d'affaires et non sur le b\u00e9n\u00e9fice.\n- Extinction compl\u00e8te du reliquat de la CVAE et all\u00e8gement cibl\u00e9 de la CFE industrielle.\n- Stabilisation du taux de l'Imp\u00f4t sur les Soci\u00e9t\u00e9s (IS) \u00e0 un taux comp\u00e9titif garanti sans surtaxe.\n\n## 3. Moratoire Normatif et Lib\u00e9ration des \u00c9nergies\n- Moratoire d'un quinquennat interdisant toute nouvelle contrainte administrative ou transposition surtranspos\u00e9e des directives europ\u00e9ennes.\n- R\u00e8gle stricte du \u00ab 1 pour 2 \u00bb : suppression de deux r\u00e9glementations ou formulaires existants pour toute nouvelle mesure technique indispensable.\n", "./01_Economie_et_Finances_Publiques/03_Travail_Salaires_et_Pouvoir_d_Achat.md": "# Travail, Salaires, 35 Heures et Pouvoir d'Achat\n\n## 1. D\u00e9passement N\u00e9goci\u00e9 des 35 Heures\n\u00c9douard Philippe refuse le dirigisme des 35 heures \u00e9tatiques instaur\u00e9 en 2000 :\n- Donner une libert\u00e9 totale de n\u00e9gociation du temps de travail au niveau des branches et des entreprises (de 35h \u00e0 39h voire 40h selon les secteurs).\n- **Incentive fiscal massif :** z\u00e9ro cotisation patronale \u00e0 partir de la 37e heure pour inciter financi\u00e8rement les employeurs \u00e0 allonger la dur\u00e9e du travail et \u00e0 mieux r\u00e9mun\u00e9rer les salari\u00e9s.\n\n## 2. Sortie de la \u00ab Trappe \u00e0 Bas Salaires \u00bb\n- R\u00e9forme des all\u00e8gements de charges Fillon au voisinage du SMIC pour briser la trappe \u00e0 bas salaires qui dissuade les augmentations entre 1,2 et 2,5 SMIC.\n- Valorisation du salaire net par la baisse des cotisations directes sur le travail suppl\u00e9mentaire.\n\n## 3. Conditionnalit\u00e9 des Aides Sociales et Retour \u00e0 l'Emploi\n- Conditionnement strict du versement du RSA \u00e0 des heures d'activit\u00e9, d'insertion ou de formation (15 \u00e0 20 heures hebdomadaires).\n- Refus de tout revenu universel inconditionnel : la solidarit\u00e9 nationale doit \u00eatre la contrepartie de l'effort civique et professionnel.\n", "01_Economie_et_Finances_Publiques/03_Travail_Salaires_et_Pouvoir_d_Achat.md": "# Travail, Salaires, 35 Heures et Pouvoir d'Achat\n\n## 1. D\u00e9passement N\u00e9goci\u00e9 des 35 Heures\n\u00c9douard Philippe refuse le dirigisme des 35 heures \u00e9tatiques instaur\u00e9 en 2000 :\n- Donner une libert\u00e9 totale de n\u00e9gociation du temps de travail au niveau des branches et des entreprises (de 35h \u00e0 39h voire 40h selon les secteurs).\n- **Incentive fiscal massif :** z\u00e9ro cotisation patronale \u00e0 partir de la 37e heure pour inciter financi\u00e8rement les employeurs \u00e0 allonger la dur\u00e9e du travail et \u00e0 mieux r\u00e9mun\u00e9rer les salari\u00e9s.\n\n## 2. Sortie de la \u00ab Trappe \u00e0 Bas Salaires \u00bb\n- R\u00e9forme des all\u00e8gements de charges Fillon au voisinage du SMIC pour briser la trappe \u00e0 bas salaires qui dissuade les augmentations entre 1,2 et 2,5 SMIC.\n- Valorisation du salaire net par la baisse des cotisations directes sur le travail suppl\u00e9mentaire.\n\n## 3. Conditionnalit\u00e9 des Aides Sociales et Retour \u00e0 l'Emploi\n- Conditionnement strict du versement du RSA \u00e0 des heures d'activit\u00e9, d'insertion ou de formation (15 \u00e0 20 heures hebdomadaires).\n- Refus de tout revenu universel inconditionnel : la solidarit\u00e9 nationale doit \u00eatre la contrepartie de l'effort civique et professionnel.\n", "./01_Economie_et_Finances_Publiques/04_Dette_Depense_Publique_et_Trajectoire.md": "# Dette Publique, \u00c9conomies Structurelles et Trajectoire\n\n## 1. Objectif Macro\u00e9conomique : Ramener le D\u00e9ficit \u00e0 2 % du PIB\n- D\u00e9ficit public consolid\u00e9 ramen\u00e9 de plus de -5,1 % (-146 Mds \u20ac) \u00e0 **-2,0 % du PIB (~ -60 Mds \u20ac)** \u00e0 l'horizon 2032.\n- R\u00e9duction nette des d\u00e9penses publiques consolid\u00e9es d'au moins **-100,0 Mds \u20ac/an** \u00e0 5 ans.\n- Inscription de la \u00ab R\u00e8gle d'or \u00bb budg\u00e9taire dans la Constitution fran\u00e7aise par r\u00e9f\u00e9rendum.\n\n## 2. R\u00e9partition de l'Effort d'\u00c9conomies\nLa doctrine Philippe repose sur un partage tripartite de l'effort :\n- **50 % de l'effort sur la sph\u00e8re sociale (-50 Mds \u20ac/an) :** retraites, efficience des soins, assurance-ch\u00f4mage, rationalisation des prestations.\n- **25 % de l'effort sur l'\u00c9tat et ses op\u00e9rateurs (-25 Mds \u20ac/an) :** non-remplacement d'un tiers des fonctionnaires partant en retraite (-250 000 postes), fusion des agences d'\u00c9tat, suppression des doublons administratifs.\n- **25 % tir\u00e9 par le surplus de croissance et de travail (+25 Mds \u20ac/an) :** rentr\u00e9es fiscales spontan\u00e9es li\u00e9es \u00e0 l'accroissement des heures travaill\u00e9es et de l'emploi.\n", "01_Economie_et_Finances_Publiques/04_Dette_Depense_Publique_et_Trajectoire.md": "# Dette Publique, \u00c9conomies Structurelles et Trajectoire\n\n## 1. Objectif Macro\u00e9conomique : Ramener le D\u00e9ficit \u00e0 2 % du PIB\n- D\u00e9ficit public consolid\u00e9 ramen\u00e9 de plus de -5,1 % (-146 Mds \u20ac) \u00e0 **-2,0 % du PIB (~ -60 Mds \u20ac)** \u00e0 l'horizon 2032.\n- R\u00e9duction nette des d\u00e9penses publiques consolid\u00e9es d'au moins **-100,0 Mds \u20ac/an** \u00e0 5 ans.\n- Inscription de la \u00ab R\u00e8gle d'or \u00bb budg\u00e9taire dans la Constitution fran\u00e7aise par r\u00e9f\u00e9rendum.\n\n## 2. R\u00e9partition de l'Effort d'\u00c9conomies\nLa doctrine Philippe repose sur un partage tripartite de l'effort :\n- **50 % de l'effort sur la sph\u00e8re sociale (-50 Mds \u20ac/an) :** retraites, efficience des soins, assurance-ch\u00f4mage, rationalisation des prestations.\n- **25 % de l'effort sur l'\u00c9tat et ses op\u00e9rateurs (-25 Mds \u20ac/an) :** non-remplacement d'un tiers des fonctionnaires partant en retraite (-250 000 postes), fusion des agences d'\u00c9tat, suppression des doublons administratifs.\n- **25 % tir\u00e9 par le surplus de croissance et de travail (+25 Mds \u20ac/an) :** rentr\u00e9es fiscales spontan\u00e9es li\u00e9es \u00e0 l'accroissement des heures travaill\u00e9es et de l'emploi.\n", "./02_Securite_Justice_et_Immigration/01_Securite_Police_Gendarmerie_et_Ordre_Public.md": "# S\u00e9curit\u00e9, Police, Gendarmerie et Ordre Public\n\n## 1. Lutte Sans Concession Contre le Narcotrafic : L'\u00ab \u00c9tat d'Urgence Narco \u00bb\n\u00c9douard Philippe formule un plan d'urgence sans pr\u00e9c\u00e9dent contre les r\u00e9seaux de drogue qui gangr\u00e8nent le pays :\n- Cr\u00e9ation d'un r\u00e9gime juridique d'exception : l'**\u00ab \u00e9tat d'urgence narco \u00bb**, permettant des op\u00e9rations coup de poing cibl\u00e9es, des perquisitions facilit\u00e9es et l'usage temporaire encadr\u00e9 de la reconnaissance faciale dans l'espace public.\n- Mise en place d'une **\u00ab fiche S financi\u00e8re \u00bb** pour geler imm\u00e9diatement les avoirs et surveiller les flux bancaires des narcotrafiquants et complices.\n- R\u00e9gime d'incarc\u00e9ration ultras\u00e9curis\u00e9 \u00e9tanche aux t\u00e9l\u00e9phones et communications pour les ca\u00efds.\n\n## 2. D\u00e9centralisation S\u00e9curitaire et Pouvoirs des Maires\n- Dotation des maires d'un **pouvoir de sanction p\u00e9nale directe** pour r\u00e9primer les incivilit\u00e9s du quotidien, les d\u00e9p\u00f4ts sauvages et les atteintes \u00e0 la tranquillit\u00e9 publique.\n- Extension des pr\u00e9rogatives des polices municipales (acc\u00e8s direct aux fichiers de police, contr\u00f4les d'identit\u00e9).\n\n## 3. Renforcement Budg\u00e9taire R\u00e9galien\n- Poursuite de la trajectoire de hausse des budgets du minist\u00e8re de l'Int\u00e9rieur : **+4,5 Mds \u20ac/an** pour moderniser les mat\u00e9riels, v\u00e9hicules et cam\u00e9ras-pi\u00e9tons des policiers et gendarmes.\n", "02_Securite_Justice_et_Immigration/01_Securite_Police_Gendarmerie_et_Ordre_Public.md": "# S\u00e9curit\u00e9, Police, Gendarmerie et Ordre Public\n\n## 1. Lutte Sans Concession Contre le Narcotrafic : L'\u00ab \u00c9tat d'Urgence Narco \u00bb\n\u00c9douard Philippe formule un plan d'urgence sans pr\u00e9c\u00e9dent contre les r\u00e9seaux de drogue qui gangr\u00e8nent le pays :\n- Cr\u00e9ation d'un r\u00e9gime juridique d'exception : l'**\u00ab \u00e9tat d'urgence narco \u00bb**, permettant des op\u00e9rations coup de poing cibl\u00e9es, des perquisitions facilit\u00e9es et l'usage temporaire encadr\u00e9 de la reconnaissance faciale dans l'espace public.\n- Mise en place d'une **\u00ab fiche S financi\u00e8re \u00bb** pour geler imm\u00e9diatement les avoirs et surveiller les flux bancaires des narcotrafiquants et complices.\n- R\u00e9gime d'incarc\u00e9ration ultras\u00e9curis\u00e9 \u00e9tanche aux t\u00e9l\u00e9phones et communications pour les ca\u00efds.\n\n## 2. D\u00e9centralisation S\u00e9curitaire et Pouvoirs des Maires\n- Dotation des maires d'un **pouvoir de sanction p\u00e9nale directe** pour r\u00e9primer les incivilit\u00e9s du quotidien, les d\u00e9p\u00f4ts sauvages et les atteintes \u00e0 la tranquillit\u00e9 publique.\n- Extension des pr\u00e9rogatives des polices municipales (acc\u00e8s direct aux fichiers de police, contr\u00f4les d'identit\u00e9).\n\n## 3. Renforcement Budg\u00e9taire R\u00e9galien\n- Poursuite de la trajectoire de hausse des budgets du minist\u00e8re de l'Int\u00e9rieur : **+4,5 Mds \u20ac/an** pour moderniser les mat\u00e9riels, v\u00e9hicules et cam\u00e9ras-pi\u00e9tons des policiers et gendarmes.\n", "./02_Securite_Justice_et_Immigration/02_Justice_Prisons_et_Politique_Penale.md": "# Justice, Prisons et Politique P\u00e9nale\n\n## 1. La Certitude et la Rapidit\u00e9 de la Peine\nPour restaurer l'autorit\u00e9 r\u00e9publicaine, \u00c9douard Philippe s'inspire du mod\u00e8le judiciaire nordique :\n- Instaurer des **peines courtes et imm\u00e9diates** d\u00e8s la premi\u00e8re infraction grave pour briser le sentiment d'impunit\u00e9.\n- Peines planchers automatiques en cas d'agression sur des personnes d\u00e9positaires de l'autorit\u00e9 publique (policiers, gendarmes, pompiers, magistrats) et professeurs.\n- **Suppression du juge d'application des peines (JAP) :** la peine prononc\u00e9e au tribunal doit \u00eatre ex\u00e9cut\u00e9e telle quelle sans am\u00e9nagement automatique a posteriori.\n\n## 2. Responsabilit\u00e9 et Redevabilit\u00e9 des Magistrats\n- R\u00e9forme de la composition du Conseil Sup\u00e9rieur de la Magistrature (CSM) pour y faire entrer davantage de personnalit\u00e9s ext\u00e9rieures qualifi\u00e9es.\n- Instauration d'un \u00ab devoir de redevabilit\u00e9 \u00bb des magistrats envers les victimes.\n- Possibilit\u00e9 pour le Garde des Sceaux d'adresser des instructions de politique p\u00e9nale claires.\n\n## 3. Plan P\u00e9nitentiaire et Recouvrement Forc\u00e9\n- Construction de 15 000 places nettes de prison suppl\u00e9mentaires (+3,5 Mds \u20ac d'investissements).\n- Recouvrement forc\u00e9 des amendes judiciaires impay\u00e9es directement pr\u00e9lev\u00e9es sur les prestations sociales et salaires.\n", "02_Securite_Justice_et_Immigration/02_Justice_Prisons_et_Politique_Penale.md": "# Justice, Prisons et Politique P\u00e9nale\n\n## 1. La Certitude et la Rapidit\u00e9 de la Peine\nPour restaurer l'autorit\u00e9 r\u00e9publicaine, \u00c9douard Philippe s'inspire du mod\u00e8le judiciaire nordique :\n- Instaurer des **peines courtes et imm\u00e9diates** d\u00e8s la premi\u00e8re infraction grave pour briser le sentiment d'impunit\u00e9.\n- Peines planchers automatiques en cas d'agression sur des personnes d\u00e9positaires de l'autorit\u00e9 publique (policiers, gendarmes, pompiers, magistrats) et professeurs.\n- **Suppression du juge d'application des peines (JAP) :** la peine prononc\u00e9e au tribunal doit \u00eatre ex\u00e9cut\u00e9e telle quelle sans am\u00e9nagement automatique a posteriori.\n\n## 2. Responsabilit\u00e9 et Redevabilit\u00e9 des Magistrats\n- R\u00e9forme de la composition du Conseil Sup\u00e9rieur de la Magistrature (CSM) pour y faire entrer davantage de personnalit\u00e9s ext\u00e9rieures qualifi\u00e9es.\n- Instauration d'un \u00ab devoir de redevabilit\u00e9 \u00bb des magistrats envers les victimes.\n- Possibilit\u00e9 pour le Garde des Sceaux d'adresser des instructions de politique p\u00e9nale claires.\n\n## 3. Plan P\u00e9nitentiaire et Recouvrement Forc\u00e9\n- Construction de 15 000 places nettes de prison suppl\u00e9mentaires (+3,5 Mds \u20ac d'investissements).\n- Recouvrement forc\u00e9 des amendes judiciaires impay\u00e9es directement pr\u00e9lev\u00e9es sur les prestations sociales et salaires.\n", "./02_Securite_Justice_et_Immigration/03_Immigration_Frontieres_Assimilation_et_Laicite.md": "# Immigration, Fronti\u00e8res, Assimilation et La\u00efcit\u00e9\n\n## 1. Diviser par Deux l'Immigration L\u00e9gale\nConstatant ce qu'il qualifie d'\u00ab \u00e9chec du mod\u00e8le d'int\u00e9gration \u00bb, \u00c9douard Philippe pr\u00e9conise une r\u00e9duction drastique des flux :\n- **R\u00e9duction de moiti\u00e9 de l'immigration l\u00e9gale en 5 ans**, en ciblant strictement les visas sur l'immigration professionnelle dans les m\u00e9tiers en tension non pourvus et les \u00e9tudiants d'excellence.\n- Fixation de **quotas migratoires annuels vot\u00e9s par le Parlement**.\n\n## 2. R\u00e9vision des Accords Internationaux et Fin du D\u00e9voiement de l'Asile\n- **D\u00e9nonciation de l'accord franco-alg\u00e9rien de 1968 :** r\u00e9tablir le droit commun pour la d\u00e9livrance des visas et titres de s\u00e9jour aux ressortissants alg\u00e9riens, et conditionner les visas \u00e0 la d\u00e9livrance des laissez-passer consulaires pour l'ex\u00e9cution des OQTF.\n- Vote annuel par le Parlement d'une liste stricte de \u00ab pays d'origine s\u00fbrs \u00bb pour rejeter rapidement les demandes d'asile infond\u00e9es.\n\n## 3. Conditionnalit\u00e9 et Assimilation R\u00e9publicaine\n- Conditionnement de l'acc\u00e8s aux prestations sociales non contributives \u00e0 une dur\u00e9e de pr\u00e9sence r\u00e9guli\u00e8re et de travail d'au moins 3 \u00e0 5 ans.\n- Parcours d'int\u00e9gration intensif : ma\u00eetrise obligatoire de la langue fran\u00e7aise et respect intransigeant de la la\u00efcit\u00e9 r\u00e9publicaine.\n", "02_Securite_Justice_et_Immigration/03_Immigration_Frontieres_Assimilation_et_Laicite.md": "# Immigration, Fronti\u00e8res, Assimilation et La\u00efcit\u00e9\n\n## 1. Diviser par Deux l'Immigration L\u00e9gale\nConstatant ce qu'il qualifie d'\u00ab \u00e9chec du mod\u00e8le d'int\u00e9gration \u00bb, \u00c9douard Philippe pr\u00e9conise une r\u00e9duction drastique des flux :\n- **R\u00e9duction de moiti\u00e9 de l'immigration l\u00e9gale en 5 ans**, en ciblant strictement les visas sur l'immigration professionnelle dans les m\u00e9tiers en tension non pourvus et les \u00e9tudiants d'excellence.\n- Fixation de **quotas migratoires annuels vot\u00e9s par le Parlement**.\n\n## 2. R\u00e9vision des Accords Internationaux et Fin du D\u00e9voiement de l'Asile\n- **D\u00e9nonciation de l'accord franco-alg\u00e9rien de 1968 :** r\u00e9tablir le droit commun pour la d\u00e9livrance des visas et titres de s\u00e9jour aux ressortissants alg\u00e9riens, et conditionner les visas \u00e0 la d\u00e9livrance des laissez-passer consulaires pour l'ex\u00e9cution des OQTF.\n- Vote annuel par le Parlement d'une liste stricte de \u00ab pays d'origine s\u00fbrs \u00bb pour rejeter rapidement les demandes d'asile infond\u00e9es.\n\n## 3. Conditionnalit\u00e9 et Assimilation R\u00e9publicaine\n- Conditionnement de l'acc\u00e8s aux prestations sociales non contributives \u00e0 une dur\u00e9e de pr\u00e9sence r\u00e9guli\u00e8re et de travail d'au moins 3 \u00e0 5 ans.\n- Parcours d'int\u00e9gration intensif : ma\u00eetrise obligatoire de la langue fran\u00e7aise et respect intransigeant de la la\u00efcit\u00e9 r\u00e9publicaine.\n", "./03_Sante_et_Affaires_Sociales/01_Hopital_Medecine_de_Ville_et_Deserts_Medicaux.md": "# H\u00f4pital, M\u00e9decine de Ville et D\u00e9serts M\u00e9dicaux\n\n## 1. D\u00e9penser Mieux Plut\u00f4t que D\u00e9penser Plus\n\u00c9douard Philippe refuse la fuite en avant de la d\u00e9pense de sant\u00e9 non r\u00e9gul\u00e9e :\n- L'objectif n'est pas d'augmenter ind\u00e9finiment les cr\u00e9dits de l'Assurance Maladie, mais d'\u00e9radiquer la bureaucratie hospitali\u00e8re et les gaspillages administratifs.\n- All\u00e8gement du poids des Agences R\u00e9gionales de Sant\u00e9 (ARS) et red\u00e9ploiement des moyens vers les soignants au chevet des patients.\n\n## 2. Lutte Contre les D\u00e9serts M\u00e9dicaux par la Responsabilit\u00e9\n- Instauration d'une obligation d'exercice ou de garde temporaire pour les jeunes m\u00e9decins dans les territoires sous-dot\u00e9s (ou conventionnement s\u00e9lectif).\n- D\u00e9veloppement massif de la t\u00e9l\u00e9m\u00e9decine et des maisons de sant\u00e9 pluriprofessionnelles avec d\u00e9l\u00e9gations d'actes aux infirmiers en pratique avanc\u00e9e (IPA).\n\n## 3. Pr\u00e9vention et Sant\u00e9 Num\u00e9rique\n- Bascule des financements de la sant\u00e9 curative vers la pr\u00e9vention pr\u00e9coce (vaccination, bilans de sant\u00e9 aux \u00e2ges cl\u00e9s de la vie, lutte contre l'ob\u00e9sit\u00e9).\n- Int\u00e9gration de l'intelligence artificielle pour optimiser le parcours de soins et les dossiers m\u00e9dicaux partag\u00e9s.\n", "03_Sante_et_Affaires_Sociales/01_Hopital_Medecine_de_Ville_et_Deserts_Medicaux.md": "# H\u00f4pital, M\u00e9decine de Ville et D\u00e9serts M\u00e9dicaux\n\n## 1. D\u00e9penser Mieux Plut\u00f4t que D\u00e9penser Plus\n\u00c9douard Philippe refuse la fuite en avant de la d\u00e9pense de sant\u00e9 non r\u00e9gul\u00e9e :\n- L'objectif n'est pas d'augmenter ind\u00e9finiment les cr\u00e9dits de l'Assurance Maladie, mais d'\u00e9radiquer la bureaucratie hospitali\u00e8re et les gaspillages administratifs.\n- All\u00e8gement du poids des Agences R\u00e9gionales de Sant\u00e9 (ARS) et red\u00e9ploiement des moyens vers les soignants au chevet des patients.\n\n## 2. Lutte Contre les D\u00e9serts M\u00e9dicaux par la Responsabilit\u00e9\n- Instauration d'une obligation d'exercice ou de garde temporaire pour les jeunes m\u00e9decins dans les territoires sous-dot\u00e9s (ou conventionnement s\u00e9lectif).\n- D\u00e9veloppement massif de la t\u00e9l\u00e9m\u00e9decine et des maisons de sant\u00e9 pluriprofessionnelles avec d\u00e9l\u00e9gations d'actes aux infirmiers en pratique avanc\u00e9e (IPA).\n\n## 3. Pr\u00e9vention et Sant\u00e9 Num\u00e9rique\n- Bascule des financements de la sant\u00e9 curative vers la pr\u00e9vention pr\u00e9coce (vaccination, bilans de sant\u00e9 aux \u00e2ges cl\u00e9s de la vie, lutte contre l'ob\u00e9sit\u00e9).\n- Int\u00e9gration de l'intelligence artificielle pour optimiser le parcours de soins et les dossiers m\u00e9dicaux partag\u00e9s.\n", "./03_Sante_et_Affaires_Sociales/02_Retraites_et_Financement_Protection_Sociale.md": "# Retraites et Financement de la Protection Sociale\n\n## 1. Sauvetage Financier des Retraites par le Travail\nFid\u00e8le \u00e0 sa conviction d'un d\u00e9ficit intenable du syst\u00e8me de r\u00e9partition, \u00c9douard Philippe propose :\n- D\u00e9fense absolue de l'\u00e2ge l\u00e9gal port\u00e9 \u00e0 64 ans, avec possibilit\u00e9 d'extension progressive vers 65 ou 67 ans si l'\u00e9quilibre financier n'est pas atteint \u00e0 la fin de la d\u00e9cennie.\n- Contribution temporaire de solidarit\u00e9 demand\u00e9e aux retrait\u00e9s ais\u00e9s (sous-indexation cibl\u00e9e des pensions sup\u00e9rieures \u00e0 2 500 \u20ac/mois).\n- \u00c9conomie brute attendue sur le syst\u00e8me des retraites : **-15,0 Mds \u20ac/an** \u00e0 terme.\n\n## 2. Introduction d'une Dose de Capitalisation Collective\n- Pour p\u00e9renniser les pensions face au choc d\u00e9mographique, \u00c9douard Philippe pr\u00f4ne l'adjonction d'un **pilier de capitalisation collective** (inspir\u00e9 de l'Agirc-Arrco et de l'\u00e9pargne salariale d'entreprise).\n- Fl\u00e9chage de cette \u00e9pargne de retraite vers le financement en fonds propres des PME et ETI fran\u00e7aises.\n", "03_Sante_et_Affaires_Sociales/02_Retraites_et_Financement_Protection_Sociale.md": "# Retraites et Financement de la Protection Sociale\n\n## 1. Sauvetage Financier des Retraites par le Travail\nFid\u00e8le \u00e0 sa conviction d'un d\u00e9ficit intenable du syst\u00e8me de r\u00e9partition, \u00c9douard Philippe propose :\n- D\u00e9fense absolue de l'\u00e2ge l\u00e9gal port\u00e9 \u00e0 64 ans, avec possibilit\u00e9 d'extension progressive vers 65 ou 67 ans si l'\u00e9quilibre financier n'est pas atteint \u00e0 la fin de la d\u00e9cennie.\n- Contribution temporaire de solidarit\u00e9 demand\u00e9e aux retrait\u00e9s ais\u00e9s (sous-indexation cibl\u00e9e des pensions sup\u00e9rieures \u00e0 2 500 \u20ac/mois).\n- \u00c9conomie brute attendue sur le syst\u00e8me des retraites : **-15,0 Mds \u20ac/an** \u00e0 terme.\n\n## 2. Introduction d'une Dose de Capitalisation Collective\n- Pour p\u00e9renniser les pensions face au choc d\u00e9mographique, \u00c9douard Philippe pr\u00f4ne l'adjonction d'un **pilier de capitalisation collective** (inspir\u00e9 de l'Agirc-Arrco et de l'\u00e9pargne salariale d'entreprise).\n- Fl\u00e9chage de cette \u00e9pargne de retraite vers le financement en fonds propres des PME et ETI fran\u00e7aises.\n", "./03_Sante_et_Affaires_Sociales/03_Minima_Sociaux_RSA_Chomage_et_Lutte_Anti_Fraude.md": "# Minima Sociaux, RSA, Assurance-Ch\u00f4mage et Anti-Fraude\n\n## 1. R\u00e9forme de l'Assurance-Ch\u00f4mage et Retour \u00e0 l'Emploi\n- Poursuite du durcissement des r\u00e8gles d'indemnisation ch\u00f4mage : contracyclicit\u00e9 renforc\u00e9e (dur\u00e9e r\u00e9duite lorsque le march\u00e9 de l'emploi est porteur).\n- Obligation de recherche active d'emploi et contr\u00f4le strict des offres raisonnables refus\u00e9es.\n- \u00c9conomie estim\u00e9e : **-8,0 Mds \u20ac/an**.\n\n## 2. RSA Contre Activit\u00e9 et Juste Prestation\n- G\u00e9n\u00e9ralisation effective des 15 \u00e0 20 heures d'activit\u00e9 ou d'insertion obligatoire pour les allocataires du RSA.\n- Refonte des minima sociaux vers une prestation sociale unifi\u00e9e \u00e9vitant qu'un individu cumule plus de revenus d'assistance que le revenu d'un travail au SMIC.\n\n## 3. Lutte Implacable Contre la Fraude Sociale\n- D\u00e9ploiement de cartes vitales biom\u00e9triques et s\u00e9curis\u00e9es.\n- Croisement syst\u00e9matique des bases de donn\u00e9es de l'URSSAF, des CAF, du fisc et des banques pour r\u00e9cup\u00e9rer 5 Mds \u20ac/an de fraudes aux prestations et cotisations.\n", "03_Sante_et_Affaires_Sociales/03_Minima_Sociaux_RSA_Chomage_et_Lutte_Anti_Fraude.md": "# Minima Sociaux, RSA, Assurance-Ch\u00f4mage et Anti-Fraude\n\n## 1. R\u00e9forme de l'Assurance-Ch\u00f4mage et Retour \u00e0 l'Emploi\n- Poursuite du durcissement des r\u00e8gles d'indemnisation ch\u00f4mage : contracyclicit\u00e9 renforc\u00e9e (dur\u00e9e r\u00e9duite lorsque le march\u00e9 de l'emploi est porteur).\n- Obligation de recherche active d'emploi et contr\u00f4le strict des offres raisonnables refus\u00e9es.\n- \u00c9conomie estim\u00e9e : **-8,0 Mds \u20ac/an**.\n\n## 2. RSA Contre Activit\u00e9 et Juste Prestation\n- G\u00e9n\u00e9ralisation effective des 15 \u00e0 20 heures d'activit\u00e9 ou d'insertion obligatoire pour les allocataires du RSA.\n- Refonte des minima sociaux vers une prestation sociale unifi\u00e9e \u00e9vitant qu'un individu cumule plus de revenus d'assistance que le revenu d'un travail au SMIC.\n\n## 3. Lutte Implacable Contre la Fraude Sociale\n- D\u00e9ploiement de cartes vitales biom\u00e9triques et s\u00e9curis\u00e9es.\n- Croisement syst\u00e9matique des bases de donn\u00e9es de l'URSSAF, des CAF, du fisc et des banques pour r\u00e9cup\u00e9rer 5 Mds \u20ac/an de fraudes aux prestations et cotisations.\n", "./04_Education_Culture_et_Jeunesse/01_Ecole_Savoirs_Fondamentaux_et_Enseignants.md": "# \u00c9cole de la Libert\u00e9, Savoirs Fondamentaux et Enseignants\n\n## 1. Faire des Chefs d'\u00c9tablissement les \u00ab Patrons \u00bb de l'\u00c9cole\nMesure de rupture \u00e9ducative port\u00e9e par Horizons :\n- Donner aux directeurs d'\u00e9cole et chefs d'\u00e9tablissement une autonomie r\u00e9elle de recrutement et de choix p\u00e9dagogique.\n- Pouvoir de fixer les r\u00e8gles disciplinaires internes, d'imposer l'uniforme ou la tenue r\u00e9publicaine, et d'adapter les rythmes scolaires.\n- \u00c9valuation des enseignants associant les chefs d'\u00e9tablissement avec primes au m\u00e9rite.\n\n## 2. Sanctuarisation des Savoirs Fondamentaux\n- Recentrage absolu de l'\u00e9cole primaire sur le triptyque : lire, \u00e9crire, compter, respecter autrui.\n- Cr\u00e9ation d'un **Service Public Universel du Soutien Scolaire**, combinant des tuteurs bas\u00e9s sur l'intelligence artificielle et des brigades d'\u00e9tudiants et d'enseignants retrait\u00e9s volontaires.\n\n## 3. Protection de l'Enfance et P\u00e9riscolaire\n- Certificat d'honorabilit\u00e9 obligatoire pour tous les encadrants de mineurs.\n- Cr\u00e9ation d'une Inspection Nationale de l'Enfance avec contr\u00f4le triennal de toutes les structures accueillant des enfants.\n", "04_Education_Culture_et_Jeunesse/01_Ecole_Savoirs_Fondamentaux_et_Enseignants.md": "# \u00c9cole de la Libert\u00e9, Savoirs Fondamentaux et Enseignants\n\n## 1. Faire des Chefs d'\u00c9tablissement les \u00ab Patrons \u00bb de l'\u00c9cole\nMesure de rupture \u00e9ducative port\u00e9e par Horizons :\n- Donner aux directeurs d'\u00e9cole et chefs d'\u00e9tablissement une autonomie r\u00e9elle de recrutement et de choix p\u00e9dagogique.\n- Pouvoir de fixer les r\u00e8gles disciplinaires internes, d'imposer l'uniforme ou la tenue r\u00e9publicaine, et d'adapter les rythmes scolaires.\n- \u00c9valuation des enseignants associant les chefs d'\u00e9tablissement avec primes au m\u00e9rite.\n\n## 2. Sanctuarisation des Savoirs Fondamentaux\n- Recentrage absolu de l'\u00e9cole primaire sur le triptyque : lire, \u00e9crire, compter, respecter autrui.\n- Cr\u00e9ation d'un **Service Public Universel du Soutien Scolaire**, combinant des tuteurs bas\u00e9s sur l'intelligence artificielle et des brigades d'\u00e9tudiants et d'enseignants retrait\u00e9s volontaires.\n\n## 3. Protection de l'Enfance et P\u00e9riscolaire\n- Certificat d'honorabilit\u00e9 obligatoire pour tous les encadrants de mineurs.\n- Cr\u00e9ation d'une Inspection Nationale de l'Enfance avec contr\u00f4le triennal de toutes les structures accueillant des enfants.\n", "./04_Education_Culture_et_Jeunesse/02_Universites_Recherche_et_Innovation.md": "# Universit\u00e9s, Recherche, Enseignement Sup\u00e9rieur et Innovation\n\n## 1. Autonomie Universitaire et Liens avec l'Industrie\n- Renforcement de l'autonomie financi\u00e8re et de gestion des universit\u00e9s fran\u00e7aises.\n- D\u00e9veloppement de fondations partenariales priv\u00e9es pour doter les campus de budgets comp\u00e9titifs face aux g\u00e9ants anglo-saxons et asiatiques.\n\n## 2. Priorit\u00e9 aux Technologies de Rupture\n- Investissement massif dans les fili\u00e8res d'avenir : intelligence artificielle, quantique, biotechnologies, hydrog\u00e8ne d\u00e9carbon\u00e9 et nouveaux r\u00e9acteurs nucl\u00e9aires SMR.\n- D\u00e9bureaucratisation des financements de l'ANR et du CNRS pour lib\u00e9rer le temps de recherche des scientifiques.\n", "04_Education_Culture_et_Jeunesse/02_Universites_Recherche_et_Innovation.md": "# Universit\u00e9s, Recherche, Enseignement Sup\u00e9rieur et Innovation\n\n## 1. Autonomie Universitaire et Liens avec l'Industrie\n- Renforcement de l'autonomie financi\u00e8re et de gestion des universit\u00e9s fran\u00e7aises.\n- D\u00e9veloppement de fondations partenariales priv\u00e9es pour doter les campus de budgets comp\u00e9titifs face aux g\u00e9ants anglo-saxons et asiatiques.\n\n## 2. Priorit\u00e9 aux Technologies de Rupture\n- Investissement massif dans les fili\u00e8res d'avenir : intelligence artificielle, quantique, biotechnologies, hydrog\u00e8ne d\u00e9carbon\u00e9 et nouveaux r\u00e9acteurs nucl\u00e9aires SMR.\n- D\u00e9bureaucratisation des financements de l'ANR et du CNRS pour lib\u00e9rer le temps de recherche des scientifiques.\n", "./04_Education_Culture_et_Jeunesse/03_Culture_Patrimoine_Audiovisuel_et_Jeunesse.md": "# Culture, Patrimoine, Audiovisuel Public et Jeunesse\n\n## 1. R\u00e9organisation de l'Audiovisuel Public\n- Cr\u00e9ation d'une holding unique de l'audiovisuel public (\u00ab France M\u00e9dias \u00bb) regroupant France T\u00e9l\u00e9visions, Radio France et France M\u00e9dias Monde pour mutualiser les co\u00fbts administratifs et techniques.\n- Recentrage sur les missions d'information v\u00e9rifi\u00e9e, de culture et de rayonnement international.\n\n## 2. Pr\u00e9servation du Patrimoine Historique et D\u00e9centralisation Culturelle\n- Fl\u00e9chage prioritaire des cr\u00e9dits de la Culture vers la restauration du patrimoine monumental et des \u00e9glises dans les communes rurales.\n- Soutien aux festivals locaux et industries cr\u00e9atives ind\u00e9pendantes.\n", "04_Education_Culture_et_Jeunesse/03_Culture_Patrimoine_Audiovisuel_et_Jeunesse.md": "# Culture, Patrimoine, Audiovisuel Public et Jeunesse\n\n## 1. R\u00e9organisation de l'Audiovisuel Public\n- Cr\u00e9ation d'une holding unique de l'audiovisuel public (\u00ab France M\u00e9dias \u00bb) regroupant France T\u00e9l\u00e9visions, Radio France et France M\u00e9dias Monde pour mutualiser les co\u00fbts administratifs et techniques.\n- Recentrage sur les missions d'information v\u00e9rifi\u00e9e, de culture et de rayonnement international.\n\n## 2. Pr\u00e9servation du Patrimoine Historique et D\u00e9centralisation Culturelle\n- Fl\u00e9chage prioritaire des cr\u00e9dits de la Culture vers la restauration du patrimoine monumental et des \u00e9glises dans les communes rurales.\n- Soutien aux festivals locaux et industries cr\u00e9atives ind\u00e9pendantes.\n", "./05_Ecologie_Energie_et_Agriculture/01_Politique_Energetique_Nucleaire_et_Renouvelables.md": "# Politique \u00c9nerg\u00e9tique : Le Choix Absolu du Nucl\u00e9aire\n\n## 1. La Formule Philippe : \u00ab Plus de Nucl\u00e9aire, Moins de Bavardage \u00bb\n\u00c9douard Philippe place l'\u00e9nergie nucl\u00e9aire au c\u0153ur de la souverainet\u00e9 \u00e9conomique et de la d\u00e9carbonation :\n- Acc\u00e9l\u00e9ration de la construction des 6 \u00e0 14 r\u00e9acteurs de nouvelle g\u00e9n\u00e9ration EPR2.\n- Soutien prioritaire au d\u00e9veloppement des petits r\u00e9acteurs modulaires (SMR) fran\u00e7ais.\n- Prolongation de la dur\u00e9e de vie du parc nucl\u00e9aire existant au-del\u00e0 de 50 et 60 ans sous r\u00e9serve du feu vert de l'ASN.\n\n## 2. Compl\u00e9mentarit\u00e9 avec les \u00c9nergies Renouvelables Pragmatiques\n- D\u00e9veloppement cibl\u00e9 de l'\u00e9olien offshore (en mer) et du solaire sur toitures et friches industrielles.\n- Refus de l'\u00e9olien terrestre anarchique rejet\u00e9 par les populations rurales.\n", "05_Ecologie_Energie_et_Agriculture/01_Politique_Energetique_Nucleaire_et_Renouvelables.md": "# Politique \u00c9nerg\u00e9tique : Le Choix Absolu du Nucl\u00e9aire\n\n## 1. La Formule Philippe : \u00ab Plus de Nucl\u00e9aire, Moins de Bavardage \u00bb\n\u00c9douard Philippe place l'\u00e9nergie nucl\u00e9aire au c\u0153ur de la souverainet\u00e9 \u00e9conomique et de la d\u00e9carbonation :\n- Acc\u00e9l\u00e9ration de la construction des 6 \u00e0 14 r\u00e9acteurs de nouvelle g\u00e9n\u00e9ration EPR2.\n- Soutien prioritaire au d\u00e9veloppement des petits r\u00e9acteurs modulaires (SMR) fran\u00e7ais.\n- Prolongation de la dur\u00e9e de vie du parc nucl\u00e9aire existant au-del\u00e0 de 50 et 60 ans sous r\u00e9serve du feu vert de l'ASN.\n\n## 2. Compl\u00e9mentarit\u00e9 avec les \u00c9nergies Renouvelables Pragmatiques\n- D\u00e9veloppement cibl\u00e9 de l'\u00e9olien offshore (en mer) et du solaire sur toitures et friches industrielles.\n- Refus de l'\u00e9olien terrestre anarchique rejet\u00e9 par les populations rurales.\n", "./05_Ecologie_Energie_et_Agriculture/02_Ecologie_Transports_et_Industrie_Verte.md": "# \u00c9cologie, Transports, S\u00e9curit\u00e9 Climatique et Industrie Verte\n\n## 1. S\u00e9curit\u00e9 Climatique : \u00ab Prot\u00e9ger, Adapter, \u00c9quiper \u00bb\n- Strat\u00e9gie d'adaptation concr\u00e8te aux effets du d\u00e9r\u00e8glement climatique : s\u00e9curisation des ressources en eau face aux s\u00e9cheresses, retenues collinaires agricoles raisonn\u00e9es, lutte anti-incendie.\n- \u00c9cologie incitative et industrielle : d\u00e9carboner la production sans d\u00e9truire le pouvoir d'achat des classes moyennes et populaires.\n\n## 2. Taxe Carbone aux Fronti\u00e8res de l'Europe (MACF)\n- Application stricte et \u00e9largie du M\u00e9canisme d'Ajustement Carbone aux Fronti\u00e8res de l'UE pour emp\u00eacher le dumping des produits polluants import\u00e9s de Chine ou d'Asie.\n- Conditionnement des march\u00e9s publics \u00e0 une empreinte carbone basse et \u00e0 une fabrication europ\u00e9enne.\n", "05_Ecologie_Energie_et_Agriculture/02_Ecologie_Transports_et_Industrie_Verte.md": "# \u00c9cologie, Transports, S\u00e9curit\u00e9 Climatique et Industrie Verte\n\n## 1. S\u00e9curit\u00e9 Climatique : \u00ab Prot\u00e9ger, Adapter, \u00c9quiper \u00bb\n- Strat\u00e9gie d'adaptation concr\u00e8te aux effets du d\u00e9r\u00e8glement climatique : s\u00e9curisation des ressources en eau face aux s\u00e9cheresses, retenues collinaires agricoles raisonn\u00e9es, lutte anti-incendie.\n- \u00c9cologie incitative et industrielle : d\u00e9carboner la production sans d\u00e9truire le pouvoir d'achat des classes moyennes et populaires.\n\n## 2. Taxe Carbone aux Fronti\u00e8res de l'Europe (MACF)\n- Application stricte et \u00e9largie du M\u00e9canisme d'Ajustement Carbone aux Fronti\u00e8res de l'UE pour emp\u00eacher le dumping des produits polluants import\u00e9s de Chine ou d'Asie.\n- Conditionnement des march\u00e9s publics \u00e0 une empreinte carbone basse et \u00e0 une fabrication europ\u00e9enne.\n", "./05_Ecologie_Energie_et_Agriculture/03_Agriculture_Peche_et_Souverainete_Alimentaire.md": "# Agriculture, P\u00eache et Souverainet\u00e9 Alimentaire\n\n## 1. Soutien Inconditionnel \u00e0 la Ferme France\n- Moratoire sur l'interdiction de mol\u00e9cules phytosanitaires tant qu'aucune alternative viable n'existe au niveau europ\u00e9en (r\u00e8gle du \u00ab pas d'interdiction sans solution \u00bb).\n- All\u00e8gement des normes environnementales nationales surtranspos\u00e9es pesant sur les agriculteurs et \u00e9leveurs.\n\n## 2. Renouvellement des G\u00e9n\u00e9rations et Eau Agricole\n- Facilitation de la transmission des exploitations agricoles par l'exon\u00e9ration des droits de mutation.\n- Simplification administrative drastique des autorisations pour les retenues d'eau et forages agricoles.\n", "05_Ecologie_Energie_et_Agriculture/03_Agriculture_Peche_et_Souverainete_Alimentaire.md": "# Agriculture, P\u00eache et Souverainet\u00e9 Alimentaire\n\n## 1. Soutien Inconditionnel \u00e0 la Ferme France\n- Moratoire sur l'interdiction de mol\u00e9cules phytosanitaires tant qu'aucune alternative viable n'existe au niveau europ\u00e9en (r\u00e8gle du \u00ab pas d'interdiction sans solution \u00bb).\n- All\u00e8gement des normes environnementales nationales surtranspos\u00e9es pesant sur les agriculteurs et \u00e9leveurs.\n\n## 2. Renouvellement des G\u00e9n\u00e9rations et Eau Agricole\n- Facilitation de la transmission des exploitations agricoles par l'exon\u00e9ration des droits de mutation.\n- Simplification administrative drastique des autorisations pour les retenues d'eau et forages agricoles.\n", "./06_Institutions_et_Decentralisation/01_Institutions_Constitution_Referendum_et_Democratie.md": "# Institutions, Constitution, R\u00e9f\u00e9rendum et D\u00e9mocratie\n\n## 1. La R\u00e8gle d'Or Budg\u00e9taire dans la Constitution\n- Projet de r\u00e9vision constitutionnelle soumis au r\u00e9f\u00e9rendum d\u00e8s le d\u00e9but du quinquennat pour inscrire une r\u00e8gle d'\u00e9quilibre des finances publiques.\n- Interdiction stricte de recourir \u00e0 l'emprunt pour combler les d\u00e9ficits de fonctionnement courant.\n\n## 2. Recours Assum\u00e9 aux Ordonnances et au R\u00e9f\u00e9rendum\n- \u00c9douard Philippe assume d'engager les r\u00e9formes structurelles (retraites, travail, simplification) par ordonnances ou r\u00e9f\u00e9rendum direct pour contourner les blocages parlementaires.\n- Refus cat\u00e9gorique du R\u00e9f\u00e9rendum d'Initiative Citoyenne (RIC), jug\u00e9 d\u00e9stabilisateur pour la d\u00e9mocratie repr\u00e9sentative.\n", "06_Institutions_et_Decentralisation/01_Institutions_Constitution_Referendum_et_Democratie.md": "# Institutions, Constitution, R\u00e9f\u00e9rendum et D\u00e9mocratie\n\n## 1. La R\u00e8gle d'Or Budg\u00e9taire dans la Constitution\n- Projet de r\u00e9vision constitutionnelle soumis au r\u00e9f\u00e9rendum d\u00e8s le d\u00e9but du quinquennat pour inscrire une r\u00e8gle d'\u00e9quilibre des finances publiques.\n- Interdiction stricte de recourir \u00e0 l'emprunt pour combler les d\u00e9ficits de fonctionnement courant.\n\n## 2. Recours Assum\u00e9 aux Ordonnances et au R\u00e9f\u00e9rendum\n- \u00c9douard Philippe assume d'engager les r\u00e9formes structurelles (retraites, travail, simplification) par ordonnances ou r\u00e9f\u00e9rendum direct pour contourner les blocages parlementaires.\n- Refus cat\u00e9gorique du R\u00e9f\u00e9rendum d'Initiative Citoyenne (RIC), jug\u00e9 d\u00e9stabilisateur pour la d\u00e9mocratie repr\u00e9sentative.\n", "./06_Institutions_et_Decentralisation/02_Reforme_de_l_Etat_Fonction_Publique_et_Collectivites.md": "# R\u00e9forme de l'\u00c9tat, Fonction Publique et Collectivit\u00e9s\n\n## 1. R\u00e9duction de la Fonction Publique : -250 000 Postes\n- R\u00e8gle du non-remplacement d'un tiers des fonctionnaires partant \u00e0 la retraite (1 sur 3).\n- Cible : **-250 000 postes sur le quinquennat**, concentr\u00e9s exclusivement sur les fonctions administratives et doublons d'agences, tout en sanctuarisant les policiers, gendarmes, soignants et magistrats.\n- \u00c9conomie annuelle g\u00e9n\u00e9r\u00e9e \u00e0 5 ans : **-12,5 Mds \u20ac/an**.\n\n## 2. Choc de D\u00e9bureaucratisation et Suppression d'Agences\n- Fusion ou suppression de dizaines d'agences publiques, de comit\u00e9s Th\u00e9odule et d'op\u00e9rateurs de l'\u00c9tat aux missions redondantes.\n- Redonner le pouvoir aux pr\u00e9fets et maires face \u00e0 la technocratie centrale.\n", "06_Institutions_et_Decentralisation/02_Reforme_de_l_Etat_Fonction_Publique_et_Collectivites.md": "# R\u00e9forme de l'\u00c9tat, Fonction Publique et Collectivit\u00e9s\n\n## 1. R\u00e9duction de la Fonction Publique : -250 000 Postes\n- R\u00e8gle du non-remplacement d'un tiers des fonctionnaires partant \u00e0 la retraite (1 sur 3).\n- Cible : **-250 000 postes sur le quinquennat**, concentr\u00e9s exclusivement sur les fonctions administratives et doublons d'agences, tout en sanctuarisant les policiers, gendarmes, soignants et magistrats.\n- \u00c9conomie annuelle g\u00e9n\u00e9r\u00e9e \u00e0 5 ans : **-12,5 Mds \u20ac/an**.\n\n## 2. Choc de D\u00e9bureaucratisation et Suppression d'Agences\n- Fusion ou suppression de dizaines d'agences publiques, de comit\u00e9s Th\u00e9odule et d'op\u00e9rateurs de l'\u00c9tat aux missions redondantes.\n- Redonner le pouvoir aux pr\u00e9fets et maires face \u00e0 la technocratie centrale.\n", "./07_Europe_et_Geopolitique/01_Union_Europeenne_Traites_et_Commerce.md": "# Union Europ\u00e9enne, Trait\u00e9s et Commerce International\n\n## 1. Une Europe Puissance et Protectrice\n- \u00c9douard Philippe d\u00e9fend une int\u00e9gration europ\u00e9enne exigeante mais r\u00e9aliste : faire de l'UE une puissance g\u00e9opolitique capable de rivaliser avec les \u00c9tats-Unis et la Chine.\n- Promotion active d'un ***Buy European Tech Act*** pour r\u00e9server la commande publique europ\u00e9enne aux entreprises et technologies continentales.\n\n## 2. R\u00e9ciprocit\u00e9 Commerciale et Fermet\u00e9 Face \u00e0 P\u00e9kin\n- Rejet des accords de libre-\u00e9change non \u00e9quitables (type Mercosur) tant que les normes environnementales et sanitaires ne sont pas rigoureusement identiques.\n- Quotas et droits de douane cibl\u00e9s sur les v\u00e9hicules \u00e9lectriques et technologies chinoises subventionn\u00e9es.\n", "07_Europe_et_Geopolitique/01_Union_Europeenne_Traites_et_Commerce.md": "# Union Europ\u00e9enne, Trait\u00e9s et Commerce International\n\n## 1. Une Europe Puissance et Protectrice\n- \u00c9douard Philippe d\u00e9fend une int\u00e9gration europ\u00e9enne exigeante mais r\u00e9aliste : faire de l'UE une puissance g\u00e9opolitique capable de rivaliser avec les \u00c9tats-Unis et la Chine.\n- Promotion active d'un ***Buy European Tech Act*** pour r\u00e9server la commande publique europ\u00e9enne aux entreprises et technologies continentales.\n\n## 2. R\u00e9ciprocit\u00e9 Commerciale et Fermet\u00e9 Face \u00e0 P\u00e9kin\n- Rejet des accords de libre-\u00e9change non \u00e9quitables (type Mercosur) tant que les normes environnementales et sanitaires ne sont pas rigoureusement identiques.\n- Quotas et droits de douane cibl\u00e9s sur les v\u00e9hicules \u00e9lectriques et technologies chinoises subventionn\u00e9es.\n", "./07_Europe_et_Geopolitique/02_Defense_Armees_Diplomatie_et_Francophonie.md": "# D\u00e9fense, Arm\u00e9es, Diplomatie et Puissance Fran\u00e7aise\n\n## 1. R\u00e9armement Militaire et Trajectoire LPM\n- Amplification de la Loi de Programmation Militaire : budget des Arm\u00e9es port\u00e9 \u00e0 plus de 2,5 % du PIB (**+6,0 Mds \u20ac/an**).\n- Reconstitution rapide des stocks de munitions, modernisation de la composante nucl\u00e9aire de dissuasion et r\u00e9armement naval de premier rang.\n\n## 2. Diplomatie d'\u00c9quilibre et Ancrage Transatlantique\n- Affirmation d'un pilier europ\u00e9en fort au sein de l'OTAN sans d\u00e9pendance exclusive envers Washington.\n- Soutien militaire et financier ind\u00e9fectible \u00e0 l'Ukraine face \u00e0 l'agression russe pour garantir la s\u00e9curit\u00e9 du continent europ\u00e9en.\n", "07_Europe_et_Geopolitique/02_Defense_Armees_Diplomatie_et_Francophonie.md": "# D\u00e9fense, Arm\u00e9es, Diplomatie et Puissance Fran\u00e7aise\n\n## 1. R\u00e9armement Militaire et Trajectoire LPM\n- Amplification de la Loi de Programmation Militaire : budget des Arm\u00e9es port\u00e9 \u00e0 plus de 2,5 % du PIB (**+6,0 Mds \u20ac/an**).\n- Reconstitution rapide des stocks de munitions, modernisation de la composante nucl\u00e9aire de dissuasion et r\u00e9armement naval de premier rang.\n\n## 2. Diplomatie d'\u00c9quilibre et Ancrage Transatlantique\n- Affirmation d'un pilier europ\u00e9en fort au sein de l'OTAN sans d\u00e9pendance exclusive envers Washington.\n- Soutien militaire et financier ind\u00e9fectible \u00e0 l'Ukraine face \u00e0 l'agression russe pour garantir la s\u00e9curit\u00e9 du continent europ\u00e9en.\n", "./08_Veille_Numerique_et_Sources/01_Presence_Numerique_YouTube_Reseaux_Sociaux.md": "# Pr\u00e9sence Num\u00e9rique, R\u00e9seaux Sociaux et Canaux de Communication\n\n## 1. Dispositif Num\u00e9rique Officiel\n- **Site officiel du candidat :** [edouardphilippe.fr](https://edouardphilippe.fr) (plateforme d'id\u00e9es, propositions th\u00e9matiques et adh\u00e9sions).\n- **Mouvement politique :** [horizonsleparti.fr](https://horizonsleparti.fr).\n- **Cha\u00eene YouTube officielle :** Entretiens longs, captations des rentr\u00e9es politiques d'Horizons, discours programmatiques et vid\u00e9os explicatives de propositions.\n- **R\u00e9seau X (Twitter) :** @EPhilippe_LH (prises de parole courtes, communiqu\u00e9s politiques majeurs, tribunes).\n- **LinkedIn :** Canal privil\u00e9gi\u00e9 pour s'adresser aux cadres, dirigeants d'entreprises et d\u00e9cideurs \u00e9conomiques.\n\n## 2. Style de Communication\n- Image soign\u00e9e de \u00ab s\u00e9rieux r\u00e9galien \u00bb, distance par rapport au bruit m\u00e9diatique imm\u00e9diat, phras\u00e9 pos\u00e9 et p\u00e9dagogique.\n- Utilisation de formules marquantes : *\u00ab Dire la v\u00e9rit\u00e9 \u00bb*, *\u00ab Ordre dans les comptes, ordre dans la rue \u00bb*, *\u00ab Plus de nucl\u00e9aire, moins de bavardage \u00bb*.\n", "08_Veille_Numerique_et_Sources/01_Presence_Numerique_YouTube_Reseaux_Sociaux.md": "# Pr\u00e9sence Num\u00e9rique, R\u00e9seaux Sociaux et Canaux de Communication\n\n## 1. Dispositif Num\u00e9rique Officiel\n- **Site officiel du candidat :** [edouardphilippe.fr](https://edouardphilippe.fr) (plateforme d'id\u00e9es, propositions th\u00e9matiques et adh\u00e9sions).\n- **Mouvement politique :** [horizonsleparti.fr](https://horizonsleparti.fr).\n- **Cha\u00eene YouTube officielle :** Entretiens longs, captations des rentr\u00e9es politiques d'Horizons, discours programmatiques et vid\u00e9os explicatives de propositions.\n- **R\u00e9seau X (Twitter) :** @EPhilippe_LH (prises de parole courtes, communiqu\u00e9s politiques majeurs, tribunes).\n- **LinkedIn :** Canal privil\u00e9gi\u00e9 pour s'adresser aux cadres, dirigeants d'entreprises et d\u00e9cideurs \u00e9conomiques.\n\n## 2. Style de Communication\n- Image soign\u00e9e de \u00ab s\u00e9rieux r\u00e9galien \u00bb, distance par rapport au bruit m\u00e9diatique imm\u00e9diat, phras\u00e9 pos\u00e9 et p\u00e9dagogique.\n- Utilisation de formules marquantes : *\u00ab Dire la v\u00e9rit\u00e9 \u00bb*, *\u00ab Ordre dans les comptes, ordre dans la rue \u00bb*, *\u00ab Plus de nucl\u00e9aire, moins de bavardage \u00bb*.\n", "./08_Veille_Numerique_et_Sources/02_Bibliographie_Discours_Cl\u00e9s_et_Sources_Verifiees.md": "# Bibliographie, Discours Cl\u00e9s et Sources V\u00e9rifi\u00e9es\n\n## 1. Ouvrages Majeurs d'\u00c9douard Philippe\n- *Des lieux qui disent* (\u00c9ditions JC Latt\u00e8s, 2023) : R\u00e9cit personnel et vision politique de la France \u00e0 travers ses territoires, l'\u00e9cole, la mer et l'industrie.\n- *Impressions et lignes claires* (avec Gilles Boyer, 2021) : Retour d'exp\u00e9rience sur ses trois ann\u00e9es pass\u00e9es \u00e0 l'H\u00f4tel de Matignon.\n- *L'Heure de v\u00e9rit\u00e9* et *Dans l'ombre* (romans politiques co-\u00e9crits avec Gilles Boyer).\n\n## 2. Discours Cl\u00e9s et D\u00e9clarations Fondatrices\n- **Discours du 3 septembre 2024 :** Annonce officielle de candidature \u00e0 la pr\u00e9sidence de la R\u00e9publique (*Le Point*).\n- **Rentr\u00e9e politique d'Horizons (Angers, octobre 2024) :** Pr\u00e9sentation du \u00ab deal fiscal \u00bb (-50 Mds \u20ac d'imp\u00f4ts contre -50 Mds \u20ac de subventions).\n- **D\u00e9clarations sur la r\u00e9forme des retraites et le temps de travail (2023-2024) :** Prises de position fermes sur l'\u00e2ge de d\u00e9part et la sortie des 35 heures.\n", "08_Veille_Numerique_et_Sources/02_Bibliographie_Discours_Cl\u00e9s_et_Sources_Verifiees.md": "# Bibliographie, Discours Cl\u00e9s et Sources V\u00e9rifi\u00e9es\n\n## 1. Ouvrages Majeurs d'\u00c9douard Philippe\n- *Des lieux qui disent* (\u00c9ditions JC Latt\u00e8s, 2023) : R\u00e9cit personnel et vision politique de la France \u00e0 travers ses territoires, l'\u00e9cole, la mer et l'industrie.\n- *Impressions et lignes claires* (avec Gilles Boyer, 2021) : Retour d'exp\u00e9rience sur ses trois ann\u00e9es pass\u00e9es \u00e0 l'H\u00f4tel de Matignon.\n- *L'Heure de v\u00e9rit\u00e9* et *Dans l'ombre* (romans politiques co-\u00e9crits avec Gilles Boyer).\n\n## 2. Discours Cl\u00e9s et D\u00e9clarations Fondatrices\n- **Discours du 3 septembre 2024 :** Annonce officielle de candidature \u00e0 la pr\u00e9sidence de la R\u00e9publique (*Le Point*).\n- **Rentr\u00e9e politique d'Horizons (Angers, octobre 2024) :** Pr\u00e9sentation du \u00ab deal fiscal \u00bb (-50 Mds \u20ac d'imp\u00f4ts contre -50 Mds \u20ac de subventions).\n- **D\u00e9clarations sur la r\u00e9forme des retraites et le temps de travail (2023-2024) :** Prises de position fermes sur l'\u00e2ge de d\u00e9part et la sortie des 35 heures.\n", "./09_Logement_Famille_et_Demographie/01_Logement_Construction_et_Fiscalite_Immobiliere.md": "# Logement, Choc d'Offre et Fiscalit\u00e9 Immobili\u00e8re\n\n## 1. Choc d'Offre et D\u00e9bureaucratisation du Permis de Construire\n- Relance de la construction par l'assouplissement des r\u00e8gles du ZAN (Z\u00e9ro Artificialisation Nette) pour redonner des marges de man\u0153uvre fonci\u00e8res aux maires b\u00e2tisseurs.\n- D\u00e9lais raccourcis de recours contre les permis de construire pour d\u00e9bloquer les chantiers de logements neufs.\n\n## 2. R\u00e9forme Fiscale Immobili\u00e8re\n- Simplification du statut du bailleur priv\u00e9 pour inciter l'investissement locatif de long terme.\n- Refonte des normes \u00e9nerg\u00e9tiques (DPE) pour \u00e9viter la sortie massive de logements locatifs du march\u00e9.\n", "09_Logement_Famille_et_Demographie/01_Logement_Construction_et_Fiscalite_Immobiliere.md": "# Logement, Choc d'Offre et Fiscalit\u00e9 Immobili\u00e8re\n\n## 1. Choc d'Offre et D\u00e9bureaucratisation du Permis de Construire\n- Relance de la construction par l'assouplissement des r\u00e8gles du ZAN (Z\u00e9ro Artificialisation Nette) pour redonner des marges de man\u0153uvre fonci\u00e8res aux maires b\u00e2tisseurs.\n- D\u00e9lais raccourcis de recours contre les permis de construire pour d\u00e9bloquer les chantiers de logements neufs.\n\n## 2. R\u00e9forme Fiscale Immobili\u00e8re\n- Simplification du statut du bailleur priv\u00e9 pour inciter l'investissement locatif de long terme.\n- Refonte des normes \u00e9nerg\u00e9tiques (DPE) pour \u00e9viter la sortie massive de logements locatifs du march\u00e9.\n", "./09_Logement_Famille_et_Demographie/02_Politique_Familiale_Natalite_et_Transmission.md": "# Politique Familiale, Natalit\u00e9 et Transmission\n\n## 1. Relance de la Natalit\u00e9 et Soutien aux Familles Actives\n- Maintien du quotient familial et d\u00e9veloppement des modes de garde d'enfants (cr\u00e8ches d'entreprises et assistantes maternelles d\u00e9ductibles).\n- Valorisation des familles qui travaillent et conciliation vie professionnelle - vie familiale.\n\n## 2. All\u00e8gement de la Transmission Familiale\n- Rel\u00e8vement des abattements sur les donations anticip\u00e9es de son vivant pour permettre aux jeunes m\u00e9nages d'acc\u00e9der \u00e0 la propri\u00e9t\u00e9.\n", "09_Logement_Famille_et_Demographie/02_Politique_Familiale_Natalite_et_Transmission.md": "# Politique Familiale, Natalit\u00e9 et Transmission\n\n## 1. Relance de la Natalit\u00e9 et Soutien aux Familles Actives\n- Maintien du quotient familial et d\u00e9veloppement des modes de garde d'enfants (cr\u00e8ches d'entreprises et assistantes maternelles d\u00e9ductibles).\n- Valorisation des familles qui travaillent et conciliation vie professionnelle - vie familiale.\n\n## 2. All\u00e8gement de la Transmission Familiale\n- Rel\u00e8vement des abattements sur les donations anticip\u00e9es de son vivant pour permettre aux jeunes m\u00e9nages d'acc\u00e9der \u00e0 la propri\u00e9t\u00e9.\n", "./10_Chiffrage_et_Simulateurs_Budgetaires/01_Chiffrage_Ligne_a_Ligne_par_Famille.md": "# Chiffrage Ligne \u00e0 Ligne du Programme par Famille\n\n## R\u00e9capitulatif Macro\u00e9conomique Quinquennal (An 1 \u00e0 An 5)\n- **Objectif central :** Ramener le d\u00e9ficit public de -5,1 % \u00e0 **-2,0 % du PIB** \u00e0 l'horizon 2032.\n- **Volume global d'\u00e9conomies sur la d\u00e9pense publique :** **-105,0 Mds \u20ac/an** \u00e0 5 ans.\n- **Volume global de baisses d'imp\u00f4ts et cotisations :** **-73,0 Mds \u20ac/an** \u00e0 5 ans (dont 50 Mds \u20ac du deal fiscal gag\u00e9 sur les subventions).\n- **R\u00e9investissements r\u00e9galiens et prioritaires (D\u00e9fense, Justice, \u00c9cole, Nucl\u00e9aire) :** **+18,5 Mds \u20ac/an**.\n- **Effet retour croissance et heures travaill\u00e9es :** **+25,0 Mds \u20ac/an**.\n- **Am\u00e9lioration nette du solde public :** **+38,5 Mds \u20ac/an** de r\u00e9duction p\u00e9renne du d\u00e9ficit public.\n\nCe document est mod\u00e9lis\u00e9 dans le classeur Excel officiel `Chiffrage_Programme_\u00c9douard_Philippe_2027.xlsx`.\n", "10_Chiffrage_et_Simulateurs_Budgetaires/01_Chiffrage_Ligne_a_Ligne_par_Famille.md": "# Chiffrage Ligne \u00e0 Ligne du Programme par Famille\n\n## R\u00e9capitulatif Macro\u00e9conomique Quinquennal (An 1 \u00e0 An 5)\n- **Objectif central :** Ramener le d\u00e9ficit public de -5,1 % \u00e0 **-2,0 % du PIB** \u00e0 l'horizon 2032.\n- **Volume global d'\u00e9conomies sur la d\u00e9pense publique :** **-105,0 Mds \u20ac/an** \u00e0 5 ans.\n- **Volume global de baisses d'imp\u00f4ts et cotisations :** **-73,0 Mds \u20ac/an** \u00e0 5 ans (dont 50 Mds \u20ac du deal fiscal gag\u00e9 sur les subventions).\n- **R\u00e9investissements r\u00e9galiens et prioritaires (D\u00e9fense, Justice, \u00c9cole, Nucl\u00e9aire) :** **+18,5 Mds \u20ac/an**.\n- **Effet retour croissance et heures travaill\u00e9es :** **+25,0 Mds \u20ac/an**.\n- **Am\u00e9lioration nette du solde public :** **+38,5 Mds \u20ac/an** de r\u00e9duction p\u00e9renne du d\u00e9ficit public.\n\nCe document est mod\u00e9lis\u00e9 dans le classeur Excel officiel `Chiffrage_Programme_\u00c9douard_Philippe_2027.xlsx`.\n", "./10_Chiffrage_et_Simulateurs_Budgetaires/02_Impact_Macroeconomique_et_Cas_Types_Menages.md": "# Impact Macro\u00e9conomique et Simulation sur 8 Profils Types\n\n## 1. Effet Macro\u00e9conomique Global\nLe programme \u00e9conomique d'\u00c9douard Philippe vise \u00e0 r\u00e9enclencher une dynamique d'offre :\n- Accroissement sensible du volume global d'heures travaill\u00e9es via la d\u00e9fiscalisation et d\u00e9socialisation au-del\u00e0 de 37 heures.\n- Am\u00e9lioration de la comp\u00e9titivit\u00e9 co\u00fbt des entreprises industrielles via le \u00ab deal fiscal \u00bb.\n- Stabilisation de la note souveraine de la France et arr\u00eat de la d\u00e9rive des taux d'int\u00e9r\u00eat de la dette publique.\n\n## 2. Simulation sur 8 M\u00e9nages et Entreprises Types\n1. **Salari\u00e9 au SMIC (35h) :** Gain net nul sur les 35h de base, mais gain imm\u00e9diat de **+150 \u00e0 +220 \u20ac/mois net** s'il effectue 39h gr\u00e2ce au z\u00e9ro charge patronale et heures suppl\u00e9mentaires d\u00e9fiscalis\u00e9es.\n2. **Salari\u00e9 m\u00e9dian (2 000 \u20ac net, 39h n\u00e9goci\u00e9es) :** **+2 400 \u20ac/an net (+200 \u20ac/mois)**.\n3. **Couple classe moyenne avec 2 enfants :** **+3 200 \u20ac/an net** (heures sup + soutien p\u00e9riscolaire + stabilit\u00e9 fiscale).\n4. **Chef d'entreprise PME industrielle :** Baisse d'imp\u00f4ts de production de **-45 000 \u20ac/an** en contrepartie d'une baisse de subventions complexes.\n5. **Retrait\u00e9 pension sup\u00e9rieure \u00e0 2 500 \u20ac/mois :** Contribution mod\u00e9r\u00e9e (-300 \u00e0 -500 \u20ac/an) due \u00e0 la sous-indexation temporaire.\n6. **Retrait\u00e9 modeste (< 1 500 \u20ac/mois) :** Maintien int\u00e9gral du pouvoir d'achat index\u00e9 sur l'inflation.\n7. **Jeune actif primo-acc\u00e9dant :** All\u00e8gement des donations parentales pour constituer son apport immobilier.\n8. **Enseignant / Soignant :** Revalorisation cibl\u00e9e li\u00e9e aux missions et primes d'engagement d'\u00e9tablissement.\n", "10_Chiffrage_et_Simulateurs_Budgetaires/02_Impact_Macroeconomique_et_Cas_Types_Menages.md": "# Impact Macro\u00e9conomique et Simulation sur 8 Profils Types\n\n## 1. Effet Macro\u00e9conomique Global\nLe programme \u00e9conomique d'\u00c9douard Philippe vise \u00e0 r\u00e9enclencher une dynamique d'offre :\n- Accroissement sensible du volume global d'heures travaill\u00e9es via la d\u00e9fiscalisation et d\u00e9socialisation au-del\u00e0 de 37 heures.\n- Am\u00e9lioration de la comp\u00e9titivit\u00e9 co\u00fbt des entreprises industrielles via le \u00ab deal fiscal \u00bb.\n- Stabilisation de la note souveraine de la France et arr\u00eat de la d\u00e9rive des taux d'int\u00e9r\u00eat de la dette publique.\n\n## 2. Simulation sur 8 M\u00e9nages et Entreprises Types\n1. **Salari\u00e9 au SMIC (35h) :** Gain net nul sur les 35h de base, mais gain imm\u00e9diat de **+150 \u00e0 +220 \u20ac/mois net** s'il effectue 39h gr\u00e2ce au z\u00e9ro charge patronale et heures suppl\u00e9mentaires d\u00e9fiscalis\u00e9es.\n2. **Salari\u00e9 m\u00e9dian (2 000 \u20ac net, 39h n\u00e9goci\u00e9es) :** **+2 400 \u20ac/an net (+200 \u20ac/mois)**.\n3. **Couple classe moyenne avec 2 enfants :** **+3 200 \u20ac/an net** (heures sup + soutien p\u00e9riscolaire + stabilit\u00e9 fiscale).\n4. **Chef d'entreprise PME industrielle :** Baisse d'imp\u00f4ts de production de **-45 000 \u20ac/an** en contrepartie d'une baisse de subventions complexes.\n5. **Retrait\u00e9 pension sup\u00e9rieure \u00e0 2 500 \u20ac/mois :** Contribution mod\u00e9r\u00e9e (-300 \u00e0 -500 \u20ac/an) due \u00e0 la sous-indexation temporaire.\n6. **Retrait\u00e9 modeste (< 1 500 \u20ac/mois) :** Maintien int\u00e9gral du pouvoir d'achat index\u00e9 sur l'inflation.\n7. **Jeune actif primo-acc\u00e9dant :** All\u00e8gement des donations parentales pour constituer son apport immobilier.\n8. **Enseignant / Soignant :** Revalorisation cibl\u00e9e li\u00e9e aux missions et primes d'engagement d'\u00e9tablissement.\n"};
+        const initialMd = "# Fiche Candidat : Édouard Philippe
+
+## 1. Identité & Appartenance
+- **Nom complet :** Édouard Philippe
+- **Parti / Mouvement :** Horizons
+- **Famille politique :** Centre-droit / Bloc central
+- **Statut électoral 2027 :** Candidat déclaré
+
+## 2. Ligne Politique & Grandes Orientations
+Mettre de l'ordre dans les comptes et dans la rue, valorisation du travail et du mérite, refondation de l'Éducation nationale, pragmatisme institutionnel.
+
+## 3. Structure Prévue pour le Suivi de Campagne
+Ce dossier personnel contient l'espace d'analyse structuré :
+- `Programme/` : Recueil des propositions officielles, du manifeste et des prises de parole
+- `Chiffrage_Budget/` : Fichiers d'évaluation budgétaire et impact sur les finances publiques
+- `Comparatif_Etat/` : Analyse comparative avec le Budget Général de l'État (503,6 Mds €) et les APU (1 514 Mds €)
+- `Sources_et_Medias/` : Liens vers interviews, articles, interventions vidéo et réseaux sociaux
+
+---
+*Dossier créé automatiquement dans le cadre de l'observatoire de l'élection présidentielle 2027.*
+";
+        const dossiers = [{"dir_name": "00_Introduction_et_Candidature", "title": "00 Introduction et Candidature", "files": [{"file_name": "01_Biographie_Parcours_et_Positionnement.md", "title": "01 Biographie Parcours et Positionnement", "path": "./00_Introduction_et_Candidature/01_Biographie_Parcours_et_Positionnement.md"}, {"file_name": "02_Parti_Mouvement_Equipe_et_Reseaux.md", "title": "02 Parti Mouvement Equipe et Reseaux", "path": "./00_Introduction_et_Candidature/02_Parti_Mouvement_Equipe_et_Reseaux.md"}, {"file_name": "03_Doctrine_Philosophie_et_Vision_2027.md", "title": "03 Doctrine Philosophie et Vision 2027", "path": "./00_Introduction_et_Candidature/03_Doctrine_Philosophie_et_Vision_2027.md"}]}, {"dir_name": "01_Economie_et_Finances_Publiques", "title": "01 Economie et Finances Publiques", "files": [{"file_name": "01_Fiscalite_Impots_Menages_et_Patrimoine.md", "title": "01 Fiscalite Impots Menages et Patrimoine", "path": "./01_Economie_et_Finances_Publiques/01_Fiscalite_Impots_Menages_et_Patrimoine.md"}, {"file_name": "02_Entreprises_Production_et_Competitivite.md", "title": "02 Entreprises Production et Competitivite", "path": "./01_Economie_et_Finances_Publiques/02_Entreprises_Production_et_Competitivite.md"}, {"file_name": "03_Travail_Salaires_et_Pouvoir_d_Achat.md", "title": "03 Travail Salaires et Pouvoir d Achat", "path": "./01_Economie_et_Finances_Publiques/03_Travail_Salaires_et_Pouvoir_d_Achat.md"}, {"file_name": "04_Dette_Depense_Publique_et_Trajectoire.md", "title": "04 Dette Depense Publique et Trajectoire", "path": "./01_Economie_et_Finances_Publiques/04_Dette_Depense_Publique_et_Trajectoire.md"}]}, {"dir_name": "02_Securite_Justice_et_Immigration", "title": "02 Securite Justice et Immigration", "files": [{"file_name": "01_Securite_Police_Gendarmerie_et_Ordre_Public.md", "title": "01 Securite Police Gendarmerie et Ordre Public", "path": "./02_Securite_Justice_et_Immigration/01_Securite_Police_Gendarmerie_et_Ordre_Public.md"}, {"file_name": "02_Justice_Prisons_et_Politique_Penale.md", "title": "02 Justice Prisons et Politique Penale", "path": "./02_Securite_Justice_et_Immigration/02_Justice_Prisons_et_Politique_Penale.md"}, {"file_name": "03_Immigration_Frontieres_Assimilation_et_Laicite.md", "title": "03 Immigration Frontieres Assimilation et Laicite", "path": "./02_Securite_Justice_et_Immigration/03_Immigration_Frontieres_Assimilation_et_Laicite.md"}]}, {"dir_name": "03_Sante_et_Affaires_Sociales", "title": "03 Sante et Affaires Sociales", "files": [{"file_name": "01_Hopital_Medecine_de_Ville_et_Deserts_Medicaux.md", "title": "01 Hopital Medecine de Ville et Deserts Medicaux", "path": "./03_Sante_et_Affaires_Sociales/01_Hopital_Medecine_de_Ville_et_Deserts_Medicaux.md"}, {"file_name": "02_Retraites_et_Financement_Protection_Sociale.md", "title": "02 Retraites et Financement Protection Sociale", "path": "./03_Sante_et_Affaires_Sociales/02_Retraites_et_Financement_Protection_Sociale.md"}, {"file_name": "03_Minima_Sociaux_RSA_Chomage_et_Lutte_Anti_Fraude.md", "title": "03 Minima Sociaux RSA Chomage et Lutte Anti Fraude", "path": "./03_Sante_et_Affaires_Sociales/03_Minima_Sociaux_RSA_Chomage_et_Lutte_Anti_Fraude.md"}]}, {"dir_name": "04_Education_Culture_et_Jeunesse", "title": "04 Education Culture et Jeunesse", "files": [{"file_name": "01_Ecole_Savoirs_Fondamentaux_et_Enseignants.md", "title": "01 Ecole Savoirs Fondamentaux et Enseignants", "path": "./04_Education_Culture_et_Jeunesse/01_Ecole_Savoirs_Fondamentaux_et_Enseignants.md"}, {"file_name": "02_Universites_Recherche_et_Innovation.md", "title": "02 Universites Recherche et Innovation", "path": "./04_Education_Culture_et_Jeunesse/02_Universites_Recherche_et_Innovation.md"}, {"file_name": "03_Culture_Patrimoine_Audiovisuel_et_Jeunesse.md", "title": "03 Culture Patrimoine Audiovisuel et Jeunesse", "path": "./04_Education_Culture_et_Jeunesse/03_Culture_Patrimoine_Audiovisuel_et_Jeunesse.md"}]}, {"dir_name": "05_Ecologie_Energie_et_Agriculture", "title": "05 Ecologie Energie et Agriculture", "files": [{"file_name": "01_Politique_Energetique_Nucleaire_et_Renouvelables.md", "title": "01 Politique Energetique Nucleaire et Renouvelables", "path": "./05_Ecologie_Energie_et_Agriculture/01_Politique_Energetique_Nucleaire_et_Renouvelables.md"}, {"file_name": "02_Ecologie_Transports_et_Industrie_Verte.md", "title": "02 Ecologie Transports et Industrie Verte", "path": "./05_Ecologie_Energie_et_Agriculture/02_Ecologie_Transports_et_Industrie_Verte.md"}, {"file_name": "03_Agriculture_Peche_et_Souverainete_Alimentaire.md", "title": "03 Agriculture Peche et Souverainete Alimentaire", "path": "./05_Ecologie_Energie_et_Agriculture/03_Agriculture_Peche_et_Souverainete_Alimentaire.md"}]}, {"dir_name": "06_Institutions_et_Decentralisation", "title": "06 Institutions et Decentralisation", "files": [{"file_name": "01_Institutions_Constitution_Referendum_et_Democratie.md", "title": "01 Institutions Constitution Referendum et Democratie", "path": "./06_Institutions_et_Decentralisation/01_Institutions_Constitution_Referendum_et_Democratie.md"}, {"file_name": "02_Reforme_de_l_Etat_Fonction_Publique_et_Collectivites.md", "title": "02 Reforme de l Etat Fonction Publique et Collectivites", "path": "./06_Institutions_et_Decentralisation/02_Reforme_de_l_Etat_Fonction_Publique_et_Collectivites.md"}]}, {"dir_name": "07_Europe_et_Geopolitique", "title": "07 Europe et Geopolitique", "files": [{"file_name": "01_Union_Europeenne_Traites_et_Commerce.md", "title": "01 Union Europeenne Traites et Commerce", "path": "./07_Europe_et_Geopolitique/01_Union_Europeenne_Traites_et_Commerce.md"}, {"file_name": "02_Defense_Armees_Diplomatie_et_Francophonie.md", "title": "02 Defense Armees Diplomatie et Francophonie", "path": "./07_Europe_et_Geopolitique/02_Defense_Armees_Diplomatie_et_Francophonie.md"}]}, {"dir_name": "08_Veille_Numerique_et_Sources", "title": "08 Veille Numerique et Sources", "files": [{"file_name": "01_Presence_Numerique_YouTube_Reseaux_Sociaux.md", "title": "01 Presence Numerique YouTube Reseaux Sociaux", "path": "./08_Veille_Numerique_et_Sources/01_Presence_Numerique_YouTube_Reseaux_Sociaux.md"}, {"file_name": "02_Bibliographie_Discours_Clés_et_Sources_Verifiees.md", "title": "02 Bibliographie Discours Clés et Sources Verifiees", "path": "./08_Veille_Numerique_et_Sources/02_Bibliographie_Discours_Clés_et_Sources_Verifiees.md"}]}, {"dir_name": "09_Logement_Famille_et_Demographie", "title": "09 Logement Famille et Demographie", "files": [{"file_name": "01_Logement_Construction_et_Fiscalite_Immobiliere.md", "title": "01 Logement Construction et Fiscalite Immobiliere", "path": "./09_Logement_Famille_et_Demographie/01_Logement_Construction_et_Fiscalite_Immobiliere.md"}, {"file_name": "02_Politique_Familiale_Natalite_et_Transmission.md", "title": "02 Politique Familiale Natalite et Transmission", "path": "./09_Logement_Famille_et_Demographie/02_Politique_Familiale_Natalite_et_Transmission.md"}]}, {"dir_name": "10_Chiffrage_et_Simulateurs_Budgetaires", "title": "10 Chiffrage et Simulateurs Budgetaires", "files": [{"file_name": "01_Chiffrage_Ligne_a_Ligne_par_Famille.md", "title": "01 Chiffrage Ligne a Ligne par Famille", "path": "./10_Chiffrage_et_Simulateurs_Budgetaires/01_Chiffrage_Ligne_a_Ligne_par_Famille.md"}, {"file_name": "02_Impact_Macroeconomique_et_Cas_Types_Menages.md", "title": "02 Impact Macroeconomique et Cas Types Menages", "path": "./10_Chiffrage_et_Simulateurs_Budgetaires/02_Impact_Macroeconomique_et_Cas_Types_Menages.md"}]}];
+        const fileContents = {"./FICHE_CANDIDAT.md": "# Fiche Candidat : Édouard Philippe
+
+## 1. Identité & Appartenance
+- **Nom complet :** Édouard Philippe
+- **Parti / Mouvement :** Horizons
+- **Famille politique :** Centre-droit / Bloc central
+- **Statut électoral 2027 :** Candidat déclaré
+
+## 2. Ligne Politique & Grandes Orientations
+Mettre de l'ordre dans les comptes et dans la rue, valorisation du travail et du mérite, refondation de l'Éducation nationale, pragmatisme institutionnel.
+
+## 3. Structure Prévue pour le Suivi de Campagne
+Ce dossier personnel contient l'espace d'analyse structuré :
+- `Programme/` : Recueil des propositions officielles, du manifeste et des prises de parole
+- `Chiffrage_Budget/` : Fichiers d'évaluation budgétaire et impact sur les finances publiques
+- `Comparatif_Etat/` : Analyse comparative avec le Budget Général de l'État (503,6 Mds €) et les APU (1 514 Mds €)
+- `Sources_et_Medias/` : Liens vers interviews, articles, interventions vidéo et réseaux sociaux
+
+---
+*Dossier créé automatiquement dans le cadre de l'observatoire de l'élection présidentielle 2027.*
+", "FICHE_CANDIDAT.md": "# Fiche Candidat : Édouard Philippe
+
+## 1. Identité & Appartenance
+- **Nom complet :** Édouard Philippe
+- **Parti / Mouvement :** Horizons
+- **Famille politique :** Centre-droit / Bloc central
+- **Statut électoral 2027 :** Candidat déclaré
+
+## 2. Ligne Politique & Grandes Orientations
+Mettre de l'ordre dans les comptes et dans la rue, valorisation du travail et du mérite, refondation de l'Éducation nationale, pragmatisme institutionnel.
+
+## 3. Structure Prévue pour le Suivi de Campagne
+Ce dossier personnel contient l'espace d'analyse structuré :
+- `Programme/` : Recueil des propositions officielles, du manifeste et des prises de parole
+- `Chiffrage_Budget/` : Fichiers d'évaluation budgétaire et impact sur les finances publiques
+- `Comparatif_Etat/` : Analyse comparative avec le Budget Général de l'État (503,6 Mds €) et les APU (1 514 Mds €)
+- `Sources_et_Medias/` : Liens vers interviews, articles, interventions vidéo et réseaux sociaux
+
+---
+*Dossier créé automatiquement dans le cadre de l'observatoire de l'élection présidentielle 2027.*
+", "./INDEX.md": "# INDEX GÉNÉRAL : CANDIDATURE & PROGRAMME PRÉSIDENTIEL D'ÉDOUARD PHILIPPE (2027)
+
+> **Mouvement :** Horizons | **Ligne :** Centre-Droit, Libéralisme Régalien, Girondin & Européen  
+> **Slogan / Philosophie :** « Voir loin pour faire bien » | « Ordre dans les comptes, ordre dans la rue »  
+> **Statut électoral :** Candidat officiellement déclaré (Annonce du 3 septembre 2024)
+
+---
+
+## 1. Vue d'Ensemble & Carte d'Identité Stratégique
+
+Ancien Premier ministre (2017-2020) et maire du Havre, **Édouard Philippe** a structuré son mouvement politique **Horizons** dès 2021 pour préparer une candidature présidentielle autonome mais ancrée dans le bloc central et le centre-droit républicain.
+
+Son projet politique pour 2027 s'articule autour de quatre grands piliers :
+1. **Le sérieux et la règle d'or budgétaire :** Ramener le déficit public de -5,1 % à **-2,0 % du PIB** d'ici 2032, inscrire une règle d'or budgétaire dans la Constitution par référendum et réduire les dépenses publiques de plus de **100 Mds €/an**.
+2. **La valeur travail et le dépassement des 35 heures :** Zéro cotisation patronale au-delà de la 37e heure pour inciter à travailler plus (39h/40h négociées), couplé à un grand **« deal fiscal »** de 50 Mds € de baisses d'impôts de production gagées sur 50 Mds € de coupes dans les subventions inefficaces.
+3. **L'autorité et le réarmement régalien :** « État d'urgence narco », peines courtes et planchers immédiates, suppression du juge d'application des peines, division par deux de l'immigration légale et hausses budgétaires massives pour la Défense (+6 Mds €), la Sécurité (+4,5 Mds €) et la Justice (+3,5 Mds €).
+4. **L'autonomie et l'exigence éducative :** Faire des chefs d'établissement les vrais patrons de leurs écoles/collèges, sanctuariser les savoirs fondamentaux et créer un service public universel de soutien scolaire.
+
+---
+
+## 2. Tableau de Bord Budgétaire Synthétique (An 1 vs An 5 Plein Régime)
+
+| Agrégat Budgétaire (APU) | Budget Actuel (Réf. 2026) | Trajectoire Philippe An 1 | Trajectoire Philippe An 5 | Écart Net An 5 |
+| :--- | :---: | :---: | :---: | :---: |
+| **Dépenses Publiques Totales** | **1 514,0 Mds €** (52,7 % PIB) | **1 475,0 Mds €** | **1 427,5 Mds €** (47,5 % PIB) | 🟢 **-86,5 Mds €/an net** |
+| *• Dont Économies brutes* | — | *-45,0 Mds €* | *-105,0 Mds €* | *-105,0 Mds €/an* |
+| *• Dont Réinvestissements régaliens & priorités* | — | *+6,0 Mds €* | *+18,5 Mds €* | *+18,5 Mds €/an* |
+| **Recettes Publiques Totales** | **1 368,0 Mds €** (44,7 % PIB) | **1 345,0 Mds €** | **1 320,0 Mds €** (44,0 % PIB) | 🔵 **-48,0 Mds €/an net** |
+| *• Dont Baisses d'impôts et cotisations* | — | *-30,0 Mds €* | *-73,0 Mds €* | *-73,0 Mds €/an* |
+| *• Dont Effet retour croissance & heures travaillées* | — | *+7,0 Mds €* | *+25,0 Mds €* | *+25,0 Mds €/an* |
+| **Déficit Public Consolidé (Maastricht)** | **-146,0 Mds €** (-5,1 % PIB) | **-130,0 Mds €** (-4,4 % PIB) | **-107,5 Mds €** (~ **-2,5 % PIB**) | 🟢 **+38,5 Mds € d'amélioration** |
+| **Dépenses de l'État seul (LOLF)** | **503,6 Mds €** | **483,6 Mds €** | **460,0 Mds €** | 🟢 **-43,6 Mds €/an** |
+
+---
+
+## 3. Sommaire Détaillé des 11 Dossiers Thématiques
+
+### [00_Introduction_et_Candidature](./00_Introduction_et_Candidature/)
+- [01_Biographie_Parcours_et_Positionnement.md](./00_Introduction_et_Candidature/01_Biographie_Parcours_et_Positionnement.md) : Formation, ascension au Havre, 3 ans à Matignon et fondation d'Horizons.
+- [02_Parti_Mouvement_Equipe_et_Reseaux.md](./00_Introduction_et_Candidature/02_Parti_Mouvement_Equipe_et_Reseaux.md) : Structure d'Horizons, cadres clés (Marcangeli, Béchu, Mesnier, Boyer) et réseau d'élus.
+- [03_Doctrine_Philosophie_et_Vision_2027.md](./00_Introduction_et_Candidature/03_Doctrine_Philosophie_et_Vision_2027.md) : Vision exposée dans *Des lieux qui disent*, réalisme budgétaire et réformes par ordonnances.
+
+### [01_Economie_et_Finances_Publiques](./01_Economie_et_Finances_Publiques/)
+- [01_Fiscalite_Impots_Menages_et_Patrimoine.md](./01_Economie_et_Finances_Publiques/01_Fiscalite_Impots_Menages_et_Patrimoine.md) : Moratoire fiscal, zéro charge patronale > 37h, maintien du PFU et transmission facilitée.
+- [02_Entreprises_Production_et_Competitivite.md](./01_Economie_et_Finances_Publiques/02_Entreprises_Production_et_Competitivite.md) : Le « deal fiscal » (50 Mds € baisses impôts prod. contre 50 Mds € d'aides supprimées), fin C3S/CVAE, moratoire normatif.
+- [03_Travail_Salaires_et_Pouvoir_d_Achat.md](./01_Economie_et_Finances_Publiques/03_Travail_Salaires_et_Pouvoir_d_Achat.md) : Sortie des 35h par négociation, déverrouillage du temps de travail, RSA 15-20h d'activité.
+- [04_Dette_Depense_Publique_et_Trajectoire.md](./01_Economie_et_Finances_Publiques/04_Dette_Depense_Publique_et_Trajectoire.md) : Cible déficit à 2%, règle d'or constitutionnelle, baisse de 105 Mds € de dépenses.
+
+### [02_Securite_Justice_et_Immigration](./02_Securite_Justice_et_Immigration/)
+- [01_Securite_Police_Gendarmerie_et_Ordre_Public.md](./02_Securite_Justice_et_Immigration/01_Securite_Police_Gendarmerie_et_Ordre_Public.md) : « État d'urgence narco », fiche S financière, sanctions directes pour les maires.
+- [02_Justice_Prisons_et_Politique_Penale.md](./02_Securite_Justice_et_Immigration/02_Justice_Prisons_et_Politique_Penale.md) : Peines courtes dissuasives, fin du juge d'application des peines, 15 000 places de prison.
+- [03_Immigration_Frontieres_Assimilation_et_Laicite.md](./02_Securite_Justice_et_Immigration/03_Immigration_Frontieres_Assimilation_et_Laicite.md) : Division par 2 de l'immigration légale, fin de l'accord franco-algérien de 1968, quotas annuels.
+
+### [03_Sante_et_Affaires_Sociales](./03_Sante_et_Affaires_Sociales/)
+- [01_Hopital_Medecine_de_Ville_et_Deserts_Medicaux.md](./03_Sante_et_Affaires_Sociales/01_Hopital_Medecine_de_Ville_et_Deserts_Medicaux.md) : Dépenser mieux à l'hôpital, débureaucratisation des ARS, régulation de l'installation des médecins.
+- [02_Retraites_et_Financement_Protection_Sociale.md](./03_Sante_et_Affaires_Sociales/02_Retraites_et_Financement_Protection_Sociale.md) : Garantie de l'équilibre financier (64-65 ans), sous-indexation pensions > 2 500 €, capitalisation collective.
+- [03_Minima_Sociaux_RSA_Chomage_et_Lutte_Anti_Fraude.md](./03_Sante_et_Affaires_Sociales/03_Minima_Sociaux_RSA_Chomage_et_Lutte_Anti_Fraude.md) : Durcissement assurance-chômage, carte Vitale biométrique, 5 Mds € récupérés sur la fraude.
+
+### [04_Education_Culture_et_Jeunesse](./04_Education_Culture_et_Jeunesse/)
+- [01_Ecole_Savoirs_Fondamentaux_et_Enseignants.md](./04_Education_Culture_et_Jeunesse/01_Ecole_Savoirs_Fondamentaux_et_Enseignants.md) : Chefs d'établissement patrons, soutien scolaire universel IA/brigades, inspection de l'enfance.
+- [02_Universites_Recherche_et_Innovation.md](./04_Education_Culture_et_Jeunesse/02_Universites_Recherche_et_Innovation.md) : Autonomie universitaire, mécénat privé, filières d'avenir (IA, quantique, SMR).
+- [03_Culture_Patrimoine_Audiovisuel_et_Jeunesse.md](./04_Education_Culture_et_Jeunesse/03_Culture_Patrimoine_Audiovisuel_et_Jeunesse.md) : Holding France Médias (audiovisuel public mutualisé), sauvegarde du patrimoine rural.
+
+### [05_Ecologie_Energie_et_Agriculture](./05_Ecologie_Energie_et_Agriculture/)
+- [01_Politique_Energetique_Nucleaire_et_Renouvelables.md](./05_Ecologie_Energie_et_Agriculture/01_Politique_Energetique_Nucleaire_et_Renouvelables.md) : Accélération des 14 réacteurs EPR2 et SMR, prolongation des centrales, éolien offshore.
+- [02_Ecologie_Transports_et_Industrie_Verte.md](./05_Ecologie_Energie_et_Agriculture/02_Ecologie_Transports_et_Industrie_Verte.md) : « Protéger, adapter, équiper », taxe carbone aux frontières (MACF), décarbonation incitative.
+- [03_Agriculture_Peche_et_Souverainete_Alimentaire.md](./05_Ecologie_Energie_et_Agriculture/03_Agriculture_Peche_et_Souverainete_Alimentaire.md) : Règle « pas d'interdiction sans solution », simplification des retenues d'eau, transmission agricole.
+
+### [06_Institutions_et_Decentralisation](./06_Institutions_et_Decentralisation/)
+- [01_Institutions_Constitution_Referendum_et_Democratie.md](./06_Institutions_et_Decentralisation/01_Institutions_Constitution_Referendum_et_Democratie.md) : Référendum sur la règle d'or, réformes par ordonnances, rejet du RIC.
+- [02_Reforme_de_l_Etat_Fonction_Publique_et_Collectivites.md](./06_Institutions_et_Decentralisation/02_Reforme_de_l_Etat_Fonction_Publique_et_Collectivites.md) : Non-remplacement d'1 fonctionnaire sur 3 (-250 000 postes administratifs), suppression d'agences d'État.
+
+### [07_Europe_et_Geopolitique](./07_Europe_et_Geopolitique/)
+- [01_Union_Europeenne_Traites_et_Commerce.md](./07_Europe_et_Geopolitique/01_Union_Europeenne_Traites_et_Commerce.md) : *Buy European Tech Act*, réciprocité commerciale, refus des traités inéquitables.
+- [02_Defense_Armees_Diplomatie_et_Francophonie.md](./07_Europe_et_Geopolitique/02_Defense_Armees_Diplomatie_et_Francophonie.md) : Budget Défense > 2,5 % du PIB (+6 Mds €), pilier européen de l'OTAN, soutien à l'Ukraine.
+
+### [08_Veille_Numerique_et_Sources](./08_Veille_Numerique_et_Sources/)
+- [01_Presence_Numerique_YouTube_Reseaux_Sociaux.md](./08_Veille_Numerique_et_Sources/01_Presence_Numerique_YouTube_Reseaux_Sociaux.md) : Canaux officiels (edouardphilippe.fr, X, YouTube, LinkedIn).
+- [02_Bibliographie_Discours_Clés_et_Sources_Verifiees.md](./08_Veille_Numerique_et_Sources/02_Bibliographie_Discours_Clés_et_Sources_Verifiees.md) : Livres (*Des lieux qui disent*), discours d'Angers et déclarations clés.
+
+### [09_Logement_Famille_et_Demographie](./09_Logement_Famille_et_Demographie/)
+- [01_Logement_Construction_et_Fiscalite_Immobiliere.md](./09_Logement_Famille_et_Demographie/01_Logement_Construction_et_Fiscalite_Immobiliere.md) : Assouplissement du ZAN, statut du bailleur privé, déblocage des permis de construire.
+- [02_Politique_Familiale_Natalite_et_Transmission.md](./09_Logement_Famille_et_Demographie/02_Politique_Familiale_Natalite_et_Transmission.md) : Soutien aux familles qui travaillent, développement des crèches, abattements donations.
+
+### [10_Chiffrage_et_Simulateurs_Budgetaires](./10_Chiffrage_et_Simulateurs_Budgetaires/)
+- [01_Chiffrage_Ligne_a_Ligne_par_Famille.md](./10_Chiffrage_et_Simulateurs_Budgetaires/01_Chiffrage_Ligne_a_Ligne_par_Famille.md) : Synthèse du chiffrage détaillé et articulation des 8 familles budgétaires.
+- [02_Impact_Macroeconomique_et_Cas_Types_Menages.md](./10_Chiffrage_et_Simulateurs_Budgetaires/02_Impact_Macroeconomique_et_Cas_Types_Menages.md) : Simulations microéconomiques sur 8 ménages et entreprises.
+
+---
+
+## 4. Outils d'Analyse & Fichiers Liés
+
+- 📊 **Classeur Excel complet (5 onglets + 5 graphiques natifs) :**  
+  [Chiffrage_Programme_Édouard_Philippe_2027.xlsx](./Chiffrage_Programme_Édouard_Philippe_2027.xlsx)
+- 📈 **Tableau de bord HTML interactif (6 graphiques Chart.js) :**  
+  [Visualisation_Programme_et_Comparatif_Budget_Édouard_Philippe.html](./Visualisation_Programme_et_Comparatif_Budget_Édouard_Philippe.html)
+- 📘 **Référentiel des comptes de l'État :**  
+  `C:\Users\user\Desktop\projets_IA\projets\presidentielle\Budget_Detaille_Etat_Francais.xlsx`
+", "INDEX.md": "# INDEX GÉNÉRAL : CANDIDATURE & PROGRAMME PRÉSIDENTIEL D'ÉDOUARD PHILIPPE (2027)
+
+> **Mouvement :** Horizons | **Ligne :** Centre-Droit, Libéralisme Régalien, Girondin & Européen  
+> **Slogan / Philosophie :** « Voir loin pour faire bien » | « Ordre dans les comptes, ordre dans la rue »  
+> **Statut électoral :** Candidat officiellement déclaré (Annonce du 3 septembre 2024)
+
+---
+
+## 1. Vue d'Ensemble & Carte d'Identité Stratégique
+
+Ancien Premier ministre (2017-2020) et maire du Havre, **Édouard Philippe** a structuré son mouvement politique **Horizons** dès 2021 pour préparer une candidature présidentielle autonome mais ancrée dans le bloc central et le centre-droit républicain.
+
+Son projet politique pour 2027 s'articule autour de quatre grands piliers :
+1. **Le sérieux et la règle d'or budgétaire :** Ramener le déficit public de -5,1 % à **-2,0 % du PIB** d'ici 2032, inscrire une règle d'or budgétaire dans la Constitution par référendum et réduire les dépenses publiques de plus de **100 Mds €/an**.
+2. **La valeur travail et le dépassement des 35 heures :** Zéro cotisation patronale au-delà de la 37e heure pour inciter à travailler plus (39h/40h négociées), couplé à un grand **« deal fiscal »** de 50 Mds € de baisses d'impôts de production gagées sur 50 Mds € de coupes dans les subventions inefficaces.
+3. **L'autorité et le réarmement régalien :** « État d'urgence narco », peines courtes et planchers immédiates, suppression du juge d'application des peines, division par deux de l'immigration légale et hausses budgétaires massives pour la Défense (+6 Mds €), la Sécurité (+4,5 Mds €) et la Justice (+3,5 Mds €).
+4. **L'autonomie et l'exigence éducative :** Faire des chefs d'établissement les vrais patrons de leurs écoles/collèges, sanctuariser les savoirs fondamentaux et créer un service public universel de soutien scolaire.
+
+---
+
+## 2. Tableau de Bord Budgétaire Synthétique (An 1 vs An 5 Plein Régime)
+
+| Agrégat Budgétaire (APU) | Budget Actuel (Réf. 2026) | Trajectoire Philippe An 1 | Trajectoire Philippe An 5 | Écart Net An 5 |
+| :--- | :---: | :---: | :---: | :---: |
+| **Dépenses Publiques Totales** | **1 514,0 Mds €** (52,7 % PIB) | **1 475,0 Mds €** | **1 427,5 Mds €** (47,5 % PIB) | 🟢 **-86,5 Mds €/an net** |
+| *• Dont Économies brutes* | — | *-45,0 Mds €* | *-105,0 Mds €* | *-105,0 Mds €/an* |
+| *• Dont Réinvestissements régaliens & priorités* | — | *+6,0 Mds €* | *+18,5 Mds €* | *+18,5 Mds €/an* |
+| **Recettes Publiques Totales** | **1 368,0 Mds €** (44,7 % PIB) | **1 345,0 Mds €** | **1 320,0 Mds €** (44,0 % PIB) | 🔵 **-48,0 Mds €/an net** |
+| *• Dont Baisses d'impôts et cotisations* | — | *-30,0 Mds €* | *-73,0 Mds €* | *-73,0 Mds €/an* |
+| *• Dont Effet retour croissance & heures travaillées* | — | *+7,0 Mds €* | *+25,0 Mds €* | *+25,0 Mds €/an* |
+| **Déficit Public Consolidé (Maastricht)** | **-146,0 Mds €** (-5,1 % PIB) | **-130,0 Mds €** (-4,4 % PIB) | **-107,5 Mds €** (~ **-2,5 % PIB**) | 🟢 **+38,5 Mds € d'amélioration** |
+| **Dépenses de l'État seul (LOLF)** | **503,6 Mds €** | **483,6 Mds €** | **460,0 Mds €** | 🟢 **-43,6 Mds €/an** |
+
+---
+
+## 3. Sommaire Détaillé des 11 Dossiers Thématiques
+
+### [00_Introduction_et_Candidature](./00_Introduction_et_Candidature/)
+- [01_Biographie_Parcours_et_Positionnement.md](./00_Introduction_et_Candidature/01_Biographie_Parcours_et_Positionnement.md) : Formation, ascension au Havre, 3 ans à Matignon et fondation d'Horizons.
+- [02_Parti_Mouvement_Equipe_et_Reseaux.md](./00_Introduction_et_Candidature/02_Parti_Mouvement_Equipe_et_Reseaux.md) : Structure d'Horizons, cadres clés (Marcangeli, Béchu, Mesnier, Boyer) et réseau d'élus.
+- [03_Doctrine_Philosophie_et_Vision_2027.md](./00_Introduction_et_Candidature/03_Doctrine_Philosophie_et_Vision_2027.md) : Vision exposée dans *Des lieux qui disent*, réalisme budgétaire et réformes par ordonnances.
+
+### [01_Economie_et_Finances_Publiques](./01_Economie_et_Finances_Publiques/)
+- [01_Fiscalite_Impots_Menages_et_Patrimoine.md](./01_Economie_et_Finances_Publiques/01_Fiscalite_Impots_Menages_et_Patrimoine.md) : Moratoire fiscal, zéro charge patronale > 37h, maintien du PFU et transmission facilitée.
+- [02_Entreprises_Production_et_Competitivite.md](./01_Economie_et_Finances_Publiques/02_Entreprises_Production_et_Competitivite.md) : Le « deal fiscal » (50 Mds € baisses impôts prod. contre 50 Mds € d'aides supprimées), fin C3S/CVAE, moratoire normatif.
+- [03_Travail_Salaires_et_Pouvoir_d_Achat.md](./01_Economie_et_Finances_Publiques/03_Travail_Salaires_et_Pouvoir_d_Achat.md) : Sortie des 35h par négociation, déverrouillage du temps de travail, RSA 15-20h d'activité.
+- [04_Dette_Depense_Publique_et_Trajectoire.md](./01_Economie_et_Finances_Publiques/04_Dette_Depense_Publique_et_Trajectoire.md) : Cible déficit à 2%, règle d'or constitutionnelle, baisse de 105 Mds € de dépenses.
+
+### [02_Securite_Justice_et_Immigration](./02_Securite_Justice_et_Immigration/)
+- [01_Securite_Police_Gendarmerie_et_Ordre_Public.md](./02_Securite_Justice_et_Immigration/01_Securite_Police_Gendarmerie_et_Ordre_Public.md) : « État d'urgence narco », fiche S financière, sanctions directes pour les maires.
+- [02_Justice_Prisons_et_Politique_Penale.md](./02_Securite_Justice_et_Immigration/02_Justice_Prisons_et_Politique_Penale.md) : Peines courtes dissuasives, fin du juge d'application des peines, 15 000 places de prison.
+- [03_Immigration_Frontieres_Assimilation_et_Laicite.md](./02_Securite_Justice_et_Immigration/03_Immigration_Frontieres_Assimilation_et_Laicite.md) : Division par 2 de l'immigration légale, fin de l'accord franco-algérien de 1968, quotas annuels.
+
+### [03_Sante_et_Affaires_Sociales](./03_Sante_et_Affaires_Sociales/)
+- [01_Hopital_Medecine_de_Ville_et_Deserts_Medicaux.md](./03_Sante_et_Affaires_Sociales/01_Hopital_Medecine_de_Ville_et_Deserts_Medicaux.md) : Dépenser mieux à l'hôpital, débureaucratisation des ARS, régulation de l'installation des médecins.
+- [02_Retraites_et_Financement_Protection_Sociale.md](./03_Sante_et_Affaires_Sociales/02_Retraites_et_Financement_Protection_Sociale.md) : Garantie de l'équilibre financier (64-65 ans), sous-indexation pensions > 2 500 €, capitalisation collective.
+- [03_Minima_Sociaux_RSA_Chomage_et_Lutte_Anti_Fraude.md](./03_Sante_et_Affaires_Sociales/03_Minima_Sociaux_RSA_Chomage_et_Lutte_Anti_Fraude.md) : Durcissement assurance-chômage, carte Vitale biométrique, 5 Mds € récupérés sur la fraude.
+
+### [04_Education_Culture_et_Jeunesse](./04_Education_Culture_et_Jeunesse/)
+- [01_Ecole_Savoirs_Fondamentaux_et_Enseignants.md](./04_Education_Culture_et_Jeunesse/01_Ecole_Savoirs_Fondamentaux_et_Enseignants.md) : Chefs d'établissement patrons, soutien scolaire universel IA/brigades, inspection de l'enfance.
+- [02_Universites_Recherche_et_Innovation.md](./04_Education_Culture_et_Jeunesse/02_Universites_Recherche_et_Innovation.md) : Autonomie universitaire, mécénat privé, filières d'avenir (IA, quantique, SMR).
+- [03_Culture_Patrimoine_Audiovisuel_et_Jeunesse.md](./04_Education_Culture_et_Jeunesse/03_Culture_Patrimoine_Audiovisuel_et_Jeunesse.md) : Holding France Médias (audiovisuel public mutualisé), sauvegarde du patrimoine rural.
+
+### [05_Ecologie_Energie_et_Agriculture](./05_Ecologie_Energie_et_Agriculture/)
+- [01_Politique_Energetique_Nucleaire_et_Renouvelables.md](./05_Ecologie_Energie_et_Agriculture/01_Politique_Energetique_Nucleaire_et_Renouvelables.md) : Accélération des 14 réacteurs EPR2 et SMR, prolongation des centrales, éolien offshore.
+- [02_Ecologie_Transports_et_Industrie_Verte.md](./05_Ecologie_Energie_et_Agriculture/02_Ecologie_Transports_et_Industrie_Verte.md) : « Protéger, adapter, équiper », taxe carbone aux frontières (MACF), décarbonation incitative.
+- [03_Agriculture_Peche_et_Souverainete_Alimentaire.md](./05_Ecologie_Energie_et_Agriculture/03_Agriculture_Peche_et_Souverainete_Alimentaire.md) : Règle « pas d'interdiction sans solution », simplification des retenues d'eau, transmission agricole.
+
+### [06_Institutions_et_Decentralisation](./06_Institutions_et_Decentralisation/)
+- [01_Institutions_Constitution_Referendum_et_Democratie.md](./06_Institutions_et_Decentralisation/01_Institutions_Constitution_Referendum_et_Democratie.md) : Référendum sur la règle d'or, réformes par ordonnances, rejet du RIC.
+- [02_Reforme_de_l_Etat_Fonction_Publique_et_Collectivites.md](./06_Institutions_et_Decentralisation/02_Reforme_de_l_Etat_Fonction_Publique_et_Collectivites.md) : Non-remplacement d'1 fonctionnaire sur 3 (-250 000 postes administratifs), suppression d'agences d'État.
+
+### [07_Europe_et_Geopolitique](./07_Europe_et_Geopolitique/)
+- [01_Union_Europeenne_Traites_et_Commerce.md](./07_Europe_et_Geopolitique/01_Union_Europeenne_Traites_et_Commerce.md) : *Buy European Tech Act*, réciprocité commerciale, refus des traités inéquitables.
+- [02_Defense_Armees_Diplomatie_et_Francophonie.md](./07_Europe_et_Geopolitique/02_Defense_Armees_Diplomatie_et_Francophonie.md) : Budget Défense > 2,5 % du PIB (+6 Mds €), pilier européen de l'OTAN, soutien à l'Ukraine.
+
+### [08_Veille_Numerique_et_Sources](./08_Veille_Numerique_et_Sources/)
+- [01_Presence_Numerique_YouTube_Reseaux_Sociaux.md](./08_Veille_Numerique_et_Sources/01_Presence_Numerique_YouTube_Reseaux_Sociaux.md) : Canaux officiels (edouardphilippe.fr, X, YouTube, LinkedIn).
+- [02_Bibliographie_Discours_Clés_et_Sources_Verifiees.md](./08_Veille_Numerique_et_Sources/02_Bibliographie_Discours_Clés_et_Sources_Verifiees.md) : Livres (*Des lieux qui disent*), discours d'Angers et déclarations clés.
+
+### [09_Logement_Famille_et_Demographie](./09_Logement_Famille_et_Demographie/)
+- [01_Logement_Construction_et_Fiscalite_Immobiliere.md](./09_Logement_Famille_et_Demographie/01_Logement_Construction_et_Fiscalite_Immobiliere.md) : Assouplissement du ZAN, statut du bailleur privé, déblocage des permis de construire.
+- [02_Politique_Familiale_Natalite_et_Transmission.md](./09_Logement_Famille_et_Demographie/02_Politique_Familiale_Natalite_et_Transmission.md) : Soutien aux familles qui travaillent, développement des crèches, abattements donations.
+
+### [10_Chiffrage_et_Simulateurs_Budgetaires](./10_Chiffrage_et_Simulateurs_Budgetaires/)
+- [01_Chiffrage_Ligne_a_Ligne_par_Famille.md](./10_Chiffrage_et_Simulateurs_Budgetaires/01_Chiffrage_Ligne_a_Ligne_par_Famille.md) : Synthèse du chiffrage détaillé et articulation des 8 familles budgétaires.
+- [02_Impact_Macroeconomique_et_Cas_Types_Menages.md](./10_Chiffrage_et_Simulateurs_Budgetaires/02_Impact_Macroeconomique_et_Cas_Types_Menages.md) : Simulations microéconomiques sur 8 ménages et entreprises.
+
+---
+
+## 4. Outils d'Analyse & Fichiers Liés
+
+- 📊 **Classeur Excel complet (5 onglets + 5 graphiques natifs) :**  
+  [Chiffrage_Programme_Édouard_Philippe_2027.xlsx](./Chiffrage_Programme_Édouard_Philippe_2027.xlsx)
+- 📈 **Tableau de bord HTML interactif (6 graphiques Chart.js) :**  
+  [Visualisation_Programme_et_Comparatif_Budget_Édouard_Philippe.html](./Visualisation_Programme_et_Comparatif_Budget_Édouard_Philippe.html)
+- 📘 **Référentiel des comptes de l'État :**  
+  `C:\Users\user\Desktop\projets_IA\projets\presidentielle\Budget_Detaille_Etat_Francais.xlsx`
+", "./00_Introduction_et_Candidature/01_Biographie_Parcours_et_Positionnement.md": "# Biographie, Parcours et Positionnement d'Édouard Philippe
+
+## 1. Origines, Formation et Débuts Politiques
+Né le 28 novembre 1970 à Rouen, fils d'enseignants, Édouard Philippe suit un cursus d'excellence républicaine : hypokhâgne au lycée Janson-de-Sailly, diplômé de l'Institut d'Études Politiques de Paris (Sciences Po) en 1992, puis élève de l'École Nationale d'Administration (ENA - promotion Marc Bloch, 1995-1997). À sa sortie de l'ENA, il intègre le Conseil d'État.
+
+Initialement engagé au Parti Socialiste sous la bannière rocardienne durant ses années d'études, il s'éloigne de la gauche pour rejoindre la droite libérale et républicaine. En 2002, il participe activement à la création de l'Union pour un Mouvement Populaire (UMP) aux côtés d'Alain Juppé, dont il devient l'un des plus proches disciples et directeurs généraux des services du parti.
+
+## 2. L'Ancrage Havrais et l'Ascension Parlementaire
+Édouard Philippe s'établit solidement au Havre, ville industrielle et portuaire emblématique :
+- Élu adjoint au maire du Havre en 2001, il devient maire du Havre en 2010 suite à la démission d'Antoine Rufenacht.
+- Il est réélu maire en 2014 dès le premier tour, puis à nouveau en 2020 après son départ de Matignon.
+- Parallèlement, il est élu député de la 7e circonscription de la Seine-Maritime de 2012 à 2017.
+- Au Havre, il développe une pratique politique pragmatique, centrée sur le développement portuaire, l'attractivité industrielle, la transition maritime et une gestion budgétaire rigoureuse.
+
+## 3. Premier Ministre de la République (2017-2020)
+Nommé Premier ministre par Emmanuel Macron le 15 mai 2017, il dirige deux gouvernements consécutifs pendant trois années marquées par des crises majeures :
+- **Réformes structurelles (2017-2018) :** Ordonnances travail réformant le Code du travail, suppression de l'ISF remplacé par l'IFI, réforme de la SNCF (fin du statut de cheminot à l'embauche), vote de la loi ELAN sur le logement.
+- **Crise des Gilets Jaunes (2018-2019) :** Gestion de la contestation sociale, recul sur la hausse de la taxe carbone, organisation du Grand Débat National.
+- **Projet de réforme des retraites à points (2019-2020) :** Porteur de la réforme systémique avec « âge pivot », interrompue par la pandémie.
+- **Gestion de crise sanitaire Covid-19 (printemps 2020) :** Confinement national, mise en place du « quoi qu'il en coûte » et points presse quotidiens très suivis.
+Il quitte Matignon le 3 juillet 2020 avec un niveau de popularité exceptionnel, nettement supérieur à celui du président de la République.
+
+## 4. Fondation d'Horizons et Déclaration Présidentielle 2027
+En octobre 2021, il fonde au Havre son propre parti politique, **Horizons**, positionné au centre-droit, autonome mais allié de la majorité sortante :
+- Il construit patiemment un maillage territorial de maires et d'élus locaux, et constitue un groupe parlementaire solide à l'Assemblée nationale et au Sénat.
+- Début septembre 2024, il franchit le pas et officialise sa candidature à l'élection présidentielle de 2027 : *« Je serai candidat à la prochaine élection présidentielle. Je me prépare pour proposer des choses massives et cohérentes aux Français. »*
+", "00_Introduction_et_Candidature/01_Biographie_Parcours_et_Positionnement.md": "# Biographie, Parcours et Positionnement d'Édouard Philippe
+
+## 1. Origines, Formation et Débuts Politiques
+Né le 28 novembre 1970 à Rouen, fils d'enseignants, Édouard Philippe suit un cursus d'excellence républicaine : hypokhâgne au lycée Janson-de-Sailly, diplômé de l'Institut d'Études Politiques de Paris (Sciences Po) en 1992, puis élève de l'École Nationale d'Administration (ENA - promotion Marc Bloch, 1995-1997). À sa sortie de l'ENA, il intègre le Conseil d'État.
+
+Initialement engagé au Parti Socialiste sous la bannière rocardienne durant ses années d'études, il s'éloigne de la gauche pour rejoindre la droite libérale et républicaine. En 2002, il participe activement à la création de l'Union pour un Mouvement Populaire (UMP) aux côtés d'Alain Juppé, dont il devient l'un des plus proches disciples et directeurs généraux des services du parti.
+
+## 2. L'Ancrage Havrais et l'Ascension Parlementaire
+Édouard Philippe s'établit solidement au Havre, ville industrielle et portuaire emblématique :
+- Élu adjoint au maire du Havre en 2001, il devient maire du Havre en 2010 suite à la démission d'Antoine Rufenacht.
+- Il est réélu maire en 2014 dès le premier tour, puis à nouveau en 2020 après son départ de Matignon.
+- Parallèlement, il est élu député de la 7e circonscription de la Seine-Maritime de 2012 à 2017.
+- Au Havre, il développe une pratique politique pragmatique, centrée sur le développement portuaire, l'attractivité industrielle, la transition maritime et une gestion budgétaire rigoureuse.
+
+## 3. Premier Ministre de la République (2017-2020)
+Nommé Premier ministre par Emmanuel Macron le 15 mai 2017, il dirige deux gouvernements consécutifs pendant trois années marquées par des crises majeures :
+- **Réformes structurelles (2017-2018) :** Ordonnances travail réformant le Code du travail, suppression de l'ISF remplacé par l'IFI, réforme de la SNCF (fin du statut de cheminot à l'embauche), vote de la loi ELAN sur le logement.
+- **Crise des Gilets Jaunes (2018-2019) :** Gestion de la contestation sociale, recul sur la hausse de la taxe carbone, organisation du Grand Débat National.
+- **Projet de réforme des retraites à points (2019-2020) :** Porteur de la réforme systémique avec « âge pivot », interrompue par la pandémie.
+- **Gestion de crise sanitaire Covid-19 (printemps 2020) :** Confinement national, mise en place du « quoi qu'il en coûte » et points presse quotidiens très suivis.
+Il quitte Matignon le 3 juillet 2020 avec un niveau de popularité exceptionnel, nettement supérieur à celui du président de la République.
+
+## 4. Fondation d'Horizons et Déclaration Présidentielle 2027
+En octobre 2021, il fonde au Havre son propre parti politique, **Horizons**, positionné au centre-droit, autonome mais allié de la majorité sortante :
+- Il construit patiemment un maillage territorial de maires et d'élus locaux, et constitue un groupe parlementaire solide à l'Assemblée nationale et au Sénat.
+- Début septembre 2024, il franchit le pas et officialise sa candidature à l'élection présidentielle de 2027 : *« Je serai candidat à la prochaine élection présidentielle. Je me prépare pour proposer des choses massives et cohérentes aux Français. »*
+", "./00_Introduction_et_Candidature/02_Parti_Mouvement_Equipe_et_Reseaux.md": "# Parti, Mouvement, Équipe et Réseaux : Le Parti Horizons
+
+## 1. La Structure Partisane : Horizons
+Fondé le 9 octobre 2021 au Havre, le parti **Horizons** se veut une formation politique « pour voir loin » :
+- **Ligne politique :** Libérale, républicaine, européenne, girondine et régalienne.
+- **Implantation territoriale :** Horizons revendique plus de 30 000 adhérents et plus de 800 maires affiliés, misant sur l'ancrage municipal pour contrebalancer le centralisme parisien.
+- **Représentation parlementaire :** Un groupe parlementaire à l'Assemblée nationale (présidé par Laurent Marcangeli) et un groupe influent au Sénat (Les Indépendants).
+
+## 2. L'Équipe Rapprochée et Cadres Clés
+- **Laurent Marcangeli :** Député et ancien maire d'Ajaccio, patron des députés Horizons, relais politique et territorial central.
+- **Christophe Béchu :** Ancien ministre de la Transition écologique, secrétaire général d'Horizons, maire d'Angers, stratège territorial.
+- **Thomas Mesnier :** Ancien député et médecin urgentiste, référent thématique sur la santé et les affaires sociales.
+- **Gilles Boyer :** Député européen, conseiller historique et intime d'Édouard Philippe (co-auteur de leurs polars politiques).
+- **Stéphanie von Euw :** Maire de Pontoise, vice-présidente d'Horizons, chargée de la cohésion républicaine.
+- **Pierre-Yves Bournazel :** Conseiller de Paris, figure de proue parisienne du mouvement.
+
+## 3. Réseaux d'Influence et Soutiens
+- **Réseau des élus locaux :** Fédération de maires indépendants et de droite modérée séduits par la décentralisation.
+- **Monde économique et chefs d'entreprise :** Soutien de dirigeants du CAC 40, d'ETI et du MEDEF favorables à son « deal fiscal » (-50 Mds € d'impôts de production) et à la sortie des 35 heures.
+- **Cercle intellectuel et technocratique :** Hauts fonctionnaires, conseillers d'État, économistes libéraux et diplomates réunis autour de ses séminaires programmatiques.
+", "00_Introduction_et_Candidature/02_Parti_Mouvement_Equipe_et_Reseaux.md": "# Parti, Mouvement, Équipe et Réseaux : Le Parti Horizons
+
+## 1. La Structure Partisane : Horizons
+Fondé le 9 octobre 2021 au Havre, le parti **Horizons** se veut une formation politique « pour voir loin » :
+- **Ligne politique :** Libérale, républicaine, européenne, girondine et régalienne.
+- **Implantation territoriale :** Horizons revendique plus de 30 000 adhérents et plus de 800 maires affiliés, misant sur l'ancrage municipal pour contrebalancer le centralisme parisien.
+- **Représentation parlementaire :** Un groupe parlementaire à l'Assemblée nationale (présidé par Laurent Marcangeli) et un groupe influent au Sénat (Les Indépendants).
+
+## 2. L'Équipe Rapprochée et Cadres Clés
+- **Laurent Marcangeli :** Député et ancien maire d'Ajaccio, patron des députés Horizons, relais politique et territorial central.
+- **Christophe Béchu :** Ancien ministre de la Transition écologique, secrétaire général d'Horizons, maire d'Angers, stratège territorial.
+- **Thomas Mesnier :** Ancien député et médecin urgentiste, référent thématique sur la santé et les affaires sociales.
+- **Gilles Boyer :** Député européen, conseiller historique et intime d'Édouard Philippe (co-auteur de leurs polars politiques).
+- **Stéphanie von Euw :** Maire de Pontoise, vice-présidente d'Horizons, chargée de la cohésion républicaine.
+- **Pierre-Yves Bournazel :** Conseiller de Paris, figure de proue parisienne du mouvement.
+
+## 3. Réseaux d'Influence et Soutiens
+- **Réseau des élus locaux :** Fédération de maires indépendants et de droite modérée séduits par la décentralisation.
+- **Monde économique et chefs d'entreprise :** Soutien de dirigeants du CAC 40, d'ETI et du MEDEF favorables à son « deal fiscal » (-50 Mds € d'impôts de production) et à la sortie des 35 heures.
+- **Cercle intellectuel et technocratique :** Hauts fonctionnaires, conseillers d'État, économistes libéraux et diplomates réunis autour de ses séminaires programmatiques.
+", "./00_Introduction_et_Candidature/03_Doctrine_Philosophie_et_Vision_2027.md": "# Doctrine, Philosophie et Vision pour 2027
+
+## 1. La Doctrine du Centre-Droit Régalien et Libéral
+Édouard Philippe théorise sa vision dans son ouvrage *Des lieux qui disent* (2023) :
+- **Le constat de l'affaissement :** Une France surendettée, bureaucratisée, aux services publics dégradés malgré une dépense record, et traversée par un sentiment diffus de perte d'autorité et d'ensauvagement.
+- **La méthode :** Dire la vérité aux Français, refuser la démagogie de la dépense facile, assumer des réformes difficiles dès les premiers mois par référendum ou ordonnances.
+- **Le triptyque programmatique :** Ordre dans les comptes, ordre dans la rue, liberté pour les acteurs économiques et éducatifs.
+
+## 2. Le Réalisme Budgétaire Élevé au Rang Constitutionnel
+Contrairement au « quoi qu'il en coûte » des années de crise sanitaire, Édouard Philippe prône une discipline budgétaire stricte :
+- Inscription d'une **« règle d'or » constitutionnelle** interdisant de financer le fonctionnement courant de l'État par la dette.
+- Réduction du déficit public consolidé à **2 % du PIB** à l'horizon 2032.
+- Réduction de la part de la dépense publique de plus de 52,7 % à moins de 48 % du PIB.
+
+## 3. Travailler Plus : Le Socle du Redressement Français
+Pour Édouard Philippe, le mal français réside dans un volume d'heures travaillées insuffisant à l'échelle de la vie et de l'année :
+- Casser le carcan rigide des 35 heures en exonérant totalement de cotisations patronales le travail au-delà de 37 heures.
+- Garantir l'équilibre du système de retraite par le travail et une dose de capitalisation collective.
+- Recentrer l'action publique sur le cœur régalien de l'État : Défense, Sécurité, Justice, Frontières, École.
+", "00_Introduction_et_Candidature/03_Doctrine_Philosophie_et_Vision_2027.md": "# Doctrine, Philosophie et Vision pour 2027
+
+## 1. La Doctrine du Centre-Droit Régalien et Libéral
+Édouard Philippe théorise sa vision dans son ouvrage *Des lieux qui disent* (2023) :
+- **Le constat de l'affaissement :** Une France surendettée, bureaucratisée, aux services publics dégradés malgré une dépense record, et traversée par un sentiment diffus de perte d'autorité et d'ensauvagement.
+- **La méthode :** Dire la vérité aux Français, refuser la démagogie de la dépense facile, assumer des réformes difficiles dès les premiers mois par référendum ou ordonnances.
+- **Le triptyque programmatique :** Ordre dans les comptes, ordre dans la rue, liberté pour les acteurs économiques et éducatifs.
+
+## 2. Le Réalisme Budgétaire Élevé au Rang Constitutionnel
+Contrairement au « quoi qu'il en coûte » des années de crise sanitaire, Édouard Philippe prône une discipline budgétaire stricte :
+- Inscription d'une **« règle d'or » constitutionnelle** interdisant de financer le fonctionnement courant de l'État par la dette.
+- Réduction du déficit public consolidé à **2 % du PIB** à l'horizon 2032.
+- Réduction de la part de la dépense publique de plus de 52,7 % à moins de 48 % du PIB.
+
+## 3. Travailler Plus : Le Socle du Redressement Français
+Pour Édouard Philippe, le mal français réside dans un volume d'heures travaillées insuffisant à l'échelle de la vie et de l'année :
+- Casser le carcan rigide des 35 heures en exonérant totalement de cotisations patronales le travail au-delà de 37 heures.
+- Garantir l'équilibre du système de retraite par le travail et une dose de capitalisation collective.
+- Recentrer l'action publique sur le cœur régalien de l'État : Défense, Sécurité, Justice, Frontières, École.
+", "./01_Economie_et_Finances_Publiques/01_Fiscalite_Impots_Menages_et_Patrimoine.md": "# Fiscalité des Ménages, Impôts et Patrimoine
+
+## 1. Moratoire Fiscal d'un Quinquennat
+Édouard Philippe s'engage à appliquer un **moratoire fiscal absolu** pendant cinq ans :
+- Aucune création de nouvelle taxe ou d'impôt nouveau.
+- Refus catégorique du retour de l'ISF ou d'une fiscalité punitive sur le capital productif.
+- Pérennisation du Prélèvement Forfaitaire Unique (PFU - Flat Tax à 30 %) sur les revenus du capital mobilier.
+
+## 2. Soutien aux Revenus du Travail et Heures Supplémentaires
+- **Zéro charge patronale au-delà de la 37e heure :** Inciter les entreprises à payer plus d'heures supplémentaires défiscalisées et désocialisées pour doper le pouvoir d'achat des salariés.
+- Maintien du barème de l'Impôt sur le Revenu indexé sur l'inflation pour préserver le pouvoir d'achat des classes moyennes.
+- Encouragement à la transmission patrimoniale familiale anticipée par l'allègement des droits de donation du vivant.
+
+## 3. Impact Budgétaire Chiffré
+- Exonération totale de cotisations au-delà de 37 heures : coût brut estimé à **-10,0 Mds €/an** en régime de croisière.
+- Mesures de soutien à l'épargne productive et transmission : **-3,0 Mds €/an**.
+- Total allègements fiscaux et sociaux ménages/actifs : **-13,0 Mds €/an**.
+", "01_Economie_et_Finances_Publiques/01_Fiscalite_Impots_Menages_et_Patrimoine.md": "# Fiscalité des Ménages, Impôts et Patrimoine
+
+## 1. Moratoire Fiscal d'un Quinquennat
+Édouard Philippe s'engage à appliquer un **moratoire fiscal absolu** pendant cinq ans :
+- Aucune création de nouvelle taxe ou d'impôt nouveau.
+- Refus catégorique du retour de l'ISF ou d'une fiscalité punitive sur le capital productif.
+- Pérennisation du Prélèvement Forfaitaire Unique (PFU - Flat Tax à 30 %) sur les revenus du capital mobilier.
+
+## 2. Soutien aux Revenus du Travail et Heures Supplémentaires
+- **Zéro charge patronale au-delà de la 37e heure :** Inciter les entreprises à payer plus d'heures supplémentaires défiscalisées et désocialisées pour doper le pouvoir d'achat des salariés.
+- Maintien du barème de l'Impôt sur le Revenu indexé sur l'inflation pour préserver le pouvoir d'achat des classes moyennes.
+- Encouragement à la transmission patrimoniale familiale anticipée par l'allègement des droits de donation du vivant.
+
+## 3. Impact Budgétaire Chiffré
+- Exonération totale de cotisations au-delà de 37 heures : coût brut estimé à **-10,0 Mds €/an** en régime de croisière.
+- Mesures de soutien à l'épargne productive et transmission : **-3,0 Mds €/an**.
+- Total allègements fiscaux et sociaux ménages/actifs : **-13,0 Mds €/an**.
+", "./01_Economie_et_Finances_Publiques/02_Entreprises_Production_et_Competitivite.md": "# Entreprises, Compétitivité et Impôts de Production
+
+## 1. Le « Deal Fiscal » : 50 Mds € contre 50 Mds €
+La mesure phare du projet économique d'Édouard Philippe repose sur un grand accord national de compétitivité :
+- **50 Mds € de baisses d'impôts de production et de cotisations patronales** accordés aux entreprises.
+- En contrepartie, **suppression de 50 Mds € de subventions et aides publiques aux entreprises jugées inefficaces, complexes ou saupoudrées** (aides de guichet, niches administratives).
+- Objectif : remettre les entreprises françaises au même niveau de coût fiscal de production que leurs concurrentes allemandes et nord-européennes.
+
+## 2. Suppression Définitive des Impôts de Production Nuisibles
+- Suppression totale et définitive de la C3S (Contribution Sociale de Solidarité des Sociétés), assise sur le chiffre d'affaires et non sur le bénéfice.
+- Extinction complète du reliquat de la CVAE et allègement ciblé de la CFE industrielle.
+- Stabilisation du taux de l'Impôt sur les Sociétés (IS) à un taux compétitif garanti sans surtaxe.
+
+## 3. Moratoire Normatif et Libération des Énergies
+- Moratoire d'un quinquennat interdisant toute nouvelle contrainte administrative ou transposition surtransposée des directives européennes.
+- Règle stricte du « 1 pour 2 » : suppression de deux réglementations ou formulaires existants pour toute nouvelle mesure technique indispensable.
+", "01_Economie_et_Finances_Publiques/02_Entreprises_Production_et_Competitivite.md": "# Entreprises, Compétitivité et Impôts de Production
+
+## 1. Le « Deal Fiscal » : 50 Mds € contre 50 Mds €
+La mesure phare du projet économique d'Édouard Philippe repose sur un grand accord national de compétitivité :
+- **50 Mds € de baisses d'impôts de production et de cotisations patronales** accordés aux entreprises.
+- En contrepartie, **suppression de 50 Mds € de subventions et aides publiques aux entreprises jugées inefficaces, complexes ou saupoudrées** (aides de guichet, niches administratives).
+- Objectif : remettre les entreprises françaises au même niveau de coût fiscal de production que leurs concurrentes allemandes et nord-européennes.
+
+## 2. Suppression Définitive des Impôts de Production Nuisibles
+- Suppression totale et définitive de la C3S (Contribution Sociale de Solidarité des Sociétés), assise sur le chiffre d'affaires et non sur le bénéfice.
+- Extinction complète du reliquat de la CVAE et allègement ciblé de la CFE industrielle.
+- Stabilisation du taux de l'Impôt sur les Sociétés (IS) à un taux compétitif garanti sans surtaxe.
+
+## 3. Moratoire Normatif et Libération des Énergies
+- Moratoire d'un quinquennat interdisant toute nouvelle contrainte administrative ou transposition surtransposée des directives européennes.
+- Règle stricte du « 1 pour 2 » : suppression de deux réglementations ou formulaires existants pour toute nouvelle mesure technique indispensable.
+", "./01_Economie_et_Finances_Publiques/03_Travail_Salaires_et_Pouvoir_d_Achat.md": "# Travail, Salaires, 35 Heures et Pouvoir d'Achat
+
+## 1. Dépassement Négocié des 35 Heures
+Édouard Philippe refuse le dirigisme des 35 heures étatiques instauré en 2000 :
+- Donner une liberté totale de négociation du temps de travail au niveau des branches et des entreprises (de 35h à 39h voire 40h selon les secteurs).
+- **Incentive fiscal massif :** zéro cotisation patronale à partir de la 37e heure pour inciter financièrement les employeurs à allonger la durée du travail et à mieux rémunérer les salariés.
+
+## 2. Sortie de la « Trappe à Bas Salaires »
+- Réforme des allègements de charges Fillon au voisinage du SMIC pour briser la trappe à bas salaires qui dissuade les augmentations entre 1,2 et 2,5 SMIC.
+- Valorisation du salaire net par la baisse des cotisations directes sur le travail supplémentaire.
+
+## 3. Conditionnalité des Aides Sociales et Retour à l'Emploi
+- Conditionnement strict du versement du RSA à des heures d'activité, d'insertion ou de formation (15 à 20 heures hebdomadaires).
+- Refus de tout revenu universel inconditionnel : la solidarité nationale doit être la contrepartie de l'effort civique et professionnel.
+", "01_Economie_et_Finances_Publiques/03_Travail_Salaires_et_Pouvoir_d_Achat.md": "# Travail, Salaires, 35 Heures et Pouvoir d'Achat
+
+## 1. Dépassement Négocié des 35 Heures
+Édouard Philippe refuse le dirigisme des 35 heures étatiques instauré en 2000 :
+- Donner une liberté totale de négociation du temps de travail au niveau des branches et des entreprises (de 35h à 39h voire 40h selon les secteurs).
+- **Incentive fiscal massif :** zéro cotisation patronale à partir de la 37e heure pour inciter financièrement les employeurs à allonger la durée du travail et à mieux rémunérer les salariés.
+
+## 2. Sortie de la « Trappe à Bas Salaires »
+- Réforme des allègements de charges Fillon au voisinage du SMIC pour briser la trappe à bas salaires qui dissuade les augmentations entre 1,2 et 2,5 SMIC.
+- Valorisation du salaire net par la baisse des cotisations directes sur le travail supplémentaire.
+
+## 3. Conditionnalité des Aides Sociales et Retour à l'Emploi
+- Conditionnement strict du versement du RSA à des heures d'activité, d'insertion ou de formation (15 à 20 heures hebdomadaires).
+- Refus de tout revenu universel inconditionnel : la solidarité nationale doit être la contrepartie de l'effort civique et professionnel.
+", "./01_Economie_et_Finances_Publiques/04_Dette_Depense_Publique_et_Trajectoire.md": "# Dette Publique, Économies Structurelles et Trajectoire
+
+## 1. Objectif Macroéconomique : Ramener le Déficit à 2 % du PIB
+- Déficit public consolidé ramené de plus de -5,1 % (-146 Mds €) à **-2,0 % du PIB (~ -60 Mds €)** à l'horizon 2032.
+- Réduction nette des dépenses publiques consolidées d'au moins **-100,0 Mds €/an** à 5 ans.
+- Inscription de la « Règle d'or » budgétaire dans la Constitution française par référendum.
+
+## 2. Répartition de l'Effort d'Économies
+La doctrine Philippe repose sur un partage tripartite de l'effort :
+- **50 % de l'effort sur la sphère sociale (-50 Mds €/an) :** retraites, efficience des soins, assurance-chômage, rationalisation des prestations.
+- **25 % de l'effort sur l'État et ses opérateurs (-25 Mds €/an) :** non-remplacement d'un tiers des fonctionnaires partant en retraite (-250 000 postes), fusion des agences d'État, suppression des doublons administratifs.
+- **25 % tiré par le surplus de croissance et de travail (+25 Mds €/an) :** rentrées fiscales spontanées liées à l'accroissement des heures travaillées et de l'emploi.
+", "01_Economie_et_Finances_Publiques/04_Dette_Depense_Publique_et_Trajectoire.md": "# Dette Publique, Économies Structurelles et Trajectoire
+
+## 1. Objectif Macroéconomique : Ramener le Déficit à 2 % du PIB
+- Déficit public consolidé ramené de plus de -5,1 % (-146 Mds €) à **-2,0 % du PIB (~ -60 Mds €)** à l'horizon 2032.
+- Réduction nette des dépenses publiques consolidées d'au moins **-100,0 Mds €/an** à 5 ans.
+- Inscription de la « Règle d'or » budgétaire dans la Constitution française par référendum.
+
+## 2. Répartition de l'Effort d'Économies
+La doctrine Philippe repose sur un partage tripartite de l'effort :
+- **50 % de l'effort sur la sphère sociale (-50 Mds €/an) :** retraites, efficience des soins, assurance-chômage, rationalisation des prestations.
+- **25 % de l'effort sur l'État et ses opérateurs (-25 Mds €/an) :** non-remplacement d'un tiers des fonctionnaires partant en retraite (-250 000 postes), fusion des agences d'État, suppression des doublons administratifs.
+- **25 % tiré par le surplus de croissance et de travail (+25 Mds €/an) :** rentrées fiscales spontanées liées à l'accroissement des heures travaillées et de l'emploi.
+", "./02_Securite_Justice_et_Immigration/01_Securite_Police_Gendarmerie_et_Ordre_Public.md": "# Sécurité, Police, Gendarmerie et Ordre Public
+
+## 1. Lutte Sans Concession Contre le Narcotrafic : L'« État d'Urgence Narco »
+Édouard Philippe formule un plan d'urgence sans précédent contre les réseaux de drogue qui gangrènent le pays :
+- Création d'un régime juridique d'exception : l'**« état d'urgence narco »**, permettant des opérations coup de poing ciblées, des perquisitions facilitées et l'usage temporaire encadré de la reconnaissance faciale dans l'espace public.
+- Mise en place d'une **« fiche S financière »** pour geler immédiatement les avoirs et surveiller les flux bancaires des narcotrafiquants et complices.
+- Régime d'incarcération ultrasécurisé étanche aux téléphones et communications pour les caïds.
+
+## 2. Décentralisation Sécuritaire et Pouvoirs des Maires
+- Dotation des maires d'un **pouvoir de sanction pénale directe** pour réprimer les incivilités du quotidien, les dépôts sauvages et les atteintes à la tranquillité publique.
+- Extension des prérogatives des polices municipales (accès direct aux fichiers de police, contrôles d'identité).
+
+## 3. Renforcement Budgétaire Régalien
+- Poursuite de la trajectoire de hausse des budgets du ministère de l'Intérieur : **+4,5 Mds €/an** pour moderniser les matériels, véhicules et caméras-piétons des policiers et gendarmes.
+", "02_Securite_Justice_et_Immigration/01_Securite_Police_Gendarmerie_et_Ordre_Public.md": "# Sécurité, Police, Gendarmerie et Ordre Public
+
+## 1. Lutte Sans Concession Contre le Narcotrafic : L'« État d'Urgence Narco »
+Édouard Philippe formule un plan d'urgence sans précédent contre les réseaux de drogue qui gangrènent le pays :
+- Création d'un régime juridique d'exception : l'**« état d'urgence narco »**, permettant des opérations coup de poing ciblées, des perquisitions facilitées et l'usage temporaire encadré de la reconnaissance faciale dans l'espace public.
+- Mise en place d'une **« fiche S financière »** pour geler immédiatement les avoirs et surveiller les flux bancaires des narcotrafiquants et complices.
+- Régime d'incarcération ultrasécurisé étanche aux téléphones et communications pour les caïds.
+
+## 2. Décentralisation Sécuritaire et Pouvoirs des Maires
+- Dotation des maires d'un **pouvoir de sanction pénale directe** pour réprimer les incivilités du quotidien, les dépôts sauvages et les atteintes à la tranquillité publique.
+- Extension des prérogatives des polices municipales (accès direct aux fichiers de police, contrôles d'identité).
+
+## 3. Renforcement Budgétaire Régalien
+- Poursuite de la trajectoire de hausse des budgets du ministère de l'Intérieur : **+4,5 Mds €/an** pour moderniser les matériels, véhicules et caméras-piétons des policiers et gendarmes.
+", "./02_Securite_Justice_et_Immigration/02_Justice_Prisons_et_Politique_Penale.md": "# Justice, Prisons et Politique Pénale
+
+## 1. La Certitude et la Rapidité de la Peine
+Pour restaurer l'autorité républicaine, Édouard Philippe s'inspire du modèle judiciaire nordique :
+- Instaurer des **peines courtes et immédiates** dès la première infraction grave pour briser le sentiment d'impunité.
+- Peines planchers automatiques en cas d'agression sur des personnes dépositaires de l'autorité publique (policiers, gendarmes, pompiers, magistrats) et professeurs.
+- **Suppression du juge d'application des peines (JAP) :** la peine prononcée au tribunal doit être exécutée telle quelle sans aménagement automatique a posteriori.
+
+## 2. Responsabilité et Redevabilité des Magistrats
+- Réforme de la composition du Conseil Supérieur de la Magistrature (CSM) pour y faire entrer davantage de personnalités extérieures qualifiées.
+- Instauration d'un « devoir de redevabilité » des magistrats envers les victimes.
+- Possibilité pour le Garde des Sceaux d'adresser des instructions de politique pénale claires.
+
+## 3. Plan Pénitentiaire et Recouvrement Forcé
+- Construction de 15 000 places nettes de prison supplémentaires (+3,5 Mds € d'investissements).
+- Recouvrement forcé des amendes judiciaires impayées directement prélevées sur les prestations sociales et salaires.
+", "02_Securite_Justice_et_Immigration/02_Justice_Prisons_et_Politique_Penale.md": "# Justice, Prisons et Politique Pénale
+
+## 1. La Certitude et la Rapidité de la Peine
+Pour restaurer l'autorité républicaine, Édouard Philippe s'inspire du modèle judiciaire nordique :
+- Instaurer des **peines courtes et immédiates** dès la première infraction grave pour briser le sentiment d'impunité.
+- Peines planchers automatiques en cas d'agression sur des personnes dépositaires de l'autorité publique (policiers, gendarmes, pompiers, magistrats) et professeurs.
+- **Suppression du juge d'application des peines (JAP) :** la peine prononcée au tribunal doit être exécutée telle quelle sans aménagement automatique a posteriori.
+
+## 2. Responsabilité et Redevabilité des Magistrats
+- Réforme de la composition du Conseil Supérieur de la Magistrature (CSM) pour y faire entrer davantage de personnalités extérieures qualifiées.
+- Instauration d'un « devoir de redevabilité » des magistrats envers les victimes.
+- Possibilité pour le Garde des Sceaux d'adresser des instructions de politique pénale claires.
+
+## 3. Plan Pénitentiaire et Recouvrement Forcé
+- Construction de 15 000 places nettes de prison supplémentaires (+3,5 Mds € d'investissements).
+- Recouvrement forcé des amendes judiciaires impayées directement prélevées sur les prestations sociales et salaires.
+", "./02_Securite_Justice_et_Immigration/03_Immigration_Frontieres_Assimilation_et_Laicite.md": "# Immigration, Frontières, Assimilation et Laïcité
+
+## 1. Diviser par Deux l'Immigration Légale
+Constatant ce qu'il qualifie d'« échec du modèle d'intégration », Édouard Philippe préconise une réduction drastique des flux :
+- **Réduction de moitié de l'immigration légale en 5 ans**, en ciblant strictement les visas sur l'immigration professionnelle dans les métiers en tension non pourvus et les étudiants d'excellence.
+- Fixation de **quotas migratoires annuels votés par le Parlement**.
+
+## 2. Révision des Accords Internationaux et Fin du Dévoiement de l'Asile
+- **Dénonciation de l'accord franco-algérien de 1968 :** rétablir le droit commun pour la délivrance des visas et titres de séjour aux ressortissants algériens, et conditionner les visas à la délivrance des laissez-passer consulaires pour l'exécution des OQTF.
+- Vote annuel par le Parlement d'une liste stricte de « pays d'origine sûrs » pour rejeter rapidement les demandes d'asile infondées.
+
+## 3. Conditionnalité et Assimilation Républicaine
+- Conditionnement de l'accès aux prestations sociales non contributives à une durée de présence régulière et de travail d'au moins 3 à 5 ans.
+- Parcours d'intégration intensif : maîtrise obligatoire de la langue française et respect intransigeant de la laïcité républicaine.
+", "02_Securite_Justice_et_Immigration/03_Immigration_Frontieres_Assimilation_et_Laicite.md": "# Immigration, Frontières, Assimilation et Laïcité
+
+## 1. Diviser par Deux l'Immigration Légale
+Constatant ce qu'il qualifie d'« échec du modèle d'intégration », Édouard Philippe préconise une réduction drastique des flux :
+- **Réduction de moitié de l'immigration légale en 5 ans**, en ciblant strictement les visas sur l'immigration professionnelle dans les métiers en tension non pourvus et les étudiants d'excellence.
+- Fixation de **quotas migratoires annuels votés par le Parlement**.
+
+## 2. Révision des Accords Internationaux et Fin du Dévoiement de l'Asile
+- **Dénonciation de l'accord franco-algérien de 1968 :** rétablir le droit commun pour la délivrance des visas et titres de séjour aux ressortissants algériens, et conditionner les visas à la délivrance des laissez-passer consulaires pour l'exécution des OQTF.
+- Vote annuel par le Parlement d'une liste stricte de « pays d'origine sûrs » pour rejeter rapidement les demandes d'asile infondées.
+
+## 3. Conditionnalité et Assimilation Républicaine
+- Conditionnement de l'accès aux prestations sociales non contributives à une durée de présence régulière et de travail d'au moins 3 à 5 ans.
+- Parcours d'intégration intensif : maîtrise obligatoire de la langue française et respect intransigeant de la laïcité républicaine.
+", "./03_Sante_et_Affaires_Sociales/01_Hopital_Medecine_de_Ville_et_Deserts_Medicaux.md": "# Hôpital, Médecine de Ville et Déserts Médicaux
+
+## 1. Dépenser Mieux Plutôt que Dépenser Plus
+Édouard Philippe refuse la fuite en avant de la dépense de santé non régulée :
+- L'objectif n'est pas d'augmenter indéfiniment les crédits de l'Assurance Maladie, mais d'éradiquer la bureaucratie hospitalière et les gaspillages administratifs.
+- Allègement du poids des Agences Régionales de Santé (ARS) et redéploiement des moyens vers les soignants au chevet des patients.
+
+## 2. Lutte Contre les Déserts Médicaux par la Responsabilité
+- Instauration d'une obligation d'exercice ou de garde temporaire pour les jeunes médecins dans les territoires sous-dotés (ou conventionnement sélectif).
+- Développement massif de la télémédecine et des maisons de santé pluriprofessionnelles avec délégations d'actes aux infirmiers en pratique avancée (IPA).
+
+## 3. Prévention et Santé Numérique
+- Bascule des financements de la santé curative vers la prévention précoce (vaccination, bilans de santé aux âges clés de la vie, lutte contre l'obésité).
+- Intégration de l'intelligence artificielle pour optimiser le parcours de soins et les dossiers médicaux partagés.
+", "03_Sante_et_Affaires_Sociales/01_Hopital_Medecine_de_Ville_et_Deserts_Medicaux.md": "# Hôpital, Médecine de Ville et Déserts Médicaux
+
+## 1. Dépenser Mieux Plutôt que Dépenser Plus
+Édouard Philippe refuse la fuite en avant de la dépense de santé non régulée :
+- L'objectif n'est pas d'augmenter indéfiniment les crédits de l'Assurance Maladie, mais d'éradiquer la bureaucratie hospitalière et les gaspillages administratifs.
+- Allègement du poids des Agences Régionales de Santé (ARS) et redéploiement des moyens vers les soignants au chevet des patients.
+
+## 2. Lutte Contre les Déserts Médicaux par la Responsabilité
+- Instauration d'une obligation d'exercice ou de garde temporaire pour les jeunes médecins dans les territoires sous-dotés (ou conventionnement sélectif).
+- Développement massif de la télémédecine et des maisons de santé pluriprofessionnelles avec délégations d'actes aux infirmiers en pratique avancée (IPA).
+
+## 3. Prévention et Santé Numérique
+- Bascule des financements de la santé curative vers la prévention précoce (vaccination, bilans de santé aux âges clés de la vie, lutte contre l'obésité).
+- Intégration de l'intelligence artificielle pour optimiser le parcours de soins et les dossiers médicaux partagés.
+", "./03_Sante_et_Affaires_Sociales/02_Retraites_et_Financement_Protection_Sociale.md": "# Retraites et Financement de la Protection Sociale
+
+## 1. Sauvetage Financier des Retraites par le Travail
+Fidèle à sa conviction d'un déficit intenable du système de répartition, Édouard Philippe propose :
+- Défense absolue de l'âge légal porté à 64 ans, avec possibilité d'extension progressive vers 65 ou 67 ans si l'équilibre financier n'est pas atteint à la fin de la décennie.
+- Contribution temporaire de solidarité demandée aux retraités aisés (sous-indexation ciblée des pensions supérieures à 2 500 €/mois).
+- Économie brute attendue sur le système des retraites : **-15,0 Mds €/an** à terme.
+
+## 2. Introduction d'une Dose de Capitalisation Collective
+- Pour pérenniser les pensions face au choc démographique, Édouard Philippe prône l'adjonction d'un **pilier de capitalisation collective** (inspiré de l'Agirc-Arrco et de l'épargne salariale d'entreprise).
+- Fléchage de cette épargne de retraite vers le financement en fonds propres des PME et ETI françaises.
+", "03_Sante_et_Affaires_Sociales/02_Retraites_et_Financement_Protection_Sociale.md": "# Retraites et Financement de la Protection Sociale
+
+## 1. Sauvetage Financier des Retraites par le Travail
+Fidèle à sa conviction d'un déficit intenable du système de répartition, Édouard Philippe propose :
+- Défense absolue de l'âge légal porté à 64 ans, avec possibilité d'extension progressive vers 65 ou 67 ans si l'équilibre financier n'est pas atteint à la fin de la décennie.
+- Contribution temporaire de solidarité demandée aux retraités aisés (sous-indexation ciblée des pensions supérieures à 2 500 €/mois).
+- Économie brute attendue sur le système des retraites : **-15,0 Mds €/an** à terme.
+
+## 2. Introduction d'une Dose de Capitalisation Collective
+- Pour pérenniser les pensions face au choc démographique, Édouard Philippe prône l'adjonction d'un **pilier de capitalisation collective** (inspiré de l'Agirc-Arrco et de l'épargne salariale d'entreprise).
+- Fléchage de cette épargne de retraite vers le financement en fonds propres des PME et ETI françaises.
+", "./03_Sante_et_Affaires_Sociales/03_Minima_Sociaux_RSA_Chomage_et_Lutte_Anti_Fraude.md": "# Minima Sociaux, RSA, Assurance-Chômage et Anti-Fraude
+
+## 1. Réforme de l'Assurance-Chômage et Retour à l'Emploi
+- Poursuite du durcissement des règles d'indemnisation chômage : contracyclicité renforcée (durée réduite lorsque le marché de l'emploi est porteur).
+- Obligation de recherche active d'emploi et contrôle strict des offres raisonnables refusées.
+- Économie estimée : **-8,0 Mds €/an**.
+
+## 2. RSA Contre Activité et Juste Prestation
+- Généralisation effective des 15 à 20 heures d'activité ou d'insertion obligatoire pour les allocataires du RSA.
+- Refonte des minima sociaux vers une prestation sociale unifiée évitant qu'un individu cumule plus de revenus d'assistance que le revenu d'un travail au SMIC.
+
+## 3. Lutte Implacable Contre la Fraude Sociale
+- Déploiement de cartes vitales biométriques et sécurisées.
+- Croisement systématique des bases de données de l'URSSAF, des CAF, du fisc et des banques pour récupérer 5 Mds €/an de fraudes aux prestations et cotisations.
+", "03_Sante_et_Affaires_Sociales/03_Minima_Sociaux_RSA_Chomage_et_Lutte_Anti_Fraude.md": "# Minima Sociaux, RSA, Assurance-Chômage et Anti-Fraude
+
+## 1. Réforme de l'Assurance-Chômage et Retour à l'Emploi
+- Poursuite du durcissement des règles d'indemnisation chômage : contracyclicité renforcée (durée réduite lorsque le marché de l'emploi est porteur).
+- Obligation de recherche active d'emploi et contrôle strict des offres raisonnables refusées.
+- Économie estimée : **-8,0 Mds €/an**.
+
+## 2. RSA Contre Activité et Juste Prestation
+- Généralisation effective des 15 à 20 heures d'activité ou d'insertion obligatoire pour les allocataires du RSA.
+- Refonte des minima sociaux vers une prestation sociale unifiée évitant qu'un individu cumule plus de revenus d'assistance que le revenu d'un travail au SMIC.
+
+## 3. Lutte Implacable Contre la Fraude Sociale
+- Déploiement de cartes vitales biométriques et sécurisées.
+- Croisement systématique des bases de données de l'URSSAF, des CAF, du fisc et des banques pour récupérer 5 Mds €/an de fraudes aux prestations et cotisations.
+", "./04_Education_Culture_et_Jeunesse/01_Ecole_Savoirs_Fondamentaux_et_Enseignants.md": "# École de la Liberté, Savoirs Fondamentaux et Enseignants
+
+## 1. Faire des Chefs d'Établissement les « Patrons » de l'École
+Mesure de rupture éducative portée par Horizons :
+- Donner aux directeurs d'école et chefs d'établissement une autonomie réelle de recrutement et de choix pédagogique.
+- Pouvoir de fixer les règles disciplinaires internes, d'imposer l'uniforme ou la tenue républicaine, et d'adapter les rythmes scolaires.
+- Évaluation des enseignants associant les chefs d'établissement avec primes au mérite.
+
+## 2. Sanctuarisation des Savoirs Fondamentaux
+- Recentrage absolu de l'école primaire sur le triptyque : lire, écrire, compter, respecter autrui.
+- Création d'un **Service Public Universel du Soutien Scolaire**, combinant des tuteurs basés sur l'intelligence artificielle et des brigades d'étudiants et d'enseignants retraités volontaires.
+
+## 3. Protection de l'Enfance et Périscolaire
+- Certificat d'honorabilité obligatoire pour tous les encadrants de mineurs.
+- Création d'une Inspection Nationale de l'Enfance avec contrôle triennal de toutes les structures accueillant des enfants.
+", "04_Education_Culture_et_Jeunesse/01_Ecole_Savoirs_Fondamentaux_et_Enseignants.md": "# École de la Liberté, Savoirs Fondamentaux et Enseignants
+
+## 1. Faire des Chefs d'Établissement les « Patrons » de l'École
+Mesure de rupture éducative portée par Horizons :
+- Donner aux directeurs d'école et chefs d'établissement une autonomie réelle de recrutement et de choix pédagogique.
+- Pouvoir de fixer les règles disciplinaires internes, d'imposer l'uniforme ou la tenue républicaine, et d'adapter les rythmes scolaires.
+- Évaluation des enseignants associant les chefs d'établissement avec primes au mérite.
+
+## 2. Sanctuarisation des Savoirs Fondamentaux
+- Recentrage absolu de l'école primaire sur le triptyque : lire, écrire, compter, respecter autrui.
+- Création d'un **Service Public Universel du Soutien Scolaire**, combinant des tuteurs basés sur l'intelligence artificielle et des brigades d'étudiants et d'enseignants retraités volontaires.
+
+## 3. Protection de l'Enfance et Périscolaire
+- Certificat d'honorabilité obligatoire pour tous les encadrants de mineurs.
+- Création d'une Inspection Nationale de l'Enfance avec contrôle triennal de toutes les structures accueillant des enfants.
+", "./04_Education_Culture_et_Jeunesse/02_Universites_Recherche_et_Innovation.md": "# Universités, Recherche, Enseignement Supérieur et Innovation
+
+## 1. Autonomie Universitaire et Liens avec l'Industrie
+- Renforcement de l'autonomie financière et de gestion des universités françaises.
+- Développement de fondations partenariales privées pour doter les campus de budgets compétitifs face aux géants anglo-saxons et asiatiques.
+
+## 2. Priorité aux Technologies de Rupture
+- Investissement massif dans les filières d'avenir : intelligence artificielle, quantique, biotechnologies, hydrogène décarboné et nouveaux réacteurs nucléaires SMR.
+- Débureaucratisation des financements de l'ANR et du CNRS pour libérer le temps de recherche des scientifiques.
+", "04_Education_Culture_et_Jeunesse/02_Universites_Recherche_et_Innovation.md": "# Universités, Recherche, Enseignement Supérieur et Innovation
+
+## 1. Autonomie Universitaire et Liens avec l'Industrie
+- Renforcement de l'autonomie financière et de gestion des universités françaises.
+- Développement de fondations partenariales privées pour doter les campus de budgets compétitifs face aux géants anglo-saxons et asiatiques.
+
+## 2. Priorité aux Technologies de Rupture
+- Investissement massif dans les filières d'avenir : intelligence artificielle, quantique, biotechnologies, hydrogène décarboné et nouveaux réacteurs nucléaires SMR.
+- Débureaucratisation des financements de l'ANR et du CNRS pour libérer le temps de recherche des scientifiques.
+", "./04_Education_Culture_et_Jeunesse/03_Culture_Patrimoine_Audiovisuel_et_Jeunesse.md": "# Culture, Patrimoine, Audiovisuel Public et Jeunesse
+
+## 1. Réorganisation de l'Audiovisuel Public
+- Création d'une holding unique de l'audiovisuel public (« France Médias ») regroupant France Télévisions, Radio France et France Médias Monde pour mutualiser les coûts administratifs et techniques.
+- Recentrage sur les missions d'information vérifiée, de culture et de rayonnement international.
+
+## 2. Préservation du Patrimoine Historique et Décentralisation Culturelle
+- Fléchage prioritaire des crédits de la Culture vers la restauration du patrimoine monumental et des églises dans les communes rurales.
+- Soutien aux festivals locaux et industries créatives indépendantes.
+", "04_Education_Culture_et_Jeunesse/03_Culture_Patrimoine_Audiovisuel_et_Jeunesse.md": "# Culture, Patrimoine, Audiovisuel Public et Jeunesse
+
+## 1. Réorganisation de l'Audiovisuel Public
+- Création d'une holding unique de l'audiovisuel public (« France Médias ») regroupant France Télévisions, Radio France et France Médias Monde pour mutualiser les coûts administratifs et techniques.
+- Recentrage sur les missions d'information vérifiée, de culture et de rayonnement international.
+
+## 2. Préservation du Patrimoine Historique et Décentralisation Culturelle
+- Fléchage prioritaire des crédits de la Culture vers la restauration du patrimoine monumental et des églises dans les communes rurales.
+- Soutien aux festivals locaux et industries créatives indépendantes.
+", "./05_Ecologie_Energie_et_Agriculture/01_Politique_Energetique_Nucleaire_et_Renouvelables.md": "# Politique Énergétique : Le Choix Absolu du Nucléaire
+
+## 1. La Formule Philippe : « Plus de Nucléaire, Moins de Bavardage »
+Édouard Philippe place l'énergie nucléaire au cœur de la souveraineté économique et de la décarbonation :
+- Accélération de la construction des 6 à 14 réacteurs de nouvelle génération EPR2.
+- Soutien prioritaire au développement des petits réacteurs modulaires (SMR) français.
+- Prolongation de la durée de vie du parc nucléaire existant au-delà de 50 et 60 ans sous réserve du feu vert de l'ASN.
+
+## 2. Complémentarité avec les Énergies Renouvelables Pragmatiques
+- Développement ciblé de l'éolien offshore (en mer) et du solaire sur toitures et friches industrielles.
+- Refus de l'éolien terrestre anarchique rejeté par les populations rurales.
+", "05_Ecologie_Energie_et_Agriculture/01_Politique_Energetique_Nucleaire_et_Renouvelables.md": "# Politique Énergétique : Le Choix Absolu du Nucléaire
+
+## 1. La Formule Philippe : « Plus de Nucléaire, Moins de Bavardage »
+Édouard Philippe place l'énergie nucléaire au cœur de la souveraineté économique et de la décarbonation :
+- Accélération de la construction des 6 à 14 réacteurs de nouvelle génération EPR2.
+- Soutien prioritaire au développement des petits réacteurs modulaires (SMR) français.
+- Prolongation de la durée de vie du parc nucléaire existant au-delà de 50 et 60 ans sous réserve du feu vert de l'ASN.
+
+## 2. Complémentarité avec les Énergies Renouvelables Pragmatiques
+- Développement ciblé de l'éolien offshore (en mer) et du solaire sur toitures et friches industrielles.
+- Refus de l'éolien terrestre anarchique rejeté par les populations rurales.
+", "./05_Ecologie_Energie_et_Agriculture/02_Ecologie_Transports_et_Industrie_Verte.md": "# Écologie, Transports, Sécurité Climatique et Industrie Verte
+
+## 1. Sécurité Climatique : « Protéger, Adapter, Équiper »
+- Stratégie d'adaptation concrète aux effets du dérèglement climatique : sécurisation des ressources en eau face aux sécheresses, retenues collinaires agricoles raisonnées, lutte anti-incendie.
+- Écologie incitative et industrielle : décarboner la production sans détruire le pouvoir d'achat des classes moyennes et populaires.
+
+## 2. Taxe Carbone aux Frontières de l'Europe (MACF)
+- Application stricte et élargie du Mécanisme d'Ajustement Carbone aux Frontières de l'UE pour empêcher le dumping des produits polluants importés de Chine ou d'Asie.
+- Conditionnement des marchés publics à une empreinte carbone basse et à une fabrication européenne.
+", "05_Ecologie_Energie_et_Agriculture/02_Ecologie_Transports_et_Industrie_Verte.md": "# Écologie, Transports, Sécurité Climatique et Industrie Verte
+
+## 1. Sécurité Climatique : « Protéger, Adapter, Équiper »
+- Stratégie d'adaptation concrète aux effets du dérèglement climatique : sécurisation des ressources en eau face aux sécheresses, retenues collinaires agricoles raisonnées, lutte anti-incendie.
+- Écologie incitative et industrielle : décarboner la production sans détruire le pouvoir d'achat des classes moyennes et populaires.
+
+## 2. Taxe Carbone aux Frontières de l'Europe (MACF)
+- Application stricte et élargie du Mécanisme d'Ajustement Carbone aux Frontières de l'UE pour empêcher le dumping des produits polluants importés de Chine ou d'Asie.
+- Conditionnement des marchés publics à une empreinte carbone basse et à une fabrication européenne.
+", "./05_Ecologie_Energie_et_Agriculture/03_Agriculture_Peche_et_Souverainete_Alimentaire.md": "# Agriculture, Pêche et Souveraineté Alimentaire
+
+## 1. Soutien Inconditionnel à la Ferme France
+- Moratoire sur l'interdiction de molécules phytosanitaires tant qu'aucune alternative viable n'existe au niveau européen (règle du « pas d'interdiction sans solution »).
+- Allègement des normes environnementales nationales surtransposées pesant sur les agriculteurs et éleveurs.
+
+## 2. Renouvellement des Générations et Eau Agricole
+- Facilitation de la transmission des exploitations agricoles par l'exonération des droits de mutation.
+- Simplification administrative drastique des autorisations pour les retenues d'eau et forages agricoles.
+", "05_Ecologie_Energie_et_Agriculture/03_Agriculture_Peche_et_Souverainete_Alimentaire.md": "# Agriculture, Pêche et Souveraineté Alimentaire
+
+## 1. Soutien Inconditionnel à la Ferme France
+- Moratoire sur l'interdiction de molécules phytosanitaires tant qu'aucune alternative viable n'existe au niveau européen (règle du « pas d'interdiction sans solution »).
+- Allègement des normes environnementales nationales surtransposées pesant sur les agriculteurs et éleveurs.
+
+## 2. Renouvellement des Générations et Eau Agricole
+- Facilitation de la transmission des exploitations agricoles par l'exonération des droits de mutation.
+- Simplification administrative drastique des autorisations pour les retenues d'eau et forages agricoles.
+", "./06_Institutions_et_Decentralisation/01_Institutions_Constitution_Referendum_et_Democratie.md": "# Institutions, Constitution, Référendum et Démocratie
+
+## 1. La Règle d'Or Budgétaire dans la Constitution
+- Projet de révision constitutionnelle soumis au référendum dès le début du quinquennat pour inscrire une règle d'équilibre des finances publiques.
+- Interdiction stricte de recourir à l'emprunt pour combler les déficits de fonctionnement courant.
+
+## 2. Recours Assumé aux Ordonnances et au Référendum
+- Édouard Philippe assume d'engager les réformes structurelles (retraites, travail, simplification) par ordonnances ou référendum direct pour contourner les blocages parlementaires.
+- Refus catégorique du Référendum d'Initiative Citoyenne (RIC), jugé déstabilisateur pour la démocratie représentative.
+", "06_Institutions_et_Decentralisation/01_Institutions_Constitution_Referendum_et_Democratie.md": "# Institutions, Constitution, Référendum et Démocratie
+
+## 1. La Règle d'Or Budgétaire dans la Constitution
+- Projet de révision constitutionnelle soumis au référendum dès le début du quinquennat pour inscrire une règle d'équilibre des finances publiques.
+- Interdiction stricte de recourir à l'emprunt pour combler les déficits de fonctionnement courant.
+
+## 2. Recours Assumé aux Ordonnances et au Référendum
+- Édouard Philippe assume d'engager les réformes structurelles (retraites, travail, simplification) par ordonnances ou référendum direct pour contourner les blocages parlementaires.
+- Refus catégorique du Référendum d'Initiative Citoyenne (RIC), jugé déstabilisateur pour la démocratie représentative.
+", "./06_Institutions_et_Decentralisation/02_Reforme_de_l_Etat_Fonction_Publique_et_Collectivites.md": "# Réforme de l'État, Fonction Publique et Collectivités
+
+## 1. Réduction de la Fonction Publique : -250 000 Postes
+- Règle du non-remplacement d'un tiers des fonctionnaires partant à la retraite (1 sur 3).
+- Cible : **-250 000 postes sur le quinquennat**, concentrés exclusivement sur les fonctions administratives et doublons d'agences, tout en sanctuarisant les policiers, gendarmes, soignants et magistrats.
+- Économie annuelle générée à 5 ans : **-12,5 Mds €/an**.
+
+## 2. Choc de Débureaucratisation et Suppression d'Agences
+- Fusion ou suppression de dizaines d'agences publiques, de comités Théodule et d'opérateurs de l'État aux missions redondantes.
+- Redonner le pouvoir aux préfets et maires face à la technocratie centrale.
+", "06_Institutions_et_Decentralisation/02_Reforme_de_l_Etat_Fonction_Publique_et_Collectivites.md": "# Réforme de l'État, Fonction Publique et Collectivités
+
+## 1. Réduction de la Fonction Publique : -250 000 Postes
+- Règle du non-remplacement d'un tiers des fonctionnaires partant à la retraite (1 sur 3).
+- Cible : **-250 000 postes sur le quinquennat**, concentrés exclusivement sur les fonctions administratives et doublons d'agences, tout en sanctuarisant les policiers, gendarmes, soignants et magistrats.
+- Économie annuelle générée à 5 ans : **-12,5 Mds €/an**.
+
+## 2. Choc de Débureaucratisation et Suppression d'Agences
+- Fusion ou suppression de dizaines d'agences publiques, de comités Théodule et d'opérateurs de l'État aux missions redondantes.
+- Redonner le pouvoir aux préfets et maires face à la technocratie centrale.
+", "./07_Europe_et_Geopolitique/01_Union_Europeenne_Traites_et_Commerce.md": "# Union Européenne, Traités et Commerce International
+
+## 1. Une Europe Puissance et Protectrice
+- Édouard Philippe défend une intégration européenne exigeante mais réaliste : faire de l'UE une puissance géopolitique capable de rivaliser avec les États-Unis et la Chine.
+- Promotion active d'un ***Buy European Tech Act*** pour réserver la commande publique européenne aux entreprises et technologies continentales.
+
+## 2. Réciprocité Commerciale et Fermeté Face à Pékin
+- Rejet des accords de libre-échange non équitables (type Mercosur) tant que les normes environnementales et sanitaires ne sont pas rigoureusement identiques.
+- Quotas et droits de douane ciblés sur les véhicules électriques et technologies chinoises subventionnées.
+", "07_Europe_et_Geopolitique/01_Union_Europeenne_Traites_et_Commerce.md": "# Union Européenne, Traités et Commerce International
+
+## 1. Une Europe Puissance et Protectrice
+- Édouard Philippe défend une intégration européenne exigeante mais réaliste : faire de l'UE une puissance géopolitique capable de rivaliser avec les États-Unis et la Chine.
+- Promotion active d'un ***Buy European Tech Act*** pour réserver la commande publique européenne aux entreprises et technologies continentales.
+
+## 2. Réciprocité Commerciale et Fermeté Face à Pékin
+- Rejet des accords de libre-échange non équitables (type Mercosur) tant que les normes environnementales et sanitaires ne sont pas rigoureusement identiques.
+- Quotas et droits de douane ciblés sur les véhicules électriques et technologies chinoises subventionnées.
+", "./07_Europe_et_Geopolitique/02_Defense_Armees_Diplomatie_et_Francophonie.md": "# Défense, Armées, Diplomatie et Puissance Française
+
+## 1. Réarmement Militaire et Trajectoire LPM
+- Amplification de la Loi de Programmation Militaire : budget des Armées porté à plus de 2,5 % du PIB (**+6,0 Mds €/an**).
+- Reconstitution rapide des stocks de munitions, modernisation de la composante nucléaire de dissuasion et réarmement naval de premier rang.
+
+## 2. Diplomatie d'Équilibre et Ancrage Transatlantique
+- Affirmation d'un pilier européen fort au sein de l'OTAN sans dépendance exclusive envers Washington.
+- Soutien militaire et financier indéfectible à l'Ukraine face à l'agression russe pour garantir la sécurité du continent européen.
+", "07_Europe_et_Geopolitique/02_Defense_Armees_Diplomatie_et_Francophonie.md": "# Défense, Armées, Diplomatie et Puissance Française
+
+## 1. Réarmement Militaire et Trajectoire LPM
+- Amplification de la Loi de Programmation Militaire : budget des Armées porté à plus de 2,5 % du PIB (**+6,0 Mds €/an**).
+- Reconstitution rapide des stocks de munitions, modernisation de la composante nucléaire de dissuasion et réarmement naval de premier rang.
+
+## 2. Diplomatie d'Équilibre et Ancrage Transatlantique
+- Affirmation d'un pilier européen fort au sein de l'OTAN sans dépendance exclusive envers Washington.
+- Soutien militaire et financier indéfectible à l'Ukraine face à l'agression russe pour garantir la sécurité du continent européen.
+", "./08_Veille_Numerique_et_Sources/01_Presence_Numerique_YouTube_Reseaux_Sociaux.md": "# Présence Numérique, Réseaux Sociaux et Canaux de Communication
+
+## 1. Dispositif Numérique Officiel
+- **Site officiel du candidat :** [edouardphilippe.fr](https://edouardphilippe.fr) (plateforme d'idées, propositions thématiques et adhésions).
+- **Mouvement politique :** [horizonsleparti.fr](https://horizonsleparti.fr).
+- **Chaîne YouTube officielle :** Entretiens longs, captations des rentrées politiques d'Horizons, discours programmatiques et vidéos explicatives de propositions.
+- **Réseau X (Twitter) :** @EPhilippe_LH (prises de parole courtes, communiqués politiques majeurs, tribunes).
+- **LinkedIn :** Canal privilégié pour s'adresser aux cadres, dirigeants d'entreprises et décideurs économiques.
+
+## 2. Style de Communication
+- Image soignée de « sérieux régalien », distance par rapport au bruit médiatique immédiat, phrasé posé et pédagogique.
+- Utilisation de formules marquantes : *« Dire la vérité »*, *« Ordre dans les comptes, ordre dans la rue »*, *« Plus de nucléaire, moins de bavardage »*.
+", "08_Veille_Numerique_et_Sources/01_Presence_Numerique_YouTube_Reseaux_Sociaux.md": "# Présence Numérique, Réseaux Sociaux et Canaux de Communication
+
+## 1. Dispositif Numérique Officiel
+- **Site officiel du candidat :** [edouardphilippe.fr](https://edouardphilippe.fr) (plateforme d'idées, propositions thématiques et adhésions).
+- **Mouvement politique :** [horizonsleparti.fr](https://horizonsleparti.fr).
+- **Chaîne YouTube officielle :** Entretiens longs, captations des rentrées politiques d'Horizons, discours programmatiques et vidéos explicatives de propositions.
+- **Réseau X (Twitter) :** @EPhilippe_LH (prises de parole courtes, communiqués politiques majeurs, tribunes).
+- **LinkedIn :** Canal privilégié pour s'adresser aux cadres, dirigeants d'entreprises et décideurs économiques.
+
+## 2. Style de Communication
+- Image soignée de « sérieux régalien », distance par rapport au bruit médiatique immédiat, phrasé posé et pédagogique.
+- Utilisation de formules marquantes : *« Dire la vérité »*, *« Ordre dans les comptes, ordre dans la rue »*, *« Plus de nucléaire, moins de bavardage »*.
+", "./08_Veille_Numerique_et_Sources/02_Bibliographie_Discours_Clés_et_Sources_Verifiees.md": "# Bibliographie, Discours Clés et Sources Vérifiées
+
+## 1. Ouvrages Majeurs d'Édouard Philippe
+- *Des lieux qui disent* (Éditions JC Lattès, 2023) : Récit personnel et vision politique de la France à travers ses territoires, l'école, la mer et l'industrie.
+- *Impressions et lignes claires* (avec Gilles Boyer, 2021) : Retour d'expérience sur ses trois années passées à l'Hôtel de Matignon.
+- *L'Heure de vérité* et *Dans l'ombre* (romans politiques co-écrits avec Gilles Boyer).
+
+## 2. Discours Clés et Déclarations Fondatrices
+- **Discours du 3 septembre 2024 :** Annonce officielle de candidature à la présidence de la République (*Le Point*).
+- **Rentrée politique d'Horizons (Angers, octobre 2024) :** Présentation du « deal fiscal » (-50 Mds € d'impôts contre -50 Mds € de subventions).
+- **Déclarations sur la réforme des retraites et le temps de travail (2023-2024) :** Prises de position fermes sur l'âge de départ et la sortie des 35 heures.
+", "08_Veille_Numerique_et_Sources/02_Bibliographie_Discours_Clés_et_Sources_Verifiees.md": "# Bibliographie, Discours Clés et Sources Vérifiées
+
+## 1. Ouvrages Majeurs d'Édouard Philippe
+- *Des lieux qui disent* (Éditions JC Lattès, 2023) : Récit personnel et vision politique de la France à travers ses territoires, l'école, la mer et l'industrie.
+- *Impressions et lignes claires* (avec Gilles Boyer, 2021) : Retour d'expérience sur ses trois années passées à l'Hôtel de Matignon.
+- *L'Heure de vérité* et *Dans l'ombre* (romans politiques co-écrits avec Gilles Boyer).
+
+## 2. Discours Clés et Déclarations Fondatrices
+- **Discours du 3 septembre 2024 :** Annonce officielle de candidature à la présidence de la République (*Le Point*).
+- **Rentrée politique d'Horizons (Angers, octobre 2024) :** Présentation du « deal fiscal » (-50 Mds € d'impôts contre -50 Mds € de subventions).
+- **Déclarations sur la réforme des retraites et le temps de travail (2023-2024) :** Prises de position fermes sur l'âge de départ et la sortie des 35 heures.
+", "./09_Logement_Famille_et_Demographie/01_Logement_Construction_et_Fiscalite_Immobiliere.md": "# Logement, Choc d'Offre et Fiscalité Immobilière
+
+## 1. Choc d'Offre et Débureaucratisation du Permis de Construire
+- Relance de la construction par l'assouplissement des règles du ZAN (Zéro Artificialisation Nette) pour redonner des marges de manœuvre foncières aux maires bâtisseurs.
+- Délais raccourcis de recours contre les permis de construire pour débloquer les chantiers de logements neufs.
+
+## 2. Réforme Fiscale Immobilière
+- Simplification du statut du bailleur privé pour inciter l'investissement locatif de long terme.
+- Refonte des normes énergétiques (DPE) pour éviter la sortie massive de logements locatifs du marché.
+", "09_Logement_Famille_et_Demographie/01_Logement_Construction_et_Fiscalite_Immobiliere.md": "# Logement, Choc d'Offre et Fiscalité Immobilière
+
+## 1. Choc d'Offre et Débureaucratisation du Permis de Construire
+- Relance de la construction par l'assouplissement des règles du ZAN (Zéro Artificialisation Nette) pour redonner des marges de manœuvre foncières aux maires bâtisseurs.
+- Délais raccourcis de recours contre les permis de construire pour débloquer les chantiers de logements neufs.
+
+## 2. Réforme Fiscale Immobilière
+- Simplification du statut du bailleur privé pour inciter l'investissement locatif de long terme.
+- Refonte des normes énergétiques (DPE) pour éviter la sortie massive de logements locatifs du marché.
+", "./09_Logement_Famille_et_Demographie/02_Politique_Familiale_Natalite_et_Transmission.md": "# Politique Familiale, Natalité et Transmission
+
+## 1. Relance de la Natalité et Soutien aux Familles Actives
+- Maintien du quotient familial et développement des modes de garde d'enfants (crèches d'entreprises et assistantes maternelles déductibles).
+- Valorisation des familles qui travaillent et conciliation vie professionnelle - vie familiale.
+
+## 2. Allègement de la Transmission Familiale
+- Relèvement des abattements sur les donations anticipées de son vivant pour permettre aux jeunes ménages d'accéder à la propriété.
+", "09_Logement_Famille_et_Demographie/02_Politique_Familiale_Natalite_et_Transmission.md": "# Politique Familiale, Natalité et Transmission
+
+## 1. Relance de la Natalité et Soutien aux Familles Actives
+- Maintien du quotient familial et développement des modes de garde d'enfants (crèches d'entreprises et assistantes maternelles déductibles).
+- Valorisation des familles qui travaillent et conciliation vie professionnelle - vie familiale.
+
+## 2. Allègement de la Transmission Familiale
+- Relèvement des abattements sur les donations anticipées de son vivant pour permettre aux jeunes ménages d'accéder à la propriété.
+", "./10_Chiffrage_et_Simulateurs_Budgetaires/01_Chiffrage_Ligne_a_Ligne_par_Famille.md": "# Chiffrage Ligne à Ligne du Programme par Famille
+
+## Récapitulatif Macroéconomique Quinquennal (An 1 à An 5)
+- **Objectif central :** Ramener le déficit public de -5,1 % à **-2,0 % du PIB** à l'horizon 2032.
+- **Volume global d'économies sur la dépense publique :** **-105,0 Mds €/an** à 5 ans.
+- **Volume global de baisses d'impôts et cotisations :** **-73,0 Mds €/an** à 5 ans (dont 50 Mds € du deal fiscal gagé sur les subventions).
+- **Réinvestissements régaliens et prioritaires (Défense, Justice, École, Nucléaire) :** **+18,5 Mds €/an**.
+- **Effet retour croissance et heures travaillées :** **+25,0 Mds €/an**.
+- **Amélioration nette du solde public :** **+38,5 Mds €/an** de réduction pérenne du déficit public.
+
+Ce document est modélisé dans le classeur Excel officiel `Chiffrage_Programme_Édouard_Philippe_2027.xlsx`.
+", "10_Chiffrage_et_Simulateurs_Budgetaires/01_Chiffrage_Ligne_a_Ligne_par_Famille.md": "# Chiffrage Ligne à Ligne du Programme par Famille
+
+## Récapitulatif Macroéconomique Quinquennal (An 1 à An 5)
+- **Objectif central :** Ramener le déficit public de -5,1 % à **-2,0 % du PIB** à l'horizon 2032.
+- **Volume global d'économies sur la dépense publique :** **-105,0 Mds €/an** à 5 ans.
+- **Volume global de baisses d'impôts et cotisations :** **-73,0 Mds €/an** à 5 ans (dont 50 Mds € du deal fiscal gagé sur les subventions).
+- **Réinvestissements régaliens et prioritaires (Défense, Justice, École, Nucléaire) :** **+18,5 Mds €/an**.
+- **Effet retour croissance et heures travaillées :** **+25,0 Mds €/an**.
+- **Amélioration nette du solde public :** **+38,5 Mds €/an** de réduction pérenne du déficit public.
+
+Ce document est modélisé dans le classeur Excel officiel `Chiffrage_Programme_Édouard_Philippe_2027.xlsx`.
+", "./10_Chiffrage_et_Simulateurs_Budgetaires/02_Impact_Macroeconomique_et_Cas_Types_Menages.md": "# Impact Macroéconomique et Simulation sur 8 Profils Types
+
+## 1. Effet Macroéconomique Global
+Le programme économique d'Édouard Philippe vise à réenclencher une dynamique d'offre :
+- Accroissement sensible du volume global d'heures travaillées via la défiscalisation et désocialisation au-delà de 37 heures.
+- Amélioration de la compétitivité coût des entreprises industrielles via le « deal fiscal ».
+- Stabilisation de la note souveraine de la France et arrêt de la dérive des taux d'intérêt de la dette publique.
+
+## 2. Simulation sur 8 Ménages et Entreprises Types
+1. **Salarié au SMIC (35h) :** Gain net nul sur les 35h de base, mais gain immédiat de **+150 à +220 €/mois net** s'il effectue 39h grâce au zéro charge patronale et heures supplémentaires défiscalisées.
+2. **Salarié médian (2 000 € net, 39h négociées) :** **+2 400 €/an net (+200 €/mois)**.
+3. **Couple classe moyenne avec 2 enfants :** **+3 200 €/an net** (heures sup + soutien périscolaire + stabilité fiscale).
+4. **Chef d'entreprise PME industrielle :** Baisse d'impôts de production de **-45 000 €/an** en contrepartie d'une baisse de subventions complexes.
+5. **Retraité pension supérieure à 2 500 €/mois :** Contribution modérée (-300 à -500 €/an) due à la sous-indexation temporaire.
+6. **Retraité modeste (< 1 500 €/mois) :** Maintien intégral du pouvoir d'achat indexé sur l'inflation.
+7. **Jeune actif primo-accédant :** Allègement des donations parentales pour constituer son apport immobilier.
+8. **Enseignant / Soignant :** Revalorisation ciblée liée aux missions et primes d'engagement d'établissement.
+", "10_Chiffrage_et_Simulateurs_Budgetaires/02_Impact_Macroeconomique_et_Cas_Types_Menages.md": "# Impact Macroéconomique et Simulation sur 8 Profils Types
+
+## 1. Effet Macroéconomique Global
+Le programme économique d'Édouard Philippe vise à réenclencher une dynamique d'offre :
+- Accroissement sensible du volume global d'heures travaillées via la défiscalisation et désocialisation au-delà de 37 heures.
+- Amélioration de la compétitivité coût des entreprises industrielles via le « deal fiscal ».
+- Stabilisation de la note souveraine de la France et arrêt de la dérive des taux d'intérêt de la dette publique.
+
+## 2. Simulation sur 8 Ménages et Entreprises Types
+1. **Salarié au SMIC (35h) :** Gain net nul sur les 35h de base, mais gain immédiat de **+150 à +220 €/mois net** s'il effectue 39h grâce au zéro charge patronale et heures supplémentaires défiscalisées.
+2. **Salarié médian (2 000 € net, 39h négociées) :** **+2 400 €/an net (+200 €/mois)**.
+3. **Couple classe moyenne avec 2 enfants :** **+3 200 €/an net** (heures sup + soutien périscolaire + stabilité fiscale).
+4. **Chef d'entreprise PME industrielle :** Baisse d'impôts de production de **-45 000 €/an** en contrepartie d'une baisse de subventions complexes.
+5. **Retraité pension supérieure à 2 500 €/mois :** Contribution modérée (-300 à -500 €/an) due à la sous-indexation temporaire.
+6. **Retraité modeste (< 1 500 €/mois) :** Maintien intégral du pouvoir d'achat indexé sur l'inflation.
+7. **Jeune actif primo-accédant :** Allègement des donations parentales pour constituer son apport immobilier.
+8. **Enseignant / Soignant :** Revalorisation ciblée liée aux missions et primes d'engagement d'établissement.
+"};
 
         // Render Sidebar
         const container = document.getElementById('dossiersContainer');

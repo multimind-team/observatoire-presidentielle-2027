@@ -37,25 +37,3 @@ Ces 16 candidats constituent l'échiquier politique réel et opérationnel pour 
 
 ---
 
-## 📁 2. LES 16 HYPOTHÈSES ÉCARTÉES, DOUBLONS & TICKETS EXÉCUTIFS
-
-Ces 16 profils ont été modélisés et chiffrés dans l'observatoire mais **ne constituent pas des candidatures effectives distinctes** pour 2027 :
-
-| Personnalité | Parti | Rôle Réel & Motif de non-candidature directe | Dossier Archivé |
-| :--- | :--- | :--- | :--- |
-| **Jordan Bardella** | RN | **Ne se présente pas.** Forme un ticket exécutif avec Marine Le Pen (cible Matignon). Plan B uniquement en cas d'inéligibilité judiciaire de Marine Le Pen. | [Consulter](./Jordan%20Bardella/index.html) |
-| **Michel Barnier** | LR | **Ne se présente pas.** 73 ans, a expressément exclu une candidature après son passage à Matignon. | [Consulter](./Michel%20Barnier/index.html) |
-| **Gabriel Attal** | Renaissance | **Doublon bloc central.** Chef du groupe parlementaire EPR, ne se présentera pas face à Édouard Philippe. | [Consulter](./Gabriel%20Attal/index.html) |
-| **Gérald Darmanin** | Renaissance | **Doublon bloc central.** Mouvement Populaires, soutien d'une candidature unique du centre-droit. | [Consulter](./G%C3%A9rald%20Darmanin/index.html) |
-| **Yaël Braun-Pivet** | Renaissance | **Doublon bloc central.** Présidente de l'Assemblée nationale, positionnée en figure institutionnelle. | [Consulter](./Ya%C3%ABl%20Braun-Pivet/index.html) |
-| **Bruno Retailleau** | LR | **Doublon LR.** Ministre de l'Intérieur, rivalité interne tranchée au profit du candidat unique de la droite républicaine. | [Consulter](./Bruno%20Retailleau/index.html) |
-| **Xavier Bertrand** | LR | **Doublon LR.** Président des Hauts-de-France, ralliement au candidat investi. | [Consulter](./Xavier%20Bertrand/index.html) |
-| **François Hollande** | PS | **Doublon social-démocrate.** Ancien président, ne se présentera pas face à l'offre sociale-démocrate établie. | [Consulter](./Fran%C3%A7ois%20Hollande/index.html) |
-| **Bernard Cazeneuve** | La Convention | **Doublon social-démocrate.** Mouvement La Convention, espace électoral insuffisant hors PS. | [Consulter](./Bernard%20Cazeneuve/index.html) |
-| **Carole Delga** | PS | **Doublon socialiste.** Présidente d'Occitanie, soutiendra la candidature sociale-démocrate unifiée. | [Consulter](./Carole%20Delga/index.html) |
-| **Clémentine Autain** | L'Après | **Doublon gauche radicale.** Refus d'une candidature testimoniale et recherche d'un accord unitaire. | [Consulter](./Cl%C3%A9mentine%20Autain/index.html) |
-| **Marion Maréchal** | Identité-Libertés | **Doublon droite nationale.** A expressément refusé de se présenter contre le Rassemblement National. | [Consulter](./Marion%20Mar%C3%A9chal/index.html) |
-| **Dominique de Villepin** | - | **Figure diplomatique.** Sans parti, sans réseau militant, sans maillage de parrainages. | [Consulter](./Dominique%20de%20Villepin/index.html) |
-| **Florian Philippot** | Les Patriotes | **Doublon souverainiste.** Candidature redondante avec Dupont-Aignan et Asselineau. | [Consulter](./Florian%20Philippot/index.html) |
-| **Hélène Thouy** | Parti Animaliste | **Thématique.** Absence de réseau suffisant d'élus locaux pour sécuriser les 500 parrainages. | [Consulter](./H%C3%A9l%C3%A8ne%20Thouy/index.html) |
-| **Jean-Marc Governatori** | Écologie au Centre | **Doublon écologiste.** Pas de dynamique pour une candidature présidentielle autonome. | [Consulter](./Jean-Marc%20Governatori/index.html) |
