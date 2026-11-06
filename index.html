@@ -497,7 +497,14 @@
                 -webkit-overflow-scrolling: touch;
                 scrollbar-width: none;
                 gap: 8px !important;
+                padding: 6px 0 !important;
+            }
+            .filters-wrap {
                 padding: 10px 12px !important;
+            }
+            .filters-wrap .filters-bar {
+                background: transparent !important;
+                border: none !important;
             }
             .topic-pills::-webkit-scrollbar, .filters-bar::-webkit-scrollbar, .xlsx-subtabs-bar::-webkit-scrollbar, .main-tabs::-webkit-scrollbar {
                 display: none;
@@ -643,12 +650,14 @@
             </div>
         </div>
 
-        <div class="filters-bar">
-            <span style="font-size:12px; font-weight:bold; color:var(--text-muted); text-transform:uppercase;">Filtres Parrainages (16 Candidats Déclarés) :</span>
-            <button class="filter-btn active" onclick="filterCands('primary')">🎯 Tous les 16 Candidats Déclarés</button>
-            <button class="filter-btn" onclick="filterCands('green')">🟢 500+ parrainages validés (7)</button>
-            <button class="filter-btn" onclick="filterCands('orange')">🟠 300-499 en bonne voie (5)</button>
-            <button class="filter-btn" onclick="filterCands('red')">🔴 &lt;300 en difficulté (4)</button>
+                <div class="filters-wrap" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px 16px; margin-bottom: 22px;">
+            <div style="font-size:11px; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">Filtres Parrainages (16 Candidats Déclarés) :</div>
+            <div class="filters-bar" style="background:transparent; border:none; padding:0; margin-bottom:0;">
+                <button class="filter-btn active" onclick="filterCands('primary')">🎯 Tous les 16 Candidats Déclarés</button>
+                <button class="filter-btn" onclick="filterCands('green')">🟢 500+ parrainages validés (7)</button>
+                <button class="filter-btn" onclick="filterCands('orange')">🟠 300-499 en bonne voie (5)</button>
+                <button class="filter-btn" onclick="filterCands('red')">🔴 &lt;300 en difficulté (4)</button>
+            </div>
         </div>
 
         <div class="cands-grid" id="candsGrid">
