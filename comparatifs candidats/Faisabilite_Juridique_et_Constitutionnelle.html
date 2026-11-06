@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baromètre de Faisabilité Juridique & Constitutionnelle | Présidentielle 2027</title>
+    <style>
+        :root {
+            --bg-main: #0a0f1d;
+            --bg-card: #111827;
+            --border-color: #334155;
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-main);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        .top-navbar {
+            background: #0f172a;
+            border-bottom: 1px solid var(--border-color);
+            padding: 14px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .brand { font-size: 15px; font-weight: 800; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .nav-links { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+        .nav-link { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 6px; transition: all 0.2s; }
+        .nav-link:hover, .nav-link.active { color: #fff; background: rgba(255,255,255,0.05); }
+
+        .container { max-width: 1300px; margin: 30px auto; padding: 0 20px; }
+
+        .hero-section {
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.4) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+        .hero-title { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+        .hero-subtitle { font-size: 14px; color: var(--text-muted); max-width: 900px; }
+
+        /* Levels grid */
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+        .level-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .level-card .badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 800; margin-bottom: 8px; }
+        .level-card h4 { font-size: 14px; color: #fff; margin-bottom: 4px; }
+        .level-card p { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+        .badge-decret { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
+        .badge-loi { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #3b82f6; }
+        .badge-organique { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #f59e0b; }
+        .badge-const { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid #ef4444; }
+        .badge-ue { background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid #a855f7; }
+
+        /* Controls */
+        .selector-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .cand-select {
+            background: #1e293b;
+            color: #fff;
+            border: 1px solid var(--border-color);
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            min-width: 280px;
+        }
+
+        /* Matrix Table */
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 13px;
+        }
+        .matrix-table th, .matrix-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            text-align: left;
+        }
+        .matrix-table th { background: #1e293b; color: #fff; font-weight: 700; }
+        .matrix-table tr:nth-child(even) { background: rgba(255,255,255,0.015); }
+        .matrix-table tr:hover { background: rgba(255,255,255,0.03); }
+    </style>
+</head>
+<body>
+
+    <header class="top-navbar">
+        <a href="../index.html" class="brand">
+            <span>🗳️</span>
+            <span>OBSERVATOIRE PRÉSIDENTIELLE 2027</span>
+        </a>
+        <nav class="nav-links">
+            <a href="../index.html" class="nav-link">🏠 Accueil Portail</a>
+            <a href="./METHODOLOGIE_ET_SOURCES.html" class="nav-link">📚 Méthodologie</a>
+            <a href="./Boussole_Electorale_Test_Affinite.html" class="nav-link">🧭 Boussole Électorale</a>
+            <a href="./Comparateur_Interactif_Face_a_Face.html" class="nav-link">⚖️ Comparateur Face-à-Face</a>
+            <a href="./Simulateur_Gouvernabilite_Assemblee_2027.html" class="nav-link">🏛️ Simulateur Assemblée</a>
+            <a href="./Crash_Test_Budgetaire_et_Scoring_Risque.html" class="nav-link">💥 Crash-Test Budgétaire</a>
+            <a href="./Simulateur_Pouvoir_Achat_Citoyen.html" class="nav-link">💶 Pouvoir d'Achat</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <div class="hero-section">
+            <h1 class="hero-title">⚖️ Baromètre de Faisabilité Juridique & Constitutionnelle</h1>
+            <p class="hero-subtitle">
+                Un président de la République ne peut pas appliquer seul toutes ses promesses. Ce module confronte les propositions phares des candidats à la hiérarchie des normes : décret, loi ordinaire, loi organique, révision de la Constitution ou traités européens.
+            </p>
+        </div>
+
+        <!-- Les 5 Niveaux de Contrainte -->
+        <div class="levels-grid">
+            <div class="level-card">
+                <span class="badge badge-decret">Niveau 1 : Décret Seul</span>
+                <h4>Pouvoir Réglementaire</h4>
+                <p>Mesure applicable immédiatement par le Président ou le Premier ministre sans vote du Parlement (ex: consignes aux préfets, nomination de hauts fonctionnaires).</p>
+            </div>
+            <div class="level-card">
+                <span class="badge badge-loi">Niveau 2 : Loi Ordinaire</span>
+                <h4>Majorité Assemblée (289)</h4>
+                <p>Nécessite le vote du Parlement (Budget, barème de l'impôt, code du travail, peines planchers). Bloqué en cas d'absence de majorité ou motion de censure.</p>
+            </div>
+            <div class="level-card">
+                <span class="badge badge-organique">Niveau 3 : Loi Organique</span>
+                <h4>Contrôle Constitutionnel</h4>
+                <p>Règles relatives au fonctionnement des pouvoirs publics. Soumission automatique obligatoire au Conseil Constitutionnel.</p>
+            </div>
+            <div class="level-card">
+                <span class="badge badge-const">Niveau 4 : Révision Const.</span>
+                <h4>Article 89 / Référendum</h4>
+                <p>Modifications de la Constitution (préférence nationale, RIC, référendum d'initiative populaire, suppression du Conseil économique et social). Nécessite Congrès aux 3/5e ou vote populaire.</p>
+            </div>
+            <div class="level-card">
+                <span class="badge badge-ue">Niveau 5 : Traités UE</span>
+                <h4>Droit Européen / CJUE</h4>
+                <p>Mesures incompatibles avec le droit de l'Union européenne (sortie unilatérale du marché de l'électricité, quotas d'importation stricts, blocage des prix sous tarif régulé).</p>
+            </div>
+        </div>
+
+        <!-- Selector Box -->
+        <div class="selector-box">
+            <label style="font-weight: 700; color: #fff;">Sélectionner un Candidat :</label>
+            <select id="candSelect" class="cand-select" onchange="renderFeasibility()">
+                <!-- Populated via JS -->
+            </select>
+            <span id="candSummary" style="font-size: 13px; color: var(--text-muted);">Chargement du profil...</span>
+        </div>
+
+        <!-- Feasibility Matrix Table -->
+        <table class="matrix-table">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Mesure Programmatique Phare</th>
+                    <th style="width: 18%;">Vecteur Juridique Requis</th>
+                    <th style="width: 15%;">Degré de Faisabilité</th>
+                    <th style="width: 42%;">Analyse d'Obstacle Institutionnel & Conseil Constitutionnel</th>
+                </tr>
+            </thead>
+            <tbody id="matrixBody">
+                <!-- Injected via JS -->
+            </tbody>
+        </table>
+
+    </div>
+
+    <script>
+        const FEASIBILITY_DATA = {
+            "David Lisnard": [
+                { mesure: "Baisse de 100 Mds € de dépenses publiques", vecteur: "Loi de Finances (LOLF)", badge: "badge-loi", statut: "🟢 Faisable sous majorité", obstacle: "Nécessite le vote annuel du Budget au Parlement. Faisable si majorité de droite ou utilisation de l'article 49.3." },
+                { mesure: "Suppression des agences étatiques (ARS, commissions théodules)", vecteur: "Loi Ordinaire / Décret", badge: "badge-loi", statut: "🟢 Faisable", obstacle: "La plupart des agences peuvent être dissoutes ou fusionnées par loi simple ; réaffectation des personnels régie par le statut général." },
+                { mesure: "Principe de subsidiarité ascendante aux maires", vecteur: "Loi Organique / Const.", badge: "badge-organique", statut: "🟡 Modéré", obstacle: "Conforme à l'article 72 de la Constitution (décentralisation), mais nécessite une loi organique sur les compétences exclusives des collectivités." },
+                { mesure: "Certitude de la peine & 40 000 places de prison", vecteur: "Loi de Programmation Justice", badge: "badge-loi", statut: "🟢 Faisable", obstacle: "Strictement législatif et budgétaire. Aucune incompatibilité constitutionnelle sous réserve du respect des conditions de détention (CEDH)." },
+                { mesure: "Suppression du ZAN (Zéro Artificialisation Nette)", vecteur: "Loi Ordinaire", badge: "badge-loi", statut: "🟢 Très Faisable", obstacle: "Abrogation d'articles de la loi Climat & Résilience. Vote d'une simple majorité parlementaire." }
+            ],
+            "Marine Le Pen": [
+                { mesure: "Priorité nationale d'accès au logement et à l'emploi", vecteur: "Révision Constitutionnelle", badge: "badge-const", statut: "🔴 Obstacle Majeur", obstacle: "Contraire au principe d'égalité (Déclaration de 1789) et au droit de l'UE (libre circulation). Nécessite une révision constitutionnelle par référendum très contestée par le Conseil Constitutionnel." },
+                { mesure: "Suppression de la TVA sur les énergies (de 20% à 5,5%)", vecteur: "Loi de Finances & Dérogation UE", badge: "badge-ue", statut: "🟡 Conditionné à l'UE", obstacle: "La directive TVA européenne autorise des taux réduits sur l'énergie, mais plafonne les exonérations totales." },
+                { mesure: "Sortie du marché européen de l'électricité (tarif régulé)", vecteur: "Dérogation / Contentieux UE", badge: "badge-ue", statut: "🟠 Risque Juridique", obstacle: "Nécessite une négociation dérogatoire avec Bruxelles (comme l'exception ibérique) sous peine d'astreintes de la CJUE." },
+                { mesure: "Expulsion systématique des délinquants étrangers", vecteur: "Loi Ordinaire / Décret", badge: "badge-loi", statut: "🟡 Faisable sous filtres CEDH", obstacle: "Faisable pour les nouveaux titres, mais encadré par l'article 8 de la CEDH (droit à une vie familiale normale) et les accords bilatéraux de réadmission." }
+            ],
+            "Jean-Luc Mélenchon": [
+                { mesure: "Blocage des prix des produits de première nécessité et de l'énergie", vecteur: "Décret (L. 410-2 Code commerce)", badge: "badge-decret", statut: "🟢 Immédiat (6 mois max)", obstacle: "L'article L. 410-2 du Code de commerce permet un blocage temporaire par décret en cas de crise, mais une prolongation exige une loi pérenne." },
+                { mesure: "Rétablissement de la retraite à 60 ans à 40 annuités", vecteur: "Loi de Financement Sécurité Sociale", badge: "badge-loi", statut: "🟢 Faisable sous majorité", obstacle: "Abrogation de la réforme 2023 par un simple article de PLFSS voté à la majorité absolue de l'Assemblée nationale." },
+                { mesure: "Constituante & Passage à la 6e République", vecteur: "Référendum (Article 11) / Rév.", badge: "badge-const", statut: "🔴 Verrou Constitutionnel", obstacle: "L'article 89 n'autorise pas la convocation d'une Constituante. L'utilisation de l'article 11 provoquerait une crise constitutionnelle avec le Conseil d'État et le Conseil Constitutionnel." },
+                { mesure: "Impôt universel lié à la nationalité pour les expatriés", vecteur: "Loi de Finances / Conventions", badge: "badge-ue", statut: "🟠 Blocage International", obstacle: "Se heurte aux 120 conventions fiscales bilatérales signées par la France (qui prévalent sur la loi nationale selon l'art. 55 de la Constitution)." }
+            ],
+            "Édouard Philippe": [
+                { mesure: "Poursuite de la réforme des retraites et des comptes publics", vecteur: "Loi de Finances", badge: "badge-loi", statut: "🟢 Faisable", obstacle: "Strictement législatif, requiert une coalition parlementaire stable au Palais Bourbon." },
+                { mesure: "Autonomie accrue des établissements scolaires", vecteur: "Loi Ordinaire / Décrets", badge: "badge-decret", statut: "🟢 Faisable", obstacle: "Expérimentations déjà permises par le cadre réglementaire de l'Éducation nationale." },
+                { mesure: "Simplification normative et débureaucratisation", vecteur: "Loi d'Habilitation par Ordonnances", badge: "badge-loi", statut: "🟢 Faisable", obstacle: "Procédure de l'article 38 de la Constitution : le Parlement autorise le gouvernement à légiférer par ordonnances." }
+            ],
+            "Laurent Wauquiez": [
+                { mesure: "Suppression de l'AME (remplacée par aide d'urgence vitale)", vecteur: "Loi Ordinaire / PLF", badge: "badge-loi", statut: "🟢 Faisable", obstacle: "L'AME relève de la loi ordinaire. Le Conseil constitutionnel a confirmé qu'elle ne constitue pas un droit constitutionnel intangible." },
+                { mesure: "Défiscalisation totale des heures supplémentaires", vecteur: "Loi de Finances", badge: "badge-loi", statut: "🟢 Faisable", obstacle: "Dispositif légal déjà testé sous la loi TEPA 2007, sans obstacle constitutionnel." },
+                { mesure: "Obligation de 15h d'activité pour les bénéficiaires du RSA", vecteur: "Loi Ordinaire / Règlements", badge: "badge-loi", statut: "🟢 Faisable", obstacle: "Déjà initié par la loi Plein Emploi, généralisable par décrets d'application." }
+            ],
+            "Marine Tondelier": [
+                { mesure: "Sortie programmée du nucléaire & 100% renouvelables", vecteur: "Loi de Programmation Énergie-Climat", badge: "badge-loi", statut: "🟡 Faisable mais contractuel", obstacle: "Légalement faisable, mais indemnisation financière massive exigible par les exploitants (EDF)." },
+                { mesure: "ISF climatique et taxe sur les patrimoines polluants", vecteur: "Loi de Finances", badge: "badge-loi", statut: "🟡 Attention seuils confiscatoires", obstacle: "Conforme sous réserve de ne pas dépasser le plafond global d'imposition fixé par la jurisprudence constitutionnelle." }
+            ],
+            "Raphaël Glucksmann": [
+                { mesure: "Taxation européenne des superprofits et transactions financières", vecteur: "Directive Européenne", badge: "badge-ue", statut: "🟠 Négociation à 27 requise", obstacle: "La fiscalité directe européenne exige l'unanimité des 27 États membres du Conseil de l'Union européenne." },
+                { mesure: "Investissement massif dans la défense européenne intégrée", vecteur: "Traité / Loi de Programmation Militaire", badge: "badge-loi", statut: "🟢 Faisable", obstacle: "Compatible avec les traités, relève de la LPM nationale et d'accords de coopération renforcée." }
+            ]
+        };
+
+        const candSelect = document.getElementById('candSelect');
+        const cands = Object.keys(FEASIBILITY_DATA);
+
+        cands.forEach((c, idx) => {
+            const opt = new Option(c, c);
+            candSelect.add(opt);
+        });
+
+        function renderFeasibility() {
+            const chosen = candSelect.value;
+            const measures = FEASIBILITY_DATA[chosen] || [];
+            const tbody = document.getElementById('matrixBody');
+            tbody.innerHTML = '';
+
+            document.getElementById('candSummary').innerText = `${measures.length} mesures phares analysées sous l'angle du droit constitutionnel et européen.`;
+
+            measures.forEach(m => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td style="font-weight:700; color:#fff;">${m.mesure}</td>
+                    <td><span class="badge ${m.badge}">${m.vecteur}</span></td>
+                    <td style="font-weight:700;">${m.statut}</td>
+                    <td style="color:#cbd5e1; font-size:12.5px;">${m.obstacle}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        renderFeasibility();
+    </script>
+</body>
+</html>

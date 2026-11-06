@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méthodologie, Chiffrage & Sources Officielles | Observatoire Présidentielle 2027</title>
+    <style>
+        :root {
+            --bg-main: #0a0f1d;
+            --bg-card: #111827;
+            --bg-card-hover: #1e293b;
+            --border-color: #334155;
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-main);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* Top Navbar */
+        .top-navbar {
+            background: #0f172a;
+            border-bottom: 1px solid var(--border-color);
+            padding: 14px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .brand { font-size: 15px; font-weight: 800; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .nav-links { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+        .nav-link { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 6px; transition: all 0.2s; }
+        .nav-link:hover, .nav-link.active { color: #fff; background: rgba(255,255,255,0.05); }
+
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+
+        .hero-section {
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.4) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 36px;
+            margin-bottom: 30px;
+        }
+        .hero-title { font-size: 30px; font-weight: 800; color: #fff; margin-bottom: 12px; }
+        .hero-subtitle { font-size: 15px; color: var(--text-muted); max-width: 900px; }
+
+        .doc-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+        .doc-section h2 { font-size: 20px; color: #93c5fd; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        .doc-section h3 { font-size: 16px; color: #f8fafc; margin-top: 20px; margin-bottom: 10px; }
+        .doc-section p { font-size: 14px; color: #cbd5e1; margin-bottom: 12px; }
+        .doc-section ul { margin-left: 20px; margin-bottom: 14px; color: #cbd5e1; font-size: 14px; }
+        .doc-section li { margin-bottom: 6px; }
+
+        /* Tables */
+        .spec-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+        .spec-table th, .spec-table td { border: 1px solid var(--border-color); padding: 10px 14px; text-align: left; }
+        .spec-table th { background: #1e293b; color: #fff; font-weight: 700; }
+        .spec-table tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+
+        .callout {
+            border-left: 4px solid var(--accent-blue);
+            background: rgba(59, 130, 246, 0.08);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 18px 0;
+            font-size: 13.5px;
+            color: #cbd5e1;
+        }
+        .callout.warn { border-left-color: var(--accent-amber); background: rgba(245, 158, 11, 0.08); }
+        .callout.green { border-left-color: var(--accent-green); background: rgba(16, 185, 129, 0.08); }
+
+        .btn-action {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 700;
+            text-decoration: none; background: #2563eb; color: #fff; transition: all 0.2s;
+            margin-top: 10px;
+        }
+        .btn-action:hover { background: #1d4ed8; transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="top-navbar">
+        <a href="../index.html" class="brand">
+            <span>🗳️</span>
+            <span>OBSERVATOIRE PRÉSIDENTIELLE 2027</span>
+        </a>
+        <nav class="nav-links">
+            <a href="../index.html" class="nav-link">🏠 Accueil Portail</a>
+            <a href="./Boussole_Electorale_Test_Affinite.html" class="nav-link">🧭 Boussole Électorale</a>
+            <a href="./Comparateur_Interactif_Face_a_Face.html" class="nav-link">⚖️ Comparateur Face-à-Face</a>
+            <a href="./Simulateur_Gouvernabilite_Assemblee_2027.html" class="nav-link">🏛️ Simulateur Assemblée</a>
+            <a href="./Crash_Test_Budgetaire_et_Scoring_Risque.html" class="nav-link">💥 Crash-Test Budgétaire</a>
+            <a href="./Simulateur_Pouvoir_Achat_Citoyen.html" class="nav-link">💶 Pouvoir d'Achat</a>
+            <a href="./Visualisation_Comparatif_Tous_Candidats_2027.html" class="nav-link">📊 Grand Atlas</a>
+            <a href="./A_PROPOS_ET_TRANSPARENCE.html" class="nav-link">ℹ️ À Propos</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1 class="hero-title">📚 Méthodologie, Hypothèses de Chiffrage & Sources Officielles</h1>
+            <p class="hero-subtitle">
+                Ce document détaille les normes de chiffrage financier, les hypothèses macroéconomiques sous-jacentes, la grille de notation souveraine (Crash-Test) et les sources documentaires de l'Observatoire de l'Élection Présidentielle 2027.
+            </p>
+        </div>
+
+        <!-- 1. Périmètre Comptable -->
+        <div class="doc-section">
+            <h2>🏛️ 1. Périmètre Comptable & Chiffres de Référence</h2>
+            <p>
+                L'Observatoire évalue chaque projet présidentiel à l'aune de deux périmètres comptables officiels de la République française :
+            </p>
+            <table class="spec-table">
+                <thead>
+                    <tr>
+                        <th>Périmètre Comptable</th>
+                        <th>Montant de Référence (2025/2026)</th>
+                        <th>Définition & Composition</th>
+                        <th>Source Officielle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>APU (Administrations Publiques Globales)</strong></td>
+                        <td><strong>1 514,0 Mds €</strong> (ou 1 714 Mds € selon base Insee élargie)</td>
+                        <td>Agrégat au sens de Maastricht : Budget de l'État + Sécurité Sociale (ASSO) + Collectivités Locales (APUL) + Organismes divers (ODAC). Représente ~56% du PIB.</td>
+                        <td>INSEE / Cour des Comptes / Rapport économique & financier PLF</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Budget Général de l'État (LOLF seul)</strong></td>
+                        <td><strong>503,6 Mds €</strong> (Dépenses nettes hors remboursements)</td>
+                        <td>32 Missions Ministérielles votées au Parlement : Enseignement scolaire (63,9 Mds €), Défense (50,5 Mds €), Charge de la dette (54 Mds €), Solidarité, Intérieur, Justice.</td>
+                        <td>Loi de Finances Initiale (LFI) / Ministère de l'Économie & des Finances</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Recettes Publiques Totales (APU)</strong></td>
+                        <td><strong>1 368,0 Mds €</strong></td>
+                        <td>Total des prélèvements obligatoires (impôts sur le revenu, TVA, cotisations sociales, impôt sur les sociétés) et recettes non fiscales. Taux de PO : ~43,5% du PIB.</td>
+                        <td>INSEE / DGFIP</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Déficit Public Annuel de Départ</strong></td>
+                        <td><strong>-146,0 à -152,5 Mds €</strong> (-5,1% du PIB)</td>
+                        <td>Écart structurel entre les recettes et les dépenses de l'ensemble des administrations publiques.</td>
+                        <td>Procédure de déficit excessif (Commission Européenne)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dette Publique Souveraine</strong></td>
+                        <td><strong>3 228 Mds €</strong> (~112% du PIB)</td>
+                        <td>Dette brute négociable au sens de Maastricht émise par l'Agence France Trésor (AFT).</td>
+                        <td>Agence France Trésor / Banque de France</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout">
+                <strong>Précision Méthodologique :</strong> Les chiffrages des programmes de l'Observatoire sont projetés à **l'horizon An 5 du quinquennat (2032)** en euros constants, permettant de mesurer l'impact structurel réel en régime de croisière.
+            </div>
+        </div>
+
+        <!-- 2. Méthode de Chiffrage -->
+        <div class="doc-section">
+            <h2>📊 2. Méthodologie de Chiffrage Ligne à Ligne (Le Modèle Excel 5 Onglets)</h2>
+            <p>
+                Chaque candidat fait l'objet d'un classeur Excel complet auditable composé de 5 onglets de modélisation financière :
+            </p>
+            <ul>
+                <li><strong>Onglet 1 : Synthèse Macroéconomique & Équilibre Quinquennal :</strong> Trajectoire pluriannuelle de l'An 1 à l'An 5 (Croissance du PIB retenue à 1,2% en moyenne, inflation cible à 1,8%, taux d'intérêt souverain à 3,0%).</li>
+                <li><strong>Onglet 2 : Mesures Dépenses (Ligne par Ligne) :</strong> Décomposition de chaque proposition (hausse de budget ou économie) par mission ministérielle et branche sociale, avec affectation des effectifs en équivalents temps plein (ETPT).</li>
+                <li><strong>Onglet 3 : Mesures Fiscalité & Recettes :</strong> Rendement fiscal brut de chaque mesure (IR, IS, TVA, IFI, cotisations, successions) assorti d'une élasticité de comportement (effets Laffer ou fuite de base fiscale modélisés selon les tables du Trésor).</li>
+                <li><strong>Onglet 4 : Trajectoire Dette & Solde Public :</strong> Calcul de la charge d'intérêts résiduelle et positionnement par rapport au seuil prudentiel de Maastricht (-3,0% du PIB).</li>
+                <li><strong>Onglet 5 : Cas-Types Ménages :</strong> Simulation de l'impact net sur le pouvoir d'achat pour 6 configurations familiales représentatives.</li>
+            </ul>
+        </div>
+
+        <!-- 3. Formule du Crash Test -->
+        <div class="doc-section">
+            <h2>💥 3. Barème & Grille du Crash-Test de Risque Souverain (/100)</h2>
+            <p>
+                Le Crash-Test évalue la résilience du programme présidentiel face aux marchés financiers et aux contraintes institutionnelles. La note globale sur 100 points résulte de 4 critères pondérés à 25 points chacun :
+            </p>
+            <table class="spec-table">
+                <thead>
+                    <tr>
+                        <th>Pilier d'Évaluation (25 Pts chacun)</th>
+                        <th>Critères Audités</th>
+                        <th>Risque Pénalisé</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Soutenabilité face aux Taux d'Intérêt (25 pts)</strong></td>
+                        <td>Impact d'une hausse brutale des taux OAT de +200 bps (+2,0%). Ratio dette/PIB final en An 5.</td>
+                        <td>Effet boule de neige sur la charge de la dette.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Faisabilité Juridique & Constitutionnelle (25 pts)</strong></td>
+                        <td>Respect du bloc de constitutionnalité (Conseil constitutionnel, libertés fondamentales) et des traités européens ratifiés (TSCG, Cour de Justice de l'UE).</td>
+                        <td>Censure constitutionnelle majeure ou blocage européen immédiat.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Réalisme des Recettes & Fiscalité (25 pts)</strong></td>
+                        <td>Cohérence des rendements fiscaux escomptés (lutte contre la fraude, taxes exceptionnelles, impôts sur les hauts patrimoines).</td>
+                        <td>Surestimation des recettes magiques sans base taxable prouvée.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Capacité d'Exécution & Acceptabilité (25 pts)</strong></td>
+                        <td>Faisabilité opérationnelle par l'administration (suppression d'agences, réformes structurelles) et risque de blocage social / grèves.</td>
+                        <td>Inertie administrative, veto syndical ou paralysie institutionnelle.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout green">
+                <strong>Échelle des Notes :</strong><br>
+                • <strong>Score 80-100 (Rating A / A+) :</strong> Haute crédibilité, respect des règles budgétaires européennes, soutenabilité financière solide.<br>
+                • <strong>Score 65-79 (Rating B / B+) :</strong> Soutenabilité acceptable sous surveillance, quelques fragilités de bouclage.<br>
+                • <strong>Score 50-64 (Rating C / C+) :</strong> Risque élevé, tensions constitutionnelles et hausses de spread OAT probables.<br>
+                • <strong>Score < 50 (Rating D / D-) :</strong> Risque critique, rupture des traités, emballement de la dette ou dégradation souveraine immédiate.
+            </div>
+        </div>
+
+        <!-- 4. Sources Officielles -->
+        <div class="doc-section">
+            <h2>📚 4. Typologie des Sources & Hiérarchie Documentaire</h2>
+            <p>
+                Chaque donnée exploitée dans les 28 fiches thématiques de chaque candidat est hiérarchisée selon un indice de fiabilité strict :
+            </p>
+            <ul>
+                <li><strong>Niveau 1 — Sources Primaires Officielles :</strong> Livres-programmes édités par les candidats, manifestes officiels des partis politiques, déclarations officielles lors de congrès d'investiture ou conférences de presse de campagne.</li>
+                <li><strong>Niveau 2 — Travaux Parlementaires & Évaluations Publiques :</strong> Rapports de la Commission des Finances de l'Assemblée nationale et du Sénat, avis du Haut Conseil des Finances Publiques (HCFP), rapports de la Cour des Comptes, chiffrages de l'Institut Montaigne et de l'OFCE.</li>
+                <li><strong>Niveau 3 — Déclarations Médias Validées :</strong> Interviews matinales, tribunes dans la presse nationale (Le Figaro, Le Monde, Les Échos) et débats télévisés transcrits.</li>
+            </ul>
+        </div>
+
+        <!-- Bouton retour -->
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="../index.html" class="btn-action">⬅️ Revenir au Portail National des Candidats</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

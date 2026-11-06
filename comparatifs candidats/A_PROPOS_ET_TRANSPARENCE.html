@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos, Charte d'Indépendance & Transparence | Observatoire Présidentielle 2027</title>
+    <style>
+        :root {
+            --bg-main: #0a0f1d;
+            --bg-card: #111827;
+            --border-color: #334155;
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+            --accent-amber: #f59e0b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-main);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        .top-navbar {
+            background: #0f172a;
+            border-bottom: 1px solid var(--border-color);
+            padding: 14px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .brand { font-size: 15px; font-weight: 800; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .nav-links { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+        .nav-link { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 6px; transition: all 0.2s; }
+        .nav-link:hover, .nav-link.active { color: #fff; background: rgba(255,255,255,0.05); }
+
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+
+        .hero-section {
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.4) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 36px;
+            margin-bottom: 30px;
+        }
+        .hero-title { font-size: 30px; font-weight: 800; color: #fff; margin-bottom: 12px; }
+        .hero-subtitle { font-size: 15px; color: var(--text-muted); max-width: 900px; }
+
+        .doc-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+        .doc-section h2 { font-size: 20px; color: #93c5fd; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        .doc-section p { font-size: 14px; color: #cbd5e1; margin-bottom: 12px; }
+        .doc-section ul { margin-left: 20px; margin-bottom: 14px; color: #cbd5e1; font-size: 14px; }
+        .doc-section li { margin-bottom: 8px; }
+
+        .callout {
+            border-left: 4px solid var(--accent-green);
+            background: rgba(16, 185, 129, 0.08);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 18px 0;
+            font-size: 13.5px;
+            color: #cbd5e1;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-navbar">
+        <a href="../index.html" class="brand">
+            <span>🗳️</span>
+            <span>OBSERVATOIRE PRÉSIDENTIELLE 2027</span>
+        </a>
+        <nav class="nav-links">
+            <a href="../index.html" class="nav-link">🏠 Accueil Portail</a>
+            <a href="./METHODOLOGIE_ET_SOURCES.html" class="nav-link">📚 Méthodologie</a>
+            <a href="./Boussole_Electorale_Test_Affinite.html" class="nav-link">🧭 Boussole Électorale</a>
+            <a href="./Comparateur_Interactif_Face_a_Face.html" class="nav-link">⚖️ Comparateur Face-à-Face</a>
+            <a href="./Simulateur_Gouvernabilite_Assemblee_2027.html" class="nav-link">🏛️ Simulateur Assemblée</a>
+            <a href="./Crash_Test_Budgetaire_et_Scoring_Risque.html" class="nav-link">💥 Crash-Test Budgétaire</a>
+            <a href="./Simulateur_Pouvoir_Achat_Citoyen.html" class="nav-link">💶 Pouvoir d'Achat</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <div class="hero-section">
+            <h1 class="hero-title">ℹ️ Charte d'Indépendance, Transparence & Déontologie</h1>
+            <p class="hero-subtitle">
+                L'Observatoire de l'Élection Présidentielle 2027 est une initiative citoyenne, neutre et ouverte. Son unique vocation est d'éclairer le débat démocratique en soumettant l'ensemble des programmes politiques à une analyse budgétaire, juridique et technique rigoureuse et équitable.
+            </p>
+        </div>
+
+        <!-- 1. Mission et gouvernance -->
+        <div class="doc-section">
+            <h2>🎯 1. Notre Mission : Éclairer le Choix Citoyen</h2>
+            <p>
+                Dans une campagne présidentielle, les propositions politiques sont trop souvent réduites à des slogans médiatiques ou des polémiques éphémères. L'Observatoire 2027 a été fondé pour apporter une réponse méthodologique aux questions fondamentales de chaque électeur :
+            </p>
+            <ul>
+                <li><strong>Combien coûtent réellement</strong> les mesures annoncées ?</li>
+                <li><strong>Qui finance</strong> les allègements ou les dépenses supplémentaires ?</li>
+                <li><strong>Quel est l'impact réel</strong> sur le pouvoir d'achat net de mon foyer (€/mois) ?</li>
+                <li><strong>Le président élu aura-t-il la majorité parlementaire</strong> pour faire voter son texte ?</li>
+                <li><strong>La dette publique</strong> restera-t-elle soutenable en cas de hausse des taux d'emprunt ?</li>
+            </ul>
+        </div>
+
+        <!-- 2. Charte de Neutralité -->
+        <div class="doc-section">
+            <h2>⚖️ 2. Charte de Stricte Neutralité & Égalité de Traitement</h2>
+            <p>
+                L'Observatoire applique une règle d'or d'équité démocratique absolue :
+            </p>
+            <ul>
+                <li><strong>Même grille pour tous :</strong> Les 16 candidats réels en lice sont évalués selon la même matrice budgétaire (PIB, inflation, taux de référence de l'État et des APU).</li>
+                <li><strong>Aucun parti pris idéologique :</strong> Aucune politique publique (libérale, sociale-démocrate, souverainiste, étatiste ou écologiste) n'est jugée a priori. Seules la cohérence des chiffres, la faisabilité juridique et la viabilité financière sont modélisées.</li>
+                <li><strong>Indépendance financière totale :</strong> Le site est 100% bénévole, autofinancé, sans publicité, sans subvention publique et sans financement d'aucun parti ou entreprise.</li>
+            </ul>
+        </div>
+
+        <!-- 3. Confidentialité & Zero-Tracking -->
+        <div class="doc-section">
+            <h2>🔒 3. Respect Absolu de la Vie Privée (Privacy by Design)</h2>
+            <div class="callout">
+                <strong>Garantie Données Citoyennes :</strong> Aucune donnée personnelle n'est collectée, enregistrée ou transmise à quiconque.
+            </div>
+            <p>
+                Les simulateurs interactifs (Simulateur Pouvoir d'Achat, Boussole Électorale, Simulateur Parlementaire) s'exécutent **intégralement dans le navigateur de l'utilisateur (côté client)** :
+            </p>
+            <ul>
+                <li>Votre niveau de salaire, votre patrimoine et votre composition familiale restent stockés temporairement dans la mémoire vive de votre propre machine et sont effacés à la fermeture de l'onglet.</li>
+                <li>Vos réponses au questionnaire d'affinité politique ne font l'objet d'aucun profilage ni analyse statistique.</li>
+                <li>Le site n'utilise aucun cookie traceur ou publicitaire tiers (zéro Google Analytics, zéro Facebook Pixel).</li>
+            </ul>
+        </div>
+
+        <!-- 4. Droit de réponse et signalement -->
+        <div class="doc-section">
+            <h2>✉️ 4. Droit de Réponse & Protocole de Signalement d'Erreur</h2>
+            <p>
+                Parce que les programmes évoluent tout au long de la campagne, l'Observatoire est un projet ouvert et participatif :
+            </p>
+            <ul>
+                <li><strong>Pour les équipes de campagne :</strong> Tout mandataire ou candidat souhaitant préciser un chiffrage officiel, apporter une source complémentaire ou signaler une mise à jour programmatique peut soumettre un rectificatif public via le dépôt GitHub ou les canaux de l'Observatoire.</li>
+                <li><strong>Pour les citoyens et économistes :</strong> Toute coquille, incohérence ou suggestion méthodologique est instruite de manière transparente. Les modifications sont consignées dans l'historique des versions (Git Commit Log).</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
