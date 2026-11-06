@@ -395,6 +395,18 @@
             }
         }
 
+        @media (min-width: 641px) and (max-width: 1024px) {
+            /* Mode Tablette (iPad / Galaxy Tab) */
+            .cands-grid, .tools-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 16px !important;
+            }
+            .charts-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                gap: 16px !important;
+            }
+        }
+
         @media (max-width: 980px) {
             /* Barre de navigation compacte avec tiroir Menu */
             .navbar, .top-navbar, .top-nav, .obs-global-nav {
@@ -471,10 +483,31 @@
             }
 
             /* Grilles 1 colonne sans débordement */
-            .cands-grid, .tools-grid, .charts-grid, .grid-2, .grid-3, .duel-grid, .sim-grid, .reader-layout, .workspace-grid, .main-grid {
+            .charts-grid, .grid-2, .grid-3, .duel-grid, .sim-grid, .reader-layout, .workspace-grid, .main-grid {
                 grid-template-columns: minmax(0, 1fr) !important;
                 gap: 14px !important;
             }
+        }
+
+        @media (max-width: 640px) {
+            /* Mode Smartphone : 1 colonne pour les cartes */
+            .cands-grid, .tools-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                gap: 14px !important;
+            }
+            .cand-actions {
+                flex-direction: row !important;
+                gap: 6px !important;
+            }
+            .btn-cand {
+                padding: 8px 4px !important;
+                font-size: 11px !important;
+                min-height: 38px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
             /* KPI en 2 colonnes compactes sur mobile */
             .kpi-grid, .kpi-strip, .hero-stats {
                  display: grid !important;
@@ -591,20 +624,51 @@
 
         <!-- 1. REPERTOIRE DES CANDIDATS 2027 (EN PREMIER) -->
         <h2 class="section-title" id="candidats">👥 Les Candidats à la Loupe (Dossiers Complets)</h2>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:18px;">
+            <p style="font-size:14px; color:#cbd5e1; margin:0;">
+                Les <strong>16 candidats déclarés</strong> présentés dans l'ordre de <strong>l'Hémicycle parlementaire (de l'extrême gauche à l'extrême droite)</strong>.
+            </p>
+            <div style="font-size:12px; color:#94a3b8; background:rgba(30,41,59,0.7); padding:5px 12px; border-radius:20px; border:1px solid #334155;">
+                🏛️ Ordre officiel Hémicycle (16)
+            </div>
+        </div>
 
+        <!-- 1. GRILLE DES 16 CANDIDATS (EN PREMIER) -->
+        <div class="cands-grid" id="candsGrid">
+            <!-- Injected via JS -->
+        </div>
+
+        <!-- 2. OUTILS DE RECHERCHE ET FILTRES (APRES LA LISTE) -->
+                <div style="margin-top:36px; margin-bottom:16px; border-top:1px solid #334155; padding-top:24px;">
+            <div style="font-size:15px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
+                <span>🔍</span> Filtrer les Candidats & Comparer par Thème
+            </div>
+            <p style="font-size:12.5px; color:#94a3b8; margin-top:2px;">
+                Affinez l'affichage de la grille ci-dessus par statut de parrainages, recherchez un mot-clé ou comparez instantanément leurs propositions.
+            </p>
+        </div>
+
+        <!-- Filtrage des Parrainages -->
+        <div class="filters-wrap" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px 16px; margin-bottom: 22px;">
+            <div style="font-size:11px; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">Filtres Parrainages (16 Candidats Déclarés) :</div>
+            <div class="filters-bar" style="background:transparent; border:none; padding:0; margin-bottom:0;">
+                <button class="filter-btn active" onclick="filterCands('primary')">🎯 Tous les 16 Candidats Déclarés</button>
+                <button class="filter-btn" onclick="filterCands('green')">🟢 500+ parrainages validés (7)</button>
+                <button class="filter-btn" onclick="filterCands('orange')">🟠 300-499 en bonne voie (5)</button>
+                <button class="filter-btn" onclick="filterCands('red')">🔴 &lt;300 en difficulté (4)</button>
+            </div>
+        </div>
+
+        <!-- Moteur de recherche et Comparateur Thématique -->
         <!-- Moteur de recherche instantané + Comparateur Rapide par Thème -->
-        <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid #334155; border-radius: 12px; padding: 16px 20px; margin-bottom: 18px; display: flex; flex-direction: column; gap: 10px;">
-            <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
-                <div style="position: relative; flex: 1; min-width: 280px;">
-                    <span style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 16px; color: var(--text-muted); pointer-events: none;">🔍</span>
-                    <input type="text" id="candSearchInput" placeholder="Rechercher un candidat, un parti ou une mesure (ex: retraite, SMIC, nucléaire, TVA, hôpital, école, OTAN, logement...)" oninput="handleSearch()" style="width: 100%; background: #1e293b; border: 1px solid #334155; color: #fff; padding: 10px 14px 10px 40px; border-radius: 8px; font-size: 14px; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#334155'">
-                </div>
-                <button onclick="clearSearch()" style="background: #334155; border: none; color: #cbd5e1; padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='#475569'" onmouseout="this.style.background='#334155'">
-                    Réinitialiser
-                </button>
+        <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid #334155; border-radius: 12px; padding: 16px 20px; margin-bottom: 18px; display: flex; flex-direction: column; gap: 12px;">
+            <div style="position: relative; width: 100%;">
+                <span style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 16px; color: var(--text-muted); pointer-events: none;">🔍</span>
+                <input type="text" id="candSearchInput" placeholder="Rechercher un candidat, un parti ou une mesure (ex: retraite, SMIC, nucléaire, TVA...)" oninput="handleSearch()" style="width: 100%; background: #1e293b; border: 1px solid #334155; color: #fff; padding: 11px 40px 11px 40px; border-radius: 8px; font-size: 14px; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#334155'">
+                <button type="button" id="candSearchClearBtn" onclick="clearSearch()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: #334155; border: none; color: #cbd5e1; width: 24px; height: 24px; border-radius: 50%; font-size: 12px; cursor: pointer; display: none; align-items: center; justify-content: center;" title="Effacer">✕</button>
             </div>
             <div>
-                <div style="font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px;">⚡ Comparer instantanément les 16 candidats sur un thème clé :</div>
+                <div style="font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 8px;">⚡ Comparer instantanément les 16 candidats sur un thème clé :</div>
                 <div class="topic-pills" id="topicPillsBar">
                     <button type="button" class="topic-pill" onclick="selectTopicPill('retraite', this)">👴 Retraites & Âge Légal</button>
                     <button type="button" class="topic-pill" onclick="selectTopicPill('salaire', this)">💶 Salaires & SMIC</button>
@@ -620,7 +684,7 @@
                     <button type="button" class="topic-pill" onclick="selectTopicPill('logement', this)">🏘️ Logement & Famille</button>
                 </div>
             </div>
-            <div id="searchResultsCount" style="font-size: 12px; color: var(--text-muted); font-weight: 600;">
+            <div id="searchResultsCount"    style="font-size: 12px; color: var(--text-muted); font-weight: 600;">
                 Affichage : 16 candidats déclarés en lice (par défaut)
             </div>
         </div>
@@ -660,12 +724,161 @@
             </div>
         </div>
 
-        <div class="cands-grid" id="candsGrid">
-            <!-- Injected via JS -->
-        </div>
+
 
         <!-- 2. OUTILS ET SIMULATEURS MAJEURS (APRES LES CANDIDATS) -->
         <h2 class="section-title" id="outils" style="margin-top: 52px;">🚀 Les Applications & Simulateurs Interactifs Déployés</h2>
+        <div class="tools-grid">
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">📖</div>
+                    <div class="tool-title">Grand Livre Blanc & 14 Synthèses Thématiques</div>
+                    <div class="tool-desc">Liseuse intégrale du Rapport Exécutif consolidé, du Référentiel Budget de l'État et des 14 monographies comparatives (Retraites, Salaires, Fiscalité, Énergie, Santé, Éducation, Défense, Logement...).</div>
+                </div>
+                <a href="./comparatifs%20candidats/Grand_Livre_Blanc_et_Syntheses_Thematiques.html" class="btn-launch">Lire le Grand Livre Blanc →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">🧭</div>
+                    <div class="tool-title">Boussole Électorale & Test d'Affinité</div>
+                    <div class="tool-desc">12 questions clivantes sur les retraites, les salaires, les impôts, l'énergie et la dette. Révèle instantanément votre Top 3 des candidats les plus proches et votre classement complet sur 100%.</div>
+                </div>
+                <a href="./comparatifs%20candidats/Boussole_Electorale_Test_Affinite.html" class="btn-launch">Lancer le Test d'Affinité →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">💶</div>
+                    <div class="tool-title">Simulateur Mon Pouvoir d'Achat</div>
+                    <div class="tool-desc">Entrez votre salaire brut, vos enfants, vos kilomètres en voiture et votre patrimoine pour calculer en direct votre gain ou perte nette en euros (€/mois et €/an) sous chaque président.</div>
+                </div>
+                <a href="./comparatifs%20candidats/Simulateur_Pouvoir_Achat_Citoyen.html" class="btn-launch">Calculer Mon Portefeuille →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">📊</div>
+                    <div class="tool-title">Grand Atlas Graphique (10 Thèmes)</div>
+                    <div class="tool-desc">Navigation interactive par onglets comparant les 16 candidats en lice sur 10 graphiques : retraites, SMIC, taux d'IR, entreprises, nucléaire, immigration, prisons, fonction publique et boussole 2D.</div>
+                </div>
+                <a href="./comparatifs%20candidats/Visualisation_Comparatif_Tous_Candidats_2027.html" class="btn-launch">Explorer les 10 Graphiques →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">⚔️</div>
+                    <div class="tool-title">Comparateur Face-à-Face (Duels)</div>
+                    <div class="tool-desc">Sélectionnez 2 ou 3 candidats pour confronter en direct leurs radars doctrinaux à 6 axes, leurs trajectoires de déficit sur 5 ans, la ventilation sectorielle de leurs dépenses et leurs fiches thématiques.</div>
+                </div>
+                <a href="./comparatifs%20candidats/Comparateur_Interactif_Face_a_Face.html" class="btn-launch">Confronter les Candidats →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">🏛️</div>
+                    <div class="tool-title">Hémicycle & Majorité Parlementaire</div>
+                    <div class="tool-desc">Simulation du 3e tour législatif : projection des 577 sièges de l'Assemblée nationale selon le président élu, faisabilité du vote budgétaire et évaluation du risque de censure ou dissolution.</div>
+                </div>
+                <a href="./comparatifs%20candidats/Simulateur_Gouvernabilite_Assemblee_2027.html" class="btn-launch">Simuler l'Assemblée →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">⚠️</div>
+                    <div class="tool-title">Crash-Test & Stress-Test Taux</div>
+                    <div class="tool-desc">Notation souveraine de robustesse (A+ à D-), détection des angles morts juridiques et simulateur d'impact sur la charge de la dette en cas de tension sur les marchés obligataires (+50 à +300 bps).</div>
+                </div>
+                <a href="./comparatifs%20candidats/Crash_Test_Budgetaire_et_Scoring_Risque.html" class="btn-launch">Tester le Risque de Dette →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">📈</div>
+                    <div class="tool-title">Observatoire Permanent des Sondages</div>
+                    <div class="tool-desc">Synthèse consolidée des intentions de vote 1er et 2nd tour (Ifop, Ipsos, Elabe, OpinionWay). Fourchettes d'incertitude et calculateur scientifique de marge d'erreur à 95%.</div>
+                </div>
+                <a href="./comparatifs%20candidats/Observatoire_Sondages_2027.html" class="btn-launch">Consulter les Sondages 2027 →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">⚖️</div>
+                    <div class="tool-title">Faisabilité Juridique & Constitutionnelle</div>
+                    <div class="tool-desc">Matrice de passage à l'acte : Décret, Loi ordinaire, Loi organique, Révision constitutionnelle (art. 89 vs 11) et Droit de l'Union européenne. Analyse des risques de censure.</div>
+                </div>
+                <a href="./comparatifs%20candidats/Faisabilite_Juridique_et_Constitutionnelle.html" class="btn-launch">Explorer la Matrice Juridique →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">🇫🇷</div>
+                    <div class="tool-title">Référentiel : Budget de l'État Français (1 514 Mds €)</div>
+                    <div class="tool-desc">Tableau de bord interactif du budget actuel de la France (État, Sécurité sociale, Collectivités locales) : d'où vient l'argent et où il va sur 1 000 € de dépense publique.</div>
+                </div>
+                <a href="./Visualisation_Graphiques_Budget_Etat.html" class="btn-launch">Explorer le Budget de l'État →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">📚</div>
+                    <div class="tool-title">Méthodologie, Chiffrage & Sources</div>
+                    <div class="tool-desc">Référentiel des Administrations Publiques (APU 1 514 Mds €) vs Budget de l'État (503 Mds €). Formule du Crash-Test sur 100 points, modèle Excel 5 onglets et hiérarchie documentaire.</div>
+                </div>
+                <a href="./comparatifs%20candidats/METHODOLOGIE_ET_SOURCES.html" class="btn-launch">Lire le Manuel Méthodologique →</a>
+            </div>
+
+            <div class="tool-card">
+                <div>
+                    <div class="tool-icon">ℹ️</div>
+                    <div class="tool-title">À Propos, Éthique & Transparence</div>
+                    <div class="tool-desc">Charte d'indépendance stricte, absence totale de traçage et respect absolu de la vie privée (zéro cookies), données citoyennes ouvertes et protocole de signalement d'erreur.</div>
+                </div>
+                <a href="./comparatifs%20candidats/A_PROPOS_ET_TRANSPARENCE.html" class="btn-launch">Consulter la Charte d'Éthique →</a>
+            </div>
+        </div>
+
+        <!-- 3. CENTRE OPEN DATA EXCEL (A LA FIN) -->
+        <div id="opendata" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 14px; padding: 22px 26px; margin: 24px 0 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div>
+                <div style="font-size: 14px; font-weight: 800; color: #34d399; text-transform: uppercase; letter-spacing: 0.5px;">📥 Open Data Citoyen : Bases Excel Maîtres Consolidées (16 Candidats Déclarés)</div>
+                <div style="font-size: 13px; color: #cbd5e1; margin-top: 4px;">Téléchargez librement les 4 classeurs analytiques transversaux avec formules natives et graphiques Excel :</div>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="./comparatifs%20candidats/Comparatif_Budgetaire_Tous_Candidats_2027.xlsx" download style="background: #059669; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">📊 Comparatif Budgétaire Global (.xlsx)</a>
+                <a href="./comparatifs%20candidats/Matrices_Thematiques_Transversales_2027.xlsx" download style="background: #059669; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">📋 12 Matrices Thématiques (.xlsx)</a>
+                <a href="./comparatifs%20candidats/Crash_Test_Budgetaire_et_Scoring_Risque.xlsx" download style="background: #059669; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">⚠️ Modèle Crash-Test & Taux (.xlsx)</a>
+                <a href="./Budget_Detaille_Etat_Francais.xlsx" download style="background: #0f766e; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">🏛️ Budget Détaillé de l'État (.xlsx)</a>
+            </div>
+        </div>
+    </div>
+
+        <!-- Matrice de Comparaison Thématique -->
+        <!-- Tableau comparatif instantané par thème -->
+        <div id="themeMatrixBox" class="theme-matrix-box">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                <div>
+                    <span style="font-size:11px; font-weight:800; color:#60a5fa; text-transform:uppercase;">Comparatif Transversal Instantané (16 Candidats Déclarés)</span>
+                    <h3 id="themeMatrixTitle" style="font-size:18px; font-weight:800; color:#fff;"></h3>
+                </div>
+                <button type="button" onclick="closeThemeMatrix()" style="background:#1e293b; border:1px solid #475569; color:#cbd5e1; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer;">✕ Fermer le tableau thématique</button>
+            </div>
+            <div style="overflow-x:auto;">
+                <table class="theme-matrix-table">
+                    <thead>
+                        <tr>
+                            <th>Candidat</th>
+                            <th>Parti / Mouvement</th>
+                            <th>Famille Politique</th>
+                            <th>Mesure Phare & Position Officielle</th>
+                            <th>Dossier</th>
+                        </tr>
+                    </thead>
+                    <tbody id="themeMatrixBody"></tbody>
+                </table>
+            </div>
+        </div>
+<h2 class="section-title" id="outils" style="margin-top: 52px;">🚀 Les Applications & Simulateurs Interactifs Déployés</h2>
         <div class="tools-grid">
             <div class="tool-card">
                 <div>
@@ -798,216 +1011,6 @@
     <script>
         const cands = [
   {
-    "name": "David Lisnard",
-    "parti": "Nouvelle Énergie",
-    "famille": "Droite libérale & souveraine",
-    "orientation": "Droite libérale",
-    "color": "#0ea5e9",
-    "dep_an5": 1394.0,
-    "def_an5": -70.0,
-    "def_pct": -2.2,
-    "crash_score": "B+",
-    "parr_status": "green",
-    "parr_label": "🟢 500+ parrainages validés",
-    "url_dir": "./candidats/David Lisnard/index.html",
-    "url_html": "./candidats/David Lisnard/Visualisation_Programme_et_Comparatif_Budget_Lisnard.html",
-    "url_xlsx": "./candidats/David Lisnard/Chiffrage_Programme_David_Lisnard_2027.xlsx",
-    "folder_name": "David Lisnard",
-    "real_xlsx": "Chiffrage_Programme_David_Lisnard_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Lisnard.html",
-    "is_primary": true,
-    "status_candidature": "Candidat en campagne"
-  },
-  {
-    "name": "Fabien Roussel",
-    "parti": "Parti Communiste Français (PCF)",
-    "famille": "Gauche républicaine & ouvrière",
-    "orientation": "Gauche populaire",
-    "color": "#dc2626",
-    "dep_an5": 1620.0,
-    "def_an5": -110.0,
-    "def_pct": -2.9,
-    "crash_score": "C",
-    "parr_status": "green",
-    "parr_label": "🟢 500+ parrainages validés",
-    "url_dir": "./candidats/Fabien Roussel/index.html",
-    "url_html": "./candidats/Fabien Roussel/Visualisation_Programme_et_Comparatif_Budget_Fabien_Roussel.html",
-    "url_xlsx": "./candidats/Fabien Roussel/Chiffrage_Programme_Fabien_Roussel_2027.xlsx",
-    "folder_name": "Fabien Roussel",
-    "real_xlsx": "Chiffrage_Programme_Fabien_Roussel_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Fabien_Roussel.html",
-    "is_primary": true,
-    "status_candidature": "Candidat en campagne"
-  },
-  {
-    "name": "François Asselineau",
-    "parti": "Union Populaire Républicaine (UPR)",
-    "famille": "Souverainisme & Frexit juridique",
-    "orientation": "Souverainisme juridique",
-    "color": "#1d4ed8",
-    "dep_an5": 1470.0,
-    "def_an5": -90.0,
-    "def_pct": -2.7,
-    "crash_score": "D",
-    "parr_status": "red",
-    "parr_label": "🔴 <300 parrainages (en difficulté)",
-    "url_dir": "./candidats/François Asselineau/index.html",
-    "url_html": "./candidats/François Asselineau/Visualisation_Programme_et_Comparatif_Budget_François_Asselineau.html",
-    "url_xlsx": "./candidats/François Asselineau/Chiffrage_Programme_François_Asselineau_2027.xlsx",
-    "folder_name": "François Asselineau",
-    "real_xlsx": "Chiffrage_Programme_François_Asselineau_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_François_Asselineau.html",
-    "is_primary": true,
-    "status_candidature": "Candidat en campagne"
-  },
-  {
-    "name": "François Bayrou",
-    "parti": "Mouvement Démocrate (MoDem)",
-    "famille": "Centre humaniste & démocrate",
-    "orientation": "Centre",
-    "color": "#f97316",
-    "dep_an5": 1450.0,
-    "def_an5": -75.0,
-    "def_pct": -2.3,
-    "crash_score": "A+",
-    "parr_status": "green",
-    "parr_label": "🟢 500+ parrainages validés",
-    "url_dir": "./candidats/François Bayrou/index.html",
-    "url_html": "./candidats/François Bayrou/Visualisation_Programme_et_Comparatif_Budget_François_Bayrou.html",
-    "url_xlsx": "./candidats/François Bayrou/Chiffrage_Programme_François_Bayrou_2027.xlsx",
-    "folder_name": "François Bayrou",
-    "real_xlsx": "Chiffrage_Programme_François_Bayrou_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_François_Bayrou.html",
-    "is_primary": true,
-    "status_candidature": "Candidat en campagne"
-  },
-  {
-    "name": "François Ruffin",
-    "parti": "Picardie Debout ! / Debout !",
-    "famille": "Gauche populaire & sociale",
-    "orientation": "Gauche ouvrière",
-    "color": "#ef4444",
-    "dep_an5": 1580.0,
-    "def_an5": -110.0,
-    "def_pct": -3.1,
-    "crash_score": "C+",
-    "parr_status": "orange",
-    "parr_label": "🟠 300-499 parrainages (en voie)",
-    "url_dir": "./candidats/François Ruffin/index.html",
-    "url_html": "./candidats/François Ruffin/Visualisation_Programme_et_Comparatif_Budget_François_Ruffin.html",
-    "url_xlsx": "./candidats/François Ruffin/Chiffrage_Programme_François_Ruffin_2027.xlsx",
-    "folder_name": "François Ruffin",
-    "real_xlsx": "Chiffrage_Programme_François_Ruffin_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_François_Ruffin.html",
-    "is_primary": true,
-    "status_candidature": "Candidat en campagne"
-  },
-  {
-    "name": "Jean Lassalle",
-    "parti": "Résistons !",
-    "famille": "Ruralité & Démocratie authentique",
-    "orientation": "Ruralisme souverain",
-    "color": "#84cc16",
-    "dep_an5": 1510.0,
-    "def_an5": -130.0,
-    "def_pct": -3.9,
-    "crash_score": "B-",
-    "parr_status": "orange",
-    "parr_label": "🟠 300-499 parrainages (en voie)",
-    "url_dir": "./candidats/Jean Lassalle/index.html",
-    "url_html": "./candidats/Jean Lassalle/Visualisation_Programme_et_Comparatif_Budget_Jean_Lassalle.html",
-    "url_xlsx": "./candidats/Jean Lassalle/Chiffrage_Programme_Jean_Lassalle_2027.xlsx",
-    "folder_name": "Jean Lassalle",
-    "real_xlsx": "Chiffrage_Programme_Jean_Lassalle_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Jean_Lassalle.html",
-    "is_primary": true,
-    "status_candidature": "Candidat en campagne"
-  },
-  {
-    "name": "Jean-Luc Mélenchon",
-    "parti": "La France Insoumise (LFI)",
-    "famille": "Gauche radicale & populaire",
-    "orientation": "Gauche de rupture",
-    "color": "#b91c1c",
-    "dep_an5": 1640.0,
-    "def_an5": -110.0,
-    "def_pct": -2.8,
-    "crash_score": "D+",
-    "parr_status": "green",
-    "parr_label": "🟢 500+ parrainages validés",
-    "url_dir": "./candidats/Jean-Luc Mélenchon/index.html",
-    "url_html": "./candidats/Jean-Luc Mélenchon/Visualisation_Programme_et_Comparatif_Budget_Jean_Luc_Mélenchon.html",
-    "url_xlsx": "./candidats/Jean-Luc Mélenchon/Chiffrage_Programme_Jean_Luc_Mélenchon_2027.xlsx",
-    "folder_name": "Jean-Luc Mélenchon",
-    "real_xlsx": "Chiffrage_Programme_Jean_Luc_Mélenchon_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Jean_Luc_Mélenchon.html",
-    "is_primary": true,
-    "status_candidature": "Candidat en campagne"
-  },
-  {
-    "name": "Laurent Wauquiez",
-    "parti": "La Droite Républicaine (LR)",
-    "famille": "Droite républicaine & régalienne",
-    "orientation": "Droite de gouvernement",
-    "color": "#2563eb",
-    "dep_an5": 1420.0,
-    "def_an5": -75.0,
-    "def_pct": -2.3,
-    "crash_score": "B+",
-    "parr_status": "green",
-    "parr_label": "🟢 500+ parrainages validés",
-    "url_dir": "./candidats/Laurent Wauquiez/index.html",
-    "url_html": "./candidats/Laurent Wauquiez/Visualisation_Programme_et_Comparatif_Budget_Laurent_Wauquiez.html",
-    "url_xlsx": "./candidats/Laurent Wauquiez/Chiffrage_Programme_Laurent_Wauquiez_2027.xlsx",
-    "folder_name": "Laurent Wauquiez",
-    "real_xlsx": "Chiffrage_Programme_Laurent_Wauquiez_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Laurent_Wauquiez.html",
-    "is_primary": true,
-    "status_candidature": "Candidat en campagne"
-  },
-  {
-    "name": "Marine Le Pen",
-    "parti": "Rassemblement National (RN)",
-    "famille": "Droite nationale & souverainiste",
-    "orientation": "Droite nationale",
-    "color": "#1e3a8a",
-    "dep_an5": 1485.0,
-    "def_an5": -115.0,
-    "def_pct": -3.4,
-    "crash_score": "C",
-    "parr_status": "orange",
-    "parr_label": "🟠 300-499 parrainages (en voie)",
-    "url_dir": "./candidats/Marine Le Pen/index.html",
-    "url_html": "./candidats/Marine Le Pen/Visualisation_Programme_et_Comparatif_Budget_Marine_Le_Pen.html",
-    "url_xlsx": "./candidats/Marine Le Pen/Chiffrage_Programme_Marine_Le_Pen_2027.xlsx",
-    "folder_name": "Marine Le Pen",
-    "real_xlsx": "Chiffrage_Programme_Marine_Le_Pen_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Marine_Le_Pen.html",
-    "is_primary": true,
-    "status_candidature": "Candidat en campagne"
-  },
-  {
-    "name": "Marine Tondelier",
-    "parti": "Les Écologistes (EELV)",
-    "famille": "Écologie politique",
-    "orientation": "Écologie politique",
-    "color": "#16a34a",
-    "dep_an5": 1570.0,
-    "def_an5": -110.0,
-    "def_pct": -3.2,
-    "crash_score": "C+",
-    "parr_status": "green",
-    "parr_label": "🟢 500+ parrainages validés",
-    "url_dir": "./candidats/Marine Tondelier/index.html",
-    "url_html": "./candidats/Marine Tondelier/Visualisation_Programme_et_Comparatif_Budget_Marine_Tondelier.html",
-    "url_xlsx": "./candidats/Marine Tondelier/Chiffrage_Programme_Marine_Tondelier_2027.xlsx",
-    "folder_name": "Marine Tondelier",
-    "real_xlsx": "Chiffrage_Programme_Marine_Tondelier_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Marine_Tondelier.html",
-    "is_primary": true,
-    "status_candidature": "Candidat en campagne"
-  },
-  {
     "name": "Nathalie Arthaud",
     "parti": "Lutte Ouvrière (LO)",
     "famille": "Extrême gauche ouvrière",
@@ -1025,27 +1028,6 @@
     "folder_name": "Nathalie Arthaud",
     "real_xlsx": "Chiffrage_Programme_Nathalie_Arthaud_2027.xlsx",
     "real_html": "Visualisation_Programme_et_Comparatif_Budget_Nathalie_Arthaud.html",
-    "is_primary": true,
-    "status_candidature": "Candidat en campagne"
-  },
-  {
-    "name": "Nicolas Dupont-Aignan",
-    "parti": "Debout la France (DLF)",
-    "famille": "Gaullisme souverainiste",
-    "orientation": "Souverainisme gaulliste",
-    "color": "#1e3a8a",
-    "dep_an5": 1460.0,
-    "def_an5": -90.0,
-    "def_pct": -2.7,
-    "crash_score": "C-",
-    "parr_status": "orange",
-    "parr_label": "🟠 300-499 parrainages (en voie)",
-    "url_dir": "./candidats/Nicolas Dupont-Aignan/index.html",
-    "url_html": "./candidats/Nicolas Dupont-Aignan/Visualisation_Programme_et_Comparatif_Budget_Nicolas_Dupont_Aignan.html",
-    "url_xlsx": "./candidats/Nicolas Dupont-Aignan/Chiffrage_Programme_Nicolas_Dupont_Aignan_2027.xlsx",
-    "folder_name": "Nicolas Dupont-Aignan",
-    "real_xlsx": "Chiffrage_Programme_Nicolas_Dupont_Aignan_2027.xlsx",
-    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Nicolas_Dupont_Aignan.html",
     "is_primary": true,
     "status_candidature": "Candidat en campagne"
   },
@@ -1071,6 +1053,90 @@
     "status_candidature": "Candidat en campagne"
   },
   {
+    "name": "Jean-Luc Mélenchon",
+    "parti": "La France Insoumise (LFI)",
+    "famille": "Gauche radicale & populaire",
+    "orientation": "Gauche de rupture",
+    "color": "#b91c1c",
+    "dep_an5": 1640.0,
+    "def_an5": -110.0,
+    "def_pct": -2.8,
+    "crash_score": "D+",
+    "parr_status": "green",
+    "parr_label": "🟢 500+ parrainages validés",
+    "url_dir": "./candidats/Jean-Luc Mélenchon/index.html",
+    "url_html": "./candidats/Jean-Luc Mélenchon/Visualisation_Programme_et_Comparatif_Budget_Jean_Luc_Mélenchon.html",
+    "url_xlsx": "./candidats/Jean-Luc Mélenchon/Chiffrage_Programme_Jean_Luc_Mélenchon_2027.xlsx",
+    "folder_name": "Jean-Luc Mélenchon",
+    "real_xlsx": "Chiffrage_Programme_Jean_Luc_Mélenchon_2027.xlsx",
+    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Jean_Luc_Mélenchon.html",
+    "is_primary": true,
+    "status_candidature": "Candidat en campagne"
+  },
+  {
+    "name": "François Ruffin",
+    "parti": "Picardie Debout ! / Debout !",
+    "famille": "Gauche populaire & sociale",
+    "orientation": "Gauche ouvrière",
+    "color": "#ef4444",
+    "dep_an5": 1580.0,
+    "def_an5": -110.0,
+    "def_pct": -3.1,
+    "crash_score": "C+",
+    "parr_status": "orange",
+    "parr_label": "🟠 300-499 parrainages (en voie)",
+    "url_dir": "./candidats/François Ruffin/index.html",
+    "url_html": "./candidats/François Ruffin/Visualisation_Programme_et_Comparatif_Budget_François_Ruffin.html",
+    "url_xlsx": "./candidats/François Ruffin/Chiffrage_Programme_François_Ruffin_2027.xlsx",
+    "folder_name": "François Ruffin",
+    "real_xlsx": "Chiffrage_Programme_François_Ruffin_2027.xlsx",
+    "real_html": "Visualisation_Programme_et_Comparatif_Budget_François_Ruffin.html",
+    "is_primary": true,
+    "status_candidature": "Candidat en campagne"
+  },
+  {
+    "name": "Fabien Roussel",
+    "parti": "Parti Communiste Français (PCF)",
+    "famille": "Gauche républicaine & ouvrière",
+    "orientation": "Gauche populaire",
+    "color": "#dc2626",
+    "dep_an5": 1620.0,
+    "def_an5": -110.0,
+    "def_pct": -2.9,
+    "crash_score": "C",
+    "parr_status": "green",
+    "parr_label": "🟢 500+ parrainages validés",
+    "url_dir": "./candidats/Fabien Roussel/index.html",
+    "url_html": "./candidats/Fabien Roussel/Visualisation_Programme_et_Comparatif_Budget_Fabien_Roussel.html",
+    "url_xlsx": "./candidats/Fabien Roussel/Chiffrage_Programme_Fabien_Roussel_2027.xlsx",
+    "folder_name": "Fabien Roussel",
+    "real_xlsx": "Chiffrage_Programme_Fabien_Roussel_2027.xlsx",
+    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Fabien_Roussel.html",
+    "is_primary": true,
+    "status_candidature": "Candidat en campagne"
+  },
+  {
+    "name": "Marine Tondelier",
+    "parti": "Les Écologistes (EELV)",
+    "famille": "Écologie politique",
+    "orientation": "Écologie politique",
+    "color": "#16a34a",
+    "dep_an5": 1570.0,
+    "def_an5": -110.0,
+    "def_pct": -3.2,
+    "crash_score": "C+",
+    "parr_status": "green",
+    "parr_label": "🟢 500+ parrainages validés",
+    "url_dir": "./candidats/Marine Tondelier/index.html",
+    "url_html": "./candidats/Marine Tondelier/Visualisation_Programme_et_Comparatif_Budget_Marine_Tondelier.html",
+    "url_xlsx": "./candidats/Marine Tondelier/Chiffrage_Programme_Marine_Tondelier_2027.xlsx",
+    "folder_name": "Marine Tondelier",
+    "real_xlsx": "Chiffrage_Programme_Marine_Tondelier_2027.xlsx",
+    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Marine_Tondelier.html",
+    "is_primary": true,
+    "status_candidature": "Candidat en campagne"
+  },
+  {
     "name": "Raphaël Glucksmann",
     "parti": "Place Publique",
     "famille": "Social-démocratie & Pro-européen",
@@ -1092,6 +1158,27 @@
     "status_candidature": "Candidat en campagne"
   },
   {
+    "name": "François Bayrou",
+    "parti": "Mouvement Démocrate (MoDem)",
+    "famille": "Centre humaniste & démocrate",
+    "orientation": "Centre",
+    "color": "#f97316",
+    "dep_an5": 1450.0,
+    "def_an5": -75.0,
+    "def_pct": -2.3,
+    "crash_score": "A+",
+    "parr_status": "green",
+    "parr_label": "🟢 500+ parrainages validés",
+    "url_dir": "./candidats/François Bayrou/index.html",
+    "url_html": "./candidats/François Bayrou/Visualisation_Programme_et_Comparatif_Budget_François_Bayrou.html",
+    "url_xlsx": "./candidats/François Bayrou/Chiffrage_Programme_François_Bayrou_2027.xlsx",
+    "folder_name": "François Bayrou",
+    "real_xlsx": "Chiffrage_Programme_François_Bayrou_2027.xlsx",
+    "real_html": "Visualisation_Programme_et_Comparatif_Budget_François_Bayrou.html",
+    "is_primary": true,
+    "status_candidature": "Candidat en campagne"
+  },
+  {
     "name": "Édouard Philippe",
     "parti": "Horizons",
     "famille": "Centre-droit / Bloc central",
@@ -1109,6 +1196,132 @@
     "folder_name": "Édouard Philippe",
     "real_xlsx": "Chiffrage_Programme_Édouard_Philippe_2027.xlsx",
     "real_html": "Visualisation_Programme_et_Comparatif_Budget_Édouard_Philippe.html",
+    "is_primary": true,
+    "status_candidature": "Candidat en campagne"
+  },
+  {
+    "name": "David Lisnard",
+    "parti": "Nouvelle Énergie",
+    "famille": "Droite libérale & souveraine",
+    "orientation": "Droite libérale",
+    "color": "#0ea5e9",
+    "dep_an5": 1394.0,
+    "def_an5": -70.0,
+    "def_pct": -2.2,
+    "crash_score": "B+",
+    "parr_status": "green",
+    "parr_label": "🟢 500+ parrainages validés",
+    "url_dir": "./candidats/David Lisnard/index.html",
+    "url_html": "./candidats/David Lisnard/Visualisation_Programme_et_Comparatif_Budget_Lisnard.html",
+    "url_xlsx": "./candidats/David Lisnard/Chiffrage_Programme_David_Lisnard_2027.xlsx",
+    "folder_name": "David Lisnard",
+    "real_xlsx": "Chiffrage_Programme_David_Lisnard_2027.xlsx",
+    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Lisnard.html",
+    "is_primary": true,
+    "status_candidature": "Candidat en campagne"
+  },
+  {
+    "name": "Laurent Wauquiez",
+    "parti": "La Droite Républicaine (LR)",
+    "famille": "Droite républicaine & régalienne",
+    "orientation": "Droite de gouvernement",
+    "color": "#2563eb",
+    "dep_an5": 1420.0,
+    "def_an5": -75.0,
+    "def_pct": -2.3,
+    "crash_score": "B+",
+    "parr_status": "green",
+    "parr_label": "🟢 500+ parrainages validés",
+    "url_dir": "./candidats/Laurent Wauquiez/index.html",
+    "url_html": "./candidats/Laurent Wauquiez/Visualisation_Programme_et_Comparatif_Budget_Laurent_Wauquiez.html",
+    "url_xlsx": "./candidats/Laurent Wauquiez/Chiffrage_Programme_Laurent_Wauquiez_2027.xlsx",
+    "folder_name": "Laurent Wauquiez",
+    "real_xlsx": "Chiffrage_Programme_Laurent_Wauquiez_2027.xlsx",
+    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Laurent_Wauquiez.html",
+    "is_primary": true,
+    "status_candidature": "Candidat en campagne"
+  },
+  {
+    "name": "Jean Lassalle",
+    "parti": "Résistons !",
+    "famille": "Ruralité & Démocratie authentique",
+    "orientation": "Ruralisme souverain",
+    "color": "#84cc16",
+    "dep_an5": 1510.0,
+    "def_an5": -130.0,
+    "def_pct": -3.9,
+    "crash_score": "B-",
+    "parr_status": "orange",
+    "parr_label": "🟠 300-499 parrainages (en voie)",
+    "url_dir": "./candidats/Jean Lassalle/index.html",
+    "url_html": "./candidats/Jean Lassalle/Visualisation_Programme_et_Comparatif_Budget_Jean_Lassalle.html",
+    "url_xlsx": "./candidats/Jean Lassalle/Chiffrage_Programme_Jean_Lassalle_2027.xlsx",
+    "folder_name": "Jean Lassalle",
+    "real_xlsx": "Chiffrage_Programme_Jean_Lassalle_2027.xlsx",
+    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Jean_Lassalle.html",
+    "is_primary": true,
+    "status_candidature": "Candidat en campagne"
+  },
+  {
+    "name": "Nicolas Dupont-Aignan",
+    "parti": "Debout la France (DLF)",
+    "famille": "Gaullisme souverainiste",
+    "orientation": "Souverainisme gaulliste",
+    "color": "#1e3a8a",
+    "dep_an5": 1460.0,
+    "def_an5": -90.0,
+    "def_pct": -2.7,
+    "crash_score": "C-",
+    "parr_status": "orange",
+    "parr_label": "🟠 300-499 parrainages (en voie)",
+    "url_dir": "./candidats/Nicolas Dupont-Aignan/index.html",
+    "url_html": "./candidats/Nicolas Dupont-Aignan/Visualisation_Programme_et_Comparatif_Budget_Nicolas_Dupont_Aignan.html",
+    "url_xlsx": "./candidats/Nicolas Dupont-Aignan/Chiffrage_Programme_Nicolas_Dupont_Aignan_2027.xlsx",
+    "folder_name": "Nicolas Dupont-Aignan",
+    "real_xlsx": "Chiffrage_Programme_Nicolas_Dupont_Aignan_2027.xlsx",
+    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Nicolas_Dupont_Aignan.html",
+    "is_primary": true,
+    "status_candidature": "Candidat en campagne"
+  },
+  {
+    "name": "François Asselineau",
+    "parti": "Union Populaire Républicaine (UPR)",
+    "famille": "Souverainisme & Frexit juridique",
+    "orientation": "Souverainisme juridique",
+    "color": "#1d4ed8",
+    "dep_an5": 1470.0,
+    "def_an5": -90.0,
+    "def_pct": -2.7,
+    "crash_score": "D",
+    "parr_status": "red",
+    "parr_label": "🔴 <300 parrainages (en difficulté)",
+    "url_dir": "./candidats/François Asselineau/index.html",
+    "url_html": "./candidats/François Asselineau/Visualisation_Programme_et_Comparatif_Budget_François_Asselineau.html",
+    "url_xlsx": "./candidats/François Asselineau/Chiffrage_Programme_François_Asselineau_2027.xlsx",
+    "folder_name": "François Asselineau",
+    "real_xlsx": "Chiffrage_Programme_François_Asselineau_2027.xlsx",
+    "real_html": "Visualisation_Programme_et_Comparatif_Budget_François_Asselineau.html",
+    "is_primary": true,
+    "status_candidature": "Candidat en campagne"
+  },
+  {
+    "name": "Marine Le Pen",
+    "parti": "Rassemblement National (RN)",
+    "famille": "Droite nationale & souverainiste",
+    "orientation": "Droite nationale",
+    "color": "#1e3a8a",
+    "dep_an5": 1485.0,
+    "def_an5": -115.0,
+    "def_pct": -3.4,
+    "crash_score": "C",
+    "parr_status": "orange",
+    "parr_label": "🟠 300-499 parrainages (en voie)",
+    "url_dir": "./candidats/Marine Le Pen/index.html",
+    "url_html": "./candidats/Marine Le Pen/Visualisation_Programme_et_Comparatif_Budget_Marine_Le_Pen.html",
+    "url_xlsx": "./candidats/Marine Le Pen/Chiffrage_Programme_Marine_Le_Pen_2027.xlsx",
+    "folder_name": "Marine Le Pen",
+    "real_xlsx": "Chiffrage_Programme_Marine_Le_Pen_2027.xlsx",
+    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Marine_Le_Pen.html",
     "is_primary": true,
     "status_candidature": "Candidat en campagne"
   },
@@ -1278,7 +1491,7 @@
             applyCombinedFilters();
         }
 
-        function applyCombinedFilters() {
+        function applyCombinedFilters(scrollUp = false) {
             const query = (document.getElementById('candSearchInput') ? document.getElementById('candSearchInput').value : '').toLowerCase().trim();
 
             let filtered = cands;
@@ -1315,14 +1528,25 @@
 
             const countElem = document.getElementById('searchResultsCount');
             if (countElem) {
+                const scrollLink = '<a href="#candsGrid" style="color:#60a5fa; text-decoration:underline; margin-left:8px; font-weight:700;">↑ Voir dans la grille</a>';
                 if (query.length > 0) {
-                    countElem.innerHTML = `Affichage : <strong>${filtered.length}</strong> profil(s) correspondant à « <em>${query}</em> » (${statusLabel})`;
+                    countElem.innerHTML = `Affichage : <strong>${filtered.length}</strong> profil(s) correspondant à « <em>${query}</em> » (${statusLabel}) ${scrollLink}`;
                 } else {
-                    countElem.innerHTML = `Affichage : <strong>${filtered.length}</strong> profil(s) (${statusLabel})`;
+                    countElem.innerHTML = `Affichage : <strong>${filtered.length}</strong> profil(s) (${statusLabel}) ${filtered.length < 16 ? scrollLink : ''}`;
                 }
             }
 
             renderGrid(filtered);
+
+            if (scrollUp) {
+                const gridElem = document.getElementById('candsGrid');
+                if (gridElem) {
+                    const rect = gridElem.getBoundingClientRect();
+                    if (rect.top < -50 || rect.bottom < 150) {
+                        gridElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            }
         }
 
         window.addEventListener('DOMContentLoaded', () => {
