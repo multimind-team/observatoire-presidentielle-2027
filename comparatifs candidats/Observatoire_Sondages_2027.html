@@ -572,7 +572,7 @@
 
         <!-- Hero Section -->
         <div class="hero-section">
-            <div class="badge-update">Dernière consolidation statistique : Novembre 2026</div>
+            <div class="badge-update">🟢 Dernière consolidation statistique : 6 Novembre 2026 (Veille Hebdo Active)</div>
             <h1 class="hero-title">📈 Observatoire Permanent des Sondages & Dynamiques 2027</h1>
             <p class="hero-subtitle">
                 Agrégateur méthodique et modélisation des intentions de vote issues des principaux instituts accrédités (Ifop, Ipsos, Elabe, OpinionWay, Cluster17, Harris). Visualisation des fourchettes, simulations de second tour, calcul automatique des marges d'erreur et neutralité institutionnelle garantie.
@@ -909,22 +909,22 @@
     <!-- Chart & Calculator Scripts -->
     <script>
         const pollsData = [
-            { name: "Marine Le Pen", score: 31.5, min: 29.0, max: 34.0, real: true, party: "RN", color: "#f43f5e" },
-            { name: "Édouard Philippe", score: 22.0, min: 19.0, max: 25.0, real: true, party: "Horizons", color: "#3b82f6" },
-            { name: "Jean-Luc Mélenchon", score: 13.5, min: 11.5, max: 15.5, real: true, party: "LFI", color: "#ef4444" },
-            { name: "Raphaël Glucksmann", score: 12.0, min: 10.0, max: 14.5, real: false, party: "Place Publique", color: "#a855f7" },
-            { name: "François Ruffin", score: 9.5, min: 8.0, max: 11.5, real: true, party: "Picardie Debout", color: "#fb923c" },
-            { name: "David Lisnard", score: 7.5, min: 6.0, max: 9.5, real: true, party: "Nouvelle Énergie / LR", color: "#10b981" },
-            { name: "Laurent Wauquiez", score: 7.0, min: 5.5, max: 8.5, real: true, party: "LR", color: "#0ea5e9" },
-            { name: "Éric Zemmour", score: 6.0, min: 4.5, max: 7.5, real: true, party: "Reconquête", color: "#854d0e" },
-            { name: "Fabien Roussel", score: 4.0, min: 3.0, max: 5.0, real: true, party: "PCF", color: "#e11d48" },
-            { name: "Marine Tondelier", score: 3.5, min: 2.5, max: 4.5, real: true, party: "Les Écologistes", color: "#22c55e" },
-            { name: "François Bayrou", score: 3.0, min: 2.0, max: 4.5, real: true, party: "MoDem", color: "#f97316" },
-            { name: "Nicolas Dupont-Aignan", score: 2.0, min: 1.0, max: 3.0, real: true, party: "DLF", color: "#1e3a8a" },
-            { name: "Jean Lassalle", score: 1.5, min: 1.0, max: 2.5, real: true, party: "Résistons", color: "#84cc16" },
-            { name: "Philippe Poutou", score: 1.0, min: 0.5, max: 1.8, real: true, party: "NPA", color: "#dc2626" },
-            { name: "Nathalie Arthaud", score: 0.8, min: 0.4, max: 1.5, real: true, party: "LO", color: "#991b1b" },
-            { name: "François Asselineau", score: 0.5, min: 0.2, max: 1.0, real: true, party: "UPR", color: "#0284c7" }
+            { name: "Marine Le Pen", score: 31.5, min: 29.0, max: 34.0, real: true, party: "RN", color: "#f43f5e", evolution: "+0.5", tendance: "up" },
+            { name: "Édouard Philippe", score: 22.0, min: 19.0, max: 25.0, real: true, party: "Horizons", color: "#3b82f6", evolution: "0.0", tendance: "stable" },
+            { name: "Jean-Luc Mélenchon", score: 13.5, min: 11.5, max: 15.5, real: true, party: "LFI", color: "#ef4444", evolution: "-0.5", tendance: "down" },
+            { name: "Raphaël Glucksmann", score: 12.0, min: 10.0, max: 14.5, real: false, party: "Place Publique", color: "#a855f7", evolution: "0.0", tendance: "stable" },
+            { name: "François Ruffin", score: 9.5, min: 8.0, max: 11.5, real: true, party: "Picardie Debout", color: "#fb923c", evolution: "+0.5", tendance: "up" },
+            { name: "David Lisnard", score: 7.5, min: 6.0, max: 9.5, real: true, party: "Nouvelle Énergie / LR", color: "#10b981", evolution: "+0.5", tendance: "up" },
+            { name: "Laurent Wauquiez", score: 7.0, min: 5.5, max: 8.5, real: true, party: "LR", color: "#0ea5e9", evolution: "0.0", tendance: "stable" },
+            { name: "Éric Zemmour", score: 6.0, min: 4.5, max: 7.5, real: true, party: "Reconquête", color: "#854d0e", evolution: "-0.5", tendance: "down" },
+            { name: "Fabien Roussel", score: 4.0, min: 3.0, max: 5.0, real: true, party: "PCF", color: "#e11d48", evolution: "0.0", tendance: "stable" },
+            { name: "Marine Tondelier", score: 3.5, min: 2.5, max: 4.5, real: true, party: "Les Écologistes", color: "#22c55e", evolution: "0.0", tendance: "stable" },
+            { name: "François Bayrou", score: 3.0, min: 2.0, max: 4.5, real: true, party: "MoDem", color: "#f97316", evolution: "0.0", tendance: "stable" },
+            { name: "Nicolas Dupont-Aignan", score: 2.0, min: 1.0, max: 3.0, real: true, party: "DLF", color: "#1e3a8a", evolution: "0.0", tendance: "stable" },
+            { name: "Jean Lassalle", score: 1.5, min: 1.0, max: 2.5, real: true, party: "Résistons", color: "#84cc16", evolution: "0.0", tendance: "stable" },
+            { name: "Philippe Poutou", score: 1.0, min: 0.5, max: 1.8, real: true, party: "NPA", color: "#dc2626", evolution: "0.0", tendance: "stable" },
+            { name: "Nathalie Arthaud", score: 0.8, min: 0.4, max: 1.5, real: true, party: "LO", color: "#991b1b", evolution: "0.0", tendance: "stable" },
+            { name: "François Asselineau", score: 0.5, min: 0.2, max: 1.0, real: true, party: "UPR", color: "#0284c7", evolution: "0.0", tendance: "stable" }
         ];
 
         let currentFilter = 'all';
@@ -967,7 +967,9 @@
                             callbacks: {
                                 label: function(context) {
                                     const item = filtered[context.dataIndex];
-                                    return `${item.name} (${item.party}) : Médiane ${item.score}% [${item.min}% - ${item.max}%]`;
+                                    const evo = item.evolution ? (item.evolution.startsWith('+') || item.evolution.startsWith('-') ? item.evolution : '+' + item.evolution) : '0.0';
+                                    const arrow = evo.startsWith('+') && evo !== '+0.0' ? '▲ ' : (evo.startsWith('-') ? '▼ ' : '▬ ');
+                                    return `${item.name} (${item.party}) : Médiane ${item.score}% [${item.min}% - ${item.max}%] • Tendance: ${arrow}${evo}%`;
                                 }
                             }
                         }

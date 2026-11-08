@@ -216,6 +216,21 @@
       "source": "Libération (Politique)",
       "url": "https://www.liberation.fr/arc/outboundfeeds/rss-all/category/politique/",
       "type": "rss"
+    },
+    {
+      "source": "Google News (Sondages 2027)",
+      "url": "https://news.google.com/rss/search?q=presidentielle+2027+sondage+OR+intentions+de+vote&hl=fr&gl=FR&ceid=FR:fr",
+      "type": "rss"
+    },
+    {
+      "source": "Google News (Programmes & Candidats 2027)",
+      "url": "https://news.google.com/rss/search?q=presidentielle+2027+programme+OR+candidature&hl=fr&gl=FR&ceid=FR:fr",
+      "type": "rss"
+    },
+    {
+      "source": "Google News (Chiffrage & Budgets 2027)",
+      "url": "https://news.google.com/rss/search?q=presidentielle+2027+chiffrage+OR+budget+OR+dette&hl=fr&gl=FR&ceid=FR:fr",
+      "type": "rss"
     }
   ]
 }
