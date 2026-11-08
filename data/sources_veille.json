@@ -1,0 +1,221 @@
+{
+  "metadata": {
+    "titre": "Répertoire des Sources Officielles de Veille — Présidentielle 2027",
+    "version": "1.0",
+    "description": "Annuaire exhaustif des instituts de sondage, sites officiels des candidats, think tanks de chiffrage budgétaire et flux médias."
+  },
+  "instituts_sondages": [
+    {
+      "nom": "Commission Nationale des Sondages (CNS)",
+      "url": "https://www.commission-des-sondages.fr/",
+      "feed": null,
+      "role": "Organisme officiel de contrôle publiant légalement la notice méthodologique intégrale de chaque sondage électoral (échantillon, marge d'erreur, questions)."
+    },
+    {
+      "nom": "IFOP (Département Opinion & Politique)",
+      "url": "https://www.ifop.com/departement/opinion/",
+      "feed": null,
+      "role": "Baromètres d'intentions de vote 2027 et cotes de popularité."
+    },
+    {
+      "nom": "Elabe (Études Politiques)",
+      "url": "https://elabe.fr/",
+      "feed": null,
+      "role": "Baromètre d'intentions de vote 'L'Opinion en direct' (BFMTV/La Tribune)."
+    },
+    {
+      "nom": "Ipsos France",
+      "url": "https://www.ipsos.com/fr-fr/elections",
+      "feed": null,
+      "role": "Enquêtes électorales complètes et cartographie d'opinion (Le Monde/Fondation Jean Jaurès)."
+    },
+    {
+      "nom": "OpinionWay",
+      "url": "https://www.opinion-way.com/",
+      "feed": null,
+      "role": "Baromètres de confiance politique et sondages présidentiels."
+    },
+    {
+      "nom": "Harris Interactive / Toluna",
+      "url": "https://harris-interactive.fr/",
+      "feed": null,
+      "role": "Baromètre politique d'intentions de vote (Challenges / RTL / M6)."
+    },
+    {
+      "nom": "Cluster17",
+      "url": "https://cluster17.com/",
+      "feed": null,
+      "role": "Enquêtes d'intentions de vote par segmentation en 16 clusters sociologiques."
+    },
+    {
+      "nom": "BVA Xsight",
+      "url": "https://www.bva-xsight.com/",
+      "feed": null,
+      "role": "Études d'opinion et baromètre politique (RTL)."
+    }
+  ],
+  "organismes_chiffrage_budgetaire": [
+    {
+      "nom": "Institut Montaigne (Chiffrage des Programmes)",
+      "url": "https://www.institutmontaigne.org/",
+      "feed": null,
+      "role": "Référence indépendante du chiffrage budgétaire rigoureux des programmes présidentiels."
+    },
+    {
+      "nom": "Fondation iFRAP",
+      "url": "https://www.ifrap.org/",
+      "feed": null,
+      "role": "Think tank libéral d'évaluation des politiques publiques, des dépenses de l'État et des réformes fiscales."
+    },
+    {
+      "nom": "OFCE (Observatoire Français des Conjonctures Économiques)",
+      "url": "https://www.ofce.sciences-po.fr/",
+      "feed": null,
+      "role": "Organisme de recherche de Sciences Po modélisant les impacts macroéconomiques (PIB, emploi, dette, déficit)."
+    },
+    {
+      "nom": "FIPECO (François Ecalle)",
+      "url": "https://fipeco.fr/",
+      "feed": null,
+      "role": "Observatoire indépendant sur les finances publiques, le coût des propositions électorales et la dette."
+    },
+    {
+      "nom": "Cour des Comptes",
+      "url": "https://www.ccomptes.fr/",
+      "feed": null,
+      "role": "Rapports annuels officiels sur la situation et les perspectives des finances publiques de la France."
+    },
+    {
+      "nom": "Haut Conseil des Finances Publiques (HCFP)",
+      "url": "https://www.hcfp.fr/",
+      "feed": null,
+      "role": "Avis officiels sur le réalisme des prévisions macroéconomiques et budgétaires."
+    },
+    {
+      "nom": "Direction du Budget (Budget.gouv.fr)",
+      "url": "https://www.budget.gouv.fr/",
+      "feed": null,
+      "role": "Données ouvertes d'exécution du Budget général de l'État, des 32 missions LOLF et des recettes."
+    }
+  ],
+  "sites_candidats": [
+    {
+      "candidat": "Nathalie Arthaud",
+      "parti": "Lutte Ouvrière (LO)",
+      "url": "https://www.lutte-ouvriere.org/",
+      "feed": null
+    },
+    {
+      "candidat": "Philippe Poutou",
+      "parti": "Nouveau Parti Anticapitaliste (NPA)",
+      "url": "https://npa-antiraciste.org/",
+      "feed": null
+    },
+    {
+      "candidat": "Jean-Luc Mélenchon",
+      "parti": "La France Insoumise (LFI)",
+      "url": "https://lafranceinsoumise.fr/",
+      "feed": "https://lafranceinsoumise.fr/feed/"
+    },
+    {
+      "candidat": "François Ruffin",
+      "parti": "Picardie Debout ! / Debout !",
+      "url": "https://francoisruffin.fr/",
+      "feed": null
+    },
+    {
+      "candidat": "Fabien Roussel",
+      "parti": "Parti Communiste Français (PCF)",
+      "url": "https://www.pcf.fr/",
+      "feed": null
+    },
+    {
+      "candidat": "Marine Tondelier",
+      "parti": "Les Écologistes (EELV)",
+      "url": "https://lesecologistes.fr/",
+      "feed": null
+    },
+    {
+      "candidat": "Raphaël Glucksmann",
+      "parti": "Place Publique",
+      "url": "https://place-publique.eu/",
+      "feed": null
+    },
+    {
+      "candidat": "François Bayrou",
+      "parti": "Mouvement Démocrate (MoDem)",
+      "url": "https://www.mouvementdemocrate.fr/",
+      "feed": null
+    },
+    {
+      "candidat": "Édouard Philippe",
+      "parti": "Horizons",
+      "url": "https://horizonsleparti.fr/",
+      "feed": null
+    },
+    {
+      "candidat": "David Lisnard",
+      "parti": "Nouvelle Énergie",
+      "url": "https://www.nouvelle-energie.fr/",
+      "feed": null
+    },
+    {
+      "candidat": "Laurent Wauquiez",
+      "parti": "La Droite Républicaine (LR)",
+      "url": "https://republicains.fr/",
+      "feed": null
+    },
+    {
+      "candidat": "Jean Lassalle",
+      "parti": "Résistons !",
+      "url": "https://resistons-france.fr/",
+      "feed": null
+    },
+    {
+      "candidat": "Nicolas Dupont-Aignan",
+      "parti": "Debout la France (DLF)",
+      "url": "https://www.debout-la-france.fr/",
+      "feed": null
+    },
+    {
+      "candidat": "François Asselineau",
+      "parti": "Union Populaire Républicaine (UPR)",
+      "url": "https://www.upr.fr/",
+      "feed": null
+    },
+    {
+      "candidat": "Marine Le Pen",
+      "parti": "Rassemblement National (RN)",
+      "url": "https://rassemblementnational.fr/",
+      "feed": null
+    },
+    {
+      "candidat": "Éric Zemmour",
+      "parti": "Reconquête !",
+      "url": "https://www.parti-reconquete.fr/",
+      "feed": null
+    }
+  ],
+  "flux_presse": [
+    {
+      "source": "Le Monde (Élection Présidentielle 2027)",
+      "url": "https://www.lemonde.fr/election-presidentielle-2027/rss_full.xml",
+      "type": "rss"
+    },
+    {
+      "source": "France Info (Politique)",
+      "url": "https://www.francetvinfo.fr/politique.rss",
+      "type": "rss"
+    },
+    {
+      "source": "Le Figaro (Politique)",
+      "url": "https://www.lefigaro.fr/rss/figaro_politique.xml",
+      "type": "rss"
+    },
+    {
+      "source": "Libération (Politique)",
+      "url": "https://www.liberation.fr/arc/outboundfeeds/rss-all/category/politique/",
+      "type": "rss"
+    }
+  ]
+}
