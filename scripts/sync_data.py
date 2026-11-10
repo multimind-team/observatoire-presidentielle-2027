@@ -250,11 +250,19 @@ def sync_polls():
         content = content[:s_sond] + f"const pollsData = {lines_str};" + content[e_sond:]
 
     # Mise à jour date métadonnées dans le badge
+    nb_polls = len(polls_list)
     content = re.sub(
         r'<div class="badge-update">.*?</div>',
         f'<div class="badge-update">🟢 Dernière consolidation statistique : {last_update_str} (Veille Hebdo Active)</div>',
         content
     )
+    content = re.sub(
+        r'<button class="filter-btn active"[^>]*onclick="setChartFilter\(\'all\'\)">.*?</button>',
+        f'<button class="filter-btn active" id="btnFilterPollsAll" onclick="setChartFilter(\'all\')">🎯 Tous les <span id="countPollsAll">{nb_polls}</span> Candidats Déclarés</button>',
+        content
+    )
+    content = content.replace("16 Candidats Déclarés", f"{nb_polls} Candidats Déclarés")
+    content = content.replace("16 candidats déclarés", f"{nb_polls} candidats déclarés")
 
     # Mise à jour du tooltip du graphique pour inclure la tendance
     old_tooltip = "return `${item.name} (${item.party}) : Médiane ${item.score}% [${item.min}% - ${item.max}%]`;"
