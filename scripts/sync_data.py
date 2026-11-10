@@ -87,11 +87,22 @@ def sync_candidates_and_themes():
                 content = content[:s_tm] + f"const thematicMatrices = {themes_json_str}" + content[end_pos:]
 
         # 3. Mise à jour du badge date dans le hero (mobile friendly)
+        nb_c = len(cands_data)
         content = re.sub(
             r'🟢 Plateforme actualisée\s*:\s*[^•<]+•\s*Périmètre exclusif des (\d+) candidats déclarés',
-            f'🟢 Plateforme actualisée : {last_update_str} • Périmètre exclusif des {len(cands_data)} candidats déclarés',
+            f'🟢 Plateforme actualisée : {last_update_str} • Périmètre exclusif des {nb_c} candidats déclarés',
             content
         )
+        content = re.sub(
+            r'<div class="num">\d+</div>\s*<div class="lbl">Candidats Déclarés en Lice</div>',
+            f'<div class="num">{nb_c}</div>\n                    <div class="lbl">Candidats Déclarés en Lice</div>',
+            content
+        )
+        content = re.sub(r'Ordre officiel Hémicycle \(\d+\)', f'Ordre officiel Hémicycle ({nb_c})', content)
+        content = re.sub(r'Les <strong>\d+ candidats déclarés</strong>', f'Les <strong>{nb_c} candidats déclarés</strong>', content)
+        content = re.sub(r'👥 Les \d+ Candidats', f'👥 Les {nb_c} Candidats', content)
+        content = re.sub(r'Affichage : \d+ candidats déclarés en lice \(par défaut\)', f'Affichage : {nb_c} candidats déclarés en lice (par défaut)', content)
+        content = re.sub(r'statusLabel = "\d+ candidats déclarés en lice";', f'statusLabel = "{nb_c} candidats déclarés en lice";', content)
 
         # 4. Injection du bloc Accordéon Veille en direct (Mobile First) si non présent
         if 'id="liveVeilleBox"' not in content:

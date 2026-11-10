@@ -168,6 +168,27 @@
     "status_candidature": "Candidat en campagne"
   },
   {
+    "name": "Teddy Riner",
+    "parti": "La France qu'on veut (LFQV)",
+    "famille": "Société civile & Rassemblement républicain",
+    "orientation": "Républicanisme civique & Transcendance",
+    "color": "#0ea5e9",
+    "dep_an5": 1490.0,
+    "def_an5": -72.0,
+    "def_pct": -2.2,
+    "crash_score": "B+",
+    "parr_status": "orange",
+    "parr_label": "🟠 380 parrainages (en voie)",
+    "url_dir": "./candidats/Teddy Riner/index.html",
+    "url_html": "./candidats/Teddy Riner/Visualisation_Programme_et_Comparatif_Budget_Teddy_Riner.html",
+    "url_xlsx": "./candidats/Teddy Riner/Chiffrage_Programme_Teddy_Riner_2027.xlsx",
+    "folder_name": "Teddy Riner",
+    "real_xlsx": "Chiffrage_Programme_Teddy_Riner_2027.xlsx",
+    "real_html": "Visualisation_Programme_et_Comparatif_Budget_Teddy_Riner.html",
+    "is_primary": true,
+    "status_candidature": "Candidat en campagne"
+  },
+  {
     "name": "Édouard Philippe",
     "parti": "Horizons",
     "famille": "Centre-droit / Bloc central",

@@ -18,7 +18,9 @@ Ces candidats s'appuient sur un appareil partisan puissant, des centaines de mai
 
 ---
 
-## 🟠 2. EN BONNE VOIE (300 À 499 PARRAINAGES) - 5 CANDIDATS
+## 🟠 2. EN BONNE VOIE (300 À 499 PARRAINAGES)
+- **Teddy Riner** (La France qu'on veut) : 380 parrainages (Élan très fort des maires ruraux, d'Outre-Mer et du milieu sportif associatif)
+ (300 À 499 PARRAINAGES) - 5 CANDIDATS
 Candidats solides mais nécessitant une campagne active de collecte sur le terrain :
 
 1. **Marine Le Pen** (Rassemblement National) : En bonne voie (Progression spectaculaire des élus locaux RN, mais réserve traditionnelle de certains maires indépendants).

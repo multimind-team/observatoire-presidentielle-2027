@@ -6,9 +6,10 @@
     "institut_reference": "Agrégation consolidée des intentions de vote (IFOP, Elabe, OpinionWay, Ipsos)",
     "echantillon_moyen": 1500,
     "marge_erreur_statistique": "± 1,5 à 2,5 points (IC 95%)",
-"derniere_veille_automatique": "2026-11-10 00:35:08",
+    "derniere_veille_automatique": "2026-11-10 00:35:08",
     "statut_veille": "Veille automatisée multi-sources (Lundi 18h) : Presse, Instituts, Partis, Think Tanks",
     "dernieres_alertes_detectees": [
+      "[Candidats & Programmes] Teddy Riner officialise sa candidature à la présidentielle 2027 avec son mouvement 'La France qu'on veut' (Le Parisien / Public Sénat)",
       "[Sondages] Présidentielle 2027 : Laurent Wauquiez appelle la droite à désigner un « candidat unique avant Noël » (Le Monde)",
       "[Candidats & Programmes] Edouard Philippe tente le pari risqué du virage à droite pour sa campagne (France Info)",
       "[Candidats & Programmes] Fabien Roussel ira « jusqu’au bout », malgré le ralliement de députés communistes à Mélenchon (Le Figaro)",
@@ -145,6 +146,31 @@
         {
           "date": "2026-11-08",
           "score": 9.5
+        }
+      ]
+    },
+    {
+      "name": "Teddy Riner",
+      "score": 8.5,
+      "min": 6.5,
+      "max": 11.0,
+      "real": true,
+      "party": "LFQV",
+      "color": "#0ea5e9",
+      "evolution": "+1.5",
+      "tendance": "up",
+      "historique": [
+        {
+          "date": "2026-10-15",
+          "score": 5.0
+        },
+        {
+          "date": "2026-11-01",
+          "score": 7.0
+        },
+        {
+          "date": "2026-11-10",
+          "score": 8.5
         }
       ]
     },
