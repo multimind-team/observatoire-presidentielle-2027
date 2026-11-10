@@ -6,17 +6,14 @@
     "institut_reference": "Agrégation consolidée des intentions de vote (IFOP, Elabe, OpinionWay, Ipsos)",
     "echantillon_moyen": 1500,
     "marge_erreur_statistique": "± 1,5 à 2,5 points (IC 95%)",
-    "derniere_veille_automatique": "2026-11-08 20:22:04",
+"derniere_veille_automatique": "2026-11-10 00:35:08",
     "statut_veille": "Veille automatisée multi-sources (Lundi 18h) : Presse, Instituts, Partis, Think Tanks",
     "dernieres_alertes_detectees": [
-      "[Sondages] Présidentielle 2027 : Laurent Wauquiez appelle la droite à désigner un « candidat unique avant Noël » (Le Monde (Élection Présidentielle 2027))",
-      "[Budget & Chiffrage] Présidentielle 2027 : en cas de victoire, LFI instaurera un « état d’urgence sociale », pour appliquer par décrets certaines mesures comme la hausse du smic ou la retraite à 62 ans (Le Monde (Élection Présidentielle 2027))",
-      "[Candidats & Programmes] Présidentielle 2027 : Gabriel Attal répond à Edouard Philippe et continue de défendre une primaire de la droite et du centre (Le Monde (Élection Présidentielle 2027))",
-      "[Candidats & Programmes] Jean-Luc Mélenchon, en meeting au Bourget pour l’élection présidentielle 2027, mobilise sa base tout en s’attelant à élargir son électorat (Le Monde (Élection Présidentielle 2027))",
-      "[Candidats & Programmes] Présidentielle 2027 : « Je n’ai qu’une chose raisonnable à vous proposer : il faut tout changer », lance Jean-Luc Mélenchon lors de son meeting au Bourget (Le Monde (Élection Présidentielle 2027))",
-      "[Candidats & Programmes] Marine Le Pen et Edouard Philippe attaquent le programme de LFI, que Jean-Luc Mélenchon doit présenter samedi lors d’un meeting au Bourget (Le Monde (Élection Présidentielle 2027))",
-      "[Candidats & Programmes] Raphaël Glucksmann met en ordre de bataille la famille socialiste pour la campagne de la présidentielle 2027 (Le Monde (Élection Présidentielle 2027))",
-      "[Candidats & Programmes] Présidentielle 2027 : l’hypothèse d’une candidature de Christine Lagarde questionne à droite et au sein du bloc central (Le Monde (Élection Présidentielle 2027))"
+      "[Sondages] Présidentielle 2027 : Laurent Wauquiez appelle la droite à désigner un « candidat unique avant Noël » (Le Monde)",
+      "[Candidats & Programmes] Edouard Philippe tente le pari risqué du virage à droite pour sa campagne (France Info)",
+      "[Candidats & Programmes] Fabien Roussel ira « jusqu’au bout », malgré le ralliement de députés communistes à Mélenchon (Le Figaro)",
+      "[Budget & Chiffrage] En cas de victoire, LFI instaurera un « état d’urgence sociale » pour appliquer hausse du SMIC et retraite à 62 ans (Le Monde)",
+      "[Candidats & Programmes] Gabriel Attal répond à Edouard Philippe et défend une primaire de la droite et du centre (Le Figaro)"
     ],
     "sources_surveillees": {
       "nb_instituts_sondages": 8,
