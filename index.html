@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portail Officiel : Observatoire des Programmes & Budgets Présidentielle 2027 (16 Candidats)</title>
+    <title>Portail Officiel : Observatoire des Programmes & Budgets Présidentielle 2027 (21 Candidats)</title>
     <meta name="theme-color" content="#0f172a">
     <link rel="manifest" href="./manifest.json">
-    <meta name="description" content="Plateforme indépendante d'évaluation encyclopédique, de chiffrage macroéconomique consolidé (APU 1 514 Mds €) et de simulation citoyenne pour les 16 candidats déclarés à la présidentielle 2027.">
-    <meta property="og:title" content="Observatoire Présidentielle 2027 — Programmes & Budgets des 16 Candidats Déclarés">
-    <meta property="og:description" content="Comparez ligne à ligne les programmes, chiffrages budgétaires, simulateurs de pouvoir d'achat et crash-tests souverains des 16 candidats déclarés.">
+    <meta name="description" content="Plateforme indépendante d'évaluation encyclopédique, de chiffrage macroéconomique consolidé (APU 1 514 Mds €) et de simulation citoyenne pour les 21 candidats déclarés à la présidentielle 2027.">
+    <meta property="og:title" content="Observatoire Présidentielle 2027 — Programmes & Budgets des 21 Candidats Déclarés">
+    <meta property="og:description" content="Comparez ligne à ligne les programmes, chiffrages budgétaires, simulateurs de pouvoir d'achat et crash-tests souverains des 21 candidats déclarés.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Cpath d='M12 14h13v36H12z' fill='%232563eb'/%3E%3Cpath d='M25 14h14v36H25z' fill='%23f8fafc'/%3E%3Cpath d='M39 14h13v36H39z' fill='%23ef4444'/%3E%3C/svg%3E">
@@ -577,7 +577,7 @@
     <div class="navbar">
         <div class="nav-brand">🏛️ Observatoire Présidentielle 2027</div>
         <div class="nav-links">
-            <a href="#candidats" class="nav-link active">👥 Les 21 Candidats</a>
+            <a href="#candidats" class="nav-link active">👥 Les <span id="titleCandCount">21</span> Candidats</a>
             <a href="#outils" class="nav-link">🛠️ Outils & Simulateurs</a>
             <a href="./comparatifs%20candidats/Boussole_Electorale_Test_Affinite.html" class="nav-link">🧭 Boussole (Quiz)</a>
             <a href="./comparatifs%20candidats/Simulateur_Pouvoir_Achat_Citoyen.html" class="nav-link">💶 Mon Pouvoir d'Achat</a>
@@ -604,7 +604,7 @@
             <p>La plateforme indépendante d'évaluation encyclopédique, de chiffrage macroéconomique consolidé (APU) et de simulation citoyenne pour l'élection présidentielle française de 2027.</p>
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <div class="num">21</div>
+                    <div class="num" id="heroCandCount">21</div>
                     <div class="lbl">Candidats Déclarés en Lice</div>
                 </div>
                 <div class="hero-stat">
@@ -654,6 +654,8 @@
         </div>
         </div>
         </div>
+        </div>
+        </div>
         <script>
             function toggleLiveVeille() {
                 const list = document.getElementById('liveVeilleList');
@@ -665,17 +667,17 @@
             }
         </script>
 
-        <h2 class="section-title" id="candidats">👥 Les Candidats à la Loupe (Dossiers Complets)</h2>
+        <h2 class="section-title" id="candidats">👥 Les <span id="titleCandCount">21</span> Candidats à la Loupe (Dossiers Complets)</h2>
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:18px;">
             <p style="font-size:14px; color:#cbd5e1; margin:0;">
                 Les <strong>21 candidats déclarés</strong> présentés dans l'ordre de <strong>l'Hémicycle parlementaire (de l'extrême gauche à l'extrême droite)</strong>.
             </p>
             <div style="font-size:12px; color:#94a3b8; background:rgba(30,41,59,0.7); padding:5px 12px; border-radius:20px; border:1px solid #334155;">
-                🏛️ Ordre officiel Hémicycle (21)
+                🏛️ Ordre officiel Hémicycle (<span id="hemicycleCandCount">21</span>)
             </div>
         </div>
 
-        <!-- 1. GRILLE DES 16 CANDIDATS (EN PREMIER) -->
+        <!-- 1. GRILLE DES CANDIDATS DÉCLARÉS (EN PREMIER) -->
         <div class="cands-grid" id="candsGrid">
             <!-- Injected via JS -->
         </div>
@@ -706,7 +708,7 @@
                     <span style="font-size: 10px; color: #64748b; font-weight: normal;">👉 Défiler horizontalement</span>
                 </div>
                 <div class="filters-bar" style="background: transparent; border: none; padding: 2px 0; margin-bottom: 0;">
-                    <button class="filter-btn active" id="btnFilterAll" onclick="filterCands('primary')">🎯 Tous les 21 Candidats Déclarés</button>
+                    <button class="filter-btn active" id="btnFilterAll" onclick="filterCands('all')">🎯 Tous les 21 Candidats Déclarés</button>
                     <button class="filter-btn" id="btnFilterGreen" onclick="filterCands('green')">🟢 500+ parrainages validés (9)</button>
                     <button class="filter-btn" id="btnFilterOrange" onclick="filterCands('orange')">🟠 300-499 en bonne voie (7)</button>
                     <button class="filter-btn" id="btnFilterRed" onclick="filterCands('red')">🔴 &lt;300 en difficulté (5)</button>
@@ -745,7 +747,7 @@
         <div id="themeMatrixBox" class="theme-matrix-box">
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
                 <div>
-                    <span style="font-size:11px; font-weight:800; color:#60a5fa; text-transform:uppercase;">Comparatif Transversal Instantané (16 Candidats Déclarés)</span>
+                    <span style="font-size:11px; font-weight:800; color:#60a5fa; text-transform:uppercase;">Comparatif Transversal Instantané (21 Candidats Déclarés)</span>
                     <h3 id="themeMatrixTitle" style="font-size:18px; font-weight:800; color:#fff;"></h3>
                 </div>
                 <button type="button" onclick="closeThemeMatrix()" style="background:#1e293b; border:1px solid #475569; color:#cbd5e1; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer;">✕ Fermer le tableau thématique</button>
@@ -802,7 +804,7 @@
                 <div>
                     <div class="tool-icon">📊</div>
                     <div class="tool-title">Grand Atlas Graphique (10 Thèmes)</div>
-                    <div class="tool-desc">Navigation interactive par onglets comparant les 16 candidats en lice sur 10 graphiques : retraites, SMIC, taux d'IR, entreprises, nucléaire, immigration, prisons, fonction publique et boussole 2D.</div>
+                    <div class="tool-desc">Navigation interactive par onglets comparant les 21 candidats en lice sur 10 graphiques : retraites, SMIC, taux d'IR, entreprises, nucléaire, immigration, prisons, fonction publique et boussole 2D.</div>
                 </div>
                 <a href="./comparatifs%20candidats/Visualisation_Comparatif_Tous_Candidats_2027.html" class="btn-launch">Explorer les 10 Graphiques →</a>
             </div>
@@ -883,7 +885,7 @@
         <!-- 3. CENTRE OPEN DATA EXCEL (A LA FIN) -->
         <div id="opendata" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 14px; padding: 22px 26px; margin: 24px 0 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
             <div>
-                <div style="font-size: 14px; font-weight: 800; color: #34d399; text-transform: uppercase; letter-spacing: 0.5px;">📥 Open Data Citoyen : Bases Excel Maîtres Consolidées (16 Candidats Déclarés)</div>
+                <div style="font-size: 14px; font-weight: 800; color: #34d399; text-transform: uppercase; letter-spacing: 0.5px;">📥 Open Data Citoyen : Bases Excel Maîtres Consolidées (21 Candidats Déclarés)</div>
                 <div style="font-size: 13px; color: #cbd5e1; margin-top: 4px;">Téléchargez librement les 4 classeurs analytiques transversaux avec formules natives et graphiques Excel :</div>
             </div>
             <div style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -895,159 +897,8 @@
         </div>
     </div>
 
-        <!-- Matrice de Comparaison Thématique -->
-        <!-- Tableau comparatif instantané par thème -->
-        <div id="themeMatrixBox" class="theme-matrix-box">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
-                <div>
-                    <span style="font-size:11px; font-weight:800; color:#60a5fa; text-transform:uppercase;">Comparatif Transversal Instantané (16 Candidats Déclarés)</span>
-                    <h3 id="themeMatrixTitle" style="font-size:18px; font-weight:800; color:#fff;"></h3>
-                </div>
-                <button type="button" onclick="closeThemeMatrix()" style="background:#1e293b; border:1px solid #475569; color:#cbd5e1; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer;">✕ Fermer le tableau thématique</button>
-            </div>
-            <div style="overflow-x:auto;">
-                <table class="theme-matrix-table">
-                    <thead>
-                        <tr>
-                            <th>Candidat</th>
-                            <th>Parti / Mouvement</th>
-                            <th>Famille Politique</th>
-                            <th>Mesure Phare & Position Officielle</th>
-                            <th>Dossier</th>
-                        </tr>
-                    </thead>
-                    <tbody id="themeMatrixBody"></tbody>
-                </table>
-            </div>
-        </div>
-<h2 class="section-title" id="outils" style="margin-top: 52px;">🚀 Les Applications & Simulateurs Interactifs Déployés</h2>
-        <div class="tools-grid">
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">📖</div>
-                    <div class="tool-title">Grand Livre Blanc & 14 Synthèses Thématiques</div>
-                    <div class="tool-desc">Liseuse intégrale du Rapport Exécutif consolidé, du Référentiel Budget de l'État et des 14 monographies comparatives (Retraites, Salaires, Fiscalité, Énergie, Santé, Éducation, Défense, Logement...).</div>
-                </div>
-                <a href="./comparatifs%20candidats/Grand_Livre_Blanc_et_Syntheses_Thematiques.html" class="btn-launch">Lire le Grand Livre Blanc →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">🧭</div>
-                    <div class="tool-title">Boussole Électorale & Test d'Affinité</div>
-                    <div class="tool-desc">12 questions clivantes sur les retraites, les salaires, les impôts, l'énergie et la dette. Révèle instantanément votre Top 3 des candidats les plus proches et votre classement complet sur 100%.</div>
-                </div>
-                <a href="./comparatifs%20candidats/Boussole_Electorale_Test_Affinite.html" class="btn-launch">Lancer le Test d'Affinité →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">💶</div>
-                    <div class="tool-title">Simulateur Mon Pouvoir d'Achat</div>
-                    <div class="tool-desc">Entrez votre salaire brut, vos enfants, vos kilomètres en voiture et votre patrimoine pour calculer en direct votre gain ou perte nette en euros (€/mois et €/an) sous chaque président.</div>
-                </div>
-                <a href="./comparatifs%20candidats/Simulateur_Pouvoir_Achat_Citoyen.html" class="btn-launch">Calculer Mon Portefeuille →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">📊</div>
-                    <div class="tool-title">Grand Atlas Graphique (10 Thèmes)</div>
-                    <div class="tool-desc">Navigation interactive par onglets comparant les 16 candidats en lice sur 10 graphiques : retraites, SMIC, taux d'IR, entreprises, nucléaire, immigration, prisons, fonction publique et boussole 2D.</div>
-                </div>
-                <a href="./comparatifs%20candidats/Visualisation_Comparatif_Tous_Candidats_2027.html" class="btn-launch">Explorer les 10 Graphiques →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">⚔️</div>
-                    <div class="tool-title">Comparateur Face-à-Face (Duels)</div>
-                    <div class="tool-desc">Sélectionnez 2 ou 3 candidats pour confronter en direct leurs radars doctrinaux à 6 axes, leurs trajectoires de déficit sur 5 ans, la ventilation sectorielle de leurs dépenses et leurs fiches thématiques.</div>
-                </div>
-                <a href="./comparatifs%20candidats/Comparateur_Interactif_Face_a_Face.html" class="btn-launch">Confronter les Candidats →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">🏛️</div>
-                    <div class="tool-title">Hémicycle & Majorité Parlementaire</div>
-                    <div class="tool-desc">Simulation du 3e tour législatif : projection des 577 sièges de l'Assemblée nationale selon le président élu, faisabilité du vote budgétaire et évaluation du risque de censure ou dissolution.</div>
-                </div>
-                <a href="./comparatifs%20candidats/Simulateur_Gouvernabilite_Assemblee_2027.html" class="btn-launch">Simuler l'Assemblée →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">⚠️</div>
-                    <div class="tool-title">Crash-Test & Stress-Test Taux</div>
-                    <div class="tool-desc">Notation souveraine de robustesse (A+ à D-), détection des angles morts juridiques et simulateur d'impact sur la charge de la dette en cas de tension sur les marchés obligataires (+50 à +300 bps).</div>
-                </div>
-                <a href="./comparatifs%20candidats/Crash_Test_Budgetaire_et_Scoring_Risque.html" class="btn-launch">Tester le Risque de Dette →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">📈</div>
-                    <div class="tool-title">Observatoire Permanent des Sondages</div>
-                    <div class="tool-desc">Synthèse consolidée des intentions de vote 1er et 2nd tour (Ifop, Ipsos, Elabe, OpinionWay). Fourchettes d'incertitude et calculateur scientifique de marge d'erreur à 95%.</div>
-                </div>
-                <a href="./comparatifs%20candidats/Observatoire_Sondages_2027.html" class="btn-launch">Consulter les Sondages 2027 →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">⚖️</div>
-                    <div class="tool-title">Faisabilité Juridique & Constitutionnelle</div>
-                    <div class="tool-desc">Matrice de passage à l'acte : Décret, Loi ordinaire, Loi organique, Révision constitutionnelle (art. 89 vs 11) et Droit de l'Union européenne. Analyse des risques de censure.</div>
-                </div>
-                <a href="./comparatifs%20candidats/Faisabilite_Juridique_et_Constitutionnelle.html" class="btn-launch">Explorer la Matrice Juridique →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">🇫🇷</div>
-                    <div class="tool-title">Référentiel : Budget de l'État Français (1 514 Mds €)</div>
-                    <div class="tool-desc">Tableau de bord interactif du budget actuel de la France (État, Sécurité sociale, Collectivités locales) : d'où vient l'argent et où il va sur 1 000 € de dépense publique.</div>
-                </div>
-                <a href="./Visualisation_Graphiques_Budget_Etat.html" class="btn-launch">Explorer le Budget de l'État →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">📚</div>
-                    <div class="tool-title">Méthodologie, Chiffrage & Sources</div>
-                    <div class="tool-desc">Référentiel des Administrations Publiques (APU 1 514 Mds €) vs Budget de l'État (503 Mds €). Formule du Crash-Test sur 100 points, modèle Excel 5 onglets et hiérarchie documentaire.</div>
-                </div>
-                <a href="./comparatifs%20candidats/METHODOLOGIE_ET_SOURCES.html" class="btn-launch">Lire le Manuel Méthodologique →</a>
-            </div>
-
-            <div class="tool-card">
-                <div>
-                    <div class="tool-icon">ℹ️</div>
-                    <div class="tool-title">À Propos, Éthique & Transparence</div>
-                    <div class="tool-desc">Charte d'indépendance stricte, absence totale de traçage et respect absolu de la vie privée (zéro cookies), données citoyennes ouvertes et protocole de signalement d'erreur.</div>
-                </div>
-                <a href="./comparatifs%20candidats/A_PROPOS_ET_TRANSPARENCE.html" class="btn-launch">Consulter la Charte d'Éthique →</a>
-            </div>
-        </div>
-
-        <!-- 3. CENTRE OPEN DATA EXCEL (A LA FIN) -->
-        <div id="opendata" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 14px; padding: 22px 26px; margin: 24px 0 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-            <div>
-                <div style="font-size: 14px; font-weight: 800; color: #34d399; text-transform: uppercase; letter-spacing: 0.5px;">📥 Open Data Citoyen : Bases Excel Maîtres Consolidées (16 Candidats Déclarés)</div>
-                <div style="font-size: 13px; color: #cbd5e1; margin-top: 4px;">Téléchargez librement les 4 classeurs analytiques transversaux avec formules natives et graphiques Excel :</div>
-            </div>
-            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <a href="./comparatifs%20candidats/Comparatif_Budgetaire_Tous_Candidats_2027.xlsx" download style="background: #059669; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">📊 Comparatif Budgétaire Global (.xlsx)</a>
-                <a href="./comparatifs%20candidats/Matrices_Thematiques_Transversales_2027.xlsx" download style="background: #059669; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">📋 12 Matrices Thématiques (.xlsx)</a>
-                <a href="./comparatifs%20candidats/Crash_Test_Budgetaire_et_Scoring_Risque.xlsx" download style="background: #059669; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">⚠️ Modèle Crash-Test & Taux (.xlsx)</a>
-                <a href="./Budget_Detaille_Etat_Francais.xlsx" download style="background: #0f766e; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 9px 14px; border-radius: 8px;">🏛️ Budget Détaillé de l'État (.xlsx)</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer">
-        Grand Observatoire Présidentiel 2027 — Plateforme Budgétaire & Stratégique (16 Candidats Déclarés)
+        <div class="footer">
+        Grand Observatoire Présidentiel 2027 — Plateforme Budgétaire & Stratégique (21 Candidats Déclarés)
     </div>
 
     <script>
@@ -1644,11 +1495,11 @@
             let filtered = cands;
             let statusLabel = "";
 
-            if (currentStatusFilter === 'primary') {
+            if (currentStatusFilter === 'primary' || currentStatusFilter === 'all') {
                 filtered = cands;
-                statusLabel = "21 candidats déclarés en lice";
+                statusLabel = `${cands.length} candidats déclarés en lice`;
             } else {
-                filtered = cands.filter(c => c.is_primary && c.parr_status === currentStatusFilter);
+                filtered = cands.filter(c => c.parr_status === currentStatusFilter);
                 if (currentStatusFilter === 'green') statusLabel = "candidats avec 500+ parrainages validés";
                 else if (currentStatusFilter === 'orange') statusLabel = "candidats avec 300-499 parrainages";
                 else if (currentStatusFilter === 'red') statusLabel = "candidats avec <300 parrainages";
@@ -1679,7 +1530,7 @@
                 if (query.length > 0) {
                     countElem.innerHTML = `Affichage : <strong>${filtered.length}</strong> profil(s) correspondant à « <em>${query}</em> » (${statusLabel}) ${scrollLink}`;
                 } else {
-                    countElem.innerHTML = `Affichage : <strong>${filtered.length}</strong> profil(s) (${statusLabel}) ${filtered.length < 16 ? scrollLink : ''}`;
+                    countElem.innerHTML = `Affichage : <strong>${filtered.length}</strong> profil(s) (${statusLabel}) ${filtered.length < cands.length ? scrollLink : ''}`;
                 }
             }
 
@@ -1704,31 +1555,28 @@
             const orangeCount = cands.filter(c => c.parr_status === 'orange').length;
             const redCount = cands.filter(c => c.parr_status === 'red').length;
 
-            const lblFilter = document.getElementById('labelFilterParrainages');
-            if (lblFilter) lblFilter.innerHTML = `🎯 Filtrer par Parrainages (${total} Candidats Déclarés) :`;
+            document.title = `Portail Officiel : Observatoire des Programmes & Budgets Présidentielle 2027 (${total} Candidats)`;
 
-            const btnAll = document.getElementById('btnFilterAll');
-            if (btnAll) btnAll.innerHTML = `🎯 Tous les ${total} Candidats Déclarés`;
+            const safeSet = (id, html) => {
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = html;
+            };
 
-            const btnGreen = document.getElementById('btnFilterGreen');
-            if (btnGreen) btnGreen.innerHTML = `🟢 500+ parrainages validés (${greenCount})`;
+            safeSet('heroCandCount', total);
+            safeSet('hemicycleCandCount', total);
+            safeSet('titleCandCount', total);
 
-            const btnOrange = document.getElementById('btnFilterOrange');
-            if (btnOrange) btnOrange.innerHTML = `🟠 300-499 en bonne voie (${orangeCount})`;
+            safeSet('labelFilterParrainages', `🎯 Filtrer par Parrainages (${total} Candidats Déclarés) :`);
+            safeSet('btnFilterAll', `🎯 Tous les ${total} Candidats Déclarés`);
+            safeSet('btnFilterGreen', `🟢 500+ parrainages validés (${greenCount})`);
+            safeSet('btnFilterOrange', `🟠 300-499 en bonne voie (${orangeCount})`);
+            safeSet('btnFilterRed', `🔴 &lt;300 en difficulté (${redCount})`);
+            safeSet('labelCompareTheme', `⚡ Comparer instantanément les ${total} candidats sur un thème clé :`);
 
-            const btnRed = document.getElementById('btnFilterRed');
-            if (btnRed) btnRed.innerHTML = `🔴 &lt;300 en difficulté (${redCount})`;
-
-            const lblComp = document.getElementById('labelCompareTheme');
-            if (lblComp) lblComp.innerHTML = `⚡ Comparer instantanément les ${total} candidats sur un thème clé :`;
-
-            const heroNum = document.querySelector('.hero-stat .num');
-            if (heroNum) heroNum.textContent = total;
-
-            const hemiTag = document.querySelector('.hero + h2 + div div');
-            if (hemiTag && hemiTag.textContent.includes('Ordre officiel Hémicycle')) {
-                hemiTag.textContent = `🏛️ Ordre officiel Hémicycle (${total})`;
-            }
+            document.querySelectorAll('.count-total-dynamic').forEach(el => el.textContent = total);
+            document.querySelectorAll('.count-green-dynamic').forEach(el => el.textContent = greenCount);
+            document.querySelectorAll('.count-orange-dynamic').forEach(el => el.textContent = orangeCount);
+            document.querySelectorAll('.count-red-dynamic').forEach(el => el.textContent = redCount);
         }
     
         window.addEventListener('DOMContentLoaded', () => {

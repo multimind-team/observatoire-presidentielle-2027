@@ -93,28 +93,58 @@ def sync_candidates_and_themes():
         nb_red = sum(1 for c in cands_data if c.get("parr_status") == "red")
 
         content = re.sub(
+            r'<title>Portail Officiel : Observatoire des Programmes & Budgets Présidentielle 2027 \([^)]+\)</title>',
+            f'<title>Portail Officiel : Observatoire des Programmes & Budgets Présidentielle 2027 ({nb_c} Candidats)</title>',
+            content
+        )
+        content = re.sub(
+            r'simulation citoyenne pour les \d+ candidats déclarés à la présidentielle 2027',
+            f'simulation citoyenne pour les {nb_c} candidats déclarés à la présidentielle 2027',
+            content
+        )
+        content = re.sub(
+            r'Programmes & Budgets des \d+ Candidats Déclarés',
+            f'Programmes & Budgets des {nb_c} Candidats Déclarés',
+            content
+        )
+        content = re.sub(
+            r'crash-tests souverains des \d+ candidats déclarés',
+            f'crash-tests souverains des {nb_c} candidats déclarés',
+            content
+        )
+
+        content = re.sub(
             r'🟢 Plateforme actualisée\s*:\s*[^•<]+•\s*Périmètre exclusif des (\d+) candidats déclarés',
             f'🟢 Plateforme actualisée : {last_update_str} • Périmètre exclusif des {nb_c} candidats déclarés',
             content
         )
         content = re.sub(
-            r'<div class="num">\d+</div>\s*<div class="lbl">Candidats Déclarés en Lice</div>',
-            f'<div class="num">{nb_c}</div>\n                    <div class="lbl">Candidats Déclarés en Lice</div>',
+            r'<div class="num" id="heroCandCount">\d+</div>',
+            f'<div class="num" id="heroCandCount">{nb_c}</div>',
             content
         )
-        content = re.sub(r'Ordre officiel Hémicycle \(\d+\)', f'Ordre officiel Hémicycle ({nb_c})', content)
+        content = re.sub(
+            r'<div class="num">\d+</div>\s*<div class="lbl">Candidats Déclarés en Lice</div>',
+            f'<div class="num" id="heroCandCount">{nb_c}</div>\n                    <div class="lbl">Candidats Déclarés en Lice</div>',
+            content
+        )
+        content = re.sub(r'Ordre officiel Hémicycle \([^)]+\)', f'Ordre officiel Hémicycle (<span id="hemicycleCandCount">{nb_c}</span>)', content)
         content = re.sub(r'Les <strong>\d+ candidats déclarés</strong>', f'Les <strong>{nb_c} candidats déclarés</strong>', content)
-        content = re.sub(r'👥 Les \d+ Candidats', f'👥 Les {nb_c} Candidats', content)
+        content = re.sub(r'👥 Les [^<]*Candidats', f'👥 Les <span id="titleCandCount">{nb_c}</span> Candidats', content)
         content = re.sub(r'Affichage : \d+ candidats déclarés en lice \(par défaut\)', f'Affichage : {nb_c} candidats déclarés en lice (par défaut)', content)
         content = re.sub(r'statusLabel = "\d+ candidats déclarés en lice";', f'statusLabel = "{nb_c} candidats déclarés en lice";', content)
 
-        # Filtres et Comparateur Thématique dynamiques
-        content = re.sub(r'id="labelFilterParrainages">🎯 Filtrer par Parrainages( \(\d+ Candidats Déclarés\))? :', f'id="labelFilterParrainages">🎯 Filtrer par Parrainages ({nb_c} Candidats Déclarés) :', content)
-        content = re.sub(r'id="btnFilterAll"[^>]*>🎯 Tous les( \d+)? Candidats Déclarés</button>', f'id="btnFilterAll" onclick="filterCands(\'primary\')">🎯 Tous les {nb_c} Candidats Déclarés</button>', content)
-        content = re.sub(r'id="btnFilterGreen"[^>]*>🟢 500\+ parrainages validés( \(\d+\))?</button>', f'id="btnFilterGreen" onclick="filterCands(\'green\')">🟢 500+ parrainages validés ({nb_green})</button>', content)
-        content = re.sub(r'id="btnFilterOrange"[^>]*>🟠 300-499 en bonne voie( \(\d+\))?</button>', f'id="btnFilterOrange" onclick="filterCands(\'orange\')">🟠 300-499 en bonne voie ({nb_orange})</button>', content)
-        content = re.sub(r'id="btnFilterRed"[^>]*>🔴 (&lt;|<)300 en difficulté( \(\d+\))?</button>', f'id="btnFilterRed" onclick="filterCands(\'red\')">🔴 &lt;300 en difficulté ({nb_red})</button>', content)
-        content = re.sub(r'id="labelCompareTheme">⚡ Comparer instantanément les( \d+)? candidats sur un thème clé :', f'id="labelCompareTheme">⚡ Comparer instantanément les {nb_c} candidats sur un thème clé :', content)
+        # Filtres et Comparateur Thématique dynamiques (Image utilisateur)
+        content = re.sub(r'id="labelFilterParrainages">🎯 Filtrer par Parrainages[^<]*:</span>', f'id="labelFilterParrainages">🎯 Filtrer par Parrainages ({nb_c} Candidats Déclarés) :</span>', content)
+        content = re.sub(r'id="btnFilterAll"[^>]*>[^<]+</button>', f'id="btnFilterAll" onclick="filterCands(\'all\')">🎯 Tous les {nb_c} Candidats Déclarés</button>', content)
+        content = re.sub(r'id="btnFilterGreen"[^>]*>[^<]+</button>', f'id="btnFilterGreen" onclick="filterCands(\'green\')">🟢 500+ parrainages validés ({nb_green})</button>', content)
+        content = re.sub(r'id="btnFilterOrange"[^>]*>[^<]+</button>', f'id="btnFilterOrange" onclick="filterCands(\'orange\')">🟠 300-499 en bonne voie ({nb_orange})</button>', content)
+        content = re.sub(r'id="btnFilterRed"[^>]*>[^<]+</button>', f'id="btnFilterRed" onclick="filterCands(\'red\')">🔴 &lt;300 en difficulté ({nb_red})</button>', content)
+        content = re.sub(r'id="labelCompareTheme">⚡ Comparer instantanément les[^<]*:</span>', f'id="labelCompareTheme">⚡ Comparer instantanément les {nb_c} candidats sur un thème clé :</span>', content)
+        content = re.sub(r'Comparatif Transversal Instantané \(\d+ Candidats Déclarés\)', f'Comparatif Transversal Instantané ({nb_c} Candidats Déclarés)', content)
+        content = re.sub(r'comparant les \d+ candidats en lice sur 10 graphiques', f'comparant les {nb_c} candidats en lice sur 10 graphiques', content)
+        content = re.sub(r'Bases Excel Maîtres Consolidées \(\d+ Candidats Déclarés\)', f'Bases Excel Maîtres Consolidées ({nb_c} Candidats Déclarés)', content)
+        content = re.sub(r'Plateforme Budgétaire & Stratégique \(\d+ Candidats Déclarés\)', f'Plateforme Budgétaire & Stratégique ({nb_c} Candidats Déclarés)', content)
 
         # 4. Injection du bloc Accordéon Veille en direct (Mobile First) si non présent
         if 'id="liveVeilleBox"' not in content:
