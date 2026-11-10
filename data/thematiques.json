@@ -610,7 +610,11 @@
         "mesure": "Immigration zéro, remigration des clandestins/délinquants, suppression droit du sol"
       }
     ],
-    "Teddy Riner": "Contrôle strict des flux migratoires ajusté aux capacités d'intégration ; exécution intégrale des OQTF pour les délinquants ; contrat d'intégration républicain exigeant."
+    "Teddy Riner": "Contrôle strict des flux migratoires ajusté aux capacités d'intégration ; exécution intégrale des OQTF pour les délinquants ; contrat d'intégration républicain exigeant.",
+    "Gabriel Attal": "Contrôle strict des frontières via le Pacte asile et migration européen ; conditionnement des visas aux laissez-passer consulaires.",
+    "Bruno Retailleau": "Bouclier constitutionnel migratoire par référendum ; suppression de l'AME ; expulsion des déboutés de l'asile sous 72h.",
+    "Bernard Cazeneuve": "Politique d'asile digne et rigoureuse ; intégration républicaine par l'école et le travail ; fermeté sur les reconduites aux frontières.",
+    "Florian Philippot": "Sortie de Schengen et rétablissement du contrôle aux frontières ; arrêt total de l'immigration ; suppression de l'AME."
   },
   "securite": {
     "label": "🛡️ Police, Justice & Prisons",
@@ -713,7 +717,11 @@
         "mesure": "15 000 places de prison, expulsion automatique des étrangers condamnés, peines dures"
       }
     ],
-    "Teddy Riner": "10 000 policiers et gendarmes sur la voie publique ; guerre absolue contre le narcotrafic et saisie des avoirs criminels ; 15 000 places de prison supplémentaires."
+    "Teddy Riner": "10 000 policiers et gendarmes sur la voie publique ; guerre absolue contre le narcotrafic et saisie des avoirs criminels ; 15 000 places de prison supplémentaires.",
+    "Gabriel Attal": "Sanctions rapides pour les mineurs délinquants dès 13 ans ; internats éducatifs renforcés ; 10 000 policiers supplémentaires sur le terrain.",
+    "Bruno Retailleau": "Peines planchers rétablies pour toute agression de policier ; expulsion systématique de tout délinquant étranger ; 30 000 places de prison.",
+    "Bernard Cazeneuve": "Police de proximité républicaine ; moyens accrus pour la police judiciaire et le renseignement territorial ; lutte intraitable contre les trafics.",
+    "Florian Philippot": "Rétablissement complet des frontières nationales par la douane ; fin du laxisme judiciaire et exécution réelle des peines de prison."
   },
   "institution": {
     "label": "🏛️ Institutions, RIC & État",
@@ -918,7 +926,11 @@
         "mesure": "Suppression totale de l'AME, carte Vitale biométrique, défiscalisation complète des médecins retraités reprenant du service dans les campagnes"
       }
     ],
-    "Teddy Riner": "Révolution du Sport-Santé sur ordonnance remboursé pour prévenir les maladies chroniques ; 20 000 soignants et aides à domicile ; conventionnement incitatif dans les déserts médicaux."
+    "Teddy Riner": "Révolution du Sport-Santé sur ordonnance remboursé pour prévenir les maladies chroniques ; 20 000 soignants et aides à domicile ; conventionnement incitatif dans les déserts médicaux.",
+    "Gabriel Attal": "Taxe lapin de 5 € sur les rendez-vous médicaux manqués ; déploiement d'assistants médicaux et maisons de santé pluridisciplinaires.",
+    "Bruno Retailleau": "Obligation d'installation temporaire de 3 ans pour les médecins généralistes dans les déserts médicaux ; recentrage de l'hôpital sur les soins.",
+    "Bernard Cazeneuve": "Plan Marshall pour l'hôpital public : revalorisation des carrières soignantes ; régulation de l'installation des médecins en zones surdotées.",
+    "Florian Philippot": "Réintégration et indemnisation de tous les soignants suspendus ; réouverture des lits d'hôpitaux de proximité ; liberté thérapeutique totale."
   },
   "education": {
     "label": "🎓 Éducation, École & Recherche",
@@ -1021,7 +1033,11 @@
         "mesure": "Suppression du collège unique, retour au certificat d'études, uniforme obligatoire, fin du pédagogisme, enseignement chronologique de l'Histoire de France"
       }
     ],
-    "Teddy Riner": "Une heure de sport obligatoire quotidienne à l'école ; revalorisation des professeurs et restauration stricte de l'autorité ; valorisation des filières manuelles et de l'apprentissage."
+    "Teddy Riner": "Une heure de sport obligatoire quotidienne à l'école ; revalorisation des professeurs et restauration stricte de l'autorité ; valorisation des filières manuelles et de l'apprentissage.",
+    "Gabriel Attal": "Groupes de besoins en français et maths au collège ; respect absolu de l'autorité des professeurs ; 2 heures de sport en plus.",
+    "Bruno Retailleau": "Autorité professorale sanctuarisée ; uniforme obligatoire de l'école au collège ; apprentissage dès 14 ans réhabilité.",
+    "Bernard Cazeneuve": "Revalorisation du métier de professeur ; dédoublement des classes étendu jusqu'au CE2 ; lutte contre la ségrégation scolaire.",
+    "Florian Philippot": "École de l'assimilation républicaine : respect du maître, punition de la désobéissance et transmission de l'histoire héroïque de la France."
   },
   "europe": {
     "label": "🌍 Europe, Défense & OTAN",
@@ -1124,7 +1140,11 @@
         "mesure": "Sortie du commandement intégré de l'OTAN, primauté absolue du droit national sur la CEDH et la CJUE, budget des Armées porté à 3% du PIB (70 Mds €/an)"
       }
     ],
-    "Teddy Riner": "Europe puissance avec 'Buy European Act' réservant la commande publique aux entreprises européennes ; renforcement drastique de Frontex aux frontières extérieures."
+    "Teddy Riner": "Europe puissance avec 'Buy European Act' réservant la commande publique aux entreprises européennes ; renforcement drastique de Frontex aux frontières extérieures.",
+    "Gabriel Attal": "Europe de la défense et souveraineté technologique européenne ; défense du marché unique et réciprocité commerciale.",
+    "Bruno Retailleau": "Europe des nations souveraines ; refus de tout élargissement sans protection commerciale ; frontières extérieures militarisées.",
+    "Bernard Cazeneuve": "Europe sociale et solidaire ; harmonisation fiscale européenne pour lutter contre le dumping ; préférence européenne sur les marchés publics.",
+    "Florian Philippot": "Frexit total (application de l'article 50 du TUE) : sortie de l'UE, de l'Euro, de l'OTAN, de la CEDH et de l'OMS."
   },
   "logement": {
     "label": "🏘️ Logement, Famille & Culture",
@@ -1227,6 +1247,10 @@
         "mesure": "Prime de naissance de 10 000 € en ruralité, priorité nationale sur le logement social, abrogation des normes DPE punitives, défense du patrimoine historique"
       }
     ],
-    "Teddy Riner": "Choc d'offre : 100 000 logements abordables par an pour les jeunes travailleurs et soignants ; plan d'urgence Outre-mer contre la vie chère et continuité territoriale."
+    "Teddy Riner": "Choc d'offre : 100 000 logements abordables par an pour les jeunes travailleurs et soignants ; plan d'urgence Outre-mer contre la vie chère et continuité territoriale.",
+    "Gabriel Attal": "Simplification des permis de construire ; pacte avec les maires bâtisseurs ; transformation de bureaux vacants en logements étudiants.",
+    "Bruno Retailleau": "Abrogation de la loi SRU et des pénalités sur les maires ; libération du foncier communal ; expulsion des squatteurs sous 24h.",
+    "Bernard Cazeneuve": "Relance de la construction de 150 000 HLM par an ; régulation des plateformes de meublés touristiques ; encadrement des loyers élargi.",
+    "Florian Philippot": "Priorité nationale absolue pour l'attribution des logements sociaux HLM ; déblocage des permis de construire ruraux sans ZAN."
   }
 }

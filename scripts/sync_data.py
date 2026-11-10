@@ -88,6 +88,10 @@ def sync_candidates_and_themes():
 
         # 3. Mise à jour du badge date dans le hero (mobile friendly)
         nb_c = len(cands_data)
+        nb_green = sum(1 for c in cands_data if c.get("parr_status") == "green")
+        nb_orange = sum(1 for c in cands_data if c.get("parr_status") == "orange")
+        nb_red = sum(1 for c in cands_data if c.get("parr_status") == "red")
+
         content = re.sub(
             r'🟢 Plateforme actualisée\s*:\s*[^•<]+•\s*Périmètre exclusif des (\d+) candidats déclarés',
             f'🟢 Plateforme actualisée : {last_update_str} • Périmètre exclusif des {nb_c} candidats déclarés',
@@ -103,6 +107,14 @@ def sync_candidates_and_themes():
         content = re.sub(r'👥 Les \d+ Candidats', f'👥 Les {nb_c} Candidats', content)
         content = re.sub(r'Affichage : \d+ candidats déclarés en lice \(par défaut\)', f'Affichage : {nb_c} candidats déclarés en lice (par défaut)', content)
         content = re.sub(r'statusLabel = "\d+ candidats déclarés en lice";', f'statusLabel = "{nb_c} candidats déclarés en lice";', content)
+
+        # Filtres et Comparateur Thématique dynamiques
+        content = re.sub(r'id="labelFilterParrainages">🎯 Filtrer par Parrainages( \(\d+ Candidats Déclarés\))? :', f'id="labelFilterParrainages">🎯 Filtrer par Parrainages ({nb_c} Candidats Déclarés) :', content)
+        content = re.sub(r'id="btnFilterAll"[^>]*>🎯 Tous les( \d+)? Candidats Déclarés</button>', f'id="btnFilterAll" onclick="filterCands(\'primary\')">🎯 Tous les {nb_c} Candidats Déclarés</button>', content)
+        content = re.sub(r'id="btnFilterGreen"[^>]*>🟢 500\+ parrainages validés( \(\d+\))?</button>', f'id="btnFilterGreen" onclick="filterCands(\'green\')">🟢 500+ parrainages validés ({nb_green})</button>', content)
+        content = re.sub(r'id="btnFilterOrange"[^>]*>🟠 300-499 en bonne voie( \(\d+\))?</button>', f'id="btnFilterOrange" onclick="filterCands(\'orange\')">🟠 300-499 en bonne voie ({nb_orange})</button>', content)
+        content = re.sub(r'id="btnFilterRed"[^>]*>🔴 (&lt;|<)300 en difficulté( \(\d+\))?</button>', f'id="btnFilterRed" onclick="filterCands(\'red\')">🔴 &lt;300 en difficulté ({nb_red})</button>', content)
+        content = re.sub(r'id="labelCompareTheme">⚡ Comparer instantanément les( \d+)? candidats sur un thème clé :', f'id="labelCompareTheme">⚡ Comparer instantanément les {nb_c} candidats sur un thème clé :', content)
 
         # 4. Injection du bloc Accordéon Veille en direct (Mobile First) si non présent
         if 'id="liveVeilleBox"' not in content:

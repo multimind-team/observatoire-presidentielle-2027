@@ -1,41 +1,25 @@
-# OBSERVATOIRE DES CANDIDATS À L'ÉLECTION PRÉSIDENTIELLE 2027
+# INDEX DES CANDIDATS AUDITÉS - PRÉSIDENTIELLE 2027 (21 CANDIDATS DÉCLARÉS)
 
-Ce répertoire regroupe les dossiers individuels des candidats à l'élection présidentielle de 2027, structurés selon le filtre de réalité politique (Option B : Resserrage strict des candidatures).
+Ordre officiel selon l'Hémicycle parlementaire (de l'extrême gauche à l'extrême droite) :
 
-> 📊 **Grand Observatoire Comparatif Dédié :** Retrouvez tous les classements, graphiques et visualisations multi-candidats dans le dossier dédié [../comparatifs candidats/](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/) :
-> - 🌐 [Portail Général National 2027](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/index.html)
-> - 📊 [Atlas Comparatif des Candidats](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Visualisation_Comparatif_Tous_Candidats_2027.html)
-> - ⚖️ [Comparateur Interactif Face-à-Face](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Comparateur_Interactif_Face_a_Face.html)
-> - 🏛️ [Simulateur de Majorités & Gouvernabilité Assemblée](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Simulateur_Gouvernabilite_Assemblee_2027.html)
-> - 💶 [Simulateur Pouvoir d'Achat Citoyen](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Simulateur_Pouvoir_Achat_Citoyen.html)
-> - 🧭 [Boussole Électorale & Test d'Affinité](file:///C:/Users/user/Desktop/projets_IA/projets/presidentielle/comparatifs%20candidats/Boussole_Electorale_Test_Affinite.html)
-
----
-
-## 🎯 1. LES 16 CANDIDATS RÉELS EN CAMPAGNE (En lice ou déclarés)
-
-Ces 16 candidats constituent l'échiquier politique réel et opérationnel pour le premier tour de 2027, sans doublons d'appareil ni candidatures de substitution :
-
-| N° | Candidat (Prénom Nom) | Parti / Mouvement | Famille Politique | Statut Parrainages | Lien Dossier |
-| :---: | :--- | :--- | :--- | :---: | :--- |
-| 1 | **Nathalie Arthaud** | Lutte Ouvrière (LO) | Extrême gauche | 🔴 <300 En difficulté | [Dossier](./Nathalie%20Arthaud/index.html) |
-| 2 | **Philippe Poutou** | Nouveau Parti Anticapitaliste (NPA) | Extrême gauche | 🔴 <300 En difficulté | [Dossier](./Philippe%20Poutou/index.html) |
-| 3 | **Jean-Luc Mélenchon** | La France Insoumise (LFI) | Gauche radicale & populaire | 🟢 500+ Assurés | [Dossier](./Jean-Luc%20M%C3%A9lenchon/index.html) |
-| 4 | **Fabien Roussel** | Parti Communiste Français (PCF) | Gauche républicaine & ouvrière | 🟢 500+ Assurés | [Dossier](./Fabien%20Roussel/index.html) |
-| 5 | **François Ruffin** | Picardie Debout ! / Debout ! | Gauche populaire & sociale | 🟠 300-499 En bonne voie | [Dossier](./Fran%C3%A7ois%20Ruffin/index.html) |
-| 6 | **Marine Tondelier** | Les Écologistes (EELV) | Écologie politique | 🟢 500+ Assurés | [Dossier](./Marine%20Tondelier/index.html) |
-| 7 | **Raphaël Glucksmann** | Place Publique / PS | Social-démocratie & Pro-européen | 🟠 300-499 En bonne voie | [Dossier](./Rapha%C3%ABl%20Glucksmann/index.html) |
-| 8 | **Édouard Philippe** | Horizons | Centre-droit / Bloc central (Déclaré) | 🟢 500+ Assurés | [Dossier](./%C3%89douard%20Philippe/index.html) |
-| 9 | **François Bayrou** | MoDem | Centre humaniste & démocrate | 🟢 500+ Assurés | [Dossier](./Fran%C3%A7ois%20Bayrou/index.html) |
-| 10 | **David Lisnard** | Nouvelle Énergie | Droite libérale, régalienne & décentralisatrice | 🟢 500+ Assurés | [Dossier](./David%20Lisnard/index.html) |
-| 11 | **Laurent Wauquiez** | La Droite Républicaine (LR) | Droite républicaine & conservatrice | 🟢 500+ Assurés | [Dossier](./Laurent%20Wauquiez/index.html) |
-| 12 | **Marine Le Pen** | Rassemblement National (RN) | Droite nationale & souverainiste (Candidate officielle) | 🟠 300-499 En bonne voie | [Dossier](./Marine%20Le%20Pen/index.html) |
-| 13 | **Éric Zemmour** | Reconquête ! | Droite identitaire & civilisationnelle | 🔴 <300 En difficulté | [Dossier](./%C3%89ric%20Zemmour/index.html) |
-| 14 | **Nicolas Dupont-Aignan** | Debout la France (DLF) | Gaullisme souverainiste | 🟠 300-499 En bonne voie | [Dossier](./Nicolas%20Dupont-Aignan/index.html) |
-| 15 | **François Asselineau** | UPR | Souverainisme & Frexit juridique | 🔴 <300 En difficulté | [Dossier](./Fran%C3%A7ois%20Asselineau/index.html) |
-| 16 | **Jean Lassalle** | Résistons ! | Ruralité & Souverainisme populaire | 🟠 300-499 En bonne voie | [Dossier](./Jean%20Lassalle/index.html) |
-
----
-
-
-* **[Teddy Riner](./Teddy%20Riner/INDEX.md)** — La France qu'on veut (Société civile & Rassemblement républicain) | *Complet (28 fiches + Excel 5 onglets + Graphiques + Dashboard HTML)*
+1. **[Nathalie Arthaud](./Nathalie Arthaud/INDEX.md)** (Lutte Ouvrière (LO)) — *Dossier complet (28 fiches + Excel + Dashboard)*
+2. **[Philippe Poutou](./Philippe Poutou/INDEX.md)** (Nouveau Parti Anticapitaliste (NPA)) — *Dossier complet (28 fiches + Excel + Dashboard)*
+3. **[Jean-Luc Mélenchon](./Jean-Luc Mélenchon/INDEX.md)** (La France Insoumise (LFI)) — *Dossier complet (28 fiches + Excel + Dashboard)*
+4. **[François Ruffin](./François Ruffin/INDEX.md)** (Picardie Debout ! / Debout !) — *Dossier complet (28 fiches + Excel + Dashboard)*
+5. **[Fabien Roussel](./Fabien Roussel/INDEX.md)** (Parti Communiste Français (PCF)) — *Dossier complet (28 fiches + Excel + Dashboard)*
+6. **[Marine Tondelier](./Marine Tondelier/INDEX.md)** (Les Écologistes (EELV)) — *Dossier complet (28 fiches + Excel + Dashboard)*
+7. **[Raphaël Glucksmann](./Raphaël Glucksmann/INDEX.md)** (Place Publique) — *Dossier complet (28 fiches + Excel + Dashboard)*
+8. **[Bernard Cazeneuve](./Bernard Cazeneuve/INDEX.md)** (La Convention) — *Dossier complet (28 fiches + Excel + Dashboard)*
+9. **[François Bayrou](./François Bayrou/INDEX.md)** (Mouvement Démocrate (MoDem)) — *Dossier complet (28 fiches + Excel + Dashboard)*
+10. **[Teddy Riner](./Teddy Riner/INDEX.md)** (La France qu'on veut (LFQV)) — *Dossier complet (28 fiches + Excel + Dashboard)*
+11. **[Gabriel Attal](./Gabriel Attal/INDEX.md)** (Renaissance) — *Dossier complet (28 fiches + Excel + Dashboard)*
+12. **[Édouard Philippe](./Édouard Philippe/INDEX.md)** (Horizons) — *Dossier complet (28 fiches + Excel + Dashboard)*
+13. **[David Lisnard](./David Lisnard/INDEX.md)** (Nouvelle Énergie) — *Dossier complet (28 fiches + Excel + Dashboard)*
+14. **[Laurent Wauquiez](./Laurent Wauquiez/INDEX.md)** (La Droite Républicaine (LR)) — *Dossier complet (28 fiches + Excel + Dashboard)*
+15. **[Jean Lassalle](./Jean Lassalle/INDEX.md)** (Résistons !) — *Dossier complet (28 fiches + Excel + Dashboard)*
+16. **[Nicolas Dupont-Aignan](./Nicolas Dupont-Aignan/INDEX.md)** (Debout la France (DLF)) — *Dossier complet (28 fiches + Excel + Dashboard)*
+17. **[Bruno Retailleau](./Bruno Retailleau/INDEX.md)** (Force Républicaine / Les Républicains) — *Dossier complet (28 fiches + Excel + Dashboard)*
+18. **[François Asselineau](./François Asselineau/INDEX.md)** (Union Populaire Républicaine (UPR)) — *Dossier complet (28 fiches + Excel + Dashboard)*
+19. **[Florian Philippot](./Florian Philippot/INDEX.md)** (Les Patriotes) — *Dossier complet (28 fiches + Excel + Dashboard)*
+20. **[Marine Le Pen](./Marine Le Pen/INDEX.md)** (Rassemblement National (RN)) — *Dossier complet (28 fiches + Excel + Dashboard)*
+21. **[Éric Zemmour](./Éric Zemmour/INDEX.md)** (Reconquête !) — *Dossier complet (28 fiches + Excel + Dashboard)*

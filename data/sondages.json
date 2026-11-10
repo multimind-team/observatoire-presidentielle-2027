@@ -75,6 +75,31 @@
       ]
     },
     {
+      "name": "Gabriel Attal",
+      "score": 14.5,
+      "min": 12.0,
+      "max": 17.0,
+      "real": true,
+      "party": "Renaissance",
+      "color": "#f59e0b",
+      "evolution": "+0.5",
+      "tendance": "up",
+      "historique": [
+        {
+          "date": "2026-10-15",
+          "score": 14.0
+        },
+        {
+          "date": "2026-11-01",
+          "score": 14.5
+        },
+        {
+          "date": "2026-11-10",
+          "score": 14.5
+        }
+      ]
+    },
+    {
       "name": "Jean-Luc Mélenchon",
       "score": 13.5,
       "min": 11.5,
@@ -225,6 +250,56 @@
       ]
     },
     {
+      "name": "Bruno Retailleau",
+      "score": 7.0,
+      "min": 5.5,
+      "max": 9.0,
+      "real": true,
+      "party": "LR",
+      "color": "#1d4ed8",
+      "evolution": "+0.5",
+      "tendance": "up",
+      "historique": [
+        {
+          "date": "2026-10-15",
+          "score": 6.5
+        },
+        {
+          "date": "2026-11-01",
+          "score": 7.0
+        },
+        {
+          "date": "2026-11-10",
+          "score": 7.0
+        }
+      ]
+    },
+    {
+      "name": "Bernard Cazeneuve",
+      "score": 6.5,
+      "min": 5.0,
+      "max": 8.5,
+      "real": true,
+      "party": "La Convention",
+      "color": "#e11d48",
+      "evolution": "0.0",
+      "tendance": "stable",
+      "historique": [
+        {
+          "date": "2026-10-15",
+          "score": 6.0
+        },
+        {
+          "date": "2026-11-01",
+          "score": 6.5
+        },
+        {
+          "date": "2026-11-10",
+          "score": 6.5
+        }
+      ]
+    },
+    {
       "name": "Éric Zemmour",
       "score": 6.0,
       "min": 4.5,
@@ -345,6 +420,31 @@
         },
         {
           "date": "2026-11-08",
+          "score": 2.0
+        }
+      ]
+    },
+    {
+      "name": "Florian Philippot",
+      "score": 2.0,
+      "min": 1.0,
+      "max": 3.5,
+      "real": true,
+      "party": "Les Patriotes",
+      "color": "#0284c7",
+      "evolution": "0.0",
+      "tendance": "stable",
+      "historique": [
+        {
+          "date": "2026-10-15",
+          "score": 1.5
+        },
+        {
+          "date": "2026-11-01",
+          "score": 2.0
+        },
+        {
+          "date": "2026-11-10",
           "score": 2.0
         }
       ]

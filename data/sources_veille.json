@@ -200,6 +200,30 @@
       "parti": "La France qu'on veut (LFQV)",
       "url": "https://lafrancequonveut.fr/",
       "feed": null
+    },
+    {
+      "candidat": "Gabriel Attal",
+      "parti": "Renaissance",
+      "url": "https://www.gabrielattal2027.fr/",
+      "feed": null
+    },
+    {
+      "candidat": "Bruno Retailleau",
+      "parti": "Force Républicaine / Les Républicains",
+      "url": "https://www.brunoretailleau2027.fr/",
+      "feed": null
+    },
+    {
+      "candidat": "Bernard Cazeneuve",
+      "parti": "La Convention",
+      "url": "https://www.bernardcazeneuve2027.fr/",
+      "feed": null
+    },
+    {
+      "candidat": "Florian Philippot",
+      "parti": "Les Patriotes",
+      "url": "https://www.florianphilippot2027.fr/",
+      "feed": null
     }
   ],
   "flux_presse": [
