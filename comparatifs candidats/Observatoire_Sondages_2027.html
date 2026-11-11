@@ -622,7 +622,7 @@
                 <div class="chart-desc">
                     Fourchette d'intentions de vote (% exprimés) consolidée sur les 6 derniers mois d'enquêtes publiées. La barre représente la médiane, l'étiquette indique la fourchette d'incertitude.
                 </div>
-                <div style="position: relative; height: 380px; width: 100%;">
+                <div id="pollsBarChartContainer" style="position: relative; min-height: 380px; height: 640px; width: 100%; transition: height 0.25s ease;">
                     <canvas id="pollsBarChart"></canvas>
                 </div>
             </div>
@@ -943,6 +943,13 @@
                 filtered = pollsData.filter(d => d.score >= 7.0);
             }
 
+            // Adapter dynamiquement la hauteur du conteneur au nombre de candidats pour afficher TOUS les noms
+            const container = document.getElementById('pollsBarChartContainer');
+            if (container) {
+                const barHeight = window.innerWidth < 480 ? 26 : 29;
+                container.style.height = `${Math.max(360, filtered.length * barHeight + 35)}px`;
+            }
+
             const labels = filtered.map(d => d.name);
             const dataValues = filtered.map(d => d.score);
             const colors = filtered.map(d => d.color);
@@ -987,7 +994,14 @@
                         },
                         y: {
                             grid: { display: false },
-                            ticks: { color: '#e2e8f0', font: { weight: '600' } }
+                            ticks: {
+                                color: '#e2e8f0',
+                                autoSkip: false, // Force l'affichage intégral de tous les 21 noms sans omission
+                                font: {
+                                    size: window.innerWidth < 480 ? 10.5 : 12,
+                                    weight: '600'
+                                }
+                            }
                         }
                     }
                 }

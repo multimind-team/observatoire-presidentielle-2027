@@ -203,12 +203,16 @@ def sync_candidates_and_themes():
                     f'<div style="padding:6px 10px; background:rgba(30,41,59,0.6); border-radius:6px; border-left:3px solid #38bdf8; font-size:11.5px; line-height:1.4; color:#e2e8f0;">{safe_a}</div>'
                 )
             rendered_alerts = "\n".join(alerts_html_items) if alerts_html_items else '<div style="color:#94a3b8; font-size:11.5px;">Aucune alerte critique ces dernières 24h. Prochaine veille lundi 18h.</div>'
-            content = re.sub(
-                r'<div id="veilleItemsContainer"[^>]*>.*?</div>\s*</div>\s*</div>',
-                f'<div id="veilleItemsContainer" style="display:flex; flex-direction:column; gap:6px;">\n{rendered_alerts}\n                </div>\n            </div>\n        </div>',
-                content,
-                flags=re.DOTALL
+            # Remplacement propre du bloc d'alertes sans dérive de balises div
+            veille_re = r'<div id="veilleItemsContainer"[^>]*>[\s\S]*?</div>\s*</div>\s*</div>\s*<script>\s*function toggleLiveVeille'
+            replacement = (
+                f'<div id="veilleItemsContainer" style="display:flex; flex-direction:column; gap:6px;">\n{rendered_alerts}\n                </div>\n'
+                '            </div>\n'
+                '        </div>\n'
+                '        <script>\n'
+                '            function toggleLiveVeille'
             )
+            content = re.sub(veille_re, replacement, content)
 
         tf.write_text(content, encoding="utf-8")
         print(f"✓ Synchronisé avec succès : {tf.name} ({len(cands_data)} candidats, {len(themes_data)} thématiques)")
